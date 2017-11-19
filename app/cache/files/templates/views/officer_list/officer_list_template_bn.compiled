@@ -1,0 +1,112 @@
+<h3>
+	কর্মকর্তাবৃন্দের তালিকা
+</h3>
+
+
+
+<div id="with-pic">
+
+<a class="btn left"style="float:right" href="javascript:;" onclick="withpic()">কর্মকর্তাবৃন্দের তালিকা ছবি ছাড়া</a>
+	<br/>	
+<table  class="bordered">
+<tbody>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td class='idHide'><?php echo digit_to_bangla($content['sl'],$lang)?></td>
+		<td><?php echo renderImage('officer_list', $content['uploadpath'], $content['Photo'], '100')?></td>
+		<td>
+				<table>
+				<tbody>
+					<td width="50%">
+						<table>
+							<tr>
+								<td width="100">নাম</td><td><?php echo $content['name']; ?></td>
+							</tr>
+							<tr>
+								<td width="100">পদবি</td><td><?php echo $content['designation']; ?></td>
+							</tr>
+							<tr>
+								<td width="100">অফিস</td><td><?php echo $content['org_name']; ?></td>
+							</tr>
+							<tr>
+								<td width="100">ই-মেইল</td><td><?php echo $content['email']; ?></td>
+							</tr>
+							
+							<?php if(!empty($content['cv'])):?>
+							<tr>
+								<td width="100">জীবন বৃত্তান্ত</td>
+								<td><?php echo renderDownloadLink('officer_list',$content['uploadpath'] ,$content['cv'][0]);	?></td>
+							</tr>
+							<?php endif;?>
+							
+						</table>
+					</td>
+					<td width="50%">
+						<table>
+							<tr>
+								<td width="100">ফোন (অফিস)</td><td><?php echo digit_to_bangla($content['phone_office'] ,'bn')?></td>
+							</tr>
+							<tr>
+								<td width="100">ফোন (বাসা)</td><td><?php echo digit_to_bangla($content['phone_residence'] ,'bn')?></td>
+							</tr>
+							<tr>
+								<td width="100">মোবাইল</td><td><?php echo digit_to_bangla($content['mobile'] ,'bn')?></td>
+							</tr>
+							<tr>
+								<td width="100">ফ্যাক্স</td><td><?php echo digit_to_bangla($content['fax'] ,'bn')?></td>
+							</tr>
+
+							<tr><a href="/site/view/vcard?name=<?php echo $content['name']; ?>&office=<?php echo $content['org_name']; ?>&email=<?php echo $content['email']; ?>&worktel=<?php echo $content['phone_office']; ?>&hometel=<?php echo $content['phone_residence']; ?>&cell=<?php echo $content['mobile']; ?>">Download Vcard</a></tr>
+						</table>
+					</td>
+					
+					
+					
+
+				</tbody>
+			</table>
+		</td>
+	</tr>
+ <?php } ?>
+</tbody>
+</table>
+</div>
+<div id="without-pic" style="display:none;">
+	<a class="btn" style="float:right" href="javascript:;" onclick="withpic()">কর্মকর্তাগণের তালিকা ছবি সহ</a>
+	<br/>
+	<table  class="bordered">
+	<thead>
+		<tr>
+			<th>ক্রমিক নং</th>
+			<th>নাম</th>
+			<th>পদবি</th>
+			<th>দপ্তর</th>
+			<th>ফোন (দপ্তর)</th>
+			<th>ফোন (বাসা)</th>
+			<th>মোবাইল</th>
+			<th>ফ্যাক্স</th>
+			<th>ই-মেইল</th>
+			<th>জীবন বৃত্তান্ত</th>
+		</tr>
+	</thead>
+<tbody>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo digit_to_bangla($content['sl'] ,'bn')?></td>
+		<td><?php echo $content['name']; ?></td>
+		<td><?php echo $content['designation']; ?></td>
+		<td><?php echo $content['org_name']; ?></td>
+		<td><?php echo digit_to_bangla($content['phone_office'] ,'bn')?></td>
+		<td><?php echo digit_to_bangla($content['phone_residence'] ,'bn')?></td>
+		<td><?php echo digit_to_bangla($content['mobile'] ,'bn')?></td>
+		<td><?php echo digit_to_bangla($content['fax'] ,'bn')?></td>		
+		<td><?php echo $content['email']; ?></td>
+		<td><?php echo renderDownloadLink('officer_list',$content['uploadpath'] ,$content['cv'][0]);	?></td>
+	</tr>
+ <?php } ?>
+</tbody>
+</table>
+</div><style></style><script>function withpic(){
+	$('#with-pic').toggle();
+	$('#without-pic').toggle();
+}</script>

@@ -1,0 +1,17 @@
+<h3>
+খবর
+</h3>
+<table class="table">
+<tbody>
+	<?php $i=1; ?>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo digit_to_bangla($i,$lang)?></td>
+		<td><?php echo renderLinkBy('news',$content['id'] ,$content['title'] )?></td>
+		<td><?php echo $content['pubdate']; ?></td>
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table>
+<?php echo renderPagination('news',$paginate)?><style>#left-content ul{list-style:none!important}</style><script></script>

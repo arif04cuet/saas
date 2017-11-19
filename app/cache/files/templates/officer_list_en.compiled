@@ -1,0 +1,18 @@
+<h3><?php echo $content['name']; ?></h3>
+<?php 		echo renderImage('officer_list',$content['uploadpath'] ,$content['Photo']);	
+?>
+<p>পদবী: <?php echo $content['designation']; ?></p>
+<p>প্রতিষ্ঠানের নাম: <?php echo $content['org_name']; ?></p>
+<p>ফোন (অফিস): <?php echo $content['phone_office']; ?></p>
+<p>ফোন (বাসা): <?php echo $content['phone_residence']; ?></p>
+<p>ফ্যাক্স: <?php echo $content['fax']; ?></p>
+<p>ইমেইল: <?php echo $content['email']; ?></p>
+<p>
+	CV :
+	<?php 
+				if(!empty($content['cv'])){
+					echo renderDownloadLink('officer_list',$content['uploadpath'] ,$content['cv'][0]);	
+				}
+			?>
+</p>
+<?php //var_dump($content); ?><style></style><script></script>

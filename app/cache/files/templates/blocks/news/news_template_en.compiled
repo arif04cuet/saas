@@ -1,0 +1,14 @@
+<div style=" background-color: #EFEFEF;border: 1px solid #CCCCCC;margin: 20px 0;padding: 10px;" class="row" id="news">
+	<h5 style="float:left;margin:-3px 5px 0 0; font-weight:bold;font-size:.9em">News:</h5>
+	<div id="news-ticker" style="overflow: hidden; position: relative; height: 0px;">
+		<ul style="font-size: 0.9em; position: absolute; margin: 0px; padding: 0px;width: 95%;">
+			<?php foreach ($contents as $content) { ?>
+	<li><?php echo renderLinkBy('news', $content['id'], $content['title']) ?> <i>(<?php echo $content['pubdate']; ?>)</i></li>   
+ <?php } ?>
+			
+		</ul>
+		<div style="float:right">
+			<a class="btn" href="/site/view/news">All</a>
+		</div>
+	</div>
+</div><style></style><script></script>

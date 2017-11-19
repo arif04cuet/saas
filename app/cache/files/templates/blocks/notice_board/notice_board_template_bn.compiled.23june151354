@@ -1,0 +1,20 @@
+<div class="row" id="notice-board">
+	<div class="notice-board-bg">
+		<h2>নোটিশ বোর্ড</h2>
+		<div id="notice-board-ticker">
+			<ul>
+				<?php foreach ($contents as $content) { ?>
+<li>
+<?php 
+$teaser_title = teaser_text($content['title'], 85);
+echo renderLinkBy('notices',$content['id'] ,$teaser_title )?>
+
+</li>
+ <?php } ?>
+			</ul>	
+			<a class="btn right" href="/site/view/notices">সকল</a>
+		</div>
+	</div>
+</div><style>#notice-board-ticker ul li{
+	list-style:none;
+}</style><script></script>

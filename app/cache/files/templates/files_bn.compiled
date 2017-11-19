@@ -1,0 +1,6 @@
+<?php //var_dump($content);?>
+<h3><?php echo $content['title']; ?></h3>
+<?php echo renderFileViewer('files',$content['uploadpath'] ,$content['file_fles']); ?>
+
+
+<style></style><script></script>

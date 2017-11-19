@@ -1,0 +1,24 @@
+<div class="nav_all_national_portal">
+	<h4>
+		সকল বাতায়ন
+	</h4>
+
+	<div class="batayon-con">
+		<select id="ddmenu_name" onchange="window.open(this.value, '_blank')">
+			<option selected="" value="">ওয়েবসাইট বাছাই করুন</option>
+			<option value="http://bangladesh.portal.gov.bd/?q=bn/govlinks/ministries">মন্ত্রণালয়</option>
+			<option value="http://bangladesh.portal.gov.bd/?q=bn/govlinks/directorates">অধিদপ্তর </option>
+			<option value="http://www.dhakadiv.gov.bd/">ঢাকা বিভাগ</option>
+			<option value="http://www.chittagongdiv.gov.bd/">চট্টগ্রাম বিভাগ</option>
+			<option value="http://www.rajshahidiv.gov.bd/">রাজশাহী বিভাগ</option>
+			<option value="http://www.khulnadiv.gov.bd/">খুলনা বিভাগ</option>
+			<option value="http://www.barisaldiv.gov.bd/">বরিশাল বিভাগ</option>
+			<option value="http://www.rangpurdiv.gov.bd/">রংপুর বিভাগ</option>
+			<option value="http://www.sylhetdiv.gov.bd/">সিলেট বিভাগ</option>
+		</select>
+		<input type="button" name="go-all-np" id="go-all-np" value="চলুন" />
+	</div>
+	
+</div>
+
+<style></style><script></script>

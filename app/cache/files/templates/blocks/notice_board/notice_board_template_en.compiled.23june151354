@@ -1,0 +1,21 @@
+<div class="row" id="notice-board">
+	<div class="notice-board-bg">
+		<h2>Notice Board</h2>
+		<div id="notice-board-ticker">
+			
+							<ul>
+				<?php foreach ($contents as $content) { ?>
+<li>
+<?php 
+$teaser_title = teaser_text($content['title'], 70);
+echo renderLinkBy('notices',$content['id'] ,$teaser_title )?>
+</li>
+ <?php } ?>
+			</ul>
+				
+			<a class="btn right" href="/site/view/notices">All</a>
+		</div>
+	</div>
+</div><style>#notice-board-ticker ul li{
+	list-style:none;
+}</style><script></script>

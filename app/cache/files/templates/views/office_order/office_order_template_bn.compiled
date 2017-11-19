@@ -1,0 +1,23 @@
+<h3>
+	অফিস আদেশ
+</h3>
+<table class="bordered">
+<tbody>
+	<?php $i=1; ?>
+	<?php foreach ($contents as $content) { ?>
+
+	<tr>
+		<td><?php echo digit_to_bangla($i,$lang)?></td>
+		<td><?php echo renderLinkBy('office_order',$content['id'] ,$content['title_bn'] )?></td>
+		<td> ডাউনলোড:	
+			<div>
+				<?php foreach ($content['file'] as $fname) { ?>
+					<?php echo renderDownloadLink('office_order',$content['uploadpath'] ,$fname); ?>
+ 				<?php } ?>							
+			</div>
+		</td>
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table><style></style><script></script>

@@ -1,0 +1,24 @@
+<ul class="popular-portal" >
+    <?php foreach ($contents as $content) { ?>
+    <li>
+        <?php
+        if (isset($content['portal_logo_icon_en'][0]) && !empty($content['portal_logo_icon_en'][0]["link"])) {
+            ?>
+		<a target="_blank" href="http://<?php echo $content['portal_logo_icon_en'][0]["link"]; ?>">
+                <?php echo renderImage('popular_portal', $content['uploadpath'], $content['portal_logo_icon_en'], 222,65) ?>
+            </a>
+            <?php
+        } else {
+            ?>
+
+            <a target="_blank" href="#">
+                <?php echo renderImage('popular_portal', $content['uploadpath'], $content['portal_logo_icon_en'], 222,65) ?>
+            </a>
+
+            <?php
+        }
+        ?>
+
+    </li>
+    <?php } ?>
+</ul><style></style><script></script>

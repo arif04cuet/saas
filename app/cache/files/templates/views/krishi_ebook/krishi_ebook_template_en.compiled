@@ -1,0 +1,37 @@
+<h3>
+	Krishi E-book
+</h3>
+
+
+<?php foreach ($contents as $content) { ?>
+<div class="ebook">
+
+	<?php $link = renderDownloadLink('krishi_ebook',$content['uploadpath'] ,$content['file']); ?>
+		
+	<?php $new_link =  explode("\"",$link); ?>
+	
+	<a href="<?php echo $new_link[1]; ?>" target="_blank">
+		<?php echo  renderImage('krishi_ebook', $content['uploadpath'], $content['cover'],'125','160'); ?>
+		<br/>
+		<span style="text-align: center; display: block;"><?php echo $content['title_bn']; ?></span>
+	</a>
+	
+</div>
+<?php } ?><style>.ebook{
+border: 1px solid black;
+padding: 5px;
+display: inline-block;
+}
+
+.ebook img{
+width: 169px;
+height: 200px;
+}
+.h3{
+background-color: #609513;
+color: white;
+font-size: 20px;
+font-weight: bold;
+padding: 0px 15px;
+}
+</style><script></script>

@@ -1,0 +1,10 @@
+<div id="map"></div><style>#map {
+        
+        width: 100%;
+        height: 400px;
+    }
+    #map img {
+        max-width: none;
+    }</style><script>$(document).ready(function () {
+	loadGoogleMap('map',<?php echo $contents[0]['geocode'][0]['lat']?>, <?php echo $contents[0]['geocode'][0]['lng']?>);
+});</script>

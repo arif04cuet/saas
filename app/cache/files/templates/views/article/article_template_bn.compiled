@@ -1,0 +1,14 @@
+
+<?php if (count($contents)): ?>
+    <h3><?php echo $contents[0]['category'] ?></h3>
+    <hr/>
+    <ul>
+        <?php foreach ($contents as $content) { ?>
+        <li><a href="/site/article/<?php echo $content['id'] ?>"><?php echo $content['title'] ?></a></li>
+        <?php } ?>
+    </ul>
+<?php else: ?>
+    <p>
+        No article found
+    </p>
+<?php endif; ?><style></style><script></script>

@@ -1,0 +1,46 @@
+<h3>
+	স্বাধীনতা পুরস্কারপ্রাপ্ত ব্যক্তি/প্রতিষ্ঠানের তালিকা		
+</h3>
+<div>
+	<a href="/site/view/all_independence_awardees" class="btn">সকল </a>
+<select id="year_select" onchange="showOnYear(this)" style="">
+	
+		      <option value="0" selected=""> -- বাছাই করুন -- </option>
+			   <?php for($i=date('Y');$i>=1977;$i--){?>
+     			 <option <?php echo $q[0]==$i?'selected':''?> value="<?php echo $i?>"><?php echo digit_to_bangla($i ,'bn')?></option>      
+			   <?php } ?>           
+    	</select>
+	
+</div>
+<?php if(count($contents)>0){?>
+<h4>
+পুরস্কার প্রাপ্তির সাল: <?php echo digit_to_bangla($q[0]  ,'bn')?>
+</h4>
+	<table class="bordered">
+	<thead>
+		<tr>
+			<th>ক্রমিক</th>
+			<th>ব্যক্তি/প্রতিষ্ঠানের নাম</th>
+			<th>ক্ষেত্র</th>
+		</tr>
+	</thead>
+<tbody>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo digit_to_bangla($content['name_order'] ,'bn')?></td>
+		<td><?php echo $content['name']; ?></td>
+		<td><?php echo $content['sector']; ?></td>
+	</tr>
+ <?php } ?>
+</tbody>
+</table>
+<?php }else{ ?>
+
+<?php } ?><style></style><script>$( document ).ready(function() {
+  $('#year_select').change(function() {
+      var v = $(this).val();  
+		if(v!=0){
+      window.location = "/site/view/independence_awardees/"+v;
+		}
+  });
+});</script>

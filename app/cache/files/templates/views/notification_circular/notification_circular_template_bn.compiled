@@ -1,0 +1,21 @@
+<h3>
+প্রজ্ঞাপন/পরিপত্র
+</h3>
+<table class="bordered">
+<tbody>
+	<?php $i=1; ?>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo digit_to_bangla($i,$lang)?></td>
+		<td><?php echo $content['title'] ?></td>
+		<td> ডাউনলোড:	
+			<div>
+				<?php echo renderDownloadLink('notification_circular',$content['uploadpath'] ,$content['pdf']) ?>
+				<?php echo renderDownloadLink('notification_circular',$content['uploadpath'] ,$content['doc']) ?>				
+			</div>
+		</td>
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table><style></style><script></script>

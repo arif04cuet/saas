@@ -1,0 +1,28 @@
+<script src="//cdn.jsdelivr.net/bxslider/4.1.1/jquery.bxslider.min.js"></script>
+<!-- bxSlider CSS file -->
+<link href="//cdn.jsdelivr.net/bxslider/4.1.1/jquery.bxslider.css" rel="stylesheet"/>
+<b>প্রতিদিনের ছবি</b>
+<ul class="bxslider">
+    <?php foreach ($contents as $content) { ?>
+    
+    <li>
+		<?php foreach ($content['upload'] as $img) { ?>
+        <a target="_blank" class="title" href="<?php echo getImagePath('daily_photo', $content['uploadpath'], $img) ?>">
+			
+            <img class="" src="<?php echo getImagePath('daily_photo', $content['uploadpath'], $img) ?>"
+                 alt="<?php echo $img['caption_en']; ?>" title="<?php echo $img['caption_en']; ?>"/></a>
+		<?php } ?>
+        
+    </li>
+   
+    <?php } ?>
+</ul>
+<style>.bxslider li img{width:720px}
+.bxslider li {margin-left:0!important}</style><script> $('.bxslider').bxSlider({
+        mode: 'fade',
+  		auto: true,
+		adaptiveHeight:true
+       
+    });
+
+</script>

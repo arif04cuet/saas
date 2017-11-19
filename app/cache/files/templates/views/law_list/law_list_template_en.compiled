@@ -1,0 +1,21 @@
+<p>Law EN</p>
+<table>
+<thead>
+<tr>
+<th>Law Name</th>
+<th>Law Number</th>
+<th>Gadget Number</th>
+<th>Publish Date</th>
+</tr>
+</thead>
+<tbody>
+<?php foreach ($contents as $content) { ?>
+<tr>
+<td><?php echo renderLinkBy('law',$content['id'] ,$content['law_name'] )?></td>
+<td><?php echo $content['law_number']; ?></td>
+<td><?php echo $content['gadget_number']; ?></td>
+<td><?php echo $content['publish_date']; ?></td>
+</tr>
+ <?php } ?>
+</tbody>
+</table><style></style><script></script>

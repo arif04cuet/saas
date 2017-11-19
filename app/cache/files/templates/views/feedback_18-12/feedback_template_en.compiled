@@ -1,0 +1,182 @@
+
+<h3>
+    Submit your Feedback
+</h3>
+<br  style="clear:both"/>
+
+<form id="feedback" action="" method="get" class="basic-grey" onsubmit="return save_form()">
+
+    <label>
+        <span>Your Name <span>*</span>:</span>
+        <input id="name" type="text" name="name" placeholder="Your Full Name" required="required"/>
+    </label>
+
+    <label>
+        <span>Your Email <span>*</span>:</span>
+        <input id="email" type="email" name="email" placeholder="Valid Email Address" required="required"/>
+    </label>
+
+    <label>
+        <span>Message <span>*</span>:</span>
+        <textarea id="message" name="message" placeholder="Your Message to Us" required="required"></textarea>
+    </label>
+
+    <div class="captcha_image" style="margin-left: 21%">
+        <!--  <img id="siimage" style="border: 1px solid #000; margin-right: 15px"
+             src="/securimage/securimage_show.php?sid=<?php /*echo md5(uniqid()) */?>" alt="CAPTCHA Image" align="left"/>
+        <a tabindex="-1" style="border-style: none;" href="#" title="Refresh Image"
+           onclick="document.getElementById('siimage').src = '/securimage/securimage_show.php?sid=' + Math.random(); this.blur(); return false">
+            <img src="/themes/responsive_npf/images/refresh.png" alt="Reload Image" height="32" width="32"
+                 onclick="this.blur()"
+                 align="bottom" border="0"/>
+        </a>-->
+        <img id="captcha_value" src="" alt="captchaImage"/>
+
+    </div>
+    <br  style="clear:both"/>
+  
+    <label>
+        <span>Enter Code <span>*</span>:</span>
+        <input type="text" id="ct_captcha" name="ct_captcha" size="12" maxlength="16" required="required"/>
+    </label>
+    <label>
+        <span>&nbsp;</span>
+        <input type="submit" class="button" value="Submit" id="submit"/>
+    </label>
+</form>
+
+<style>
+.basic-grey {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 800px;
+        background: #F7F7F7;
+        padding: 25px 15px 25px 10px;
+        font: 12px Georgia, "Times New Roman", Times, serif;
+        color: #888;
+        text-shadow: 1px 1px 1px #FFF;
+        border: 1px solid #E4E4E4;
+    }
+
+    .basic-grey h1 {
+        font-size: 25px;
+        padding: 0px 0px 10px 40px;
+        display: block;
+        border-bottom: 1px solid #E4E4E4;
+        margin: -10px -15px 30px -10px;;
+        color: #888;
+    }
+
+    .basic-grey h1 > span {
+        display: block;
+        font-size: 11px;
+    }
+
+    .basic-grey label {
+        display: block;
+        margin: 0px;
+    }
+
+    .basic-grey label > span {
+        float: left;
+        width: 20%;
+        text-align: right;
+        padding-right: 10px;
+        margin-top: 10px;
+        color: #000;
+    }
+
+    .basic-grey input[type="text"], .basic-grey input[type="email"], .basic-grey textarea, .basic-grey select {
+        border: 1px solid #DADADA;
+        color: #888;
+        height: 30px;
+        margin-bottom: 16px;
+        margin-right: 6px;
+        margin-top: 2px;
+        outline: 0 none;
+        padding: 3px 3px 3px 5px;
+        width: 70%;
+        font-size: 12px;
+        line-height: 15px;
+        box-shadow: inset 0px 1px 4px #ECECEC;
+        -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+        -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+    }
+
+    .basic-grey textarea {
+        padding: 5px 3px 3px 5px;
+    }
+
+    .basic-grey select {
+        background: #FFF url('down-arrow.png') no-repeat right;
+        background: #FFF url('down-arrow.png') no-repeat right);
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        text-indent: 0.01px;
+        text-overflow: '';
+        width: 70%;
+        height: 35px;
+        line-height: 25px;
+    }
+
+    .basic-grey textarea {
+        height: 200px;
+    }
+
+    .basic-grey .button {
+        background: #609513;
+        border: none;
+        padding: 5px 30px;
+        font-size: 17px;
+        color: #FFF;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .basic-grey .button:hover {
+
+    }
+
+    form#feedback label span span {
+        color: red;
+    }
+</style>
+<script>
+
+var captcha_source = "http://"+document.domain+"/npfadmin/feedback/captcha";
+$("#captcha_value").attr('src',captcha_source);
+
+function save_form() {
+    var save_url = "http://"+document.domain+"/npfadmin/feedback/create?callback=getConfirmation&";
+    var dt = $("#feedback").serialize();
+    dt += "&form_name=feedback_form";
+    save_url += dt;
+
+    $.ajax({
+        type: 'GET',
+        url: save_url,
+        dataType: 'jsonp',
+        jsonpCallback: 'getConfirmation',
+        xhrFields: {
+             withCredentials: true
+           },
+        success: function (result) {
+            console.log(result);
+            if (result.msg == "success") {
+                alert("ফিডব্যাকজন্য দেয়ার জন্য ধন্যবাদ, আপনার তথ্য ও উপাত্তগুলো সফলভাবে সংরক্ষণ হয়েছে।");
+                $("#feedback").trigger("reset");
+                location.reload(true);
+            }
+            else if (result.msg == "captcha") {
+                alert("Captcha Mismatch!!!");
+            }
+            else {
+                alert(result.msg);
+            }
+        }
+    });
+
+    return false;
+}
+</script>

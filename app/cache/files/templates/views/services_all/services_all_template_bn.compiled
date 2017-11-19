@@ -1,0 +1,141 @@
+<div id="article-title">
+	<h1>
+		সেবার তালিকা (প্রোফাইল ও পদ্ধতিচিত্র সহ)
+	</h1>
+</div>
+
+<div id="statusbar">
+	<?php echo 'মোট সেবা এন্ট্রি আছেঃ '.digit_to_bangla(sizeof($contents), bn).' টি'.'<br>'; ?>
+</div>
+
+<ul class="front-tab-ajax-ul">
+<!--<li><h3 style="width: 100%; float: left;color: #8A5FAA;">সেবার নাম</h3></li>	-->
+
+<?php 
+$temp_domain = "";
+foreach ($contents as $content){
+	
+	if($temp_domain == $content['sitename_bn'])
+	{
+		
+		//--------tappware
+		$new_title = str_replace(" ","-",$content['title']);
+		$new_title = htmlspecialchars($new_title, ENT_QUOTES);
+		//--------tappware
+
+		echo '<li>';
+		echo '<i class="flaticon-right65"></i>'.'   ';
+		echo '<a href="/site/service_portal/'.$content['id'].'/'.$new_title.'">'.$content['title'].'</a>';
+		
+		//echo '<a class="org_a" href="/site/view/services_org/'.$content['service_domain'].'/'.$content['sitename_bn'].'">'.$content['sitename_bn'].'</a>';
+		
+		echo '</li>';
+	}
+	else
+	{
+		
+		//--------tappware
+		$new_sitename_bn = str_replace(" ","-",$content['sitename_bn']);
+		$new_sitename_bn= htmlspecialchars($new_sitename_bn, ENT_QUOTES);
+
+		$new_title = str_replace(" ","-",$content['title']);
+		$new_title = htmlspecialchars($new_title, ENT_QUOTES);
+		//--------tappware
+
+		echo "<hr />";
+		
+		/////////////////////////////////////////////////
+		if($content['service_domain'] == 6487)  
+		{
+			//echo "উপজেলা ভূমি অফিস : সেবা সমূহ";
+			echo '<h3><a class="org_a" href="/site/view/services_org/'.$content['service_domain'].'/'.$new_sitename_bn.'">উপজেলা ভূমি অফিস</a></h3>';
+		}
+		else if($content['service_domain'] == 5598) 
+		{
+			//echo "ইউ এন ও অফিস : সেবা সমূহ";	
+			echo '<h3><a class="org_a" href="/site/view/services_org/'.$content['service_domain'].'/'.$new_sitename_bn.'">ইউ এন ও অফিস</a></h3>';
+		}
+		else
+		{
+			echo '<h3><a class="org_a" href="/site/view/services_org/'.$content['service_domain'].'/'.$new_sitename_bn.'">'.$content['sitename_bn'].'</a></h3>';
+		}
+		//////////////////////////////////////////////
+		
+		
+		echo '<li>';
+		echo '<i class="flaticon-right65"></i>'.'   ';
+		echo '<a href="/site/service_portal/'.$content['id'].'/'.$new_title.'">'.$content['title'].'</a>';
+		
+		//echo '<a class="org_a" href="/site/view/services_org/'.$content['service_domain'].'/'.$content['sitename_bn'].'">'.$content['sitename_bn'].'</a>';
+		
+		echo '</li>';
+	}
+	
+	$temp_domain = $content['sitename_bn'];
+}
+
+?>
+	
+</ul>
+<style>#printable_area a {
+    color: #444444;
+    text-decoration: none;
+}
+
+.front-tab-ajax-ul li{
+list-style:none;
+border-bottom:1px solid #efefef;
+
+}
+
+.italic {
+    color: #FFA500;
+}
+
+#statusbar {
+    background-color: #FAFAFA;
+    border: 1px solid #D8D8D8;
+    padding: 10px;
+}
+
+.front-tab-ajax-ul{
+padding:0;
+}
+
+/*==============================================*/
+#article-title {
+    border-bottom: 4px solid #8CC641;
+    clear: both;
+    display: block;
+    margin-bottom: 10px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.front-tab-ajax-ul li{
+ 	margin-bottom:10px;
+}
+
+.front-tab-ajax-ul li i {
+    background-color: #efefef;
+    display: block;
+    float: left;
+    margin-right: 20px;
+    text-align: center;
+    width: 24px;
+	height: 24px;
+}
+.front-tab-ajax-ul li:hover i{
+    background-color: #683091;
+    color:#fff;
+}
+.front-tab-ajax-ul li:hover{
+	border-bottom:1px solid #683091;
+}
+
+.front-tab-ajax-ul li a.org_a
+{
+   float: right;
+   width: 30%;
+}
+/*==============================================*/</style><script></script>

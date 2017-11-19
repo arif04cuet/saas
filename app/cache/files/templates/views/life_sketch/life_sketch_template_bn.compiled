@@ -1,0 +1,10 @@
+<h3>
+	Life Sketch
+</h3>
+
+<ul class="life_sketch">
+	<?php foreach($contents as $content):?>
+	<li><a href="/site/life_sketch/<?php echo $content['id']?>"><?php echo $content['title']?></a></li>
+	<?php endforeach;?>
+</ul><style>.life_sketch{list-type:none}
+.life_sketch li{text-decoration: underline;}</style><script></script>

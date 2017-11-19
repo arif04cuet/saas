@@ -1,0 +1,13 @@
+<script type="text/javascript" src="/themes/responsive_npf/js/yoxview/yoxview-init.js"></script>
+
+<div class="thumbnails yoxview">
+	<?php foreach ($content['pictures'] as $img) { ?>
+		<a href="<?php echo getImagePath('photogallery', $content['uploadpath'], $img)?>">
+			<img src="<?php echo getThumbnailPath('photogallery', $content['uploadpath'], $img)?>" 
+				 	alt="<?php echo $img['caption_bn']; ?>" title="<?php echo $img['caption_bn']; ?>" />
+		</a>	
+	<?php } ?>
+</div>
+<style></style><script>$(document).ready(function(){
+		        $(".yoxview").yoxview();
+		    });</script>

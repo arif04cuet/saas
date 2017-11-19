@@ -1,0 +1,156 @@
+<h3 class="h3">
+	কৃষি কথা
+</h3>
+<div class="top_area">
+	
+	<div class="cover_image" style="border-radius: 6px;margin-left:20%">
+		<h5 class="h5">
+			চলতি সংখ্যা
+		</h5>
+		<br/>
+	<?php if (($contents[0]['cover_photo'][0]['name'] == '')) { ?> 
+		<a href="/site/view/krishi_kotha_month/<?php echo $contents[0]['year']; ?>/<?php echo $contents[0]['month']; ?>">
+		<?php echo renderImage('krishi_kotha', $contents[0]['uploadpath'], $contents[0]['image'], '125','172'); ?>
+		<br/>
+		<span><?php echo $contents[0]['month']; ?> - <?php echo $contents[0]['year']; ?></span>
+		</a>
+	<?php } else { ?>
+		<a href="/site/view/krishi_kotha_month/<?php echo $contents[0]['year']; ?>/<?php echo $contents[0]['month']; ?>">
+		<?php echo renderImage('krishi_kotha', $contents[0]['uploadpath'], $contents[0]['cover_photo'], '125','172'); ?>
+		<br/>
+		<span><?php echo $contents[0]['month']; ?> - <?php echo $contents[0]['year']; ?></span>
+		</a>
+	<?php } ?>
+	</div>
+	
+	<div class="search_area">
+		<h5 class="h5" style="margin-bottom: 5px;">
+			পুরাতন সংখ্যা
+		</h5>
+		<label>মাস:</label> 
+		<select class="month">
+			<option value="">-- মাস --</option>
+			<option value="550">বৈশাখ</option>
+			<option value="551">জ্যৈষ্ঠ</option>
+			<option value="552">আষাঢ়</option>
+			<option value="553">শ্রাবণ</option>
+			<option value="554">ভাদ্র</option>
+			<option value="555">আশ্বিন</option>
+			<option value="556">কার্ত্তিক</option>
+			<option value="557">অগ্রহায়ণ</option>
+			<option value="558">পৌষ</option>
+			<option value="559">মাঘ</option>
+			<option value="560">ফাল্গুন</option>
+			<option value="561">চৈত্র</option>
+		</select>
+		<br/>
+		<label>সাল:</label>
+		<select class="year">
+			<option value="">-- সাল --</option>
+			<option value="583">১৪২২</option>
+			<option value="568">১৪২১</option>
+			<option value="567">১৪২০</option>
+			<option value="566">১৪১৯</option>
+			<option value="565">১৪১৮</option>
+			<option value="564">১৪১৭</option>
+			<option value="563">১৪১৬</option>
+			<option value="562">১৪১৫</option>
+		</select>
+		<button class="search_content">
+			অনুসন্ধান
+		</button>
+	</div>
+	
+</div>
+
+
+
+<br/>
+
+<!-- ============================== for all list =========================================== -->
+
+<?php foreach ($contents as $content) { ?>
+
+<div class='cover_image'>
+	<?php if (($content['cover_photo'][0]['name'] == '')) { ?> 
+	<a href="/site/view/krishi_kotha_month/<?php echo $content['year']; ?>/<?php echo $content['month']; ?>">
+<?php echo renderImage('krishi_kotha', $content['uploadpath'], $content['image'], '125','172'); ?>
+<br/>
+<span><?php echo $content['month']; ?> - <?php echo $content['year']; ?></span>
+		</a>
+
+<?php } else { ?>
+<a href="/site/view/krishi_kotha_month/<?php echo $content['year']; ?>/<?php echo $content['month']; ?>">
+<?php echo renderImage('krishi_kotha', $content['uploadpath'], $content['cover_photo'], '125','172'); ?>
+<br/>
+<span><?php echo $content['month']; ?> - <?php echo $content['year']; ?></span>
+	</a>
+
+<?php } ?>
+</div>
+
+<?php } ?>
+<!-- ================================= end list ============================================ --><style>.h3{
+background: none repeat scroll 0% 0% #87A00D;
+height: 40px;
+line-height: 40px;
+padding: 5px 10px 0px;
+color: #FFF;
+font-weight: bold;
+font-size: 16px;
+font-family: "solaimanLipi";
+}
+.cover_image{
+border:1px solid black;
+padding: 5px;
+float:left;
+margin:3px;
+}
+.cover_image span{
+margin-left:25px;
+}
+.top_area{
+width:100%;
+}
+.h5{
+background-color: rgb(96, 149, 19);
+margin: -6px;
+padding: 4px;
+border-radius: 6px 6px 0px 0px;
+text-align: center;
+font-weight: bold;
+color: white;
+border: 1px solid black;
+border-bottom: 0px;
+}
+.search_area{
+width: 140px;
+float: right;
+border: 1px solid rgb(96, 149, 19);
+height: 155px;
+padding: 5px;
+border-radius: 5px;
+margin-right: 144px;
+margin-top: 31px;
+}
+.search_area select{
+width: 110px;
+float: right;
+}
+.search_area label{
+float: left; 
+height: 44px;
+}
+.search_area button{
+margin-left: 30%;
+background-color: #609513;
+color: white;
+font-weight: normal;
+font-size: 12px;
+}</style><script>$(".search_content").click(function(){
+var month = $(".month :selected").val();
+var year = $(".year :selected").val();
+    if((month != "")&&(year != "")){
+window.location = "/site/view/krishi_kotha_search/"+year+"/"+month;
+}
+});</script>

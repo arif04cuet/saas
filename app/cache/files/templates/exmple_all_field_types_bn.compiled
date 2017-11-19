@@ -1,0 +1,20 @@
+<h3>Title: <?php echo $content['title']; ?></h3>
+<h5>Date:<?php echo $content['date_box']; ?></h5>
+<h6>Color:<?php echo $content['color']; ?></h6>
+
+<?php echo renderImage('exmple_all_field_types',$content['uploadpath'] ,$content['image']) ?>
+
+<?php echo renderImageThumbnil('exmple_all_field_types',$content['uploadpath'] ,$content['image']) ?>
+
+<h3>Donwloads</h3>
+<?php foreach ($content['downloads'] as $fname) { ?>
+<?php echo renderDownloadLink('exmple_all_field_types',$content['uploadpath'] ,$fname) ?>
+ <?php } ?>
+
+<h3>Content Ref</h3>
+<?php echo renderLink($content['content_ref'][0] ,$lang) ?>
+
+<h3>Links</h3>
+<?php foreach ($content['links'] as $link) { ?>
+<?php echo renderLink($link   ,$lang) ?>
+ <?php } ?><style></style><script></script>

@@ -1,0 +1,16 @@
+<h3>
+	Photo Gallery
+</h3>
+
+<table class="bordered">
+<tbody>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo renderLinkBy('photogallery',$content['id'] ,$content['title'] )?>
+		(<i><small><?php echo $content['taken_date']?></small></i>)
+		</td>				
+	</tr>
+	
+ <?php } ?>
+</tbody>
+</table><style></style><script></script>

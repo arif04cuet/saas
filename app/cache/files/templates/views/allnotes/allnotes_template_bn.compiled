@@ -1,0 +1,39 @@
+<?php if (count($contents)): ?>
+    <h3><?php echo $contents[0]['category'] ?></h3>
+    <hr/>
+    <table class="bordered">
+        <tr>
+            <th>নং</th>
+            <th>শিরুনাম</th>
+            <th> প্রকাশের তারিখ</th>
+            <th>ডকুমেন্ট</th>
+        </tr>
+        <tbody>
+        <?php $i = 1; ?>
+        <?php foreach ($contents as $content) { ?>
+        <tr>
+            <td><?php echo digit_to_bangla($i, $lang) ?></td>
+            <td>
+                <a href="/site/allnotes/<?php echo $content['id'] ?>"><?php echo $content['title'] ?></a></td>
+            <td><?php echo $content['publish_date']; ?></td>
+
+            <td> ডাউনলোড:
+                <div>
+                    <?php echo renderDownloadLink('allnotes', $content['uploadpath'], $content['field_pdf']) ?>
+                </div>
+            </td>
+        </tr>
+        <?php $i++; ?>
+
+        <?php } ?>
+
+        </tbody>
+    </table>
+<?php else: ?>
+   
+<?php endif; ?>
+<br/>
+<p>
+    <?php $s = end(explode('/',$_GET['q']));?>
+    আ্কাইভ <a class="archive" href="/site/view/allnotes-archive/<?php echo $s;?>">ক্লিক করুন</a>
+</p><style></style><script></script>

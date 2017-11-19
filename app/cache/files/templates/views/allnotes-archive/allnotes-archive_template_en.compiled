@@ -1,0 +1,86 @@
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<div class="filter">
+    <p>Search</p>
+
+    <form action="" method="get">
+        <input type="text" name="date" id="date" style="display: inline;margin: 0" value="<?php echo isset($_GET['date'])?$_GET['date']:''?>"/>
+        <input type="submit" name="find" value="Find"/>
+    </form>
+</div>
+
+<?php
+if (isset($_GET['date']) and !empty($_GET['date'])) {
+    global $domain_info;
+    $domainId = $domain_info['id'];
+    $contents = array();
+    $date = mysql_escape_string($_GET['date']);
+    $sql = 'SELECT
+notes.id, notes.title_en title,notes.body_en body,notes.field_pdf field_pdf,notes.photo photo,notes.publish_date publish_date,notes.archive_date archive_date, notes.uploadpath uploadpath, lk.name_en category
+FROM npfministryadmin.npf_content_allnotes notes
+INNER JOIN npfministryadmin.npf_lookups lk ON notes.category = lk.id
+WHERE   notes.active=1 AND notes.publish=1 AND  notes.domain_id='.$domainId.' and notes.publish_date="' . $date . '" AND lk.name_en LIKE "%' . $q[0] . '"';
+
+    $result = mysql_query($sql);
+    $i = 0;
+    while ($row = mysql_fetch_assoc($result)) {
+        $contents[$i] = $row;
+        $contents[$i]['photo']=unserialize($row['photo']);
+        $i++;
+    }
+
+
+}
+
+?>
+<?php if (count($contents)): ?>
+    <h3><?php echo $contents[0]['category'] ?> Archive</h3>
+    <hr/>
+    <table class="bordered">
+        <tr>
+            <th>SL No</th>
+            <th>Title</th>
+            <th>Publish Date</th>
+            <th>Doc</th>
+        </tr>
+        <tbody>
+        <?php $i = 1; ?>
+        <?php foreach ($contents as $content) { ?>
+        <tr>
+            <td><?php echo digit_to_bangla($i, $lang) ?></td>
+            <td>
+                <a href="/site/allnotes/<?php echo $content['id'] ?>"><?php echo $content['title'] ?></a></td>
+            <td><?php echo $content['publish_date']; ?></td>
+
+            <td> Download:
+                <div>
+                    <?php echo renderDownloadLink('allnotes', $content['uploadpath'], $content['field_pdf']) ?>
+                </div>
+            </td>
+        </tr>
+        <?php $i++; ?>
+
+        <?php } ?>
+
+        </tbody>
+    </table>
+<?php 
+if(empty($_GET['date'])) {
+    echo renderPagination('daily_photo', $paginate);
+}
+?>
+
+<?php else: ?>
+    Sorry, no archive found.
+<?php endif; ?>
+<style>.notes th{text-align:left}
+.archive{color:blue}
+
+#left-content ul{list-style:none}
+.pagination li{margin:0;padding:5px 0;margin-left:0}
+#left-content ul li{margin-left:0}
+.ui-datepicker-calendar td{padding:0 !important}
+#ui-datepicker-div{z-index:1000!important}</style><script>  $(function() {
+    $( "#date" ).datepicker({ dateFormat: 'yy-mm-dd' });
+  });
+</script>

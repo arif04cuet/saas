@@ -1,0 +1,37 @@
+<?php if (count($contents)): ?>
+    <h3><?php echo $contents[0]['category'] ?></h3>
+    <hr/>
+    <table class="bordered">
+        <tr>
+            <th>SL No</th>
+            <th>Title</th>
+            <th>Publish Date</th>
+            <th>Doc</th>
+        </tr>
+        <tbody>
+        <?php $i = 1; ?>
+        <?php foreach ($contents as $content) { ?>
+            <tr>
+                <td><?php echo digit_to_bangla($i, $lang) ?></td>
+                <td>
+                    <a href="/site/allnotes/<?php echo $content['id'] ?>"><?php echo $content['title'] ?></a></td>
+                <td><?php echo $content['publish_date']; ?></td>
+
+                <td> Download:
+                    <div>
+                        <?php echo renderDownloadLink('allnotes', $content['uploadpath'], $content['field_pdf']) ?>
+                    </div>
+                </td>
+            </tr>
+            <?php $i++; ?>
+      
+        <?php } ?>
+       
+        </tbody>
+    </table>
+<?php else: ?>
+    Nothing Found
+<?php endif; ?>
+<br/>
+<p>
+	<?php $q = end(explode('/',$_GE<style></style><script></script>

@@ -1,0 +1,9 @@
+<?php 
+	if(!empty($content['photo'])){
+		echo renderImage('life_sketch',$content['uploadpath'] ,$content['photo']);	
+	}
+?>
+<h3><?php echo $content['title']; ?></h3>
+<div><?php echo $content['body']; ?></div>
+
+<style></style><script></script>

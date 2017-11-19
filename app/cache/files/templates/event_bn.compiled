@@ -1,0 +1,12 @@
+<h3><?php echo $content['title']; ?></h3>
+
+<?php if(isset($content['attachments'])) echo renderFileViewer('notices',$content['uploadpath'] ,$content['attachments']); ?>
+
+<hr/>
+<div>
+	ইভেন্ট তারিখ
+	: <i><?php echo $content['eventdate']; ?></i>, 
+	প্রকাশন তারিখ
+	: <i><?php echo $content['pubdate']; ?></i>
+</div>
+<div><?php echo $content['body']; ?></div><style></style><script></script>

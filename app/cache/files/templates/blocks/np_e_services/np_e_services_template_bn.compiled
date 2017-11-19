@@ -1,0 +1,178 @@
+<div class="eservices-tabs">
+    <ul class="tab-links">
+        <li class="active">
+            <a href="#tab1">জনপ্রিয় ই-সেবা</a>
+        </li>
+        <li><a href="#tab2">নতুন ই-সেবা</a></li>
+        <li><a href="#tab3">সকল ই-সেবা</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="tab1" class="tab active">
+            <div class="slider-wrapper">
+
+                <div class="slider slider1">
+
+                    <?php
+                    $cnt = 0;
+
+                    $sql = "SELECT DISTINCT (lk.id), lk.name_{$lang} AS name, lk.name_bn, eci.uploadpath, eci.eservice_cat_icon
+                            FROM npfministryadmin.npf_lookups lk
+                            LEFT JOIN npfministryadmin.npf_content_eservice_cat_icon eci ON lk.id = eci.eservice_cat 
+                            JOIN npfministryadmin.npf_content_np_services npsr ON lk.id = npsr.service_cat 
+                            WHERE lk.lookuptype_id =32
+                            GROUP BY lk.id
+                            ORDER BY SUM( npsr.service_hit ) DESC, npsr.service_order ASC  
+                            LIMIT 0 , 36";
+
+                    $result = db_query($sql);
+                    $total_rows = mysql_num_rows($result);
+
+
+                    while ($row = db_fetch_array($result)) {
+
+                        ?>
+
+                        <?php
+                        if ($cnt % 12 == 0) {
+                            ?>
+                            <div class="eservice-block">
+                                <?php
+                            }
+                            ?>
+
+                                <div class="eservice-cat">
+                                    <a href="site/view/eservices/<?php echo $row['name_bn']; ?>">
+                                        <?php echo renderImage('eservice_cat_icon', $row["uploadpath"], $row["eservice_cat_icon"]); ?>
+                                    </a>
+                                    <a href="site/view/eservices/<?php echo $row['name_bn']; ?>" class="service-type">
+                                        <?php
+                                        echo $row["name"];
+                                        ?>
+                                    </a>
+                                </div>
+
+                            <?php
+                            
+                            //echo $cnt."ccc".$total_rows;
+                            if (($cnt % 12 == 11) || ($cnt == $total_rows-1)) {
+                                ?>
+                            </div>
+                            <?php
+                        }
+                        ?>
+
+                        <?php
+                        $cnt++;
+                    }
+                    ?>
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+        <div id="tab2" class="tab">
+            <div class="slider-wrapper">
+                <div class="eservice-block">
+                    <?php
+                    $sql = "SELECT DISTINCT (lk.id), lk.name_{$lang} AS name, lk.name_bn, lk.weight, eci.uploadpath, eci.eservice_cat_icon
+                            FROM npfministryadmin.npf_lookups lk
+                            LEFT JOIN npfministryadmin.npf_content_eservice_cat_icon eci ON lk.id = eci.eservice_cat 
+                            JOIN npfministryadmin.npf_content_np_services npsr ON lk.id = npsr.service_cat 
+                            WHERE lk.lookuptype_id =32 
+                            GROUP BY lk.id
+                            ORDER BY lk.weight ASC, npsr.service_order ASC 
+                            LIMIT 0 , 12";
+
+                    $result = db_query($sql);
+                    $total_rows = mysql_num_rows($result);
+
+                    while ($row = db_fetch_array($result)) {
+                        ?>
+
+                        <div class="eservice-cat">
+                            <a href="site/view/eservices/<?php echo $row['name_bn']; ?>">
+                                <?php echo renderImage('eservice_cat_icon', $row["uploadpath"], $row["eservice_cat_icon"]); ?>
+                            </a>
+                            <a href="site/view/eservices/<?php echo $row['name_bn']; ?>" class="service-type">
+                                <?php
+                                echo $row["name"];
+                                ?>
+                            </a>
+                        </div>
+
+                        <?php
+                    }
+                    ?>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div id="tab3" class="tab">
+            <div class="slider-wrapper">
+                <div class="slider slider2">
+                    <?php
+                    $cnt = 0;
+
+                    $sql = "SELECT DISTINCT (lk.id), lk.name_{$lang} AS name, lk.name_bn, lk.weight, eci.uploadpath, eci.eservice_cat_icon
+                                FROM npfministryadmin.npf_lookups lk
+                            	LEFT JOIN npfministryadmin.npf_content_eservice_cat_icon eci ON lk.id = eci.eservice_cat 
+                            	JOIN npfministryadmin.npf_content_np_services npsr ON lk.id = npsr.service_cat 
+                                WHERE lk.lookuptype_id =32
+                                GROUP BY lk.id
+                                ORDER BY lk.weight ASC, npsr.service_order ASC 
+							";
+
+                    $result = db_query($sql);
+                    $total_rows = mysql_num_rows($result);
+
+                    while ($row = db_fetch_array($result)) {
+                        ?>
+
+                        <?php
+                        if ($cnt % 12 == 0) {
+                            ?>
+                            <div class="eservice-block">                               
+                                <?php
+                            }
+                            ?> 
+
+                            <div class="eservice-cat">
+                                <a href="site/view/eservices/<?php echo $row['name_bn']; ?>">
+                                    <?php echo renderImage('eservice_cat_icon', $row["uploadpath"], $row["eservice_cat_icon"]); ?>
+                                </a>
+                                <a href="site/view/eservices/<?php echo $row['name_bn']; ?>" class="service-type">
+                                    <?php
+                                    echo $row["name"];
+                                    ?>
+                                </a>
+                            </div>
+
+                            <?php
+                            if (($cnt % 12 == 11) || ($cnt == $total_rows-1)) {
+                                ?>
+                            </div>
+                            <?php
+                        }
+                        ?>
+
+                        <?php
+                        $cnt++;
+                    }
+                    ?>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<style></style><script></script>

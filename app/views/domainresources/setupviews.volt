@@ -1,0 +1,47 @@
+<form method="post" autocomplete="off">
+    <h2>Views Mapping</h2>
+    {{ content() }}
+
+    <ul class="pager">
+        <li class="pull-right">
+            {{ submit_button("Save", "class": "btn btn-success") }}
+        </li>
+    </ul>
+    <div class="row">
+        <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>Views</th>
+                {% for domainType in domainTypes %}
+                <th>{{ domainType.name }}</th>
+                {% endfor %}
+            </tr>
+            </thead>
+            <tbody>
+                {% for viewContent in viewContents %}
+                    <tr>
+                        <td>{{ viewContent.human_name }}</td>
+                        {% for domainType in domainTypes %}
+                        <td>
+                            <?php if(in_array($viewContent->id,$viewMap[$domainType->id])){?>
+                                {{ check_field(domainType.id~"["~viewContent.id~"]","checked":"checked") }}
+                            <?php }else{ ?>
+                                {{ check_field(domainType.id~"["~viewContent.id~"]") }}
+                            <?php } ?>
+                        </td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <ul class="pager">
+        <li class="pull-right">
+            {{ submit_button("Save", "class": "btn btn-success") }}
+        </li>
+    </ul>
+</form>
+
+<style>
+
+</style>

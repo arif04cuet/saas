@@ -1,0 +1,11 @@
+<h2>
+	Directorate List
+</h2>
+<?php foreach ($contents as $content){ ?>
+
+<p>
+	<a href ="http://<?php echo $content['subdomain']; ?>"><?php echo $content['sitename_en']; ?></a>
+</p>
+		
+<?php } ?>
+<style></style><script></script>

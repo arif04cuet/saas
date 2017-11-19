@@ -1,0 +1,93 @@
+<?php $url = (explode("/",$_SERVER['REQUEST_URI'])); ?>
+
+<h3 class='h3'>
+	<?php if(empty($contents[0]['list'])): ?>
+	<?php echo $_SESSION['list_name']; ?>
+	<?php else: ?>
+	<?php $_SESSION['list_name']=$contents[0]['list'] ?>
+	 <?php echo $contents[0]['list']; ?>
+	<?php endif; ?>
+</h3>
+
+<?php //var_dump($contents); ?>
+
+
+<select class="year">
+	<option>--সাল নির্বাচন করুন--</option>
+	<?php for($i=date("Y");$i>=2000;$i--): ?>
+	<option><?php echo $i; ?></option>
+	<?php endfor; ?>
+</select>
+
+
+<br/>
+
+<h4 style="text-align:center">
+	<?php echo $_SESSION['list_name']; ?> - <?php echo $url[5]; ?>
+</h4>
+
+<hr/>
+
+
+<script type="text/javascript" src="/themes/responsive_npf/js/yoxview/yoxview-init.js"></script>
+
+<div class="thumbnails yoxview">
+	
+	<?php foreach($contents[0]['pictures'] as $image): ?>
+	
+	<div class="imagegallery">
+		<a href="<?php echo getImagePath('cabinet_photogallery', $contents[0]['uploadpath'], $image)?>">
+			<?php echo  renderImage('cabinet_photogallery', $contents[0]['uploadpath'], $image,'160','160'); ?>
+		</a>
+	</div>
+	
+	<?php endforeach; ?>
+	
+</div>
+
+<div>
+	<?php if(empty($contents[0]['list'])): ?>
+	<?php 
+
+		$loc = '/site/view/gallary_details/'.$_SESSION['list_name'].'/'.date("Y");
+		if(($url[5]=='')&&($url[4]=='')){header('Location: /site/view/cabinet_photogallery');} 
+		else if(($url[5]=='')&&($url[4]!='')){header('Location: '.$loc);}
+
+	?>
+	<h3 style="text-align:center">
+		দুঃখিত কোনও ছবি নেই।
+	</h3>
+	<?php endif; ?>
+</div>
+
+<style>.imagegallery img{
+border-radius: 4px;
+box-shadow: 0px 0px 4px gray;
+margin: 5px;
+float:left;
+}
+.h3{
+background-color: #609513;
+color: white;
+font-size: 20px;
+font-weight: bold;
+padding: 0px 15px;
+}
+select{
+width: 220px;
+border-radius: 5px;
+height: 30px;
+margin: 5px auto;
+box-shadow: 0px 0px 6px #609513;
+border: 1px solid #609513;
+}</style><script>$(document).ready(function(){
+		        $(".yoxview").yoxview();
+		    });
+
+$(".year").change(function(){
+//alert(document.URL);
+var v = $(".year :selected").val();
+var name = $('.h3').text().trim();
+window.location = "/site/view/gallary_details/"+name+"/"+v;
+});
+</script>

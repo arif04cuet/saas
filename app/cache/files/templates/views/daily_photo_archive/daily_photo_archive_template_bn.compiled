@@ -1,0 +1,138 @@
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<h3>
+    প্রতিদিনের ছবির আর্কাইভ
+</h3>
+<table class="bordered" style="text-align:center;">
+	<tr>
+		<td colspan='2'><h3>
+			আজকের ফটো রিলিজ
+			</h3></td>
+		<td><h4>
+			প্রকাশের তারিখ: <?php echo $contents[0]['created']; ?>
+			</h4></td>
+	</tr>
+	
+	<tr>
+		<td colspan='3'>
+			<?php $t = date("Y-m-d",strtotime($contents[0]['created'])); ?>
+			 <?php foreach ($contents as $content) { ?>
+
+				<?php if(date("Y-m-d")==date("Y-m-d",strtotime($content['created']))): ?>
+				
+					<?php if(empty($content['upload'])):?>
+						<?php foreach ($content['photo'] as $img) { ?>
+						<a target="_blank" class="title" href="<?php echo getImagePath('daily_photo', $content['uploadpath'], $img) ?>">
+							<img width="100" height="70" class="" src="<?php echo getImagePath('daily_photo', $content['uploadpath'], $img) ?>"
+							 alt="<?php echo $img['caption_en']; ?>" title="<?php echo $img['caption_en']; ?>"/>
+						</a>
+						<?php } ?>
+			
+					<?php endif;?>
+			
+					<?php if(empty($content['photo'])):?>
+						<?php foreach ($content['upload'] as $img) { ?>
+						<a target="_blank" class="title" href="<?php echo getImagePath('daily_photo', $content['uploadpath'], $img) ?>">
+							<img width="100" height="70" class="" src="<?php echo getImagePath('daily_photo', $content['uploadpath'], $img) ?>"
+							 alt="<?php echo $img['caption_en']; ?>" title="<?php echo $img['caption_en']; ?>"/>
+						</a>
+						<?php } ?>
+			
+					<?php endif;?>
+								
+				<?php endif; ?>
+			<?php } ?>
+		</td>
+	</tr>
+</table>
+
+<br/>
+
+<div class="filter">
+    <p>খুঁজুন</p>
+
+    <form action="" method="get">
+        <input type="text" name="date" id="date" style="display: inline;margin: 0" value="<?php echo isset($_GET['date'])?$_GET['date']:''?>"/>
+        <input type="submit" name="find" value="Find"/>
+    </form>
+</div>
+<?php
+if(isset($_GET['date']) and !empty($_GET['date']) )
+{
+global $domain_info;
+$domainId = $domain_info['id'];
+$contents = array();
+$date = mysql_escape_string($_GET['date']);
+$sql = "SELECT * FROM npfministryadmin.npf_content_daily_photo where publish=1 and active=1 AND  domain_id=$domainId and DATE(`created`)='".$date."'";
+$result = mysql_query($sql);
+$i = 0;
+while ($row = mysql_fetch_assoc($result)) {
+    $contents[$i] = $row;
+	$contents[$i]['photo']=empty($row['upload'])?unserialize($row['photo']):unserialize($row['upload']);
+	$contents[$i]['upload'] = '';
+	$i++;
+}
+
+}
+?>
+
+<?php if(count($contents)>0):?>
+<table class="bordered" style="text-align:center;">
+    <thead>
+    <th>আইডি</th>
+    <th>প্রকাশের তারিখ</th>
+    <th>ছবি</th>
+    </thead>
+    <tbody>
+    <?php $i = 1; ?>
+    <?php foreach ($contents as $content) { ?>
+		
+		
+		<?php if(date("Y-m-d") != date("Y-m-d",strtotime($content['created']))):?>
+		<tr>
+			<td><?php echo digit_to_bangla($i + $offset, $lang) ?></td>
+			<td><?php echo $content['created']?></td>
+			<td>
+				<?php if(empty($content['upload'])):?>
+				<?php foreach ($content['photo'] as $img) { ?>
+				<a target="_blank" class="title" href="<?php echo getImagePath('daily_photo', $content['uploadpath'], $img) ?>">
+					<img width="300" height="200" class="" src="<?php echo getImagePath('daily_photo', $content['uploadpath'], $img) ?>"
+					 alt="<?php echo $img['caption_en']; ?>" title="<?php echo $img['caption_en']; ?>"/>
+				</a>
+				<?php } ?>
+				<?php endif;?>
+				
+				<?php if(empty($content['photo'])):?>
+				<?php foreach ($content['upload'] as $img) { ?>
+				<a target="_blank" class="title" href="<?php echo getImagePath('daily_photo', $content['uploadpath'], $img) ?>">
+					<img width="300" height="200" class="" src="<?php echo getImagePath('daily_photo', $content['uploadpath'], $img) ?>"
+					 alt="<?php echo $img['caption_en']; ?>" title="<?php echo $img['caption_en']; ?>"/>
+				</a>
+				<?php } ?>
+				<?php endif;?>
+				
+				
+			</td>
+			</tr>
+    		<?php $i++; ?>
+		<?php endif;?>
+    <?php } ?>
+    </tbody>
+</table>
+
+<?php 
+if(empty($_GET['date'])) {
+    echo renderPagination('daily_photo', $paginate);
+}
+?>
+
+
+<?php endif;?>
+
+<style>#left-content ul{list-style:none}
+.pagination li{margin:0;padding:5px 0;margin-left:0}
+#left-content ul li{margin-left:0}
+.ui-datepicker-calendar td{padding:0 !important}</style><script>  $(function() {
+    $( "#date" ).datepicker({ dateFormat: 'yy-mm-dd' });
+  });
+</script>

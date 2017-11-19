@@ -1,0 +1,4 @@
+<h3><?php echo $t_1;?></h3>
+<h3><?php echo $t_2;?></h3>
+
+<h3><?php echo $_GET['m'];?></h3><table width="100%" align="center">	<thead><tr><th>ক্রমিক</th><th>সেবার শিরোনাম</th></tr></thead>	<tbody> <?php $i=1; ?>	<?php foreach ($contents as $content) { ?>		<tr>		<td>			<?php echo $i; ?>		</td>		<td>					<a href="/site/service_portal/<?php echo $content['id']; ?>"><?php echo $content['title_bn']; ?></a>				</td>		</tr> 		<?php $i++; ?>	<?php } ?>	</tbody></table><style></style><script></script>

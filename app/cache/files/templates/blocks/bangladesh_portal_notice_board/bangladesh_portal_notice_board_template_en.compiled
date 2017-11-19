@@ -1,0 +1,19 @@
+<div class="row notice-board">
+    <div class="full-row">
+        <h4>Notice</h4>
+        <div id="full-row">
+            <ul>
+                <?php foreach ($contents as $content) { ?>
+                <li>
+                    <?php
+                    $teaser_title = "-" . teaser_text($content['title'], 65);
+                    echo renderLinkBy('notices', $content['id'], $teaser_title)
+                    ?>
+
+                </li>
+                <?php } ?>
+            </ul>	
+            <a class="btn right" href="/site/view/notices">All</a>
+        </div>
+    </div>
+</div><style></style><script></script>

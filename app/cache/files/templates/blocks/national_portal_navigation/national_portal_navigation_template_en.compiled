@@ -1,0 +1,24 @@
+<div class="nav_all_national_portal">
+	<h4>
+		All National Portals
+	</h4>
+
+	<div class="batayon-con">
+		<select id="ddmenu_name" onchange="window.open(this.value, '_blank')">
+			<option selected="" value="">Select Site</option>
+			<option value="http://bangladesh.portal.gov.bd/?q=bn/govlinks/ministries">Ministries</option>
+			<option value="http://bangladesh.portal.gov.bd/?q=bn/govlinks/directorates">Directorates </option>
+			<option value="http://www.dhakadiv.gov.bd/">Dhaka Division</option>
+			<option value="http://www.chittagongdiv.gov.bd/">Chittagong Division</option>
+			<option value="http://www.rajshahidiv.gov.bd/">Rajshahi Division</option>
+			<option value="http://www.khulnadiv.gov.bd/">Khulna Division</option>
+			<option value="http://www.barisaldiv.gov.bd/">Barishal Division</option>
+			<option value="http://www.rangpurdiv.gov.bd/">Rangpur Division</option>
+			<option value="http://www.sylhetdiv.gov.bd/">Sylhet Division</option>
+		</select>
+		<input type="button" name="go-all-np" id="go-all-np" value="GO" />
+	</div>
+	
+</div>
+
+<style></style><script></script>

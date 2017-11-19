@@ -1,0 +1,68 @@
+<div class="sixteen columns">
+		<h4><?php echo $content['title']; ?></h4>	
+</div>
+<div class="sixteen columns">
+	<table width="100%" id="service_details_table" >				
+		<tr>		
+			<td width="30%"><h5>পরিচিতি</h5></td>				
+			<td><a target="_blank" href="#"><?php echo $content['off_introduction']; ?></a></td>	
+		</tr>
+		<tr>		
+			<td width="30%"><h5>কার্যপরিধি</h5></td>				
+			<td><a target="_blank" href="#"><?php echo $content['off_workscope']; ?></a></td>	
+		</tr>
+		<tr>		
+			<td width="30%"><h5></h5></td>				
+			<td><a target="_blank" href="#"><?php echo $content['off_structure']; ?></a></td>	
+		</tr>
+		<tr>		
+			<td width="30%"><h5>অরগানোগ্রাম</h5></td>				
+			<td><a target="_blank" href="#"><?php echo $content['off_organogram']; ?></a></td>	
+		</tr>
+		<tr>		
+			<td width="30%"><h5>ফিল্ড অফিস অরগানোগ্রাম</h5></td>				
+			<td><a target="_blank" href="#"><?php echo $content['field_organogram']; ?></a></td>	
+		</tr>
+		<tr>		
+			<td width="30%"><h5>সেবার তালিকা</h5></td>				
+			<td><a target="_blank" href="#"><?php echo $content['services']; ?></a></td>	
+		</tr>
+		<tr>		
+			<td width="30%"><h5>নাগরিক সেবার তথ্য সারণী</h5></td>				
+			<td><a target="_blank" href="#"><?php echo $content['services_details']; ?></a></td>	
+		</tr>
+	</table>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#verticalTab').easyResponsiveTabs({
+            type: 'vertical',
+            width: 'auto',
+            fit: true
+        });
+    });
+</script><style>.resp-vtabs .resp-tabs-list li {
+font-size: 19px !important;
+}
+
+#verticalTab
+{
+	clear: both !important;
+}
+
+#print_btn_div img
+{
+	display: none !important;
+}
+hr#print_div_hr {
+    display: none;
+}
+a
+{
+text-decoration: none !important;
+}
+hr {
+    box-sizing: none;
+    border-color: #ddd;
+}</style><script> </script>

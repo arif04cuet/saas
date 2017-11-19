@@ -1,0 +1,53 @@
+<?php
+$sitename = $contents[0]['sitename_bn'] ? $contents[0]['sitename_bn'] : $contents[0]['sitename_en'];
+$title = $contents[0]['title_bn'] ? $contents[0]['title_bn'] : $contents[0]['title_en'];
+?>
+<div id="article-title">
+    <h1><?php echo $sitename; ?> এর ফরমসমূহ</h1>
+
+    <div id="print-email-social">
+
+        <a href="javascript:;"><i class="flaticon-email26"></i></a>
+        <a href="http://www.facebook.com/sharer.php?u=http://www.forms.gov.bd/site/view/form-page/<?php echo $contents['0']['id'] ?> &t=<?php echo $title; ?>"
+           target="_blank"><i class="flaticon-facebook6"></i></a>
+
+        <a href="http://twitter.com/home?status=<?php echo $title ?>+http://www.forms.gov.bd/site/view/form-page/<?php echo $contents['0']['id'] ?>"
+           target="_blank"><i class="flaticon-social19"></i></a>
+        <a href="http://plus.google.com/share?url=http://www.forms.gov.bd/site/view/form-page/<?php echo $contents['0']['id'] ?> "
+           target="_blank"><i class="flaticon-google42"></i></a>
+    </div>
+    <!-- print-email-social -->
+</div>
+
+
+<ul class="front-tab-ajax-ul">
+    <?php
+    foreach ($contents as $content) {
+        echo '<li>';
+        echo '<i class="flaticon-arrow73"></i>' . '   ';
+        $title = $content['title_bn'] ? $content['title_bn'] : $content['title_en'];
+        echo '<a href="http://www.forms.gov.bd/site/view/form-page/' . $content['id'] . '/' . str_replace(' ', '-', $title) . '">' . $title . '</a>';
+        echo '</li>';
+    }
+    ?>
+
+</ul>
+<style>#printable_area a {
+    color: #444444;
+    text-decoration: none;
+
+}
+
+li{
+list-style:none;
+
+}
+
+.front-tab-ajax-ul li {
+    border-bottom: 1px solid #F5F5F5;
+}
+
+.front-tab-ajax-ul{
+	padding:0;
+}
+</style><script></script>

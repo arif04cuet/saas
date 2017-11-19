@@ -1,0 +1,23 @@
+<h3>
+	জেলা কমিশনারদের তালিকা	
+</h3>
+<table>
+	<thead>
+		<tr>
+			<th>ক্রমিক</th>
+			<th>আইডি</th>
+			<th>নাম</th>
+			<th>বিভাগ</th>
+		</tr>
+	</thead>
+<tbody>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo digit_to_bangla($content['sl'] ,'bn')?></td>
+		<td><?php echo $content['id_num']; ?></td>
+		<td><?php echo $content['name']; ?></td>		
+		<td><?php echo $content['org_name']; ?></td>
+	</tr>
+ <?php } ?>
+</tbody>
+</table><style></style><script></script>

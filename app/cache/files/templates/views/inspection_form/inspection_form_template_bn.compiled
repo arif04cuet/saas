@@ -1,0 +1,24 @@
+<h3>পরিদর্শন প্রতিবেদন</h3>
+<?php echo $content['header']; ?>
+<table class="bordered">
+<thead>
+<tr>
+<th>শিরোনাম</th>
+<th>ডাউনলোড</th>
+</tr>
+</thead>
+<tbody>
+<?php foreach ($contents as $content) { ?>
+<tr>
+	<td>
+		<?php echo $content['title']; ?>
+	</td>
+	<td>
+		<?php foreach ($content['multifiles'] as $fname) { ?>
+				<?php echo renderDownloadLink('forms',$content['uploadpath'] ,$content['multifiles'], FALSE, null, 16) ?>
+		<?php } ?>
+	</td>
+</tr>
+<?php } ?>
+</tbody>
+</table><style></style><script></script>

@@ -1,0 +1,1290 @@
+<p style="text-align: center;">গণপ্রজাতন্ত্রী বাংলাদেশ সরকার<br />
+বেতন ও চাকরি কমিশন-২০১৩<br />
+বিসিএস প্রশাসন একাডেমী, শাহবাগ, ঢাকা।</p>
+
+<p style="text-align: center;"><br />
+এই প্রশ্নমালা মন্ত্রণালয়/বিভাগ/সংযুক্ত অধিদপ্তর/পরিদপ্তর/স্ব-শাসিত/আধা শাসিত সংস্থা/রাষ্ট্রায়ত্ব ব্যাংক ও অর্থলগ্নি প্রতিষ্ঠান/বিশ্ববিদ্যালয় ও অনুরূপ অন্যান্য বিধিবদ্ধ প্রতিষ্ঠানের জন্য প্রযোজ্য।</p>
+	<form id='frm' name="frm" method="post" action="" style="margin-top: 120px;clear: both;width: 100%;"> 	
+	<table id="info_table"> 
+	 <tr>
+		<td width="20%">
+			<label>প্রতিষ্ঠানের নাম</label>
+		</td>		
+		<td width="30%">
+			<input type="text" class="sText"  value="" name="org_name" id="org_name" />
+		</td>
+		<td width="20%">
+			<label>প্রতিষ্ঠানের ঠিকানা ও টেলিফোন নং</label>
+		</td>
+		<td width="30%">
+			<textarea name="org_add" id="org_add" ></textarea>
+		</td>		
+	</tr>
+	</table>	
+	<u style="font-weight: bold;">প্রথম অংশ (সার্ভিস সংক্রান্ত)</u>
+	<table id="main_table"> 
+	 <tr>
+		<td colspan="3">
+			<label>১। প্রতিষ্ঠানের পদ ও বেতন/ভাতাদি/সুবিধাদি সংক্রান্ত তথ্য(নিমেণ বর্ণিত) </label>
+			<input type="hidden" name="q1" value=" ১। প্রতিষ্ঠানের পদ ও বেতন/ভাতাদি/সুবিধাদি সংক্রান্ত তথ্য(নিমেণ বর্ণিত)" />
+		</td>
+	</tr>
+	<tr>
+	<td colspan="3">
+    <table id="first_table" border="1">    	
+		<tr>
+        	<td><label>স্কেল নম্বর</label></td>
+        	<td><label>প্রচলিত বেতন স্কেল</label></td>
+        	<td><label>স্কেল ওয়ারী অনুমোদিত পদের সংখ্যা ও পদের নাম</label></td>
+        	<td colspan="2"><label>পুরণকৃত পদ</label></td>
+        	<td colspan="2"><label>বেতন বাবদ বার্ষিক ব্যয়/বরাদ্দ এর পরিমাণ</label></td>
+        </tr>
+        <tr>
+        	<td width="5%"><label></label></td>
+        	<td width="35%"><label></label></td>
+        	<td width="10%"><label></label></td>
+			<td width="12%"><label>স্কেল ওয়ারী পূরণকৃত পদের সংখ্যা</label></td>
+			<td width="13%"><label>টাইম স্কেলপ্রাপ্ত কর্মকর্তা/কর্মচারীদের সংখ্যা</label></td>
+			<td width="15%"><label>প্রকৃত ব্যয় (২০১২-১৩ অর্থ বছর)</label></td>
+			<td width="10%"><label>বরাদ্দ (২০১৩-১৪অর্থ বছর)</label></td>
+        </tr>
+        <tr>
+        	<td><label>১</label></td>
+        	<td>
+            	<label>৪০,০০০(নির্ধারিত)</label>
+				<input type="hidden" name="a1_1_com_payscale" value="৪০,০০০(নির্ধারিত)">
+            </td>
+        	<td><input type="text" class="sText"  name="a1_1_deg_no_name" id="a1_1_deg_no_name" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_1_scalewise_filldeg_no" id="a1_1_scalewise_filldeg_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_1_timescale_staff_no" id="a1_1_timescale_staff_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_1_expend_1213" id="a1_1_expend_1213" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_1_allocate_1314" id="a1_1_allocate_1314" value=""></td>
+        </tr>
+        <tr>
+        	<td><label>২</label></td>
+        	<td>
+            	<label>৩৩,৫০০-১২০০ &#042;৫-৩৯,৫০০</label>
+				<input type="hidden" name="a1_2_com_payscale" value="৩৩,৫০০-১২০০ &#042;৫-৩৯,৫০০">
+            </td>
+        	<td><input type="text" class="sText"  name="a1_2_deg_no_name" id="a1_2_deg_no_name" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_2_scalewise_filldeg_no" id="a1_2_scalewise_filldeg_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_2_timescale_staff_no" id="a1_2_timescale_staff_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_2_expend_1213" id="a1_2_expend_1213" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_2_allocate_1314" id="a1_2_allocate_1314" value=""></td>
+        </tr>
+        <tr>
+        	<td><label>৩</label></td>
+        	<td>
+            	<label>২৯,০০০ -১১০০ &#042;৬-৩৫,৬০০</label>
+                <input type="hidden" name="a1_3_com_payscale" value="২৯,০০০ -১১০০ &#042;৬-৩৫,৬০০">
+            </td>
+        	<td><input type="text" class="sText"  name="a1_3_deg_no_name" id="a1_3_deg_no_name" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_3_scalewise_filldeg_no" id="a1_3_scalewise_filldeg_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_3_timescale_staff_no" id="a1_3_timescale_staff_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_3_expend_1213" id="a1_3_expend_1213" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_3_allocate_1314" id="a1_3_allocate_1314" value=""></td>
+        </tr>
+        <tr>
+        	<td><label>৪</label></td>
+        	<td>
+            	<label> ২৫,৭৫০- ১০০০ &#042;৮-৩৩,৭৫০</label>
+                <input type="hidden" name="a1_4_com_payscale" value=" ২৫,৭৫০- ১০০০ &#042;৮-৩৩,৭৫০">
+            </td>
+        	<td><input type="text" class="sText"  name="a1_4_deg_no_name" id="a1_4_deg_no_name" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_4_scalewise_filldeg_no" id="a1_4_scalewise_filldeg_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_4_timescale_staff_no" id="a1_4_timescale_staff_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_4_expend_1213" id="a1_4_expend_1213" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_4_allocate_1314" id="a1_4_allocate_1314" value=""></td>
+        </tr>
+        <tr>
+        	<td><label>৫</label></td>
+        	<td>
+            	<label>২২,২৫০-৯০০ &#042;১০-৩১,২৫০</label>
+                <input type="hidden" name="a1_5_com_payscale" value="২২,২৫০-৯০০ &#042;১০-৩১,২৫০">
+            </td>
+        	<td><input type="text" class="sText"  name="a1_5_deg_no_name" id="a1_5_deg_no_name" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_5_scalewise_filldeg_no" id="a1_5_scalewise_filldeg_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_5_timescale_staff_no" id="a1_5_timescale_staff_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_5_expend_1213" id="a1_5_expend_1213" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_5_allocate_1314" id="a1_5_allocate_1314" value=""></td>
+        </tr>
+        <tr>
+        	<td><label>৬</label></td>
+        	<td>
+            	<label>১৮,৫০০ - ৮০০ &#042;১৪-২৯,৭০০</label>
+                <input type="hidden" name="a1_6_com_payscale" value="১৮,৫০০ - ৮০০ &#042;১৪-২৯,৭০০">
+            </td>
+        	<td><input type="text" class="sText"  name="a1_6_deg_no_name" id="a1_6_deg_no_name" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_6_scalewise_filldeg_no" id="a1_6_scalewise_filldeg_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_6_timescale_staff_no" id="a1_6_timescale_staff_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_6_expend_1213" id="a1_6_expend_1213" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_6_allocate_1314" id="a1_6_allocate_1314" value=""></td>
+        </tr>
+        <tr>
+        	<td><label>৭</label></td>
+        	<td>
+            	<label>১৫,০০০ - ৭০০ &#042;১৬-২৬,২০০</label>
+                <input type="hidden" name="a1_7_com_payscale" value="১৫,০০০ - ৭০০ &#042;১৬-২৬,২০০">
+            </td>
+        	<td><input type="text" class="sText"  name="a1_7_deg_no_name" id="a1_7_deg_no_name" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_7_scalewise_filldeg_no" id="a1_7_scalewise_filldeg_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_7_timescale_staff_no" id="a1_7_timescale_staff_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_7_expend_1213" id="a1_7_expend_1213" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_7_allocate_1314" id="a1_7_allocate_1314" value=""></td>
+        </tr>
+        <tr>
+        	<td><label>৮</label></td>
+        	<td>
+            	<label>১২,০০০- ৬০০ &#042;১৬-২১,৬০০ </label>
+                <input type="hidden" name="a1_8_com_payscale" value="১২,০০০- ৬০০ &#042;১৬-২১,৬০০ ">
+            </td>
+        	<td><input type="text" class="sText"  name="a1_8_deg_no_name" id="a1_8_deg_no_name" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_8_scalewise_filldeg_no" id="a1_8_scalewise_filldeg_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_8_timescale_staff_no" id="a1_8_timescale_staff_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_8_expend_1213" id="a1_8_expend_1213" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_8_allocate_1314" id="a1_8_allocate_1314" value=""></td>
+        </tr>
+        <tr>
+        	<td><label>৯</label></td>
+        	<td>
+            	<label>১১,০০০- ৪৯০ &#042;৭-১৪৪৩০- ইবি-৫৪০ &#042; ১১-২০,৩৭০  </label>
+                <input type="hidden" name="a1_9_com_payscale" value="১১,০০০- ৪৯০ &#042;৭-১৪৪৩০- ইবি-৫৪০ &#042; ১১-২০,৩৭০">
+            </td>
+        	<td><input type="text" class="sText"  name="a1_9_deg_no_name" id="a1_9_deg_no_name" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_9_scalewise_filldeg_no" id="a1_9_scalewise_filldeg_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_9_timescale_staff_no" id="a1_9_timescale_staff_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_9_expend_1213" id="a1_9_expend_1213" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_9_allocate_1314" id="a1_9_allocate_1314" value=""></td>
+        </tr>
+        <tr>
+        	<td><label>১০</label></td>
+        	<td>
+            	<label>৮,০০০ - ৪৫০ &#042;৭-১১,১৫০- ইবি-৪৯০ &#042; ১১-১৬,৫৪০</label>
+                <input type="hidden" name="a1_10_com_payscale" value="৮,০০০ - ৪৫০ &#042;৭-১১,১৫০- ইবি-৪৯০ &#042; ১১-১৬,৫৪০">
+            </td>
+        	<td><input type="text" class="sText"  name="a1_10_deg_no_name" id="a1_10_deg_no_name" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_10_scalewise_filldeg_no" id="a1_10_scalewise_filldeg_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_10_timescale_staff_no" id="a1_10_timescale_staff_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_10_expend_1213" id="a1_10_expend_1213" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_10_allocate_1314" id="a1_10_allocate_1314" value=""></td>
+        </tr>
+        <tr>
+        	<td><label>১১</label></td>
+        	<td>
+            	<label>৬,৪০০ - ৪১৫ &#042;৭-৯,৩০৫- ইবি-৪৫০ &#042; ১১-১৪,২৫৫</label>
+                <input type="hidden" name="a1_11_com_payscale" value="৬,৪০০ - ৪১৫ &#042;৭-৯,৩০৫- ইবি-৪৫০ &#042; ১১-১৪,২৫৫">
+            </td>
+        	<td><input type="text" class="sText"  name="a1_11_deg_no_name" id="a1_11_deg_no_name" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_11_scalewise_filldeg_no" id="a1_11_scalewise_filldeg_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_11_timescale_staff_no" id="a1_11_timescale_staff_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_11_expend_1213" id="a1_11_expend_1213" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_11_allocate_1314" id="a1_11_allocate_1314" value=""></td>
+        </tr>
+        <tr>
+        	<td><label>১২</label></td>
+        	<td>
+            	<label> ৫,৯০০ - ৩৮০ &#042;৭-৮,৫৬০- ইবি-৪১৫০ &#042; ১১-১৩,১২৫</label>
+                <input type="hidden" name="a1_12_com_payscale" value=" ৫,৯০০ - ৩৮০ &#042;৭-৮,৫৬০- ইবি-৪১৫০ &#042; ১১-১৩,১২৫">
+            </td>
+        	<td><input type="text" class="sText"  name="a1_12_deg_no_name" id="a1_12_deg_no_name" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_12_scalewise_filldeg_no" id="a1_12_scalewise_filldeg_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_12_timescale_staff_no" id="a1_12_timescale_staff_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_12_expend_1213" id="a1_12_expend_1213" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_12_allocate_1314" id="a1_12_allocate_1314" value=""></td>
+        </tr>
+        <tr>
+        	<td><label>১৩</label></td>
+        	<td>
+            	<label>৫,৫০০ - ৩৪৫ &#042;৭-৭,৯১৫- ইবি-৩৮০ &#042; ১১-১২,০৯৫</label>
+                <input type="hidden" name="a1_13_com_payscale" value="৫,৫০০ - ৩৪৫ &#042;৭-৭,৯১৫- ইবি-৩৮০ &#042; ১১-১২,০৯৫">
+            </td>
+        	<td><input type="text" class="sText"  name="a1_13_deg_no_name" id="a1_13_deg_no_name" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_13_scalewise_filldeg_no" id="a1_13_scalewise_filldeg_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_13_timescale_staff_no" id="a1_13_timescale_staff_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_13_expend_1213" id="a1_13_expend_1213" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_13_allocate_1314" id="a1_13_allocate_1314" value=""></td>
+        </tr>
+        <tr>
+        	<td><label>১৪</label></td>
+        	<td>
+            	<label>৫,২০০- ৩২০ &#042;৭-৭,৪৪০- ইবি-৩৪৫ &#042; ১১-১১,২৩৫ </label>
+                <input type="hidden" name="a1_14_com_payscale" value="৫,২০০- ৩২০ &#042;৭-৭,৪৪০- ইবি-৩৪৫ &#042; ১১-১১,২৩৫">
+            </td>
+        	<td><input type="text" class="sText"  name="a1_14_deg_no_name" id="a1_14_deg_no_name" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_14_scalewise_filldeg_no" id="a1_14_scalewise_filldeg_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_14_timescale_staff_no" id="a1_14_timescale_staff_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_14_expend_1213" id="a1_14_expend_1213" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_14_allocate_1314" id="a1_14_allocate_1314" value=""></td>
+        </tr>
+        <tr>
+        	<td><label>১৫</label></td>
+        	<td>
+            	<label>৪,৯০০ - ২৯০ &#042;৭-৬,৯৩০- ইবি-৩২০ &#042; ১১-১০,৪৫০</label>
+                <input type="hidden" name="a1_15_com_payscale" value="৪,৯০০ - ২৯০ &#042;৭-৬,৯৩০- ইবি-৩২০ &#042; ১১-১০,৪৫০">
+            </td>
+        	<td><input type="text" class="sText"  name="a1_15_deg_no_name" id="a1_15_deg_no_name" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_15_scalewise_filldeg_no" id="a1_15_scalewise_filldeg_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_15_timescale_staff_no" id="a1_15_timescale_staff_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_15_expend_1213" id="a1_15_expend_1213" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_15_allocate_1314" id="a1_15_allocate_1314" value=""></td>
+        </tr>
+        <tr>
+        	<td><label>১৬</label></td>
+        	<td>
+            	<label>৪,৭০০ - ২৬৫ &#042;৭-৬,৫৫৫- ইবি-২৯০ &#042; ১১-৯,৭৪৫</label>
+                <input type="hidden" name="a1_16_com_payscale" value="৪,৭০০ - ২৬৫ &#042;৭-৬,৫৫৫- ইবি-২৯০ &#042; ১১-৯,৭৪৫">
+            </td>
+        	<td><input type="text" class="sText"  name="a1_16_deg_no_name" id="a1_16_deg_no_name" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_16_scalewise_filldeg_no" id="a1_16_scalewise_filldeg_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_16_timescale_staff_no" id="a1_16_timescale_staff_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_16_expend_1213" id="a1_16_expend_1213" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_16_allocate_1314" id="a1_16_allocate_1314" value=""></td>
+        </tr>
+        <tr>
+        	<td><label>১৭</label></td>
+        	<td>
+            	<label>৪,৫০০ - ২৪০ &#042;৭-৬,১৮০- ইবি-২৬৫ &#042; ১১-৯,০৯৫</label>
+                <input type="hidden" name="a1_17_com_payscale" value="৪,৫০০ - ২৪০ &#042;৭-৬,১৮০- ইবি-২৬৫ &#042; ১১-৯,০৯৫">
+            </td>
+        	<td><input type="text" class="sText"  name="a1_17_deg_no_name" id="a1_17_deg_no_name" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_17_scalewise_filldeg_no" id="a1_17_scalewise_filldeg_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_17_timescale_staff_no" id="a1_17_timescale_staff_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_17_expend_1213" id="a1_17_expend_1213" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_17_allocate_1314" id="a1_17_allocate_1314" value=""></td>
+        </tr>
+        <tr>
+        <tr>
+        	<td><label>১৮</label></td>
+        	<td>
+            	<label>৪,৪০০- ২২০ &#042;৭-৫,৯৪০- ইবি-২৪০ &#042; ১১-৮,৫৮০ </label>
+                <input type="hidden" name="a1_18_com_payscale" value="৪,৪০০- ২২০ &#042;৭-৫,৯৪০- ইবি-২৪০ &#042; ১১-৮,৫৮০">
+            </td>
+        	<td><input type="text" class="sText"  name="a1_18_deg_no_name" id="a1_18_deg_no_name" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_18_scalewise_filldeg_no" id="a1_18_scalewise_filldeg_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_18_timescale_staff_no" id="a1_18_timescale_staff_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_18_expend_1213" id="a1_18_expend_1213" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_18_allocate_1314" id="a1_18_allocate_1314" value=""></td>
+        </tr>
+    
+        <tr>
+        	<td><label>১৯</label></td>
+        	<td>
+            	<label>৪,২৫০ - ২১০ &#042;৭-৫,৭২০- ইবি-২২০ &#042; ১১-৮,১৪০</label>
+                <input type="hidden" name="a1_19_com_payscale" value="৪,২৫০ - ২১০ &#042;৭-৫,৭২০- ইবি-২২০ &#042; ১১-৮,১৪০">
+            </td>
+        	<td><input type="text" class="sText"  name="a1_19_deg_no_name" id="a1_19_deg_no_name" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_19_scalewise_filldeg_no" id="a1_19_scalewise_filldeg_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_19_timescale_staff_no" id="a1_19_timescale_staff_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_19_expend_1213" id="a1_19_expend_1213" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_19_allocate_1314" id="a1_19_allocate_1314" value=""></td>
+        </tr>
+        <tr>
+        	<td><label>২০</label></td>
+        	<td>
+            	<label>৪,১০০ - ১৯০ &#042;৭-৫,৪৩০- ইবি-২১০ &#042; ১১-৭,৭৪০</label>
+                <input type="hidden" name="a1_20_com_payscale" value="৪,১০০ - ১৯০ &#042;৭-৫,৪৩০- ইবি-২১০ &#042; ১১-৭,৭৪০">
+            </td>
+        	<td><input type="text" class="sText"  name="a1_20_deg_no_name" id="a1_20_deg_no_name" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_20_scalewise_filldeg_no" id="a1_20_scalewise_filldeg_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_20_timescale_staff_no" id="a1_20_timescale_staff_no" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_20_expend_1213" id="a1_20_expend_1213" value=""></td>
+        	<td><input type="text" class="sText"  name="a1_20_allocate_1314" id="a1_20_allocate_1314" value=""></td>
+        </tr>        
+    </table>
+	</td>
+	</tr>
+
+     <tr>
+		<td colspan="3">
+			<label>২। প্রতিষ্ঠানওয়ারি (প্রযোজ্য ক্ষেত্রে) প্রদত্ত সুবিধাদির সার্বিক পরিমাণঃ</label>
+			<input type="hidden" name="q2" value="২। প্রতিষ্ঠানওয়ারি (প্রযোজ্য ক্ষেত্রে) প্রদত্ত সুবিধাদির সার্বিক পরিমাণঃ" />
+		</td>
+	</tr>
+	<tr>
+	<td colspan="3">
+    <table id="second_table" border="1">
+    	<tr>
+        	<td><label>ক্রমিক নং</label></td>
+        	<td><label>প্রদেয় ভাতা/সুবিধা</label></td>
+        	<td colspan="2"><label>বার্ষিক ব্যায়/বরাদ্দ এর পরিমান (টাকায়)</label></td>
+        </tr>
+        <tr>
+        	<td width="5%"><label></label></td>
+        	<td width="35%"><label></label></td>
+        	<td width="30%"><label>প্রকৃত ব্যয় (২০১২-২০১৩)</label></td>
+			<td width="30%"><label>বরাদ্দ (২০১৩-২০১৪)</label></td>
+        </tr>
+        
+        <tr>
+        	<td><label>(০১)</label></td>
+        	<td>
+            	<label>বাড়ি ভাড়া ভাতা</label>
+				<input type="hidden" name="a2_1_advantage" value="বাড়ি ভাড়া ভাতা">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_1_1213" id="a2_1_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_1_1314" id="a2_1_1314" value=""></label></td>
+        </tr>
+        <tr>
+        	<td><label>(০২)</label></td>
+        	<td>
+            	<label>গাড়ি/যাতায়াত ভাতা</label>
+				<input type="hidden" name="a2_2_advantage" value="গাড়ি/যাতায়াত ভাতা">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_2_1213" id="a2_2_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_2_1314" id="a2_2_1314" value=""></label></td>
+        </tr>
+        <tr>
+        	<td><label>(০৩)</label></td>
+        	<td>
+            	<label>চিকিৎসা ভাতা</label>
+				<input type="hidden" name="a2_3_advantage" value="চিকিৎসা ভাতা">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_3_1213" id="a2_3_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_3_1314" id="a2_3_1314" value=""></label></td>
+        </tr>
+        <tr>
+        	<td><label>(০৪)</label></td>
+        	<td>
+            	<label>শিক্ষা ভাতা</label>
+				<input type="hidden" name="a2_4_advantage" value="শিক্ষা ভাতা">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_4_1213" id="a2_4_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_4_1314" id="a2_4_1314" value=""></label></td>
+        </tr>
+        <tr>
+        	<td><label>(০৫)</label></td>
+        	<td>
+            	<label>মহার্ঘ ভাতা</label>
+				<input type="hidden" name="a2_5_advantage" value="মহার্ঘ ভাতা">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_5_1213" id="a2_5_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_5_1314" id="a2_5_1314" value=""></label></td>
+        </tr>
+        <tr>
+        	<td><label>(০৬)</label></td>
+        	<td>
+            	<label>আপ্যায়ন ভাতা</label>
+				<input type="hidden" name="a2_6_advantage" value="আপ্যায়ন ভাতা">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_6_1213" id="a2_6_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_6_1314" id="a2_6_1314" value=""></label></td>
+        </tr>
+        <tr>
+        	<td><label>(০৭)</label></td>
+        	<td>
+            	<label>অধিকাল ভাতা</label>
+				<input type="hidden" name="a2_7_advantage" value="অধিকাল ভাতা">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_7_1213" id="a2_7_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_7_1314" id="a2_7_1314" value=""></label></td>
+        </tr>
+        <tr>
+        	<td><label>(০৮)</label></td>
+        	<td>
+            	<label>সম্মানী ভাতা</label>
+				<input type="hidden" name="a2_8_advantage" value="সম্মানী ভাতা">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_8_1213" id="a2_8_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_8_1314" id="a2_8_1314" value=""></label></td>
+        </tr>
+        <tr>
+        	<td><label>(০৯)</label></td>
+        	<td>
+            	<label>ঝুঁকি ভাতা</label>
+				<input type="hidden" name="a2_9_advantage" value="ঝুঁকি ভাতা">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_9_1213" id="a2_9_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_9_1314" id="a2_9_1314" value=""></label></td>
+        </tr>
+        <tr>
+        	<td><label>(১০)</label></td>
+        	<td>
+            	<label>পাহাড়ী ভাতা</label>
+				<input type="hidden" name="a2_10_advantage" value="পাহাড়ী ভাতা">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_10_1213" id="a2_10_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_10_1314" id="a2_10_1314" value=""></label></td>
+        </tr>
+        <tr>
+        	<td><label>(১১)</label></td>
+        	<td>
+            	<label>কার্যভার (ইনচার্জ) ভাতা </label>
+				<input type="hidden" name="a2_11_advantage" value="কার্যভার (ইনচার্জ) ভাতা ">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_11_1213" id="a2_11_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_11_1314" id="a2_11_1314" value=""></label></td>
+        </tr>
+        <tr>
+        	<td><label>(১২)</label></td>
+        	<td>
+            	<label>টিফিন ভাতা/ভাউচার/রেশন</label>
+				<input type="hidden" name="a2_12_advantage" value="টিফিন ভাতা/ভাউচার/রেশন ">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_12_1213" id="a2_12_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_12_1314" id="a2_12_1314" value=""></label></td>
+        </tr>
+        <tr>
+        	<td><label>(১৩)</label></td>
+        	<td>
+            	<label>ছুটি ভাতা/ছুটির পরিবর্তে ভাতা</label>
+				<input type="hidden" name="a2_13_advantage" value="ছুটি ভাতা/ছুটির পরিবর্তে ভাতা ">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_13_1213" id="a2_13_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_13_1314" id="a2_13_1314" value=""></label></td>
+        </tr>
+        <tr>
+        	<td><label>(১৪)</label></td>
+        	<td>
+            	<label>বিনোদন ছুটি ভাতা</label>
+				<input type="hidden" name="a2_14_advantage" value="বিনোদন ছুটি ভাতা">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_14_1213" id="a2_14_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_14_1314" id="a2_14_1314" value=""></label></td>
+        </tr>
+        <tr>
+        	<td><label>(১৫)</label></td>
+        	<td>
+            	<label>উৎসব ভাতা</label>
+				<input type="hidden" name="a2_15_advantage" value="উৎসব ভাতা">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_15_1213" id="a2_15_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_15_1314" id="a2_15_1314" value=""></label></td>
+        </tr>
+        <tr>
+        	<td><label>(১৬)</label></td>
+        	<td>
+            	<label>বোনাস কত মাসের বেতনের সমান</label>
+				<input type="hidden" name="a2_16_advantage" value="বোনাস কত মাসের বেতনের সমান">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_16_1213" id="a2_16_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_16_1314" id="a2_16_1314" value=""></label></td>
+        </tr>
+        <tr>
+        	<td><label>(১৭)</label></td>
+        	<td>
+            	<label>পোষাক ভাতা</label>
+				<input type="hidden" name="a2_17_advantage" value="পোষাক ভাতা">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_17_1213" id="a2_17_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_17_1314" id="a2_17_1314" value=""></label></td>
+        </tr>
+        <tr>
+        	<td><label>(১৮)</label></td>
+        	<td>
+            	<label>ধোলাই ভাতা</label>
+				<input type="hidden" name="a2_18_advantage" value="ধোলাই ভাতা">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_18_1213" id="a2_18_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_18_1314" id="a2_18_1314" value=""></label></td>
+        </tr>
+        <tr>
+        	<td><label>(১৯)</label></td>
+        	<td>
+            	<label>ভবিষ্যৎ তহবিল</label>
+				<input type="hidden" name="a2_19_advantage" value="ভবিষ্যৎ তহবিল">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_19_1213" id="a2_19_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_19_1314" id="a2_19_1314" value=""></label></td>
+        </tr>
+        <tr>
+        	<td><label>(২০)</label></td>
+        	<td>
+            	<label>সাধারণ ভবিষ্যৎ তহবিল</label>
+				<input type="hidden" name="a2_20_advantage" value="সাধারণ ভবিষ্যৎ তহবিল">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_20_1213" id="a2_20_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_20_1314" id="a2_20_1314" value=""></label></td>
+        </tr>
+        <tr>
+        	<td><label>(২১)</label></td>
+        	<td>
+            	<label>কন্ট্রিবিউটরি তহবিল</label>
+				<input type="hidden" name="a2_21_advantage" value="কন্ট্রিবিউটরি তহবিল">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_21_1213" id="a2_21_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_21_1314" id="a2_21_1314" value=""></label></td>
+        </tr>
+		<tr>
+        	<td><label>(২২)</label></td>
+        	<td>
+            	<label>অবসর ভাতা</label>
+				<input type="hidden" name="a2_22_advantage" value="অবসর ভাতা">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_22_1213" id="a2_22_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_22_1314" id="a2_22_1314" value=""></label></td>
+        </tr>
+		<tr>
+        	<td><label>(২৩)</label></td>
+        	<td>
+            	<label>এককালীন ভাতা</label>
+				<input type="hidden" name="a2_23_advantage" value="এককালীন ভাতা">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_23_1213" id="a2_23_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_23_1314" id="a2_23_1314" value=""></label></td>
+        </tr>
+		<tr>
+        	<td><label>(২৪)</label></td>
+        	<td>
+            	<label>মৃত্যুজনিত ক্ষতিপুরণ ভাতা ও ওয়ারিশ/ ওয়ারিশগণের অবসর ভাতা</label>
+				<input type="hidden" name="a2_24_advantage" value="মৃত্যুজনিত ক্ষতিপুরণ ভাতা ও ওয়ারিশ/ ওয়ারিশগণের অবসর ভাতা">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_24_1213" id="a2_24_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_24_1314" id="a2_24_1314" value=""></label></td>
+        </tr>
+		<tr>
+        	<td><label>(২৫)</label></td>
+        	<td>
+            	<label>অন্যান্য সুবিধাদি/ভাতা</label>
+				<input type="hidden" name="a2_25_advantage" value="অন্যান্য সুবিধাদি/ভাতা">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_25_1213" id="a2_25_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_25_1314" id="a2_25_1314" value=""></label></td>
+        </tr>
+		<tr>
+        	<td><label>(২৬)</label></td>
+        	<td>
+            	<label>বিভিন্ন প্রকার ঋণ (গাড়ি, গৃহনির্মাণ, মোটর সাইকেল ইত্যাদি)</label>
+				<input type="hidden" name="a2_26_advantage" value="বিভিন্ন প্রকার ঋণ (গাড়ি, গৃহনির্মাণ, মোটর সাইকেল ইত্যাদি)">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_26_1213" id="a2_26_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_26_1314" id="a2_26_1314" value=""></label></td>
+        </tr>
+		<tr>
+        	<td><label>(২৬)</label></td>
+        	<td>
+            	<label>বিভিন্ন প্রকার ঋণ (গাড়ি, গৃহনির্মাণ, মোটর সাইকেল ইত্যাদি)</label>
+				<input type="hidden" name="a2_26_advantage" value="বিভিন্ন প্রকার ঋণ (গাড়ি, গৃহনির্মাণ, মোটর সাইকেল ইত্যাদি)">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_26_1213" id="a2_26_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_26_1314" id="a2_26_1314" value=""></label></td>
+        </tr>
+		<tr>
+        	<td><label>(২৭)</label></td>
+        	<td>
+            	<label>ট্রাফিক ভাতা</label>
+				<input type="hidden" name="a2_27_advantage" value="ট্রাফিক ভাতা">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_27_1213" id="a2_27_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_27_1314" id="a2_27_1314" value=""></label></td>
+        </tr>
+        	<td><label>(২৮)</label></td>
+        	<td>
+            	<label>তদন্ত ভাতা</label>
+				<input type="hidden" name="a2_28_advantage" value="তদন্ত ভাতা">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_28_1213" id="a2_28_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_28_1314" id="a2_28_1314" value=""></label></td>
+        </tr>
+        </tr>
+        	<td><label>সর্বমোটঃ</label></td>
+        	<td>
+            	<label></label>
+				<input type="hidden" name="a2_29_advantage" value="সর্বমোটঃ">
+            </td>
+        	<td><label><input type="text" class="sText"  name="a2_29_1213" id="a2_29_1213" value=""></label></td>
+        	<td><label><input type="text" class="sText"  name="a2_29_1314" id="a2_29_1314" value=""></label></td>
+        </tr>
+    </table>
+	</td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<label>৩। সকল পদের জন্য সাধারণভাবে প্রযোজ্য ভাতা (যেমন-বাড়ি ভাড়া, চিকিৎসা ভাতা, শিক্ষা ভাতা,উৎসব ভাতা  এবং শ্রামিত ও বিনোদন) ব্যতীত আপনার প্রতিষ্ঠানে  প্রচলিত অন্যান্য ভাতা ও প্রাwন্তক সুবিধাদি সংক্রান্ত তথ্য নিমেণর ছকে সুনির্দিষ্টভাবে উল্লেখ করুনঃ</label>
+			<input type="hidden" name="q3" value="৩। সকল পদের জন্য সাধারণভাবে প্রযোজ্য ভাতা (যেমন-বাড়ি ভাড়া, চিকিৎসা ভাতা, শিক্ষা ভাতা,উৎসব ভাতা  এবং শ্রামিত ও বিনোদন) ব্যতীত আপনার প্রতিষ্ঠানে  প্রচলিত অন্যান্য ভাতা ও প্রাwন্তক সুবিধাদি সংক্রান্ত তথ্য নিমেণর ছকে সুনির্দিষ্টভাবে উল্লেখ করুন ঃ" />
+		</td>
+	</tr>
+	
+	<tr>
+	<td colspan="3">
+	<table id="third_table" border="1">
+            <tr>
+                <td><label>ক্রমিক নং</label></td>
+                <td><label>পদের নাম</label></td>
+                <td><label>বেতন স্কেল</label></td>
+                <td><label>প্রচলিত ভাতার নাম ও প্রবর্তনের তারিখ</label></td>
+                <td><label>ভাতার বিদ্যমান হার</label></td>
+                <td><label>মন্তব্য/সুপারিশ</label></td>
+            </tr>
+        <tr>
+        	<td><label>(০১)</label></td>
+        	<td>
+            	<input type="text" class="sText"  name="a3_1_designation" id="a3_1_designation" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_1_payscale" id="a3_1_payscale" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_1_pension" id="a3_1_pension" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_1_percentage" id="a3_1_percenage" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_1_comments" id="a3_1_comments" value="">
+            </td>
+        </tr>
+        <tr>
+        	<td><label>(০২)</label></td>
+        	<td>
+            	<input type="text" class="sText"  name="a3_2_designation" id="a3_2_designation" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_2_payscale" id="a3_2_payscale" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_2_pension" id="a3_2_pension" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_2_percentage" id="a3_2_percenage" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_2_comments" id="a3_2_comments" value="">
+            </td>
+        </tr>
+        <tr>
+        	<td><label>(০৩)</label></td>
+            <td>
+            	<input type="text" class="sText"  name="a3_3_designation" id="a3_3_designation" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_3_payscale" id="a3_3_payscale" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_3_pension" id="a3_3_pension" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_3_percentage" id="a3_3_percenage" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_3_comments" id="a3_3_comments" value="">
+            </td>
+        </tr>
+        <tr>
+            <td><label>(০৪)</label></td>
+            <td>
+            	<input type="text" class="sText"  name="a3_4_designation" id="a3_4_designation" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_4_payscale" id="a3_4_payscale" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_4_pension" id="a3_4_pension" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_4_percentage" id="a3_4_percenage" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_4_comments" id="a3_4_comments" value="">
+            </td>
+        </tr>
+        <tr>
+            <td><label>(০৫)</label></td>
+            <td>
+            	<input type="text" class="sText"  name="a3_5_designation" id="a3_5_designation" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_5_payscale" id="a3_5_payscale" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_5_pension" id="a3_5_pension" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_5_percentage" id="a3_5_percenage" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_5_comments" id="a3_5_comments" value="">
+            </td>
+        </tr>
+        <tr>
+            <td><label>(০৬)</label></td>
+            <td>
+            	<input type="text" class="sText"  name="a3_6_designation" id="a3_6_designation" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_6_payscale" id="a3_6_payscale" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_6_pension" id="a3_6_pension" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_6_percentage" id="a3_6_percenage" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_6_comments" id="a3_6_comments" value="">
+            </td>
+        </tr>
+                <tr>
+            <td><label>(০৭)</label></td>
+            <td>
+            	<input type="text" class="sText"  name="a3_7_designation" id="a3_7_designation" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_7_payscale" id="a3_7_payscale" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_7_pension" id="a3_7_pension" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_7_percentage" id="a3_7_percenage" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_7_comments" id="a3_7_comments" value="">
+            </td>
+        </tr>
+                <tr>
+            <td><label>(০৮)</label></td>
+            <td>
+            	<input type="text" class="sText"  name="a3_8_designation" id="a3_8_designation" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_8_payscale" id="a3_8_payscale" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_8_pension" id="a3_8_pension" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_8_percentage" id="a3_8_percenage" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_8_comments" id="a3_8_comments" value="">
+            </td>
+        </tr>
+a        <tr>
+            <td><label>(০৯)</label></td>
+            <td>
+            	<input type="text" class="sText"  name="a3_9_designation" id="a3_9_designation" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_9_payscale" id="a3_9_payscale" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_9_pension" id="a3_9_pension" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_9_percentage" id="a3_9_percenage" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_9_comments" id="a3_9_comments" value="">
+            </td>
+        </tr>
+a        <tr>
+            <td><label>(১০)</label></td>
+            <td>
+            	<input type="text" class="sText"  name="a3_10_designation" id="a3_10_designation" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_10_payscale" id="a3_10_payscale" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_10_pension" id="a3_10_pension" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_10_percentage" id="a3_10_percenage" value="">
+            </td>
+            <td>
+            	<input type="text" class="sText"  name="a3_10_comments" id="a3_10_comments" value="">
+            </td>
+        </tr>
+    </table>
+			</td>
+			</tr>
+               <tr>
+                    <td colspan="3">
+                        <label>
+                            ৪। অর্থনৈতিক প্রবৃদ্ধি অর্জন, দারিদ্র দূরীকরণ ও উন্নয়ন বাজেটে সম্পদের যোগান বৃদ্ধি করে ক্রমান্বয়ে অধিকতর  স্বনির্ভরতা   অর্জনের কি কি  ব্যবস্থা গ্রহণ করতে পারেন ? 				</label>
+                            <input type="hidden" name="q4" value=" ৪। অর্থনৈতিক প্রবৃদ্ধি অর্জন, দারিদ্র দূরীকরণ ও উন্নয়ন বাজেটে সম্পদের যোগান বৃদ্ধি করে ক্রমান্বয়ে অধিকতর  স্বনির্ভরতা   অর্জনের কি কি  ব্যবস্থা গ্রহণ করতে পারেন ? 				">
+                    </td>
+               </tr>
+               <tr>
+                    <td colspan="3">
+						<textarea name="a4" id="a4"></textarea>
+					</td>
+               </tr>
+        	<tr>
+            	<td colspan="3">
+                	<label>৫। আপনার প্রতিষ্ঠানে বর্তমানে প্রচিলত বেতন কাঠামোতে কোন অসঙ্গতি আছে কি ?</label>
+                    <input type="hidden" name="q5" value="৫। আপনার প্রতিষ্ঠানে বর্তমানে প্রচিলত বেতন কাঠামোতে কোন অসঙ্গতি আছে কি ?">
+                </td>
+            </tr>
+            <tr>
+            	<td width="34%">
+            		<input type="radio" name="a5" checked="checked" value="হ্যাঁ">&nbsp;হ্যাঁ
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="a5" checked="checked" value="না">&nbsp;না
+           		</td>
+            
+                <td width="33%">
+                </td>
+                <td width="33%">
+                </td>
+            </tr>
+            <tr>
+            	<td colspan="3">
+                	<label>৫.১। উত্তর হ্যাঁ হলে প্রযোজ্য ক্ষেত্রে এক বা একাাধিক টিক (√) দিন।</label>
+                    <input type="hidden" name="q5_1" value="৫.১। উত্তর হ্যাঁ হলে প্রযোজ্য ক্ষেত্রে এক বা একাাধিক টিক (√) দিন।" />
+                </td>
+            </tr>
+            <tr>
+            	<td>
+                	<select name="a5_1" id="a5_1"  multiple>
+                        <option value="(১) আন্ত:বেতন স্কেলের বৈষম্য">(১) আন্ত:বেতন স্কেলের বৈষম্য</option>
+                        <option value="(৩) চাকরিতে মধ্যবর্তী পর্যায়ে অপর্যাপ্ত বেতন">(৩) চাকরিতে মধ্যবর্তী পর্যায়ে অপর্যাপ্ত বেতন</option>
+                        <option value="(৫) সিলেকশন গ্রেড প্রদানে অসঙ্গতি">(৫) সিলেকশন গ্রেড প্রদানে অসঙ্গতি</option>
+                        <option value="(৭)  কম সংখ্যক বেতন স্কেল">(৭) কম সংখ্যক বেতন স্কেল</option>
+                        <option value="(২) অপর্যাপ্ত প্রারম্ভিক বেতন">(২) অপর্যাপ্ত প্রারম্ভিক বেতন</option>
+                        <option value="(৪) টাইমস্কেল প্রদানে অসঙ্গতি">(৪) টাইমস্কেল প্রদানে অসঙ্গতি</option>
+                        <option value="(৬) অধিক সংখ্যক বেতন স্কেল">(৬) অধিক সংখ্যক বেতন স্কেল</option>
+                        <option value="(৮) পদোন্নতির ব্যবস্থা না থাকা">(৮) পদোন্নতির ব্যবস্থা না থাকা</option>
+                        <option value="(৯) অন্যান্য( নাম লিখুন ও যুক্তি দিন)">(৯) অন্যান্য( নাম লিখুন ও যুক্তি দিন)</option>                        
+                     </select>
+                </td>
+                <td colspan="2">
+                	<label>অন্যান্য হলে নাম লিখুন ও যুক্তি দিন:</label>&nbsp;<textarea name="a5_1_remarks" id="a5_1_remarks"></textarea>
+                </td>
+            </tr>
+            <tr>
+            	<td colspan="3">
+                	<label>৬। কোনো কোনো ক্ষেত্রে  অপর্যাপ্ত বেতন সরকারি কর্মকর্তা/কর্মচারীদের অসৎ উপায় অবলম্বনে উৎসাহিত করে কিনা ? (প্রযোজ্য ক্ষেত্রে টিক (√) দিন)															</label>
+                    <input type="hidden" name="q6" value="৬। কোনো কোনো ক্ষেত্রে  অপর্যাপ্ত বেতন সরকারি কর্মকর্তা/কর্মচারীদের অসৎ উপায় অবলম্বনে উৎসাহিত করে কিনা ? (প্রযোজ্য ক্ষেত্রে টিক () দিন)">	
+                </td>
+            </tr>
+            <tr>
+            	<td>
+            		<input type="radio" name="a6" checked="checked" value="হ্যাঁ">&nbsp;হ্যাঁ
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="a6" checked="checked" value="না">&nbsp;না
+           		</td>
+            
+                <td>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+            	<td colspan="3">
+                	<label>৭। বেতন বৃদ্ধি ছাড়া আর কি কি উপায়ে কর্মকর্তা/কর্মচারীদের সততা বৃদ্ধি করা যায় বলে আপনি মনে করেন ? (প্রযোজ্য ক্ষেত্রে এক বা একাধিক টিক (√) দিন)</label>
+                    <input type="hidden" name="q7" value="৭। বেতন বৃদ্ধি ছাড়া আর কি কি উপায়ে কর্মকর্তা/কর্মচারীদের সততা বৃদ্ধি করা যায় বলে আপনি মনে করেন ? (প্রযোজ্য ক্ষেত্রে এক বা একাধিক টিক (√) দিন)">
+                </td>
+            </tr>
+            <tr>
+            	<td>
+                	<select name="a7_1" id="a7_1"  multiple>
+                        <option value="(১) অফিসে কর্মকর্তা/কর্মচারির সমন্বয়ে ভিজিল্যান্স টিম গঠন">(১) অফিসে কর্মকর্তা/কর্মচারির সমন্বয়ে ভিজিল্যান্স টিম গঠন</option>
+                        <option value="(২) বার্ষিক নিয়মিত সম্পদ বিবরণী দাখিলকরন">(২) বার্ষিক নিয়মিত সম্পদ বিবরণী দাখিলকরন</option>
+                        <option value="(৩) দোষী ব্যক্তিদের বিরুদ্ধে দ্রত শাস্তিম~লক ব্যবস্থা গ্রহণ">(৩) দোষী ব্যক্তিদের বিরুদ্ধে দ্রত শাস্তিম~লক ব্যবস্থা গ্রহণ</option>
+                        <option value="(৪) দূর্নীতি বিরোধী জনমত গঠন ও সামাজিক সচেতনতা সৃষ্টি">(৪) দূর্নীতি বিরোধী জনমত গঠন ও সামাজিক সচেতনতা সৃষ্টি</option>
+                        <option value="(৫) সৎ ও দক্ষ কর্মকর্তা/কর্মচারীদের পারফরমেন্স বোনাস প্রদান">(৫) সৎ ও দক্ষ কর্মকর্তা/কর্মচারীদের পারফরমেন্স বোনাস প্রদান</option>
+                        <option value="(৬) অন্যান্য হলে উল্লেখ করুন">(৬) অন্যান্য হলে উল্লেখ করুন </option>
+                     </select>
+                <td colspan="2">
+				<label>অন্যান্য হলে উল্লেখ করুন:</label>&nbsp;<textarea name="a7_1_remarks" id="a7_1_remarks"></textarea>				
+                </td>
+           </tr>
+		<tr>
+			<td colspan="3">
+				<label>৮। নিমণবর্ণিত বিষয়সমূহ কিভাবে সংশোধিত হওয়া প্রয়োজন বলে আপনি মনে করেন ? </label>
+				<input type="hidden" name="q8" value="৮। নিমণবর্ণিত বিষয়সমূহ কিভাবে সংশোধিত হওয়া প্রয়োজন বলে আপনি মনে করেন ? ">
+			</td>
+		</tr>
+			<tr>
+				<td colspan="3">
+                    <label>(১) নতুন প্রসতাবিত বেতন কাঠামোতে সর্বাধিক বেতন স্কেল সংখ্যা :</label>&nbsp;<input  class="sText" type="text" name="a8_min" id="a8_min" value="">&nbsp;টি <br />(বর্তমান বেতন কাঠামোতে ২০টি স্কেল রয়েছে)
+				</td>
+            </tr> 
+            <tr>
+            	<td>
+                    <label>(২) সর্বোচ্চ বেতনঃ</label>&nbsp;<input  class="sText" type="text" name="a8_max" id="a2_max" value=""> টাকা
+                    </td>
+            	<td>
+                    <label>(৩) সর্বনিমণ বেতনঃ</label>&nbsp;<input  class="sText" type="text" name="a8_min" id="a8_min" value=""> টাকা
+                </td>
+            </tr>
+            <tr>
+				<td colspan="3">
+                    <label>(৪) সর্বনিমণ ও সর্বোচ্চ বেতনের অনুপাতঃ</label>&nbsp;<input  class="sText" type="text" name="a8_1" id="a8_1" value="">
+				</td>
+
+            </tr>
+			<tr>
+				<td>
+                    <label>(৫)মাসিক চিকিৎসা ভাতাঃ</label>&nbsp;<input  class="sText" type="text" name="a8_1" id="a8_1" value=""> টাকা
+				</td>
+				<td>
+                    <label>(৬) মাসিক যাতায়াত ভাতাঃ</label>&nbsp;<input  class="sText" type="text" name="a8_1" id="a8_1" value=""> টাকা
+				</td>
+				<td>
+                    <label>(৭) মাসিক সন্তান শিক্ষা ভাতাঃ</label>&nbsp;<input  class="sText" type="text" name="a8_1" id="a8_1" value=""> টাকা
+				</td>
+            </tr>
+			<tr>
+				<td>
+                    <label>(৮) টিফিন ভাতাঃ</label>&nbsp;<input  class="sText" type="text" name="a8_1" id="a8_1" value=""> টাকা
+				</td>
+				<td>
+                    <label>(৯) অবসর ভাতা মূল বেতনের শতকরা কত ভাগ</label>&nbsp;<input  class="sText" type="text" name="a8_1" id="a8_1" value="">%				</td>
+				<td>
+                    <label>(১০) পেনশন সমর্পণকৃত হার প্রতি টাকায় কত </label>&nbsp;<input  class="sText" type="text" name="a8_1" id="a8_1" value="">টাকা
+				</td>
+            </tr>
+        	<tr>
+            	<td colspan="3">
+                	<label>৯। বাড়ি ভাড়া বেতনের সঙ্গে আনুপাতিক হওয়া  যুক্তিযুক্ত কিনা ? (প্রযোজ্য ক্ষেত্রে টিক (√) দিন)</label>
+                    <input type="hidden" name="q9" value="৯। বাড়ি ভাড়া বেতনের সঙ্গে আনুপাতিক হওয়া  যুক্তিযুক্ত কিনা ? (প্রযোজ্য ক্ষেত্রে টিক (√) দিন)">
+                </td>
+            </tr>
+            <tr>
+            	<td width="34%">
+            		<input type="radio" name="a9" checked="checked" value="হ্যাঁ">&nbsp;হ্যাঁ
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="a9" checked="checked" value="না">&nbsp;না
+           		</td>
+            
+                <td width="33%">
+                </td>
+                <td width="33%">
+                </td>
+            </tr>
+            <tr>
+            	<td colspan="3">
+                	<label>৯.১। যদি ‘হ্যাঁ’ হয় তবে একটি চাকরিজীবী পরিবারের জন্য মাসিক বাড়িভাড়ার ভাতা কত হওয়া উচিত ?</label>
+                    <input type="hidden" name="q9_1" value=" ৯.১। যদি ‘হ্যাঁ’ হয় তবে একটি চাকরিজীবী পরিবারের জন্য মাসিক বাড়ড়ভাড়া ভাতা কত হওয়া উচিত ?" />
+                </td>
+            </tr>
+            <tr>
+            <tr>
+                <td>	
+                    <label>স্থানের নাম</label>
+                </td>
+                <td colspan="2">
+                    <label>মূল বেতনের ৪০%-৫০%</label>
+                </td>
+            </tr>
+            <tr>
+                <td>	
+                    <label>ঢাকা</label>
+                </td>
+                <td colspan="2">
+                    <select name="a9_1_dhaka" id="a9_1_dhaka">
+                      <option value="৪০%-৫০%">৪০%-৫০%</option>
+                      <option value="৫০%-৬০%">৫০%-৬০%</option>
+                      <option value="৬০-৭০%">৬০-৭০%</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>	
+                    <label>বিভাগীয় শহর</label>
+                </td>
+                <td colspan="2">
+                    <select name="a9_1_division" id="a9_1_division">
+                      <option value="৪০%-৫০%">৪০%-৫০%</option>
+                      <option value="৫০%-৬০%">৫০%-৬০%</option>
+                      <option value="৬০-৭০%">৬০-৭০%</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>	
+                    <label>জেলা শহর</label>
+                </td>
+                <td colspan="2">
+                    <select name="a9_1_district" id="a9_1_district">
+                      <option value="৪০%-৫০%">৪০%-৫০%</option>
+                      <option value="৫০%-৬০%">৫০%-৬০%</option>
+                      <option value="৬০-৭০%">৬০-৭০%</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>	
+                    <label>উপজেলা শহর</label>
+                </td>
+                <td colspan="2">
+                    <select name="a9_1_upazilla" id="a9_1_upazilla">
+                      <option value="৪০%-৫০%">৪০%-৫০%</option>
+                      <option value="৫০%-৬০%">৫০%-৬০%</option>
+                      <option value="৬০-৭০%">৬০-৭০%</option>
+                    </select>
+                </td>
+            </tr> 
+            <tr>
+            	<td colspan="3">
+                	<label>১০। দক্ষ ও অভিজ্ঞ কর্মকর্তা/কর্মকচারীদের কাজে আকৃষ্ট ও উৎসাহিত করার জন্য কি কি সুবিধা প্রদান করা উচিত ? (একাধিক উত্তর হতে পারে) প্রযোজ্য ক্ষেত্রে টিক(√) দিনঃ</label>
+                    <input type="hidden" name="q10" value="১০। দক্ষ ও অভিজ্ঞ কর্মকর্তা/কর্মকচারীদের কাজে আকৃষ্ট ও উৎসাহিত করার জন্য কি কি সুবিধা প্রদান করা উচিত ? (একাধিক উত্তর হতে পারে) প্রযোজ্য ক্ষেত্রে টিক(√) দিনঃ" />
+                </td>
+            </tr>
+            <tr>
+            	<td>
+                	<select name="a10" id="a10"  multiple>
+                        <option value="(১) উচ্চতর প্রারম্ভিক বেতন">(১) উচ্চতর প্রারম্ভিক বেতন</option>
+                        <option value="(২) বেতন স্কেলে অধিক হারে বার্ষিক বর্ধিত বেতনের সুবিধা">(২) বেতন স্কেলে অধিক হারে বার্ষিক বর্ধিত বেতনের সুবিধা</option>
+                        <option value="(৩) পদোন্নতি ত্বরান্বিতকরণ">(৩) পদোন্নতি ত্বরান্বিতকরণ</option>
+                        <option value="(৪) উচ্চতর প্রক্ষিণের ব্যবস্থা">(৪) উচ্চতর প্রক্ষিণের ব্যবস্থা</option>
+                        <option value="(৫) স্বচ্ছ পদোন্নতি প্রক্রিয়া">(৫) স্বচ্ছ পদোন্নতি প্রক্রিয়া</option>
+                        <option value="(৬) পারফরমেন্স বোনাস প্রদান">(৬) পারফরমেন্স বোনাস প্রদান</option>
+                        <option value="(৭) প্রয়োজনীয় লজিষ্টিক/ইকুইপমেন্ট সুবিধা">(৭) প্রয়োজনীয় লজিষ্টিক/ইকুইপমেন্ট সুবিধা</option>
+                        <option value="(৮) প্রযোজ্য ক্ষেত্রে বোনাসের মাত্রা বৃদ্ধি">(৮) প্রযোজ্য ক্ষেত্রে বোনাসের মাত্রা বৃদ্ধি</option>  
+                        <option value="(৯) পুরস্কার প্রদান">(৯) পুরস্কার প্রদান</option>
+                        <option value="(১০) অন্যান্য,(নাম লিখুন)">(১০) অন্যান্য,(নাম লিখুন)</option>
+                     </select>
+                </td>
+                <td colspan="2">
+                	<label>অন্যান্য,(নাম লিখুন):</label>&nbsp;<textarea name="a10_remarks" id="a10_remarks"></textarea>
+                </td>
+            </tr>
+        	<tr>
+            	<td colspan="3">
+                	<label>১১। ভোক্তা মূল্য সূচক (CPI) অনুযায়ী জীবনযাত্রার ক্রমবর্ধমান ব্যয় বিবেচনা করে পেনশনভোগী কর্মকর্তা/কর্মচারীদের পেনশন বৃদ্ধি  
+           করার প্রয়োজন আছে কিনা ? (প্রযোজ্য ক্ষেত্রে টিক (√ )চিহ্ন দিন)
+					</label>
+                    <input type="hidden" name="q11" value="১১।  ভোক্তা মূল্য সূচক (CPI) অনুযায়ী জীবনযাত্রার ক্রমবর্ধমান ব্যয় বিবেচনা করে পেনশনভোগী কর্মকর্তা/কর্মচারীদের পেনশন বৃদ্ধি করার প্রয়োজন আছে কিনা ? (প্রযোজ্য ক্ষেত্রে টিক (√ )চিহ্ন দিন)">
+                </td>
+            </tr>
+            <tr>
+            	<td width="34%">
+            		<input type="radio" name="a11" checked="checked" value="হ্যাঁ">&nbsp;হ্যাঁ
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="a11" checked="checked" value="না">&nbsp;না
+           		</td>
+            
+                <td width="33%">
+                </td>
+                <td width="33%">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label> ১১.১। উত্তর যদি ‘হ্যাঁ’ হয় তা হলে কি হারে হওয়া উচিত ? (প্রযোজ্য ক্ষেত্রে টিক (√ )চিহ্ন দিন)</label>
+                    <input type="hidden" name="q11_1" value=" ১১.১। উত্তর যদি ‘হ্যাঁ’ হয় তা হলে কি হারে হওয়া উচিত ? (প্রযোজ্য ক্ষেত্রে টিক (√ )চিহ্ন দিন)">
+                </td>
+                <td>
+                    <input type="radio" name="a11_1" checked="checked" value="সমানুপাতিক হারে">&nbsp;সমানুপাতিক হারে
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="a11_1" value="অন্য কোন হারে">&nbsp;অন্য কোন হারে
+                </td>
+            </tr>
+            <tr>
+            	<td colspan="3">
+                	<label>১২। বেতন কমিশনের সুপারিশে যদি বেতন বৃদ্ধি করা হয় তা হলে বর্ধিত ব্যয় সংকুলানের জন্য সরকারের কি  কি পদক্ষেপ নেওয়া উচিৎ বলে মনে করেন ? (প্রযোজ্য ক্ষেত্রে এক বা একাধিক টিক (√ ) চিহ্ন দিন)</label>
+                    <input type="hidden" name="q12" value="১২। বেতন কমিশনের সুপারিশে যদি বেতন বৃদ্ধি করা হয় তা হলে বর্ধিত ব্যয় সংকুলানের জন্য সরকারের কি  কি পদক্ষেপ নেওয়া উচিৎ বলে মনে করেন ? (প্রযোজ্য ক্ষেত্রে এক বা একাধিক টিক (√ ) চিহ্ন দিন)" />
+                </td>
+            </tr>
+            <tr>
+            	<td>
+                	<select name="a12" id="a12"  multiple>
+                        <option value="(১) কর বৃদ্ধি">(১) কর বৃদ্ধি</option>
+                        <option value="(২) সম্ভ্যাব্য ক্ষেত্রে কর ফাঁকি রোধ করা">(২) সম্ভ্যাব্য ক্ষেত্রে কর ফাঁকি রোধ করা</option>
+                        <option value="(৩) করের আওতা সম্প্রসারণ">(৩) করের আওতা সম্প্রসারণ</option>
+                        <option value="(৪) অন্যান্য,(উল্লেখ করুন)">(৪) অন্যান্য, (উল্লেখ করুন)</option>
+                     </select>
+                </td>
+                <td colspan="2">
+                	<label>অন্যান্য, (উল্লেখ করুন):</label>&nbsp;<textarea name="a12_remarks" id="a12_remarks"></textarea>
+                </td>
+            </tr>
+       </table>
+	   
+	   <u style="font-weight: bold;">দ্বিতীয় অংশ (সার্ভিস সংক্রান্ত)</u>
+	   <table id="main_table2">
+			<tr>
+			<td colspan="3">
+				<label>১৩।  সরকারি চাকরিতে পদোন্নতি জন্য আইনানুগ নীতিমালা থাকা প্রয়োজন কিনা ?</label>
+				<input type="hidden" name="q13" value="১৩।  সরকারি চাকরিতে পদোন্নতি জন্য আইনানুগ নীতিমালা থাকা প্রয়োজন কিনা ?">
+			</td>
+		</tr>
+		
+		<tr>
+			<td width="34%">
+				<input type="radio" name="a13" checked="checked" value="হ্যাঁ">&nbsp;হ্যাঁ
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a13" value="না">&nbsp;না
+			</td>
+			<td width="33%">				
+			</td>
+			<td width="33%">&nbsp;</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>১৩.১।  উত্তর যদি ‘হ্যাঁ’ হয়, তা হলে পদোন্নতির কি কি বিষয় গুরুত্ব দেওয়া উচিত বলে আপনি মনে করেন?  (একাধিক উত্তর হতে পারে)</label>
+				<input type="hidden" name="q13_1" value="১৩.১।  উত্তর যদি ‘হ্যাঁ’ হয়, তা হলে পদোন্নতির কি কি বিষয় গুরুত্ব দেওয়া উচিত বলে আপনি মনে করেন?  (একাধিক উত্তর হতে পারে)">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<select name="a13_1" id="a13_1" multiple>
+				  <option value="শিক্ষাগত যোগ্যতা">শিক্ষাগত যোগ্যতা</option>
+				  <option value="প্রশিক্ষণ">প্রশিক্ষণ</option>
+				  <option value="জ্যেষ্ঠতা">জ্যেষ্ঠতা</option>
+				  <option value="এসিআর">এসিআর</option>
+				  <option value="অন্যান্য (উল্লেখ করুন)">অন্যান্য (উল্লেখ করুন)</option>
+				</select>				
+			</td>
+			<td colspan="2">
+				<label>অন্যান্য হলে উল্লেখ করুন:</label>&nbsp;<textarea name="a13_1_remarks" id="a13_1_remarks"></textarea>
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>১৪।  দপ্তর/সংস্থা/বিভাগ/পদায়িত কর্মস্থল /ক্যাডার ভিত্তিক চাকরিতে বেতন ও অন্যান্য সুবিধাদির ক্ষেত্রে বৈষম্য রয়েছে বলে মনে করেন কি?</label>
+				<input type="hidden" name="q14" value="১৪।  দপ্তর/সংস্থা/বিভাগ/পদায়িত কর্মস্থল /ক্যাডার ভিত্তিক চাকরিতে বেতন ও অন্যান্য সুবিধাদির ক্ষেত্রে বৈষম্য রয়েছে বলে মনে করেন কি?">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<input type="radio" name="a14" checked="checked" value="হ্যাঁ">&nbsp;হ্যাঁ
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a14" value="না">&nbsp;না				
+			</td>
+			<td colspan="2">
+				&nbsp;
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>১৪.১।  উত্তর যদি ‘হ্যাঁ’ হয় তা হলে উক্ত বৈষম্য দূরীকরণে আপনার মতামত দিন।</label>
+				<input type="hidden" name="q14_1" value="১৪.১।  উত্তর যদি ‘হ্যাঁ’ হয় তা হলে উক্ত বৈষম্য দূরীকরণে আপনার মতামত দিন।">
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="2">
+				<textarea name="a14_1" id="a14_1"></textarea>
+			</td>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>১৫।  স্বেচ্ছায় অবসরে যাওয়ার জন্য পূর্ণ পেনশন চাকুরী বয়স ২৫ বছর রয়েছে, তা কমানো উচিৎ কিনা ?</label>
+				<input type="hidden" name="q15" value="১৫।  স্বেচ্ছায় অবসরে যাওয়ার জন্য পূর্ণ পেনশন চাকুরী বয়স ২৫ বছর রয়েছে, তা কমানো উচিৎ কিনা ?">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="radio" name="a15" checked="checked" value="হ্যাঁ">&nbsp;হ্যাঁ
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a15" value="না">&nbsp;না				
+			</td>
+			<td colspan="2">
+				&nbsp;
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>১৫.১।  উত্তর যদি ‘হ্যাঁ’ হয় তা হলে কত বছর হওয়া উচিত ?</label>
+				<input type="hidden" name="q15_1" value="১৫.১।  উত্তর যদি ‘হ্যাঁ’ হয় তা হলে কত বছর হওয়া উচিত ?">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="radio" name="a15_1" checked="checked" value="১৮">&nbsp;১৮
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a15_1" value="২০">&nbsp;২০		
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a15_1" value="২২">&nbsp;২২	
+			</td>
+			<td colspan="2">
+				&nbsp;
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>১৬।  বিদ্যমান বার্ষিক গোপনীয় প্রতিবেদন (এসিআর)  যে পদ্ধতি অনুসরণ করা হয়ে থাকে তা  আপনি সমর্থন করেন কি?</label>
+				<input type="hidden" name="q16" value="১৬।  বিদ্যমান বার্ষিক গোপনীয় প্রতিবেদন (এসিআর)  যে পদ্ধতি অনুসরণ করা হয়ে থাকে তা  আপনি সমর্থন করেন কি?">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<input type="radio" name="a16" checked="checked" value="হ্যাঁ">&nbsp;হ্যাঁ
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a16" value="না">&nbsp;না				
+			</td>
+			<td colspan="2">
+				&nbsp;
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>১৬.১।  উত্তর যদি ‘না’ হয়, তা হলে কি পদ্ধতিতে হওয়া উচিত বলে আপনি মনে করেন ?</label>
+				<input type="hidden" name="q16_1" value="১৬.১।  উত্তর যদি ‘না’ হয়, তা হলে কি পদ্ধতিতে হওয়া উচিত বলে আপনি মনে করেন ?">
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="2">
+				<textarea name="a16_1" id="a16_1"></textarea>
+			</td>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+		
+		
+		<tr>
+			<td colspan="3">
+				<label>১৭। সরকারী কর্মকর্তা/কর্মচারীদের দক্ষতা বৃদ্ধির জন্য প্রশিক্ষণে  কোন কোন প্রশিক্ষণ অগ্রাধিকার দেয়া উচিৎ? (উল্লেখ করুন)</label>
+				<input type="hidden" name="q17" value="১৭। সরকারী কর্মকর্তা/কর্মচারীদের দক্ষতা বৃদ্ধির জন্য প্রশিক্ষণে  কোন কোন প্রশিক্ষণ অগ্রাধিকার দেয়া উচিৎ? (উল্লেখ করুন)">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<textarea name="a17" id="a17"></textarea>
+			</td>			
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+			
+		<tr>
+			<td colspan="3">
+				<input type="button" id="submit" name="submit" value="সংরক্ষণ করুন" onclick="save_form()" />
+			</td>
+		</tr>
+		
+	</table>
+    </form><style>#main_table td input,#info_table td input, #first_table td input, #second_table td input, #third_table td input
+{
+	margin: 0px;
+}
+
+#first_table td input.sText, #second_table td input.sText, #third_table td input.sText
+{
+	width: 150px;
+}
+</style><script>function save_form()
+{
+var save_url = "http://paycom.portal.gov.bd/npfadmin/formspay/insertform";
+var dt = $( "#frm" ).serialize();
+//dt += "&form_name=testing_view";
+$.ajax({
+    type: "POST",
+    url: save_url,
+    data: dt,
+    success: function (result) {
+    console.debug(result);
+    //alert(result);
+	if(result == "success")
+	{
+		alert("জরিপে অংশগ্রহণ করার জন্য ধন্যবাদ, আপনার তথ্য ও উপাত্তগুলো সফলভাবে সংরক্ষণ হয়েছে।");
+	}
+	else
+	{
+		alert(result);
+	}
+	$("#submit").hide();
+    }
+    });
+return false;
+}
+</script>

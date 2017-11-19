@@ -1,0 +1,18 @@
+<div class="column block">
+	<h5 class="bk-org title"><?php echo $title; ?>
+
+	</h5>
+	<?php if(sizeof($contents)>0){?>
+	<?php ?>
+		<ul>
+			<?php foreach ($contents as $lnk) { ?>	
+				
+				<li><?php  echo renderLink($lnk['link'], $lang)?></li>
+			<?php } ?>
+		</ul>
+		<?php if($more!=''){?>
+			<a href="<?php echo $more; ?>" class="btn" style="display:block;text-align:center;">সকল</a>
+		<?php }?>
+	<?php } ?>
+</div>
+<style></style><script></script>

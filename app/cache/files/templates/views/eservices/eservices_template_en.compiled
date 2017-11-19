@@ -1,0 +1,17 @@
+<h3>
+	eService List : <?php echo $contents[0]["category"]; ?>
+</h3>
+
+<table class="bordered">
+<tbody>
+	<?php $i=1; ?>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo digit_to_bangla($i,$lang)?></td>
+		<td><a target="_blank" href="<?php echo $content['service_url']; ?>"><?php echo $content['title'];?></a></td>
+		
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table><style></style><script></script>

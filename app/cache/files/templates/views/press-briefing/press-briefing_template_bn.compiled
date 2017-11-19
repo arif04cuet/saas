@@ -1,0 +1,25 @@
+<h3>
+প্রেস ব্রিফিং
+</h3>
+
+
+<table class="bordered">
+	<thead>
+		<th>শিরোনাম</th>
+		<th>ডাউনলোড</th>
+	</thead>
+<tbody>
+	<?php foreach ($contents as $content) { ?>
+	<tr>		
+		<td><?php echo renderLinkBy('press_briefing',$content['id'] ,$content['title_bn'] )?> 	</td>
+		<td>
+				<?php echo renderDownloadLink('press_briefing',$content['uploadpath'] ,$content['briefing_attachment'], FALSE, null,16); ?>				
+				<?php $i++; ?>
+		</td>
+		
+	</tr>
+ <?php } ?>
+</tbody>
+</table><style>#left-content table thead tr{
+text-align:left;
+}</style><script></script>

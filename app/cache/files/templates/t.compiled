@@ -1,0 +1,4 @@
+<h3><?php echo $content['title']; ?></h3>
+<div><?php echo $content['body']; ?></div>
+<h1><?php echo $content['t']; ?></h1>
+<?php echo renderImageThumbnil('t',$content['uploadpath'] ,$content['image'][0] ) ?>

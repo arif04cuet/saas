@@ -1,0 +1,22 @@
+<h3>
+	Office Order
+</h3>
+<table class="bordered">
+<tbody>
+	<?php $i=1; ?>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo $i; ?></td>
+		<td><?php echo renderLinkBy('office_order',$content['id'] ,$content['title_en'] )?></td>
+		<td> Download:	
+			<div>
+				<?php foreach ($content['file'] as $fname) { ?>
+					<?php echo renderDownloadLink('office_order',$content['uploadpath'] ,$fname); ?>
+ 				<?php } ?>							
+			</div>
+		</td>
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table><style></style><script></script>

@@ -1,0 +1,23 @@
+<table class="table bordered">
+    <tr>
+        <th>SL No</th>
+        <th>Designation</th>
+        <th></th>
+    </tr>
+    <?php $m=1;?>
+    <?php foreach($contents as $content):?>
+        <tr>
+            <td><?php echo $m;?></td>
+            <td><?php echo $content['name_en'];?></td>
+            <td><a href="/site/view/bbs_officials/<?php echo $content['name_bn']?>">View</a></td>
+        </tr>
+        <?php $m++;?>
+    <?php endforeach;?>
+
+</table><style>.desi_list a{color:blue}
+
+.desi_list th{font-weight: bold;
+text-align: left!important;
+background-color: #4BA614;
+color: white;
+padding: 5px;}</style><script></script>

@@ -1,0 +1,423 @@
+<article id="article">
+	<div id="article-title">
+   		<h1 title="<?php echo $content['title']; ?>"><?php echo teaser_text($content['title'], 60); ?></h1><!--<span class='st_fblike_large' displayText='Facebook Like'></span>-->
+        	<div id="print-email-social"  style="margin-top: 10px;">              
+				<span class='st_email_large ' displayText='Email'></span>
+				<span class='st_twitter_large' displayText='Tweet'></span>
+				<span class='st_facebook_large' displayText='Facebook'></span>
+          	</div><!-- print-email-social -->
+    </div> <!-- article-title -->
+    
+    <div class="label">নাগরিক সেবা আইডি</div>
+	<h2 style="color: red;">CS-1001</h2>
+	
+	<div class="label">সেবার বিবরণ</div>
+    <div id="article-description">
+		<div id="short" class="service_body"><?php echo teaser_text($content['body'], 200); ?> <span style="cursor: pointer; font-style: italic; font-size: 16px;"  onclick="short_details('details');">বিস্তারিত</span> </div>
+		<div id="details" style="display: none;" class="service_body"><?php echo $content['body']; ?> <span  style="cursor: pointer; font-style: italic; font-size: 16px;" onclick="short_details('short');">সংক্ষিপ্ত</span> </div>
+    </div><!-- article description -->
+    
+    <div id="service-time">
+    	<div class="label">সেবা প্রাপ্তির সময়</div><!-- label -->
+        <div id="service-time-content">			
+			<div ontouchstart="this.classList.toggle(\'hover\');" class="flip-container">
+				<div class="flipper">
+					<div class="front">
+						<?php echo $content['service_time_s']; ?>
+					</div>
+					<div class="back">
+						<?php echo $content['service_time']; ?>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--<a class="myTag"  style="float: right; margin: 0px -15px 20px 0px; cursor: pointer; color:#683091; " title="<?php echo $content['service_time']; ?>" >আরও</a>-->
+    </div><!-- service time -->
+    <div id="service-fee">
+    	<div class="label">প্রয়োজনীয় ফি</div><!-- label -->
+        <div id="service-fee-content">				
+				<div ontouchstart="this.classList.toggle(\'hover\');" class="flip-container">
+					<div class="flipper">
+						<div class="front">
+							<?php echo $content['service_fee_s']; ?>
+						</div>
+						<div class="back">
+							<?php echo $content['service_fees']; ?>
+						</div>
+					</div>
+				</div>
+		</div>
+		<!--<a class="myTag" style="float: right; margin: 0px -15px 20px 0px; cursor: pointer; color:#683091; " title="<?php echo $content['service_fees']; ?>" >আরও</a>-->
+    </div><!-- service fee -->
+   
+    <div id="service-place">
+        <div class="label">সেবা প্রাপ্তির স্থান</div><!-- label -->
+		<i class="flaticon-social19"></i> 
+        <div class="service-place-content">
+			<?php echo $content['service_place']; ?>
+		</div>
+    </div><!-- service-place -->
+    <div id="service-oc">
+        <div class="label">দায়িত্বপ্রাপ্ত কর্মকর্তা/কর্মচারী</div><!-- label -->
+		<i class="flaticon-social97"></i> 
+        <div class="service-oc-content">
+        	<?php echo $content['designations']; ?>
+        </div>
+    </div><!-- service-oc -->
+   
+    <div id="other-2">
+        <div class="label">প্রয়োজনীয় কাগজপত্র</div><!-- label -->
+        <div class="service-oc-content">
+        	<?php echo $content['service_papers']; ?>
+        </div>
+    </div><!-- other-2 -->
+   
+	
+	
+	 <div id="other-1">
+        <div class="label">সেবা প্রাপ্তির শর্তাবলি</div><!-- label -->
+        <div class="service-oc-content">
+			<?php echo $content['service_conditions']; ?>
+		</div>
+				
+    </div><!-- other-1 -->	
+	
+	
+	
+    <div id="other-2">
+        <div class="label">সংশ্লিষ্ট আইন ও বিধি</div><!-- label -->
+        <div class="service-oc-content">
+        	<?php echo $content['service_laws']; ?>
+        </div>
+    </div><!-- other-2 -->
+   
+	
+	 <div id="other-1">
+        <div class="label">সেবা প্রদানে ব্যর্থ হলে প্রতিকারকারী কর্মকর্তা</div><!-- label -->
+        <div class="service-oc-content">
+			<?php echo $content['upper_authority']; ?>
+		</div>
+				
+    </div><!-- other-1 -->	
+	
+	<?php $flow = renderImagePath('service_portal',$content['uploadpath'],$content['flow_chart']); ?>		
+	
+	 <div id="service-conditions">
+        <div class="label"><a href='<?php echo $flow?>' target='_blank' style="text-decoration: none;"><i class="flaticon-images11"></i><br>পদ্ধতি চিত্র (Process Map)</a></div><!-- label -->
+        <div id="service-conditions-content">
+        	<a href='<?php echo $flow?>' target='_blank' onclick=""><?php echo renderImageThumbnil('service_portal',$content['uploadpath'],$content['flow_chart']); ?></a>
+						  <img onclick="openWin('<?php echo $flow; ?>','<?php echo $content['title'] ;?>');" style="cursor: pointer;" title="প্রিন্ট"  alt="printer_icon" width="26" src="/themes/responsive_npf/images/print_btn.png" />
+			
+        </div>
+    </div><!-- service-conditions -->
+	
+	
+    <div id="contentxtual-links">
+    	<a class="btn bg-add" href="#" >অনলাইন আবেদন</a>
+        <a class="btn bg-a2iviolet" href="#">আবেদন ফরম</a>    	
+        <a class="btn bg-a2igreen" href="#">নমুনা আবেদন</a>
+    </div><!-- contextual-links -->
+</article>
+
+	
+
+<div id="printable_area_hidden" style="display: none; width: 100%;">	
+	<table cellpadding="5" cellspacing="5" width="100%" id="printable_area_hidden_tbl">
+		<tr>
+			<td colspan="2" align="center">
+				<h1><?php echo $content['title']; ?></h1>
+			</td>
+		</tr>
+		<tr>
+			<td width="30%" align="right">
+				<lable class="p_title">সেবা প্রাপ্তির সংক্ষিপ্ত বিবরণ</lable>
+			</td>
+			<td width="70%" align="left">
+				<p><?php echo $content['body']; ?></p>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">
+				<lable class="p_title">সেবা প্রাপ্তির সময়</lable>
+			</td>
+			<td align="left">
+				<p><?php echo $content['service_time']; ?></p>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">
+				<lable class="p_title">প্রয়োজনীয় ফি</lable>
+			</td>
+			<td  align="left">
+				<p><?php echo $content['service_fees']; ?></p>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">
+				<lable class="p_title">সেবা প্রাপ্তির স্থান</lable>
+			</td>
+			<td  align="left">
+				<p><?php echo $content['service_place']; ?></p>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">
+				<lable class="p_title">দায়িত্বপ্রাপ্ত কর্মকর্তা/কর্মচারী</lable>
+			</td>
+			<td  align="left">
+				<p><?php echo $content['designations']; ?></p>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">
+				<lable class="p_title">প্রয়োজনীয় কাগজপত্র</lable>
+			</td>
+			<td  align="left">
+				<p><?php echo $content['service_papers']; ?></p>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">
+				<lable class="p_title">সেবা প্রাপ্তির শর্তাবলি</lable>
+			</td>
+			<td  align="left">
+				<p><?php echo $content['service_conditions']; ?></p>
+			</td>
+		</tr>	
+		
+		<tr>
+			<td align="right">
+				<lable class="p_title">সংশ্লিষ্ট আইন ও বিধি</lable>
+			</td>
+			<td  align="left">
+				<p><?php echo $content['service_laws']; ?></p>
+			</td>
+		</tr>
+		
+		<tr>
+			<td align="right">
+				<lable class="p_title">সেবা প্রদানে ব্যর্থ হলে প্রতিকারকারী কর্মকর্তা</lable>
+			</td>
+			<td  align="left">
+				<p><?php echo $content['upper_authority']; ?></p>
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="2" align="center">
+				<lable class="p_title">পদ্ধতি চিত্র (Process Map)</lable>
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="2" align="center">
+				<img src="<?php echo $flow; ?>" />
+			</td>
+		</tr>
+		
+	</table>
+	<style>		
+		#printable_area_hidden_tbl .p_title
+		{
+			font-weight:bold;
+			color: #8f8f8f;
+		}
+		#printable_area_hidden_tbl h1
+		{
+			border-bottom: 5px solid #8cc641; 
+		}
+		table#printable_area_hidden_tbl tr td
+		{
+			font-size: 18px;			
+		}
+	</style>
+</div><style>#article
+{
+	margin-top: 5px;
+}
+
+.flip-container, .front, .back {
+	height: 145px !important;
+    width: 315px !important;
+	background-color: #F4F4F4 !important;
+}
+
+.back {
+	 box-sizing: border-box;
+    font-size: 20px !important;
+    line-height: 1 !important;
+    padding: 40px 20px;
+}
+
+#print_btn_div img
+{
+	display: none !important;
+}
+hr#print_div_hr {
+    display: none;
+}
+a
+{
+text-decoration: none !important;
+}
+hr {
+    box-sizing: none;
+    border-color: #ddd;
+}</style><script>function short_details(sel)
+{
+	 $(".service_body").hide();
+	 $("#"+sel).show();
+}
+
+function openWin(url,title)
+{
+/*
+var myWindow = window.open(url,'_blank');
+myWindow.document.write("<script>window.onload=function(){print();};<\/script>");
+*/
+	var htmlstring = "";
+	htmlstring='<html>\n';
+	htmlstring+='<head>\n';
+	htmlstring+='<title>সেবা প্রসেস ম্যাপ</title>\n';
+	htmlstring+='</head>\n';
+	htmlstring+='<body onload="print();">\n';
+	
+	htmlstring+="<h3 style='color: #A00000;'>"+title+" -এর প্রসেস ম্যাপ</h3>";
+	htmlstring+="<img src='"+url+"' />";
+
+	htmlstring+='</body>\n';
+	htmlstring+='</html>';
+	
+	newwindow=window.open();
+	newdocument=newwindow.document;
+	newdocument.write(htmlstring);
+	newdocument.close();
+		
+}
+function email_details_service(title)
+{
+	$("#c_email").show();
+	$("#btn_c_email").show();
+	
+	$("#btn_c_email").click(function(){		
+		alert("sending email...");	
+	});
+}
+
+function download_details_service(title)
+{
+	html2canvas($('#left-content'), {
+            onrendered: function(canvas) {
+               var img = canvas.toDataURL();
+				
+				var htmlstring = "";
+				htmlstring='<html>\n';
+				htmlstring+='<head>\n';
+				htmlstring+='<title>সেবা প্রোফাইল</title>\n';
+				htmlstring+='</head>\n';
+				htmlstring+='<body>\n';
+
+htmlstring+="<h3 style='color: #A00000;'>"+title+" -এর সেবা প্রোফাইল</h3>";
+htmlstring+="<img src="+img+" />";
+
+				htmlstring+='</body>\n';
+				htmlstring+='</html>';
+			
+			newwindow=window.open();
+			newdocument=newwindow.document;
+			newdocument.write(htmlstring);
+			newdocument.close();
+            }
+        });
+}
+
+function print_details_service(title)
+{
+	html2canvas($('#left-content'), {
+            onrendered: function(canvas) {
+               var img = canvas.toDataURL();
+				
+				var htmlstring = "";
+				htmlstring='<html>\n';
+				htmlstring+='<head>\n';
+				htmlstring+='<title>সেবা প্রোফাইল</title>\n';
+				htmlstring+='</head>\n';
+				htmlstring+='<body onload="print();">\n';
+
+htmlstring+='<div style="text-decoration: center;">\n';
+htmlstring+="<h3 style='color: #A00000;'>"+title+" -এর সেবা প্রোফাইল</h3>";
+htmlstring+="<img src="+img+" />";
+htmlstring+='</div>\n';
+
+				htmlstring+='</body>\n';
+				htmlstring+='</html>';
+			
+			newwindow=window.open();
+			newdocument=newwindow.document;
+			newdocument.write(htmlstring);
+			newdocument.close();
+            }
+        });
+}
+
+function print_details_service(title)
+{
+	html2canvas($('#left-content'), {
+            onrendered: function(canvas) {
+               var img = canvas.toDataURL();
+				
+				var htmlstring = "";
+				htmlstring='<html>\n';
+				htmlstring+='<head>\n';
+				htmlstring+='<title>সেবা প্রোফাইল</title>\n';
+				htmlstring+='</head>\n';
+				htmlstring+='<body onload="print();">\n';
+
+htmlstring+='<div style="text-decoration: center;">\n';
+htmlstring+="<h3 style='color: #A00000;'>"+title+" -এর সেবা প্রোফাইল</h3>";
+htmlstring+="<img src="+img+" />";
+htmlstring+='</div>\n';
+
+				htmlstring+='</body>\n';
+				htmlstring+='</html>';
+			
+			newwindow=window.open();
+			newdocument=newwindow.document;
+			newdocument.write(htmlstring);
+			newdocument.close();
+            }
+        });
+}
+
+$(function () {
+////////////////////////////////////////////////////////
+		var url = "../../npfadmin/services/getdetailsright?id=<?php echo $content['id']; ?>";
+		//alert(url);
+		$.post(url, function(data) {
+        })
+		.success(function(data) {
+			$("#right_dir").html(data);
+		})
+		.error(function() {
+		
+		})
+		.complete(function() {
+		
+		});
+////////////////////////////////////////////////////
+var url = "../../npfadmin/services/getdetailsrightpr?id=<?php echo $content['id']; ?>";
+		//alert(url);
+		$.post(url, function(data) {
+        })
+		.success(function(data) {
+			$("#right_pr").html(data);
+		})
+		.error(function() {
+		
+		})
+		.complete(function() {
+		
+		});
+////////////////////////////////////////////////////
+});
+</script>

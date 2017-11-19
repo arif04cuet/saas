@@ -1,0 +1,57 @@
+<script src="/themes/responsive_npf/templates/forms/js/jquery.highlights.js" type="text/javascript"></script>
+<div id="article-title">
+	<h1>
+		ফরম অনুসন্ধান ফলাফল
+	</h1>
+</div>
+
+<div id="statusbar">
+	<?php echo '<span class="italic">'.$q[0].'</span>'.' এর জন্য ফলাফল পাওয়া গেছে মোট '.digit_to_bangla(sizeof($contents), bn).' টি'.'<br>'; ?>
+</div>
+
+
+
+<ul class="front-tab-ajax-ul">
+<?php 
+foreach ($contents as $content){
+	echo '<li>';
+	echo '<i class="flaticon-right65"></i>'.'   ';
+	echo '<a href="http://www.forms.gov.bd/site/view/form-page/'.$content['id'].'">'.$content['title'].'</a>';
+	echo '</li>';
+
+}
+
+?>
+	
+</ul>
+
+<script>$('li a').highlight('<?php echo $q[0]; ?>');</script>
+
+<style>#printable_area a {
+    color: #444444;
+    text-decoration: none;
+}
+
+.front-tab-ajax-ul li{
+list-style:none;
+border-bottom:1px solid #efefef;
+
+}
+
+
+.italic {
+    color: #FFA500;
+}
+
+
+#statusbar {
+    background-color: #FAFAFA;
+    border: 1px solid #D8D8D8;
+    padding: 10px;
+	margin:20px 0;
+}
+
+
+.front-tab-ajax-ul{
+padding:0;
+}</style><script></script>

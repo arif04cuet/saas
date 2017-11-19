@@ -1,0 +1,9 @@
+<?php //var_dump($contents); ?>
+
+
+<h3>
+	<?php echo $contents[0]['title_bn']; ?>
+</h3><br>
+<p>
+		<?php echo $contents[0]['body_bn']; ?>
+</p><style></style><script></script>

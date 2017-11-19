@@ -1,0 +1,24 @@
+
+<?php $i=0;$m=0;?>
+
+<?php foreach ($contents as $content) { ?>
+	<?php if($i==0){ ?>
+	<div class="row">
+	<?php } ?>
+	<div id="box-<?php echo $content['box_order'];?>" class="six columns service-box box" >
+		<h4><?php echo $content['title']; ?></h4>
+		<?php echo renderImage('front_service_box',$content['uploadpath'] ,$content['image'], 110) ?>
+		
+		<ul class="caption fade-caption" style="margin:0">
+			<li><?php echo renderLinkServiceBox($content['link1'],$lang) ?></li>
+			<li><?php echo renderLinkServiceBox($content['link2'],$lang) ?></li>
+			<li><?php echo renderLinkServiceBox($content['link3'],$lang) ?></li>
+			<li><?php echo renderLinkServiceBox($content['link4'],$lang) ?></li>
+			
+		</ul>
+	</div>
+	<?php $i++;$m++; if($i==2 || $m==count($contents)){ ?>
+	</div>
+	<?php $i=0;} ?>
+<?php } ?>
+<style></style><script></script>

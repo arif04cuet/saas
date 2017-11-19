@@ -1,0 +1,9 @@
+<h2>গুরুত্বপূর্ণ লিংকসমূহ</h2>
+<ol>
+			<?php foreach ($contents as $lnk) { ?>	
+			
+				<li><?php  echo renderLink($lnk['link'], $lang)?></li>
+			<?php } ?>
+		</ol>
+
+<style></style><script></script>

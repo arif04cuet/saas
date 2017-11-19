@@ -1,0 +1,19 @@
+<h3><?php echo $content['title']; ?></h3>
+<span>Date : <?php echo $content['publish_date']; ?></span>
+<div><?php echo $content['body']; ?></div>
+
+<div class="photos">
+    <?php if ($content['photo']) { ?>
+        <?php foreach ($content['photo'] as $img) { ?>
+            <?php echo renderImage('press_note', $content['uploadpath'], $img);?>
+        <?php } ?>
+    <?php } ?>
+</div>
+
+<?php
+if (!empty($content['field_pdf'])) {
+    echo renderFileViewer('press_note', $content['uploadpath'], $content['field_pdf']);
+
+}
+?>
+<style></style><script></script>

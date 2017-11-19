@@ -1,0 +1,110 @@
+<?php
+
+//Update Counter
+//Update Counter
+$sql = 'update npfministryadmin.npf_content_forms set count=count+1 where id="'.$q[0].'"';
+db_query($sql);
+
+
+$title = $contents[0]['title_en']?$contents[0]['title_en']:$contents[0]['title_bn'];
+$body = $contents[0]['body_en']?$contents[0]['body_en']:$contents[0]['body_bn'];
+?>
+
+<div id="article-title">
+	
+	<h1><?php echo $title?></h1>
+	<div id="print-email-social">
+		
+		
+
+		
+		<a href="http://www.facebook.com/sharer.php?u=http://www.forms.gov.bd/site/view/form-page/<?php echo $contents['0']['id']?> &t=<?php echo $title ?>" target="_blank"><i class="flaticon-facebook12"></i></a>
+		
+		<a href="http://twitter.com/home?status=<?php echo $title ?>+http://www.forms.gov.bd/site/view/form-page/<?php echo $contents['0']['id']?>" target="_blank"><i class="flaticon-social19"></i></a> 
+		<a href="http://plus.google.com/share?url=http://www.forms.gov.bd/site/view/form-page/<?php echo $contents['0']['id']?> " target="_blank"><i class="flaticon-google10"></i></a> 
+	</div><!-- print-email-social -->
+</div>
+
+<p>	<?php echo $body;?></p>
+
+
+<?php echo renderFileViewer('forms',$contents['0']['uploadpath'] ,$contents['0']['multifiles'], $contents['0']["subdomain"]); ?><style></style><script>$(function () {
+
+		var url = "../../../../npfadmin/services/getministrylist";
+		//alert(url);
+		$.post(url, function(data) {
+			$("#sender-office-ministry-id").html("");
+        })
+		.success(function(data) {
+			$("#sender-office-ministry-id").html(data);
+		})
+		.error(function() {
+		
+		})
+		.complete(function() {
+		
+		});
+/*---------------------------------*/		
+		$("#sender-office-ministry-id").on("change", function(e) {
+		
+			var url = "../../../../npfadmin/services/getofficelayerlist?id="+$( this ).val();
+			//alert(url);
+			$.post(url, function(data) {
+				$("#sender-office-layer-id").html("");
+			})
+			.success(function(data) {
+				$("#sender-office-layer-id").html(data);
+			})
+			.error(function() {
+			
+			})
+			.complete(function() {
+			
+			});
+				
+		});
+/*---------------------------------*/
+/*---------------------------------*/		
+		$("#sender-office-layer-id").on("change", function(e) {
+		
+			var url = "../../../../npfadmin/services/getofficeoriginlist?id="+$( this ).val();
+			//alert(url);
+			$.post(url, function(data) {
+				$("#sender-office-origin-id").html("");
+			})
+			.success(function(data) {
+				$("#sender-office-origin-id").html(data);
+			})
+			.error(function() {
+			
+			})
+			.complete(function() {
+			
+			});
+				
+		});
+/*---------------------------------*/
+/*---------------------------------*/		
+		$("#sender-office-origin-id").on("change", function(e) {
+		
+			var url = "../../../../npfadmin/services/getofficelist?id="+$( this ).val();
+			//alert(url);
+			$.post(url, function(data) {
+				$("#sender-office-id").html("");
+			})
+			.success(function(data) {
+				$("#sender-office-id").html(data);
+			})
+			.error(function() {
+			
+			})
+			.complete(function() {
+			
+			});
+				
+		});
+/*---------------------------------*/
+		
+
+});
+</script>

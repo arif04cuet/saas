@@ -1,0 +1,4 @@
+<style></style><script>function showOnYear(t){
+	var v = $(t).val();
+	window.location = "/site/view/independence_awardees/"+v;
+}</script>

@@ -1,0 +1,21 @@
+<?php foreach($contents as $content){ ?>
+<div class="column block">
+	<h5 class="bk-org title">
+	<?php echo $content['designation_new_bn']; ?>	
+	</h5>
+<?php echo renderImage('office_head', $content['uploadpath'], $content['office_head_photo'], '100')?>
+<?php echo teaser_text($content['office_head_des_bn'], 100);?>
+
+	<p>
+					<?php echo renderLinkBy('office_head',$content['id'], "বিস্তারিত" ); ?>
+	</p>
+</div>
+<?php } ?>
+<style>.column.block a{
+text-decoration:underline;
+}
+
+#right-content img {
+    float: left;
+    margin-right: 20px;
+}</style><script></script>

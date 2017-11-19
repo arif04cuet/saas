@@ -1,0 +1,65 @@
+<div class="live-search-box">
+	<input  value="" id="live-search-all-form" placeholder="ফরম খুঁজতে এখানে লিখুন">	
+</div>
+
+
+<ul id="all-form-tab" class="front-tab-ajax-ul">
+
+<?php foreach ($contents as $content) { ?>
+	
+	
+	<li>
+		
+		<?php 
+
+		//-------------tappware	
+        $new_title = str_replace(" ","-",$content['title']);
+        $new_title = htmlspecialchars($new_title, ENT_QUOTES);
+        //-------------tappware
+		
+		echo '<i class="flaticon-arrow73"></i>'.'   ';
+
+		echo '<a href="http://www.forms.gov.bd/site/view/form-page/'.$content['id'].'/'.$new_title.'">'.teaser_text($content['title'], 100).'</a>'; 
+		
+		?>
+
+		<?php //echo renderLinkBy('forms',$content['id'] ,$content['title'] )?>
+	</li>
+		
+ <?php } ?>
+	
+</ul>
+
+
+<style>#printable_area a {
+    color: #444444;
+    text-decoration: none;
+}
+
+li{
+list-style:none;
+
+}
+
+
+.live-search-box > input {
+    margin: 10px 0;
+    padding: 10px;
+    width: 97%;
+}
+
+#front-tab ul{
+padding:0;
+}</style><script>(function($) {
+	$('input#live-search-all-form').quicksearch('#front-tab-content-pcat ul li');
+})(jQuery);
+
+$(document).ready(function() {
+	$( "#live-search-all-form" ).keyup(function() {
+		var v= $(this).val();
+		//console.debug(v);
+		$('#all-form-tab li a').removeHighlight();
+		$('#all-form-tab li a').highlight(v);			
+	});
+});
+</script>

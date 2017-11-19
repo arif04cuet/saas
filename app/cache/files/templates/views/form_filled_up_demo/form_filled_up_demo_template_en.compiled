@@ -1,0 +1,57 @@
+<div class="live-search-box">
+    <input value="" id="live-search-all-form" placeholder="Search form here">
+</div>
+
+
+<ul id="all-form-tab" class="front-tab-ajax-ul">
+
+    <?php foreach ($contents as $content) { ?>
+
+
+    <?php
+    if (strlen($content['filled_up_form'][0]['name']) != "") {
+        echo '<li>';
+        echo '<i class="flaticon-arrow73"></i>' . '   ';
+        echo '<a href="http://www.forms.gov.bd/site/view/form-demo/' . $content['id'] . '/' . str_replace(' ', '-', $content['title']) . '">' . teaser_text($content['title'], 100) . '</a>';
+        echo '</li>';
+    }
+    ?>
+
+
+    <?php } ?>
+
+</ul>
+
+
+<style>#printable_area a {
+    color: #444444;
+    text-decoration: none;
+}
+
+li{
+list-style:none;
+
+}
+
+
+.live-search-box > input {
+    margin: 10px 0;
+    padding: 10px;
+    width: 97%;
+}
+
+#front-tab ul{
+padding:0;
+}</style><script>(function($) {
+	$('input#live-search-all-form').quicksearch('#front-tab-content-fuf ul li');
+})(jQuery);
+
+$(document).ready(function() {
+	$( "#live-search-all-form" ).keyup(function() {
+		var v= $(this).val();
+		//console.debug(v);
+		$('#all-form-tab li a').removeHighlight();
+		$('#all-form-tab li a').highlight(v);			
+	});
+});
+</script>

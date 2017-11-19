@@ -1,0 +1,99 @@
+<h3 class="h3">
+	আপনার কাঙ্ক্ষিত সংখ্যা
+</h3>
+
+<?php if(empty($contents)): ?>
+<h2 style="text-align:center">
+	দুঃখিত আপনার কাঙ্ক্ষিত সংখ্যাটি নেই
+	<br/>
+	 <button onclick="goBack()">পুনরায় অনুসন্ধান করুন</button>
+
+</h2>
+<?php else: ?>
+<div class="cover_image" style="border-radius: 6px;margin-left:35%">
+		<h5 class="h5">
+			<?php echo $contents[0]['month']; ?> - <?php echo $contents[0]['year']; ?>
+		</h5>
+		<br/>
+	<?php if (($contents[0]['cover_photo'][0]['name'] == '')) { ?> 
+		<a href="/site/view/krishi_kotha_second/<?php echo $contents[0]['year']; ?>/<?php echo $contents[0]['month']; ?>">
+		<?php echo renderImage('krishi_kotha', $contents[0]['uploadpath'], $contents[0]['image'], '125','172'); ?>
+		</a>
+	<?php } else { ?>
+		<a href="/site/view/krishi_kotha_second/<?php echo $contents[0]['year']; ?>/<?php echo $contents[0]['month']; ?>">
+		<?php echo renderImage('krishi_kotha', $contents[0]['uploadpath'], $contents[0]['cover_photo'], '125','172'); ?>
+		</a>
+	<?php } ?>
+	
+</div>
+<br/>
+<button class="mybtn" onclick="goBack()">পুনরায় অনুসন্ধান করুন</button>
+<?php endif; ?>
+
+<style>.h3{
+background: none repeat scroll 0% 0% #87A00D;
+height: 40px;
+line-height: 40px;
+padding: 5px 10px 0px;
+color: #FFF;
+font-weight: bold;
+font-size: 16px;
+font-family: "solaimanLipi";
+}
+.cover_image{
+border:1px solid black;
+padding: 5px;
+float:left;
+margin:3px;
+}
+.cover_image span{
+margin-left:25px;
+}
+.top_area{
+width:100%;
+}
+.h5{
+background-color: rgb(96, 149, 19);
+margin: -6px;
+padding: 4px;
+border-radius: 6px 6px 0px 0px;
+text-align: center;
+font-weight: bold;
+color: white;
+border: 1px solid black;
+border-bottom: 0px;
+}
+.search_area{
+width: 140px;
+float: right;
+border: 1px solid rgb(96, 149, 19);
+height: 155px;
+padding: 5px;
+border-radius: 5px;
+}
+.search_area select{
+width: 110px;
+float: right;
+}
+.search_area label{
+float: left; 
+height: 44px;
+}
+h2 button{
+background-color: #609513;
+color: white;
+font-weight: normal;
+font-size: 12px;
+}
+.mybtn{
+float: left;
+margin-top: 220px;
+margin-left: -135px;
+background-color: rgb(96, 149, 19);
+color: white;
+font-weight: normal;
+font-size: 13px;
+}</style><script>function goBack() {
+    window.history.back();
+}
+</script>

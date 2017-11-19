@@ -1,0 +1,27 @@
+<h3>
+	সংবাদ বিজ্ঞপ্তি
+</h3>
+<table class="bordered"  style="text-align:center;">
+	<thead>
+	<th>ক্রমিক</th>
+		<th>শিরোনাম</th>
+		<th>ডাউনলোড</th>
+	</thead>
+<tbody>
+	<?php $i=1;?>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo digit_to_bangla($i+$offset,$lang)?></td>
+		<td><?php echo $content['title'] ?></td>
+		<td>
+			<div>
+				<?php echo renderDownloadLink('press_release',$content['uploadpath'] ,$content['pdf'], FALSE,null, 16) ?>
+				<?php echo renderDownloadLink('press_release',$content['uploadpath'] ,$content['doc'], FALSE,null, 16) ?>				
+			</div>
+		</td>
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table>
+<?php echo digit_to_bangla(renderPagination('press_release',$paginate),'en')?><style></style><script></script>

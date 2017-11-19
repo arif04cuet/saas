@@ -1,0 +1,29 @@
+<h3>
+কমিটি
+</h3>
+<table class="bordered">
+<tbody>
+	<?php $i=1; ?>
+	<?php foreach ($contents as $content) { ?>
+	 <tr>
+   		<th>ক্রমিক</th>
+   		<th>কমিটির নাম</th>
+		 <th>কমিটি গঠনের তারিখ</th>
+		 <th>ডাউনলোড</th>
+ 	</tr>
+	<tr>
+		<td><?php echo digit_to_bangla($i,$lang)?></td>
+		
+		<td><?php echo $content['committee_name_bn'] ?></td>
+		<td><?php echo $content['committee_formation_date'] ?></td>
+	
+		<td> ডাউনলোড:	
+			<div>
+				<?php echo renderDownloadLink('committees',$content['uploadpath'] ,$content['file']) ?>
+			</div>
+		</td>
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table><style></style><script></script>

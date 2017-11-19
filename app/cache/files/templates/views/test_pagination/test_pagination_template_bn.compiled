@@ -1,0 +1,18 @@
+<table>
+	<thead>
+		<tr>
+			<th>Id</th>	
+			<th>Title</th>
+		</tr>
+	</thead>
+	<tbody>
+<?php foreach($contents as $content){?>
+		<tr>
+			<td><?php echo $content['id']?></td>
+			<td><?php echo $content['details_bn']?></td>
+		</tr>
+<?php } ?>
+	</tbody>	
+</table>
+<?php echo renderPagination('test_pagination',$paginate)?>
+<style></style><script></script>

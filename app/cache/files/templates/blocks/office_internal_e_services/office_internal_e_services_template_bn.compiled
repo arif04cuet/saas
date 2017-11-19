@@ -1,0 +1,26 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a href="#collapseThree" data-parent="#accordion" data-toggle="collapse" class="accordion-toggle collapsed">
+          আভ্যন্তরীণ ই-সেবা
+        </a><i class="indicator flaticon-cross8 pull-right"></i>
+		<i class=""></i>
+      </h4>
+    </div>
+    <div class="panel-collapse collapse" id="collapseThree">
+      <div class="panel-body">
+        <ul style="padding:0;margin: 0" class="list-unstyled">
+								<li><i class="flaticon-events violet"></i><a href="#">ইভেন্ট ক্যালেন্ডার</a></li>                	
+								<li><i class="flaticon-social97 green"></i><a href="#">প্রেস রিলিজ</a></li>                	
+								<li><i class="flaticon-press4 orange"></i><a href="#">প্রকাশনা</a></li>                	
+								<li><i class="flaticon-order blue"></i><a href="#">অফিস আদেশ</a></li>                	
+								<li><i class="flaticon-law1 pink"></i><a href="#">পলিসি</a></li>                	
+								<li><i class="flaticon-images11 golden"></i><a href="#">ফটোগ্যালারী</a></li>                	
+								<li><i class="flaticon-newspapre green"></i><a href="#">সার্কুলার</a></li>                	
+								<li><i class="flaticon-rss11 maroon"></i><a href="#">নোটিস</a></li>                	
+								<li><i class="flaticon-start green"></i><a href="#">ভিডিও গ্যালারী</a></li>                	
+								<li><i class="flaticon-folder63 red"></i><a href="#">আর্কাইভ</a></li>
+							</ul>
+      </div>
+    </div>
+  </div><style></style><script></script>

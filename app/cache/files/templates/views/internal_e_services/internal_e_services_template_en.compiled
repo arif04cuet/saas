@@ -1,0 +1,16 @@
+<h3>
+Internal E-services
+</h3>
+<table>
+<tbody>
+	<?php $i=1; ?>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo digit_to_bangla($i,$lang)?></td>
+		<td><?php  echo renderLink($content['link'], en)?></td>
+		
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table><style></style><script></script>

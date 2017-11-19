@@ -1,0 +1,29 @@
+<h3>
+বিজ্ঞপ্তি/পরিপত্র/অফিস আদেশ
+</h3>
+<table>
+
+		<tr>
+			<td>S/L</td>
+		<td width="60%">Title</td>
+		<td>Category</td>
+		<td>Date</td>
+		<td>Download</td>
+		
+			</tr>
+
+<tbody>
+	<?php $i=1; ?>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo digit_to_bangla($i,$lang)?></td>
+		<td><?php echo renderLinkBy('document_type',$content['id'] ,$content['title'] )?></td>
+		<td><?php echo $content['category']; ?></td>
+		<td><?php echo $content['created']; ?></td>
+		<td><?php echo renderDownloadLink('document_type',$content['uploadpath'] ,$content['pdf_file'][0]); ?></td>
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table>
+<?php echo renderPagination('document_type',$paginate)?><style></style><script></script>

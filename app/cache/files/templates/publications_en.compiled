@@ -1,0 +1,14 @@
+<h3><?php echo $content['title']; ?></h3>
+
+<?php 
+	if(!empty($content['pdf'])){
+		echo renderFileViewer('publications',$content['uploadpath'] ,$content['pdf']);	
+
+	}
+?>
+<?php 
+	if(!empty($content['doc'])){
+		echo renderFileViewer('publications',$content['uploadpath'] ,$content['doc']);	
+
+	}
+?><style></style><script></script>

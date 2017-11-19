@@ -1,0 +1,26 @@
+<h3>
+	প্রকাশনাসমূহ
+</h3>
+<table class="bordered">
+	<thead>
+	<th>ক্রমিক</th>
+		<th>শিরোনাম</th>
+		<th>ডাউনলোড</th>
+	</thead>
+<tbody>
+	<?php $i=1; ?>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo digit_to_bangla($i,$lang)?></td>
+		<td><?php echo $content['title'] ?></td>
+		<td>
+			<div>
+				<?php echo renderDownloadLink('publications',$content['uploadpath'] ,$content['pdf'], FALSE, null, 16) ?>
+				<?php echo renderDownloadLink('publications',$content['uploadpath'] ,$content['doc'], FALSE, null, 16) ?>				
+			</div>
+		</td>
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table><style></style><script></script>

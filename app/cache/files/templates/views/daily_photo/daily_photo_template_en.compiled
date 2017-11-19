@@ -1,0 +1,37 @@
+<h3>
+    Daily photo
+</h3>
+<?php if(count($contents)>0):?>
+<table class="bordered" style="text-align:center;">
+    <thead>
+    <th>ID</th>
+    <th>Publish Date</th>
+    <th>Image</th>
+    </thead>
+    <tbody>
+    <?php $i = 1; ?>
+    <?php foreach ($contents as $content) { ?>
+		<tr>
+			<td><?php echo digit_to_bangla($i + $offset, $lang) ?></td>
+			<td><?php echo $content['created']?></td>
+			<td>
+				<?php foreach ($content['upload'] as $img) { ?>
+				<a target="_blank" class="title" href="<?php echo getImagePath('daily_photo', $content['uploadpath'], $img) ?>">
+					<img width="300" height="200" class="" src="<?php echo getImagePath('daily_photo', $content['uploadpath'], $img) ?>"
+					 alt="<?php echo $img['caption_en']; ?>" title="<?php echo $img['caption_en']; ?>"/>
+				</a>
+				<?php } ?>
+			</td>
+		</tr>
+    <?php $i++; ?>
+    <?php } ?>
+    </tbody>
+</table>
+<?php echo renderPagination('daily_photo',$paginate)?>
+
+<?php endif;?>
+
+<a href="http://pressinform.portal.gov.bd/site/view/daily_photo_archive">Daily photo archive</a>
+
+
+<style></style><script></script>

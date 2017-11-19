@@ -1,0 +1,2 @@
+ <img class="" src="<?php echo getImagePath('daily_photo', $content['uploadpath'], $img) ?>"
+                 alt="<?php echo $img['caption_en']; ?>" title="<?php echo $img['caption_en']; ?>"/><style></style><script></script>

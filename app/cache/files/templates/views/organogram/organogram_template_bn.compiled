@@ -1,0 +1,5 @@
+<h3>সাংগঠনিক কাঠামো</h3><br>
+
+<img alt="<?php echo $contents[0]['title_bn']; ?>" src="<?php  echo renderImagePath('organogram', $contents[0]['uploadpath'], $contents[0]['file']) ; ?>" class="img-responsive">
+	
+<style></style><script></script>

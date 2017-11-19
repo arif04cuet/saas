@@ -1,0 +1,10 @@
+<h3><?php echo $content['title']; ?></h3>
+
+<?php if(isset($content['attachments'])) echo renderFileViewer('notices',$content['uploadpath'] ,$content['attachments']); ?>
+
+<hr/>
+<div>
+	Event Date: <i><?php echo $content['eventdate']; ?></i>, 
+	Publish Date: <i><?php echo $content['pubdate']; ?></i>
+</div>
+<div><?php echo $content['body']; ?></div><style></style><script></script>

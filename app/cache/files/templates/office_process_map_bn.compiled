@@ -1,0 +1,4 @@
+<h5><?php echo $content[$title]; ?></h5>
+<p>
+<?php  echo renderImage('office_process_map', $content[0]['uploadpath'], $content[0]['process_map_new']) ; ?>
+</p><style></style><script></script>

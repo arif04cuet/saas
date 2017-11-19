@@ -1,0 +1,19 @@
+<div class="row gov-initiatives">
+	<h5>Initiatives:</h5>
+	<div class="gov-init-ticker">
+		<ul >
+			<?php foreach ($contents as $content) { ?>
+			
+			<?php 
+			if(strlen(($content['title']) > 75)
+			 $title = teaser_text($content['title'], 75)."...";
+			?>
+			
+	<li><?php echo renderLinkBy('gov_initiatives', $content['id'], $title) ?> <i>(<?php echo digit_to_bangla($content['pubdate'],$lang)?>)</i></li>   
+ <?php } ?>
+		</ul>
+		<div style="float:right">
+			<a class="btn" href="/site/view/initiatives">All</a>
+		</div>
+	</div>
+</div><style></style><script></script>

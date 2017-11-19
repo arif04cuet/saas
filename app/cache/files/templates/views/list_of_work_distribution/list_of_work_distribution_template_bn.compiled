@@ -1,0 +1,68 @@
+<h3>কর্মবণ্টন</h3>
+<?php $result = makeArrayGroup(array('w_name','b_name','s_name'), $contents); ?>
+<table class="bordered">
+	<thead>
+		<tr>
+			<th width="300px">অনুবিভাগ</th>
+			<th width="300px">অধিশাখা</th>
+			<th width="300px">শাখা</th>
+		</tr>
+	</thead>
+</table>
+<table class="bordered">
+	<tbody>
+		<?php foreach($result as $wk => $wv){?>
+		<tr>
+			<td width="300px"><?php echo '<a href="/site/view/wing_work_distribution?t='.$wk.'">'.$wk.'</a>';?></td>
+			<td>
+				<table>
+					<tbody>						
+						<?php foreach($wv as $bk => $bv){ ?>
+						<tr>
+							<td  width="300px"><?php echo '<a href="/site/view/section_work_distribution?t='.$bk.'">'.$bk.'</a>';?></td>
+							<td>
+								<table>
+									<tbody>
+										<?php foreach($bv as $sk => $sv){?>
+										<tr>
+											<td  width="300px"><?php echo '<a href="/site/view/cell_work_distribution?t='.$sk.'">'.$sk.'</a>'; ?></td>
+										</tr>
+										<?php } ?>
+									</tbody>
+								</table>							
+							</td>						
+						</tr>
+						<?php }?>
+					</tbody>
+				</table>			
+			</td>
+		</tr>	
+		<?php } ?>
+	</tbody>
+</table>
+<style>
+	table tbody tr:nth-child(2n) {
+		background: none !important;
+	}
+	table th, table td {
+		border-top: none;
+	}
+	table tbody tr:hover td, table tbody tr:hover th {
+		background-color: #FFF;
+	}
+	table-bordered th, table-bordered td {
+		border-left: none;
+	}
+	#left-content table tbody tr:last-child {
+		border-bottom: none;
+	}
+</style><style>table.bordered tr
+{
+	border: 1px #999 solid;
+}
+table.bordered tr td,
+table.bordered tr th
+{
+	padding: 10px 0 0 10px;
+}
+</style><script></script>

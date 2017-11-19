@@ -1,0 +1,21 @@
+<h3>Press Trend</h3>
+<table class="bordered">
+<tbody>
+	<?php $i=1; ?>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo digit_to_bangla($i,$lang)?></td>
+		<td>
+			<a href="/site/press_trend/<?php echo $content['id'] ?>"><?php echo $content['title'] ?></a></td>
+		
+		<td> ডাউনলোড:	
+			<div>
+				<?php echo renderDownloadLink('press_trend',$content['uploadpath'] ,$content['field_pdf']) ?>
+			</div>
+		</td>
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table>
+<style></style><script></script>

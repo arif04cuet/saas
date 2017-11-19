@@ -1,0 +1,21 @@
+<h3><?php echo $contents[0]['category']?></h3>
+<table class="bordered">
+    <tbody>
+    <?php $i=1; ?>
+    <?php foreach ($contents as $content) { ?>
+    <tr>
+        <td><?php echo digit_to_bangla($i,$lang)?></td>
+        <td>
+            <a href="/site/allnotes/<?php echo $content['id'] ?>"><?php echo $content['title'] ?></a></td>
+        <td><?php echo $content['publish_date']; ?></td>
+
+        <td> ডাউনলোড:
+            <div>
+                <?php echo renderDownloadLink('allnotes',$content['uploadpath'] ,$content['field_pdf']) ?>
+            </div>
+        </td>
+    </tr>
+    <?php $i++; ?>
+    <?php } ?>
+    </tbody>
+</table><style></style><script></script>

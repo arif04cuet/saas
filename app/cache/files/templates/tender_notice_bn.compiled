@@ -1,0 +1,21 @@
+<h3>
+দরপত্রের তথ্য
+</h3>
+<table class="bordered">
+<tbody>
+	<?php $i=1; ?>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo digit_to_bangla($i,$lang)?></td>
+		<td><?php echo $content['title'] ?></td>
+		<td> ডাউনলোড:	
+			<div>
+				<?php echo renderDownloadLink('tender_notice',$content['uploadpath'] ,$content['pdf']) ?>
+				<?php echo renderDownloadLink('tender_notice',$content['uploadpath'] ,$content['doc']) ?>				
+			</div>
+		</td>
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table><style></style><script></script>

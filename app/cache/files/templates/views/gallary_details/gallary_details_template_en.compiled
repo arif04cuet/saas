@@ -1,0 +1,31 @@
+<style>.imagegallery img{
+border-radius: 4px;
+box-shadow: 0px 0px 4px gray;
+margin: 5px;
+float:left;
+}
+.h3{
+background-color: #609513;
+color: white;
+font-size: 20px;
+font-weight: bold;
+padding: 0px 15px;
+}
+select{
+width: 220px;
+border-radius: 5px;
+height: 30px;
+margin: 5px auto;
+box-shadow: 0px 0px 6px #609513;
+border: 1px solid #609513;
+}</style><script>$(document).ready(function(){
+		        $(".yoxview").yoxview();
+		    });
+
+$(".year").change(function(){
+//alert(document.URL);
+var v = $(".year :selected").val();
+var name = $('.h3').text().trim();
+window.location = "/site/view/gallary_details/"+name+"/"+v;
+});
+</script>

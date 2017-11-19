@@ -1,0 +1,9 @@
+<h3><?php echo $content['title']; ?></h3>
+<div><?php echo $content['body']; ?></div>
+
+<?php 
+	if(!empty($content['field_page_file'])){
+		echo renderFileViewer('phytosanitary',$content['uploadpath'] ,$content['field_page_file']);	
+
+	}
+?><style></style><script></script>

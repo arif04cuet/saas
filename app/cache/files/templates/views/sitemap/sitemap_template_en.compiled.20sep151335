@@ -1,0 +1,86 @@
+<h3>
+  Sitemap
+</h3>
+<?php
+$root = 'pmo';
+$tree = array();
+$tree[$root] = array('parent' => 'root', 'title' => $domain_info['sitename'], 'link' => '/');
+?>
+<div class="sitemap">
+
+    <?php
+    global $domain_info;
+    $domainid = $domain_info['id'];
+
+    //initialize sitemap with main menu
+    $sitemap = initSitemap($tree, $root);
+    //add service box links
+    $sql = "select id,title_bn,title_en,link1,link2,link3,link4 From npfministryadmin.npf_content_front_service_box where active=1 AND publish=1 AND domain_id = '$domainid' order by box_order";
+    $sitemap = addLinks($sql, $sitemap, 'service_box', false);
+
+    // add important links
+    $sitemap['important_links'] = array('parent' => $root, 'title' => 'Important Links', 'link' => 'nolink');
+    $sql = "select id,title_bn,title_en,link from npfministryadmin.npf_content_external_links where active=1 AND publish=1 AND domain_id = '$domainid' order by weight desc";
+    $sitemap = addLinks($sql, $sitemap, 'important_links', $lang);
+
+    // add Internal Service Links
+    $sitemap['internal_eservices'] = array('parent' => $root, 'title' => 'Internal e-Service', 'link' => 'nolink');
+    $sql = "select id,title_bn,title_en,link from npfministryadmin.npf_content_internal_eservices where active=1 AND publish=1 AND domain_id = '$domainid'";
+    $sitemap = addLinks($sql, $sitemap, 'internal_eservices', $lang);
+
+    // add Internal Service Links
+    $sitemap['central_eservices'] = array('parent' => $root, 'title' => 'Central e-Service', 'link' => 'nolink');
+    $sql = "select id,title_bn,title_en,link from npfministryadmin.npf_content_central_eservices where active=1 AND publish=1";
+    $sitemap = addLinks($sql, $sitemap, 'central_eservices', $lang);
+
+    //add footer menu
+    $sitemap['footer'] = array('parent' => $root, 'title' => 'Footer', 'link' => 'nolink');
+    $sql = "select id,title_bn,title_en,link from npfministryadmin.npf_content_footer_menu where active=1 AND publish=1 AND domain_id = '$domainid'";
+    $sitemap = addLinks($sql, $sitemap, 'footer', false);
+
+    ?>
+    <?php parseAndPrintTree('root', $sitemap); ?>
+    <?php
+        /*========== Start View Site map================*/
+
+        $str = '<?xml version="1.0" encoding="UTF-8"?>';
+        $str .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">';
+        global $domain_info;
+        $domain_subdomain = $domain_info['subdomain'];
+
+        $site_subdomain = str_replace(".portal.",".",$domain_subdomain);
+        
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/</loc>";
+        $str .= '<priority>1.0</priority>';
+        $str .= '</url>';
+
+        $str .= createXML('root', $sitemap); 
+
+        $str .= '</urlset>';
+
+        $dir = "sitemap/".$site_subdomain;
+        $fn = $dir."/sitemap.xml";
+        if (!is_dir($dir)) {
+            mkdir($dir, 0777, true);       
+        }
+
+        unlink($fn);
+
+        $file = fopen($fn, "a+");
+        $size = filesize($fn);
+
+        fwrite($file, $str);
+        $text = fread($file, $size);
+        fclose($file); 
+        $xmlLink = 'http://www.'.$site_subdomain.'/'.$fn;
+
+        ?>
+
+        <a class="btn left" href="<?php echo $xmlLink; ?>">XML Sitemap</a>
+        <?php  
+        /*===============Site Map work End=================*/
+    
+?>
+    
+</div><style></style><script></script>

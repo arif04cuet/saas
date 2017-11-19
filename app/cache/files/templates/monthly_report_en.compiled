@@ -1,0 +1,16 @@
+<h3><?php echo $content['title']; ?></h3>
+<div><?php echo $content['body']; ?></div>
+
+<?php 
+	if(!empty($content['pdf'])){
+		echo renderFileViewer('monthly_report',$content['uploadpath'] ,$content['pdf']);	
+
+	}
+?>
+
+<?php 
+	if(!empty($content['doc'])){
+		echo renderFileViewer('monthly_report',$content['uploadpath'] ,$content['doc']);	
+
+	}
+?><style></style><script></script>

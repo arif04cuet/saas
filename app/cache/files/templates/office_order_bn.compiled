@@ -1,0 +1,14 @@
+<h3><?php echo $content['title']; ?></h3>
+<div><?php echo $content['body']; ?></div>
+
+<?php
+
+$uploadPath = $content['uploadpath'];
+
+foreach ($content['file'] as $file) {
+    if (!empty($file)) {
+        echo renderImage('office_order', $uploadPath, $file);
+    }
+}
+?>
+<style></style><script></script>

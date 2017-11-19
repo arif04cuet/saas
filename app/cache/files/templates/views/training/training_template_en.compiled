@@ -1,0 +1,22 @@
+<h3>
+	Training
+</h3>
+<table class="bordered">
+<tbody>
+	<?php $i=1; ?>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo digit_to_bangla($i,$lang)?></td>
+		<td><?php echo renderLinkBy('training',$content['id'] ,$content['title'] )?></td>
+		<td> Download:	
+			<div>
+				<?php foreach ($content['file'] as $fname) { ?>
+					<?php echo renderDownloadLink('training',$content['uploadpath'] ,$fname); ?>
+ 				<?php } ?>							
+			</div>
+		</td>
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table><style></style><script></script>

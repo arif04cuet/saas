@@ -1,0 +1,5 @@
+<a href="http://<?php echo $content['domainname']['subdomain']; ?>"><?php echo $content['domainname']['name']; ?></a>
+<br/>
+<?php echo $content['fld_date']; ?>
+<br/>
+<?php echo $content['fld_number']; ?><style></style><script></script>

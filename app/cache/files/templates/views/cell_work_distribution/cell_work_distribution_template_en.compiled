@@ -1,0 +1,28 @@
+<div class="work_distribution">
+<?php $result = makeArrayGroup(array('w_name','b_name','s_name'), $contents); ?>
+<?php foreach($result as $wk => $wv){?>
+		<?php foreach($wv as $bk => $bv){ ?>
+			<ul>
+				<?php foreach($bv as $sk => $sv){?>
+				<li>
+				<?php echo '<h3><a href="#">'.$sk.'</a></h3>'; ?>
+				<ul><li>
+					<?php echo $sv[0]['details'] ?>
+					</li>
+					</ul>
+				</li>
+				<?php } ?>
+			</ul>
+		<?php }?>
+<?php } ?>
+</div><style>.work_distribution ul {
+    clear: both;
+list-style:none;
+
+}
+
+
+.work_distribution ul li {
+    clear: both;
+list-style:none;
+}</style><script></script>

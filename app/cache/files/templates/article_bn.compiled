@@ -1,0 +1,8 @@
+<h3><?php echo $content['title']; ?></h3>
+<div><?php echo $content['body']; ?></div>
+<?php 
+	if(!empty($content['photo'])){
+		echo renderImage('article',$content['uploadpath'] ,$content['photo']);	
+	}
+?>
+<style></style><script></script>

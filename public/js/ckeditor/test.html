@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Uploads plugin for CKEditor 4 sample</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="ckeditor.js"></script>
+	<link href="sample.css" rel="stylesheet" type="text/css">
+
+		<style>
+
+		/* The following styles are just to make the page look nice. */
+
+		*[contenteditable="true"]
+		{
+			padding: 10px;
+		}
+
+		#columns
+		{
+			color: #333;
+			overflow: hidden;
+			padding: 20px 0;
+		}
+
+		#columns > div
+		{
+			float: left;
+			width: 33.3%;
+		}
+
+		#columns #column1 > div
+		{
+			margin-left: 1px;
+		}
+
+		#columns #column3 > div
+		{
+			margin-right: 1px;
+		}
+
+		#columns > div > div
+		{
+			margin: 0px 10px;
+			padding: 10px 20px;
+		}
+
+		#columns blockquote
+		{
+			margin-left: 15px;
+		}
+
+		/* responsive images for inline demo */
+		img, svg, .SimpleUploadsTmpWrapper  {
+		  height: auto;
+		  max-width: 100%;
+		}
+	</style>
+</head>
+<body>
+
+	<h1 class="samples">
+		SimpleUploads for CKEditor demo page
+	</h1>
+	<div class="description">
+	<p>
+		This sample shows the usage of the SimpleUpload plugin.<br>
+		Depending on the browser that you're using you will have different options to upload files or images. This is due to the different capabilities of each browser.
+	</p>
+	<p>
+		In all the browsers you can upload a file or an image by clicking the addFile or addImage buttons. All the browsers means that even IE8 is supported for this option and it's just the simplest way for everyone to add files without having to deal with all the options in the default image or link dialogs.
+	</p>
+	<p>
+		If you use a modern browser (current versions of Firefox, Chrome, Opera and Safari, as well as IE 10) you will be able to upload an image or file just by dropping it into the editor.
+	</p>
+	<p>
+		With Chrome and Firefox, you can copy an image or part of it to your clipboard in a program like Photoshop, Paint.Net, etc... and then paste it into the contents with Ctrl+V.
+	</p>
+	<p>
+		With Firefox, you can select a file in your desktop, copy it to the clipboard (Ctrl+C) and then paste it into the editor with Ctrl+V.
+	</p>
+	<p>
+		The CKEditor dialogs that include a "QuickUpload" buttons are automatically modified to provide the same control options (check extension, file size...) and upload progress. If there's only a browse button, then that isn't modified, but files can be dropped into the dialog.
+	</p>
+	<p>
+		The full plugin is available only for licensed customers as explained in
+		<a href="http://alfonsoml.blogspot.com/p/simpleuploads-plugin-for-ckeditor.html">my blog</a>. You can check here this <a href="/ckplugins/simpleuploads.demo/">same plugin in CKEditor 3</a>
+	</p>
+	</div>
+
+
+		<p>
+			<textarea cols="80" id="editor1" name="editor1" rows="10">
+			&lt;p&gt;This is some &lt;strong&gt;sample text&lt;/strong&gt;. You are using &lt;a href="http://ckeditor.com/"&gt;CKEditor&lt;/a&gt;.&lt;br&gt;
+			Drop something here...
+			&lt;/p&gt;
+			</textarea>
+		</p>
+<script>
+
+// Apply some events to every editor that it's created on this page
+CKEDITOR.on('instanceReady', function(e) {
+	var editor = e.editor;
+
+	// When an upload starts
+	editor.on('simpleuploads.startUpload', function (e) {
+		log("Uploading " + e.data.name + ", please wait...");
+	});
+
+	// When the upload ends
+	editor.on('simpleuploads.endUpload', function (e) {
+		if (e.data.ok)
+			log("File " + e.data.name + " uploaded correctly.");
+		else
+			log("Upload of " + e.data.name + " has failed.");
+	})
+
+	// When the upload has finished (the plugin has finished and the element is ready on the page
+	editor.on( 'simpleuploads.finishedUpload' , function(ev) {
+
+		var element = ev.data.element;
+		// Add sample CSS class
+		element.addClass("picture");
+
+		// remove dimension attributes added in v 3.3.2
+		element.removeAttribute("width");
+		element.removeAttribute("height");
+	});
+
+});
+
+// Customize the toolbar of the main editor
+var config = {
+	toolbarCanCollapse : false,
+	colorButton_enableMore : false,
+	toolbar :
+	[
+		{ name: 'document',    items : [ 'Source' ] },
+		{ name: 'clipboard',   items : [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ] },
+		{ name: 'basicstyles', items : [ 'Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat' ] },
+		{ name: 'paragraph',   items : [ 'Blockquote','CreateDiv','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'] },
+		{ name: 'colors',      items : [ 'TextColor','BGColor' ] },
+		{ name: 'insert',      items : [ 'Link', 'Image', 'addFile', 'addImage' ] },
+		{ name: 'tools',       items : [ 'Maximize', 'About' ] }
+	]
+}
+
+CKEDITOR.replace( "editor1", config)
+
+// Simple logger function to show on screen the usage of the basic eventsA
+function log(msg)
+{
+	var p=document.createElement('p');
+	p.appendChild( document.createTextNode( msg ) );
+	document.getElementById('log').appendChild(p);
+}
+</script>
+	<div id='log'></div>
+	<h1>Inline editing samples</h1>
+	<div id="columns">
+		<div id="column1">
+			<div contenteditable="true">
+				<h3>
+					Fusce vitae porttitor
+				</h3>
+				<p>
+					<strong>
+						Lorem ipsum dolor sit amet dolor. Duis blandit vestibulum faucibus a, tortor.
+					</strong>
+				</p>
+				<p>
+					Proin nunc justo felis mollis tincidunt, risus risus pede, posuere cubilia Curae, Nullam euismod, enim. Etiam nibh ultricies dolor ac dignissim erat volutpat. Vivamus fermentum <a href="http://ckeditor.com/">nisl nulla sem in</a> metus. Maecenas wisi. Donec nec erat volutpat.
+				</p>
+				<blockquote>
+					<p>
+						Fusce vitae porttitor a, euismod convallis nisl, blandit risus tortor, pretium.
+						Vehicula vitae, imperdiet vel, ornare enim vel sodales rutrum
+					</p>
+				</blockquote>
+				<p><s>Mauris mattis feugiat lectus nec mauris. Nullam vitae ante.</s></p>
+			</div>
+		</div>
+		<div id="column2">
+			<div contenteditable="true">
+				<h3>
+					Integer condimentum sit amet
+				</h3>
+				<p>
+					<strong>Aenean nonummy a, mattis varius. Cras aliquet.</strong>
+					Praesent <a href="http://ckeditor.com/">magna non mattis ac, rhoncus nunc</a>, rhoncus eget, cursus pulvinar mollis.</p>
+				<p>Proin id nibh. Sed eu libero posuere sed, lectus. Phasellus dui gravida gravida feugiat mattis ac, felis.</p>
+			</div>
+			<div contenteditable="true">
+				<h3>
+					Praesent wisi accumsan sit amet nibh
+				</h3>
+				<p>Donec ullamcorper, risus tortor, pretium porttitor. Morbi quam quis lectus non leo.</p>
+				<p style="margin-left: 40px; ">Integer faucibus scelerisque. Proin faucibus at, aliquet vulputate, odio at eros. Fusce <a href="http://ckeditor.com/">gravida, erat vitae augue</a>. Fusce urna fringilla gravida.</p>
+			</div>
+		</div>
+		<div id="column3">
+			<div contenteditable="true">
+				<p>Quisque justo neque, mattis sed, fermentum ultrices <strong>posuere cubilia Curae</strong>, Vestibulum elit metus, quis placerat ut, lectus. Ut sagittis, nunc libero, egestas consequat lobortis velit rutrum ut, faucibus turpis. Fusce porttitor, nulla quis turpis. Nullam laoreet vel, consectetuer tellus suscipit ultricies, hendrerit wisi. Donec odio nec velit ac nunc sit amet, accumsan cursus aliquet. Vestibulum ante sit amet sagittis mi.</p>
+				<h3>
+					Nullam laoreet vel consectetuer tellus suscipit
+				</h3>
+				<ul>
+					<li>Ut sagittis, nunc libero, egestas consequat lobortis velit rutrum ut, faucibus turpis.</li>
+					<li>Fusce porttitor, nulla quis turpis. Nullam laoreet vel, consectetuer tellus suscipit ultricies, hendrerit wisi.</li>
+					<li>Mauris eget tellus. Donec non felis. Nam eget dolor. Vestibulum enim. Donec.</li>
+				</ul>
+				<p>Quisque justo neque, mattis sed, <a href="http://ckeditor.com/">fermentum ultrices posuere cubilia</a> Curae, Vestibulum elit metus, quis placerat ut, lectus.</p>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

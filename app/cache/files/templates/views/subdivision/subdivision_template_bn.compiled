@@ -1,0 +1,7 @@
+<h3>অনুবিভাগ</h3>
+<?php echo $header; ?>
+<ul  class="square">
+<?php foreach ($contents as $content) { ?>
+	<li><?php echo renderLinkBy('subdivision', $content['id'], $content['title']) ?></li>   
+ <?php } ?>
+</ul><style></style><script></script>

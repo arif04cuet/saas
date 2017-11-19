@@ -1,0 +1,22 @@
+<p><br />
+&nbsp;</p>
+<h3>হ্যান্ডআউট</h3>
+<table class="bordered">
+<tbody>
+	<?php $i=1; ?>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo digit_to_bangla($i,$lang)?></td>
+		<td>
+			<a href="/site/handout/<?php echo $content['id'] ?>"><?php echo $content['title'] ?></a></td>
+		
+		<td> ডাউনলোড:	
+			<div>
+				<?php echo renderDownloadLink('handout',$content['uploadpath'] ,$content['field_pdf']) ?>
+			</div>
+		</td>
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table><style></style><script></script>

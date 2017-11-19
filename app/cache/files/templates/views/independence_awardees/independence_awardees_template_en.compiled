@@ -1,0 +1,46 @@
+<h3>
+	List of Independence Awardees
+</h3>
+<div>
+	<a href="/site/view/all_independence_awardees"  class="btn">All</a>
+	<select id="year_select" onchange="showOnYear(this)" style="">
+
+				  <option value="0" selected=""> -- Select a Year -- </option>
+				   <?php for($i=date('Y');$i>=1977;$i--){?>
+					 <option <?php echo $q[0]==$i?'selected':''?> value="<?php echo $i?>"><?php echo $i ?></option>      
+				   <?php } ?>           
+			</select>		
+</div>
+
+<?php if(count($contents)>0){?>
+<h4>
+	Awarded Year: <?php echo $q[0]?>
+</h4>
+<table class="bordered">
+	<thead>
+		<tr>
+			<th>SL</th>
+			<th>Person/Organization</th>
+			<th>Sector</th>
+		</tr>
+	</thead>
+<tbody>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo digit_to_bangla($content['name_order'] ,'bn')?></td>
+		<td><?php echo $content['name']; ?></td>
+		<td><?php echo $content['sector']; ?></td>
+	</tr>
+ <?php } ?>
+</tbody>
+</table>
+<?php }else{ ?>
+
+<?php } ?><style></style><script>$( document ).ready(function() {
+  $('#year_select').change(function() {
+      var v = $(this).val();  
+		if(v!=0){
+      window.location = "/site/view/independence_awardees/"+v;
+		}
+  });
+});</script>

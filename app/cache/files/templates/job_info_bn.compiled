@@ -1,0 +1,19 @@
+<h3>
+	<?php echo $content['title']; ?>
+</h3>
+<p>
+	<?php echo $content['body']; ?>
+</p>
+
+
+<?php if($content['attachments_bn'] !="")
+	{
+?>
+<?php foreach ($content['attachments_bn'] as $fname) { ?>
+
+<?php echo renderDownloadLink('job_info',$content['uploadpath'] ,$fname); ?>
+<?php echo renderGoogleDocViewer('job_info',$content['uploadpath'] ,$fname); ?>
+ <?php } ?>
+<?php
+}
+?><style></style><script></script>

@@ -1,0 +1,24 @@
+<ul class="graphical-service-btn" >
+    <?php foreach ($contents as $content) { ?>
+    <li>
+        <?php
+        if (isset($content['service_button_en'][0]) && !empty($content['service_button_en'][0]["link"])) {
+            ?>
+        <a target="_blank" href="<?php echo $content['service_button_en'][0]["link"]; ?>">
+                <?php echo renderImage('graphical_service_button', $content['uploadpath'], $content['service_button_en'], 315, 60) ?>
+            </a>
+            <?php
+        } else {
+            ?>
+
+            <a target="_blank" href="#">
+                <?php echo renderImage('graphical_service_button', $content['uploadpath'], $content['service_button_en'], 315, 60) ?>
+            </a>
+
+            <?php
+        }
+        ?>
+
+    </li>
+    <?php } ?>
+</ul><style></style><script></script>

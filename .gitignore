@@ -1,0 +1,3 @@
+app/cache/volt/*
+app/cache/metaData/*
+app/cache/session/*

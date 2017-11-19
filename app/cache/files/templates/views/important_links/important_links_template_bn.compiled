@@ -1,0 +1,11 @@
+<p>গুরুত্বপূর্ণ লিংক</p>
+<div class="">
+	<h5 class="bk-org title"><?php echo $title; ?></h5>
+	<?php if(sizeof($contents)>0){?>	
+		<ul style="display: none;">
+			<?php foreach ($contents as $lnk) { ?>	
+				<li><?php  echo renderLink($lnk['link'], $lang)?></li>
+			<?php } ?>
+		</ul>		
+	<?php } ?>
+</div><style></style><script></script>

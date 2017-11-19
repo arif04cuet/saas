@@ -1,0 +1,112 @@
+<h3>
+	List of Officers	
+</h3>
+
+
+
+<div id="with-pic">
+
+<a class="btn left"style="float:right" href="javascript:;" onclick="withpic()">Officers List without Picture</a>
+	<br/>	
+<table  class="bordered">
+<tbody>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td class='idHide'><?php echo digit_to_bangla($content['sl'],$lang)?></td>
+		<td><?php echo renderImage('officer_list', $content['uploadpath'], $content['Photo'], '100')?></td>
+		<td>
+				<table>
+				<tbody>
+					<td width="50%">
+						<table>
+							<tr>
+								<td width="100">Name</td><td><?php echo $content['name']; ?></td>
+							</tr>
+							<tr>
+								<td width="100">Designation</td><td><?php echo $content['designation']; ?></td>
+							</tr>
+							<tr>
+								<td width="100">Office</td><td><?php echo $content['org_name']; ?></td>
+							</tr>
+														<tr>
+								<td width="100">E-mail</td><td><?php echo $content['email']; ?></td>
+							</tr>
+							<?php if(!empty($content['cv'])):?>
+							<tr>
+								<td width="100">CV</td>
+								<td><?php echo renderDownloadLink('officer_list',$content['uploadpath'] ,$content['cv'][0]);	?></td>
+							</tr>
+							<?php endif;?>
+							
+						</table>
+					</td>
+					<td width="50%">
+						<table>
+							<tr>
+								<td width="100">Phone (Office)</td><td><?php echo $content['phone_office'] ?></td>
+							</tr>
+							<tr>
+								<td width="100">Phone (Res)</td><td><?php echo $content['phone_residence'] ?></td>
+							</tr>
+							<tr>
+								<td width="100">Mobile</td><td><?php echo $content['mobile'] ?></td>
+							</tr>
+							<tr>
+								<td width="100">Fax</td><td><?php echo $content['fax'] ?></td>
+							</tr>
+
+														<tr><a href="/site/view/vcard?name=<?php echo $content['name']; ?>&office=<?php echo $content['org_name']; ?>&email=<?php echo $content['email']; ?>&worktel=<?php echo $content['phone_office']; ?>&hometel=<?php echo $content['phone_residence']; ?>&cell=<?php echo $content['mobile']; ?>">Download Vcard</a></tr>
+						</table>
+					</td>
+					
+					
+					
+
+				</tbody>
+			</table>
+		</td>
+	</tr>
+ <?php } ?>
+</tbody>
+</table>
+</div>
+<div id="without-pic" style="display:none;">
+	<a class="btn" style="float:right" href="javascript:;" onclick="withpic()">Officers List with Picture</a>
+	<br/>
+	<table  class="bordered">
+	<thead>
+		<tr>
+			<th>Sl</th>
+			<th>Name</th>
+			<th>Designation</th>
+			<th>Office</th>
+			<th>Phone (Office)</th>
+			<th>Phone (Res)</th>
+			<th>Mobile</th>
+			<th>Fax</th>
+			
+			<th>Email</th>
+			<th>CV</th>
+		</tr>
+	</thead>
+<tbody>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo $content['sl']?></td>
+		<td><?php echo $content['name']; ?></td>
+		<td><?php echo $content['designation']; ?></td>
+		<td><?php echo $content['org_name']; ?></td>
+		<td><?php echo $content['phone_office'] ?></td>
+		<td><?php echo $content['phone_residence'] ?></td>
+		<td><?php echo $content['mobile'] ?></td>
+		<td><?php echo $content['fax'] ?></td>		
+		<td><?php echo $content['email']; ?></td>
+		<td><?php echo renderDownloadLink('officer_list',$content['uploadpath'] ,$content['cv'][0]);	?></td>
+	</tr>
+ <?php } ?>
+</tbody>
+</table>
+</div><style></style><script>function withpic(){
+	$('#with-pic').toggle();
+	$('#without-pic').toggle();
+}</script>

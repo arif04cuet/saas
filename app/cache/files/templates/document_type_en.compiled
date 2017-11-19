@@ -1,0 +1,6 @@
+<h3><?php echo $content['title']; ?></h3>
+
+<?php echo renderFileViewer('document_type',$content['uploadpath'] ,$content['attachments']); ?>
+
+
+<style></style><script></script>

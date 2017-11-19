@@ -1,0 +1,138 @@
+<?php
+
+//Update Counter
+$sql = 'update npfministryadmin.npf_content_forms set count=count+1 where id="'.$q[0].'"';
+db_query($sql);
+
+
+
+
+$title = $contents[0]['title_bn']?$contents[0]['title_bn']:$contents[0]['title_en'];
+$body = $contents[0]['body_bn']?$contents[0]['body_bn']:$contents[0]['body_en'];
+?>
+
+<div id="article-title">
+	
+	<h1><?php echo $title?></h1>
+	<div id="print-email-social">
+		
+		
+
+		
+		<a href="http://www.facebook.com/sharer.php?u=http://www.forms.gov.bd/site/view/form-page/<?php echo $contents['0']['id']?> &t=<?php echo $title ?>" target="_blank"><i class="flaticon-facebook12"></i></a>
+		
+		<a href="http://twitter.com/home?status=<?php echo $title ?>+http://www.forms.gov.bd/site/view/form-page/<?php echo $contents['0']['id']?>" target="_blank"><i class="flaticon-social19"></i></a> 
+		<a href="http://plus.google.com/share?url=http://www.forms.gov.bd/site/view/form-page/<?php echo $contents['0']['id']?> " target="_blank"><i class="flaticon-google10"></i></a> 
+	</div><!-- print-email-social -->
+</div>
+
+<p>	<?php echo $body;?></p>
+
+
+<?php echo renderFileViewer('forms',$contents['0']['uploadpath'] ,$contents['0']['multifiles'], $contents['0']["subdomain"]); ?>
+
+<p>
+	অনলাইন আবেদনঃ
+</p>
+<form action="../../../../npfadmin/services/sendapplication" id="applicationForm" accept-charset="utf-8" method="post" enctype="multipart/form-data">
+<div class="row">
+    <div class="col-md-6 form-group form-horizontal">
+        <label class="control-label">মন্ত্রণালয় <span class="required"> * </span> </label>
+        <div class="input select"><select id="sender-office-ministry-id" placeholder="মন্ত্রণালয়" class="form-control" name="sender_office_ministry_id"></select></div>    </div>
+    <div class="col-md-6 form-group form-horizontal">
+        <label class="control-label">দপ্তরের স্তর <span class="required"> * </span> </label>
+        <div class="input select"><select id="sender-office-layer-id" placeholder="দপ্তর / অধিদপ্তর " class="form-control" name="sender_office_layer_id"></select></div>    </div>    
+
+	<div class="col-md-6 form-group form-horizontal">
+        <label class="control-label">দপ্তর / অধিদপ্তর ধরণ <span class="required"> * </span> </label>
+        <div class="input select"><select id="sender-office-origin-id" placeholder="দপ্তর / অধিদপ্তর " class="form-control" name="sender_office_origin_id"></select></div>    </div>
+	<div class="col-md-6 form-group form-horizontal">
+		<label class="control-label"> কার্যালয় <span class="required"> * </span> </label>
+		<div class="input select"><select id="sender-office-id" placeholder="কার্যালয়" class="form-control" name="sender-office-id"></select></div>    </div>    	
+	
+</div>
+<div class="row">
+	<div class="col-md-6 form-group form-horizontal">
+		<button type="submit" onclick="" disabled="disabled" class="btn btn-primary">আবেদন দাখিল</button>
+	</div>
+</div>
+</form><style></style><script>$(function () {
+
+		var url = "../../../../npfadmin/services/getministrylist";
+		//alert(url);
+		$.post(url, function(data) {
+			$("#sender-office-ministry-id").html("");
+        })
+		.success(function(data) {
+			$("#sender-office-ministry-id").html(data);
+		})
+		.error(function() {
+		
+		})
+		.complete(function() {
+		
+		});
+/*---------------------------------*/		
+		$("#sender-office-ministry-id").on("change", function(e) {
+		
+			var url = "../../../../npfadmin/services/getofficelayerlist?id="+$( this ).val();
+			//alert(url);
+			$.post(url, function(data) {
+				$("#sender-office-layer-id").html("");
+			})
+			.success(function(data) {
+				$("#sender-office-layer-id").html(data);
+			})
+			.error(function() {
+			
+			})
+			.complete(function() {
+			
+			});
+				
+		});
+/*---------------------------------*/
+/*---------------------------------*/		
+		$("#sender-office-layer-id").on("change", function(e) {
+		
+			var url = "../../../../npfadmin/services/getofficeoriginlist?id="+$( this ).val();
+			//alert(url);
+			$.post(url, function(data) {
+				$("#sender-office-origin-id").html("");
+			})
+			.success(function(data) {
+				$("#sender-office-origin-id").html(data);
+			})
+			.error(function() {
+			
+			})
+			.complete(function() {
+			
+			});
+				
+		});
+/*---------------------------------*/
+/*---------------------------------*/		
+		$("#sender-office-origin-id").on("change", function(e) {
+		
+			var url = "../../../../npfadmin/services/getofficelist?id="+$( this ).val();
+			//alert(url);
+			$.post(url, function(data) {
+				$("#sender-office-id").html("");
+			})
+			.success(function(data) {
+				$("#sender-office-id").html(data);
+			})
+			.error(function() {
+			
+			})
+			.complete(function() {
+			
+			});
+				
+		});
+/*---------------------------------*/
+		
+
+});
+</script>

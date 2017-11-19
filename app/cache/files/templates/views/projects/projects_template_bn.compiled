@@ -1,0 +1,9 @@
+<h3>প্রকল্পের তালিকা</h3>
+<ul style="margin-left:30px;">
+	<?php foreach ($contents as $content) { ?>
+		<li><?php echo digit_to_bangla($i, bn); ?>
+			<?php echo renderLinkBy('project',$content['id'] ,$content['title_bn'] )?>
+		</li>
+ <?php } ?>
+</ul>
+<style></style><script></script>

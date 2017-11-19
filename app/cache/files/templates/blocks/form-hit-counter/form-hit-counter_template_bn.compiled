@@ -1,0 +1,1 @@
+<div id="hit-counter">হিট সংখ্যাঃ <?php echo digit_to_bangla($contents[0]['cnt'], 'bn'); ?></div><style></style><script></script>

@@ -1,0 +1,145 @@
+
+	<div>
+		<table id="profile_details" width="100%">
+			<tr>
+				<td align="center" colspan="2">
+					<img src="/themes/responsive_npf/templates/edirectory/images/apic.jpg" width="92" height="94">
+				</td>
+			</tr>
+			<tr>
+				<td width="30%" align="right">
+					<span class="info-name ash">নাম</span>
+				</td>
+				<td width="70%" align="left">
+					<span class="info-name ash"><?php echo $contents[0]['title_bn']; ?></span>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<span class="info-name ash">পদবী</span>
+				</td>
+				<td align="left">
+					<span class="info-designation ash"><?php echo $contents[0]['field_designation_bn']; ?></span>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<span class="info-name ash">মোবাইল নং</span>
+				</td>
+				<td align="left">
+					<span class="info-address ash"><?php echo $contents[0]['field_mobile_bn']; ?></span><br>		
+				</td>
+			</tr>		
+			<tr>
+				<td align="right">
+					<span class="info-name ash">ইমেইল</span>
+				</td>
+				<td align="left">
+					<span class="info-address ash"><?php echo $contents[0]['field_email']; ?></span>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<span class="info-name ash">টেলিফোন নং</span>
+				</td>
+				<td align="left">
+					<span class="info-address ash"><?php echo $contents[0]['field_telephone_bn']; ?></span>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<span class="info-name ash">ফ্যাক্স নং</span>
+				</td>
+				<td align="left">
+					<span class="info-address ash"><?php echo $contents[0]['field_fax_bn']; ?></span>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<span class="info-name ash">জন্ম তারিখ</span>
+				</td>
+				<td align="left">
+					<span class="info-address ash"><?php echo $contents[0]['field_birthday']; ?></span>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<span class="info-name ash">বৈবাহিক অবস্থা</span>
+				</td>
+				<td align="left">
+					<span class="info-address ash"><?php echo $contents[0]['field_marital_status_bn']; ?></span>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<span class="info-name ash">জাতীয় পরিচয় পত্র নং</span>
+				</td>
+				<td align="left">
+					<span class="info-address ash"><?php echo $contents[0]['field_national_id_no_bn']; ?></span>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<span class="info-name ash">স্থায়ী ঠিকানা</span>
+				</td>
+				<td align="left">
+					<span class="info-address ash"><?php echo $contents[0]['field_permanent_address_bn']; ?></span>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<span class="info-name ash">নিজ জেলা</span>
+				</td>
+				<td align="left">
+					<span class="info-address ash"><?php echo $contents[0]['field_own_district_bn']; ?></span>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right">
+					<span class="info-name ash">ব্যাচ নং</span>
+				</td>
+				<td align="left">
+					<span class="info-address ash"><?php echo $contents[0]['field_batch']; ?></span>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right">
+					<span class="info-name ash">শিক্ষাগত যোগ্যতা</span>
+				</td>
+				<td align="left">
+					<span class="info-address ash"><?php echo $contents[0]['field_educational_qualification_bn']; ?></span>
+				</td>
+			</tr>
+			
+			<tr>
+				<td align="right">
+					<span class="info-name ash">বর্তমান যোগদানের তারিখ</span>
+				</td>
+				<td align="left">
+					<span class="info-address ash"><?php echo $contents[0]['field_current_join_date']; ?></span>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<span class="info-name ash">চাকুরীতে যোগদানের তারিখ</span>
+				</td>
+				<td align="left">
+					<span class="info-address ash"><?php echo $contents[0]['field_date_of_join']; ?></span>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<span class="info-name ash">সর্বশেষ কর্মস্থল</span>
+				</td>
+				<td align="left">
+					<span class="info-address ash"><?php echo $contents[0]['field_last_place_of_job_bn']; ?></span>
+				</td>
+			</tr>
+		</table>		
+	</div>
+	<style>table#profile_details tr td
+{
+	  border: 3px solid #EFEFEF;
+}</style><script></script>

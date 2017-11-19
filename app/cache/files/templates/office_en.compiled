@@ -1,0 +1,40 @@
+<h3>
+	<?php echo $content['title']; ?>
+</h3>
+<table width="720" border="1" cellspacing="5" cellpadding="10">
+	<tr>
+		<td><p><?php echo renderImage('office',$content['uploadpath'] ,$content['image']); ?></p></td>
+		
+	</tr>
+  <tr>
+    <td>
+
+<div>Address:<?php echo $content['address']; ?></div>
+		
+		
+<div>Phone: <?php echo $content['phone']; ?></div>
+<div>
+	Fax: <?php echo $content['fax']; ?></div>
+<div>Email: <?php echo $content['email']; ?></div>
+  </tr>
+  <tr>
+    <td>
+
+<div id="map-canvas">
+	
+		</div>
+ </td>
+  </tr>
+  
+</table>
+
+<style>#map-canvas {
+        border:1px solid #000000;
+        width: 300px;
+        height: 300px;
+    }
+    #map-canvas img {
+        max-width: none;
+    }</style><script>$(document).ready(function () {
+	loadGoogleMap('map-canvas',<?php echo $content['geocode'][0]['lat']?>, <?php echo $content['geocode'][0]['lng']?>);
+});</script>

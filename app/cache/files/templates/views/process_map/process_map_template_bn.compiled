@@ -1,0 +1,26 @@
+<h3>সেবা এবং ধাপ</h3><br>
+
+<ul id="front-tab-tabs" class="nav nav-tabs" data-tabs="tabs">
+
+	<?php   for($i=0;$i<count($contents);$i++){ ?>
+
+		<li <?php echo ($i==0?'class="active"':"");?>><a href="#<?php echo $i;?>" data-toggle="tab"><?php echo $contents[$i]['title_bn']; ?></a></li>
+	
+	<?php } ?>
+
+
+</ul>
+
+
+<div id="my-tab-content" class="tab-content">
+	<?php   for($i=0;$i<count($contents);$i++){ ?>
+
+		<div class="tab-pane <?php echo ($i==0?'active':"");?>" id="<?php echo $i;?>">
+			<img alt="<?php echo $contents[$i]['title_bn']; ?>" src="<?php  echo renderImagePath('office_process_map', $contents[$i]['uploadpath'], $contents[$i]['process_map_new']) ; ?>" class="img-responsive">
+			
+		</div>
+	
+	<?php } ?>
+	
+</div>
+<style></style><script></script>

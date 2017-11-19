@@ -1,0 +1,74 @@
+<h3 class="title">
+	কৃষি কথা
+</h3>
+
+<?php foreach ($contents as $content) { ?>
+<div class="krishi_kotha_summary">
+	<?php if (($content['image'][0]['name'] == '')) { ?> 
+	
+	<?php echo renderImage('krishi_kotha', $content['uploadpath'], $content['cover_photo'], '100','120'); ?>
+
+	<?php } else { ?>
+
+	<?php echo renderImage('krishi_kotha', $content['uploadpath'], $content['image'], '100','120'); ?>
+
+	<?php } ?>
+	
+	<span><strong><?php echo $content['title_bn']; ?></strong></span>
+	<div class="summary">
+		<?php echo $content['body_bn']; ?>
+		
+	</div>
+	<a class="details_view button" href="/site/view/krishi_kotha_details/<?php echo $content['year']; ?>/<?php echo $content['month']; ?>/<?php echo $content['title_bn']; ?>">
+		বিস্তারিত
+	</a>
+</div>
+<?php } ?><style>.title{
+background: none repeat scroll 0% 0% #87A00D;
+height: 40px;
+line-height: 40px;
+padding: 5px 10px 0px;
+color: #FFF;
+font-weight: bold;
+font-size: 16px;
+font-family: "solaimanLipi";
+}
+.krishi_kotha_summary{
+padding: 5px;
+border:1px solid black;
+margin-top: 3px;
+height: 120px;
+}
+.krishi_kotha_summary span{
+float:left;
+font-size:18px;
+}
+img{
+float:left;
+margin-right:5px;
+}
+.summary{
+height: 100px;
+width: 532px;
+float:left;
+overflow:hidden;
+}
+.details_view{
+margin-top: 90px;
+position: absolute;
+left: 656px;
+background-color: #609513;
+color: white;
+font-weight: normal;
+font-size: 14px;
+}
+.button{
+padding: 3px 7px;
+color: white !important;
+border-radius: 2px;
+border: 1px solid #50692B;
+font-size: 15px;
+}
+.button:hover{
+background-color: #99EC1F;
+}</style><script></script>

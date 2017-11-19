@@ -1,0 +1,21 @@
+<h3>
+	Acts & Rules
+</h3>
+<table class="bordered">
+<tbody>
+	<?php $i=1; ?>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo $i; ?></td>
+		<td><?php echo $content['title'] ?></td>
+		<td> Download:			
+			<div>
+				<?php echo renderDownloadLink('legislative_information',$content['uploadpath'] ,$content['pdf']) ?>
+				<?php echo renderDownloadLink('legislative_information',$content['uploadpath'] ,$content['doc']) ?>				
+			</div>
+		</td>
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table><style></style><script></script>

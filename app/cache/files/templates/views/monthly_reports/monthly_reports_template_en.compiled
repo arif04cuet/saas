@@ -1,0 +1,21 @@
+<h3>
+	Monthly Reports
+</h3>
+<table class="bordered">
+<tbody>
+	<?php $i=1; ?>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo $i; ?></td>
+		<td><a href="/site/monthly_report/<?php echo $content['id']?>"><?php echo $content['title'] ?></a></td>
+		<td> Download:			
+			<div>
+				<?php echo renderDownloadLink('monthly_report',$content['uploadpath'] ,$content['pdf']) ?>
+				<?php echo renderDownloadLink('monthly_report',$content['uploadpath'] ,$content['doc']) ?>				
+			</div>
+		</td>
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table><style></style><script></script>

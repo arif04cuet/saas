@@ -1,0 +1,5 @@
+<h3><?php echo $content['title']; ?></h3>
+<div><?php echo $content['body']; ?></div>
+<img class="small" src="<?php echo renderImagePath('organogram',$contents[0]['uploadpath'] ,$contents[0]['file']); ?>" width="700"/>
+	
+<style></style><script></script>

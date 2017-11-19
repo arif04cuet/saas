@@ -1,0 +1,34 @@
+<p align="center"><b>
+	DETAIL MANPOWER LIST ‎(<?php echo strtoupper(end(explode('/',$_GET['q'])));?>‎)‎
+	</b>
+</p>
+<p><b>
+	TOTAL NO OF EMPLOYEE ‎: <?php echo count($contents);?>
+	</b>
+</p>
+<br/>
+<br/>
+<table class="table bordered bbs_officials">
+    <tr>
+        <th>PHOTO‎</th>
+        <th>NAME ‎&‎ DESIGNATION‎</th>
+        <th>ID</th>
+        <th>CURRENT POSTING‎</th>
+        <th>BLOOD ‎GROUP‎</th>
+        <th>CONTACT INFORMATION‎</th>
+        <th>EMAIL ADDRESS‎</th>
+    </tr>
+
+    <?php foreach ($contents as $content): ?>
+        <tr>
+            <td><?php echo renderImage('bbs_officials', $content['uploadpath'], $content['photo'], 70); ?></td>
+            <td width="20%"><?php echo $content['name']; ?><br/><?php echo $content['designation']; ?></td>
+            <td width="15%">BBS ID :<?php echo $content['bbs_id']; ?><br/>GOV ID:<?php echo $content['gov_id']; ?></td>
+            <td width="30%"><?php echo $content['current_posting']; ?></td>
+            <td width="10%"><?php echo $content['blood_group']; ?></td>
+            <td width="50%">Office:<?php echo $content['phono_office']; ?><br/>Residence :<?php echo $content['phono_resident']; ?><br/>Mobile
+                :<?php echo $content['mobile']; ?>
+            </td>
+            <td><a href="mailto:<?php echo $content['email']?>"><?php echo $content['email']?></a></td>
+        </tr>
+    <?php endforeac<style>.head p{font-weight:bold}</style><script></script>

@@ -1,0 +1,58 @@
+<h3 class='h3'>
+	ফটোগ্যালারি
+</h3>
+
+
+<div>
+	
+	<ul class="ul">
+		<?php foreach ($contents as $content) { ?>
+		<li class="image_topic"><a href="/site/view/gallary_details/<?php echo $content['list']; ?>/<?php echo $content['year']; ?>"><?php echo $content['list']; ?></a></li>
+		<?php } ?>
+	</ul>
+	
+</div>
+<style>.h3{
+background-color: #609513;
+color: white;
+font-size: 20px;
+font-weight: bold;
+padding: 0px 15px;
+}
+.image_topic{
+border: 1px solid #609513;
+padding: 4px 5px;
+border-radius: 3px;
+font-size: 16px;
+height: auto;
+list-style: none;
+text-align: center;
+box-shadow: 0px 0px 4px #609513;
+}
+.ul{
+list-style: outside none none;
+margin: 5px auto;
+width: 90%;
+}
+.image_topic a:hover{
+font-weight: bold;
+color:#609513;
+}</style><script>var id;
+$(".subject").change(function(){
+	id = $(".subject :selected").val();
+    if(id=="")
+  		{
+      $(".year").css('display','none');
+      }
+    else
+      {
+          $(".year").css('display','inline');
+    }
+    
+});
+
+$(".year").change(function(){
+var v = $(".year :selected").val();
+window.location = "/site/view/gallary_details/"+id+"/"+v;
+});
+</script>

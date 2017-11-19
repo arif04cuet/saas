@@ -1,0 +1,56 @@
+<h3>
+	<?php echo $content['title_bn']; ?>
+</h3>
+<table width="720" border="1" cellspacing="5" cellpadding="10">
+  <tr>
+    <td width="200" rowspan="4">
+	<p><?php echo renderImage('e_directory',$content['uploadpath'] ,$content['field_image']); ?></p>
+
+
+ </td>
+    <td width="459"><h4>জীবনবৃত্তান্ত</h4>
+
+<div><?php echo $content['body_bn']; ?></div>
+<div>জন্মদিন: <?php echo $content['field_birthday']; ?></div>
+<div>শিক্ষাগত যোগ্যতা: <?php echo $content['field_education_full_bn']; ?></div>
+<div>নির্বাচনী এলাকার নং: <?php echo $content['field_name_election_area_bn']; ?></div>
+<div>নিজ জেলা: <?php echo $content['field_own_district_bn']; ?></div>
+<div>বৈবাহিক অবস্থা: <?php echo $content['field_marital_status_bn']; ?></div>
+<div>জাতীয় পরিচয় পত্র নং: <?php echo $content['field_national_id_no_bn']; ?></div>
+<div>নির্বাচনী এলাকার নাম:<?php echo $content['field_election_seat']; ?></div>
+<div>প্রশিক্ষণসমূহ: <?php echo $content['field_training_bn']; ?></div>
+<div>প্রফেশনাল ডিগ্রী: <?php echo $content['field_des_professional_deg_bn']; ?></div>
+<div>শিক্ষাগত যোগ্যতা (বিস্তারিত): <?php echo $content['field_educational_qualification_bn']; ?></div>
+<div>স্থায়ী ঠিকানা: <?php echo $content['field_permanent_address_bn']; ?></div></td>
+  </tr>
+  <tr>
+    <td><h4>চাকুরী সংক্রান্ত</h4>
+
+<div>পদবী: <?php echo $content['field_designation_bn']; ?></div>
+<div>ফ্যাক্স: <?php echo $content['field_fax_bn']; ?></div>
+<div>ব্যাচ: <?php echo $content['field_batch']; ?></div> 
+<div>বর্তমান চাকুরীস্থলে যোগদানের তারিখ: <?php echo $content['field_current_join_date']; ?></div> 
+<div>আইডি নং: <?php echo $content['field_id']; ?></div> 
+<div>চাকুরীতে যোগদানের তারিখ: <?php echo $content['field_date_of_join']; ?></div>
+<div>সর্বশেষ চাকুরীস্থল: <?php echo $content['field_last_place_of_job_bn']; ?></div> </td>
+  </tr>
+  <tr>
+    <td><h4>যোগাযোগ</h4>
+<div>ইমেইল: <?php echo $content['field_email']; ?></div>
+<div>টেলিফোন: <?php echo $content['field_telephone_bn']; ?></div>
+<div>মোবাইল নং:<?php echo $content['field_mobile_bn']; ?></div></td>
+  </tr>
+  <tr>
+    <td><h4>অন্যান্য</h4>
+
+<div>ক্যাটাগরী: <?php echo $content['category']; ?></div></td>
+  </tr>
+</table>
+
+<style>#contents img {
+    width: 180px;
+}
+
+#contents tbody td {
+    vertical-align: top;
+}</style><script></script>

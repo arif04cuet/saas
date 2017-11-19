@@ -1,0 +1,27 @@
+<h3>Download</h3><br>
+
+<table class="bordered" style="border:1px solid #d8d8d8; width:100%; ">
+	<thead style="background-color:#fafafa;">
+	<th style="text-align:center;">Serial</th>
+		<th style="padding:5px;">Title</th>
+		<th style="text-align:center;">Download</th>
+	</thead>
+<tbody>
+	<?php $i=1; ?>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td  style="text-align:center;"><?php echo digit_to_bangla($i, en)?></td>
+		<td><?php echo $content['title_en'] ?></td>
+		<td style="text-align:center;">
+			<div>
+				<?php echo renderDownloadLink('download',$content['uploadpath'] ,$content['file'], FALSE, null, 32) ?>
+			</div>
+		</td>
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table><style>td, tr{
+border:1px solid #d8d8d8;
+}
+td{padding:5px;}</style><script></script>

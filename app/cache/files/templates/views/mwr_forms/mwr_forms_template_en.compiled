@@ -1,0 +1,20 @@
+<h3>
+	Ministry wise reports form
+</h3>
+<table class="bordered">
+<tbody>
+	<?php $i=1; ?>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo $i; ?></td>
+		<td><?php echo $content['title'] ?></td>
+		<td> Download	
+			<div>
+				<?php echo renderDownloadLink('forms',$content['uploadpath'] ,$content['multifiles'], FALSE, null, 16) ?>
+			</div>
+		</td>
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table><style></style><script></script>

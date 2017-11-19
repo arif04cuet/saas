@@ -1,0 +1,16 @@
+<div class="six columns subdivision-box box" id="box-3">	
+	<a href="#" class="button_style" style="">Your Asks</a>
+	<a href="#" class="button_style" style="">Your Complains</a>
+	<a href="#" class="button_style" style="">Your Comments</a>
+	<a href="#" class="button_style" style="">Contact Us</a>
+</div><style>.button_style {
+	background-color: #DDDDDD;
+	border: 1px solid #AAAAAA;
+	border-radius: 6px;
+	display: block;
+	font-size: 1.6em;
+	font-weight: bold;
+	padding: 10px;
+	margin: 5px;
+	text-align: center;
+}</style><script></script>

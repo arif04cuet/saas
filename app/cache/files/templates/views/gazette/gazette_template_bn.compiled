@@ -1,0 +1,38 @@
+<h3>
+গেজেট
+</h3>
+<table class="bordered">
+<tbody>
+	<?php $i=1; ?>
+		 <tr>
+   		<th>ক্রমিক</th>
+   		<th>শিরোনাম</th>
+		 <th>গেজেট প্রকাশের তারিখ</th>
+		 <th>প্রজ্ঞাপন নং</th>
+		 <th>প্রজ্ঞাপনের তারিখ</th>
+		 <th>বিভাগের নাম</th>
+		 <th>জেলার নাম</th>
+		 <th>ডাউনলোড</th>
+ 	</tr>
+	<?php foreach ($contents as $content) { ?>
+
+	<tr>
+		<td><?php echo digit_to_bangla($i,$lang)?></td>
+		
+		<td><?php echo $content['title_bn'] ?></td>
+		<td><?php echo $content['gazette_publish_date'] ?></td>
+		<td><?php echo $content['notification_no'] ?></td>
+		<td><?php echo $content['notification_date'] ?></td>
+		<td><?php echo $content['division_name'] ?></td>
+		<td><?php echo $content['district_name'] ?></td>
+	
+		<td> ডাউনলোড:	
+			<div>
+				<?php echo renderDownloadLink('gazette',$content['uploadpath'] ,$content['file']) ?>
+			</div>
+		</td>
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table><style></style><script></script>

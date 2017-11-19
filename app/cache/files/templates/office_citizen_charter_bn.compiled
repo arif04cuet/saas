@@ -1,0 +1,9 @@
+<h3><?php echo $content['title']; ?></h3>
+<?php echo $content['body']; ?>
+
+<?php 
+	if(!empty($content['office_file'])){
+		echo renderFileViewer('office_citizen_charter',$content['uploadpath'] ,$content['office_file']);	
+
+	}
+?><style></style><script></script>

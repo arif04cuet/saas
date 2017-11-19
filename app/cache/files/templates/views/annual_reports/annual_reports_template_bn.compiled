@@ -1,0 +1,21 @@
+<h3>
+	মাসিক/বার্ষিক প্রতিবেদন
+</h3>
+<table class="bordered">
+<tbody>
+	<?php $i=1; ?>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo digit_to_bangla($i,$lang)?></td>
+		<td><?php echo $content['title'] ?></td>
+		<td> ডাউনলোড:	
+			<div>
+				<?php echo renderDownloadLink('annual_reports',$content['uploadpath'] ,$content['pdf']) ?>
+				<?php echo renderDownloadLink('annual_reports',$content['uploadpath'] ,$content['doc']) ?>				
+			</div>
+		</td>
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table><style></style><script></script>

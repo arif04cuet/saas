@@ -1,0 +1,6 @@
+<h3><?php echo $content['title']; ?></h3>
+<hr/>
+<div>
+	Publish Date: <i><?php echo $content['pubdate']; ?></i>
+</div>
+<div><?php echo $content['body']; ?></div><style></style><script></script>

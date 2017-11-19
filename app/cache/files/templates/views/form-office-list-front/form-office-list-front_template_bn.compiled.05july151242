@@ -1,0 +1,57 @@
+<div class="live-search-box">
+	<input  value="" id="live-search-off" placeholder="অফিস খুঁজতে এখানে লিখুন">	
+</div>
+
+
+<?php
+
+
+    $html = '';
+    //////////////////////////////////////////////////////
+    
+
+
+  	$content_body .= '<ul id="office-wise" class="front-tab-ajax-ul">';
+
+	foreach($contents as $content){
+              $content_body .= '<li>';
+		$content_body .= '<i class="flaticon-arrow73"></i>'.'   ';
+		$content_body .= '<a href="http://www.forms.gov.bd/site/view/form-office/'.$content['id'].'">'.$content['sitename_bn'].'</a>'.' ('.$content['cnt'].')';
+              $content_body .= '</li>';
+
+
+	}
+    	
+	$html .= $content_body;
+
+	print $html;
+
+?>
+<style>.live-search-box > input {
+    margin: 10px 0;
+    padding: 10px;
+    width: 97%;
+}
+
+#front-tab ul{
+
+padding:0;
+}
+
+.front-tab-ajax-ul li{
+	list-style:none;
+}</style><script>(function($) {
+	$('input#live-search-off').quicksearch('#front-tab-content-off ul li');
+})(jQuery);
+
+
+$(document).ready(function() {
+	$( "#live-search-off" ).keyup(function() {
+		var v= $(this).val();
+		//console.debug(v);
+		$('#office-wise li a').removeHighlight();
+		$('#office-wise li a').highlight(v);	
+	});
+});
+
+</script>

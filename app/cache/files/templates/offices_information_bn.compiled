@@ -1,0 +1,84 @@
+<link href="/themes/responsive_npf/templates/services/css/easy-responsive-tabs.css" media="all" rel="stylesheet" type="text/css" />	
+<script type="text/javascript" src="/themes/responsive_npf/templates/services/js/easyResponsiveTabs.js"></script>
+<script type="text/javascript">
+	
+		$(document).ready(function () {
+
+			$('#verticalTab').easyResponsiveTabs({
+				type: 'vertical',
+				width: 'auto',
+				fit: true
+			});
+		});
+		
+</script>
+<!--<h1 style="color:#683091;  text-align:center;line-height: 5px; "><?php echo $content['title']; ?></h1>-->
+<div style="position: relative; width: 100%;margin-top: 20px;">
+<h1 id="org_title_head" style="color:#683091;  text-align:center;line-height: 1;"><?php echo $content['title']; ?></h1>
+
+<img id="pbtn" width="30" height="30" src="/themes/responsive_npf/images/download01.png" style="cursor: pointer;position: relative;float: left;margin-left: 1000px;margin-top: 1px;" onclick="download_content();" title="ডাউনলোড">
+    <img  id="dbtn" width="32" height="32" title="প্রিন্ট" onclick="print_content();" style="cursor: pointer;position: relative;float: left;margin-left: 14px;margin-bottom: 3px;" src="/themes/responsive_npf/images/print_btn.png">	
+</div>
+
+<div id="verticalTab">
+		<ul class="resp-tabs-list">
+			<li style="border-top-left-radius: 4px;">প্রোফাইল </li>
+			<li>পরিচিতি</li>
+			<li>অর্গানোগ্রাম</li>
+			<li>কার্যপরিধি</li>
+			<li>অধীনস্থ অফিসসমূহের প্রোফাইল</li>			
+			<li>অধীনস্থ অফিসসমূহের অর্গানোগ্রাম </li>
+			<li>নাগরিক-সেবার তালিকা</li>
+			<li style="border-bottom-left-radius: 4px;">নাগরিক-সেবার তথ্য সারণি</li>
+		</ul>
+		<div class="resp-tabs-container" id="printable_area_hidden_off">
+			<div>
+				<?php echo $content['body']; ?>
+			</div>
+			<div>
+				<?php echo $content['off_introduction']; ?>
+			</div>
+			<div>
+				<?php echo $content['off_organogram']; ?>
+			</div>
+			<div>
+				<?php echo $content['off_workscope']; ?>
+			</div>
+			<div>
+				<?php echo $content['off_structure']; ?>
+			</div>
+			
+			<div>
+				<?php echo $content['field_organogram']; ?>
+			</div>
+			<div>
+				<?php echo $content['services']; ?>
+			</div>
+			<div>
+				<?php echo $content['services_details']; ?>
+			</div>
+		</div>
+	</div><style>.resp-vtabs .resp-tabs-list li {
+font-size: 19px !important;
+}
+
+#verticalTab
+{
+	clear: both !important;
+}
+
+#print_btn_div img
+{
+	display: none !important;
+}
+hr#print_div_hr {
+    display: none;
+}
+a
+{
+text-decoration: none !important;
+}
+hr {
+    box-sizing: none;
+    border-color: #ddd;
+}</style><script> </script>

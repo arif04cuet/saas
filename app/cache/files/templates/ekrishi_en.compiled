@@ -1,0 +1,24 @@
+<h2><?php echo $content['title']; ?></h2>
+<hr/>
+<div class="item-details">
+ 
+        <?php foreach ($content['photo'] as $img) { ?>
+
+        <img class="" src="<?php echo getImagePath('ekrishi', $content['uploadpath'], $img)?>"
+             alt="<?php echo $img['caption_en']; ?>" title="<?php echo $img['caption_en']; ?>" />
+
+        <?php } ?>
+
+        <?php echo $content['body']; ?>
+
+</div>
+
+<style>.item-details img{
+   float:left;
+   padding:5px;
+width:300px
+}
+.item-details>p{
+   float:none;
+}
+</style><script></script>

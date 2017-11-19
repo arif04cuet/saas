@@ -1,0 +1,4 @@
+<h3>আইনের নাম:<?php echo $content['title']; ?></h3>
+
+<?php echo renderGoogleDocViewer('test_pdf',$content['uploadpath'] ,$content['attachment']) ?>
+<style></style><script></script>

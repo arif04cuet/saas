@@ -1,0 +1,8 @@
+<h3><?php echo $content['title']; ?></h3>
+<p><?php echo $content['body']; ?></p>
+
+<?php 
+	if(!empty($content['file_en_new'])){
+		echo renderFileViewer('project',$content['uploadpath'] ,$content['file_en_new']);	
+	}
+?><style></style><script></script>

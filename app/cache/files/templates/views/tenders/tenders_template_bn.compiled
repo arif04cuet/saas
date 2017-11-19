@@ -1,0 +1,44 @@
+<pre>
+<?php //var_dump($contents); ?>
+
+</pre>
+<h3>
+	দরপত্র/নিয়োগ বিজ্ঞপ্তি
+</h3>
+<?php if(count(contents)>0):?>
+<table class="bordered" style="text-align:center;">
+    <thead>
+    <th>ক্রমিক</th>
+    <th>শিরোনাম</th>
+    <th>প্রকাশের তারিখ</th>
+    <th>ডাউনলোড</th>
+    </thead>
+    <tbody>
+    <?php $i = 1; ?>
+    <?php foreach ($contents as $content) { ?>
+    <tr>
+        <td><?php echo digit_to_bangla($i + $offset, $lang) ?></td>
+        <td><?php echo $content['title_bn']; ?></td>
+        <td><?php echo digit_to_bangla($content['pubdate'], $lang) ?></td>
+        <td>
+            <div>
+                <?php echo renderDownloadLink('tenders', $content['uploadpath'], $content['attachments_bn'], FALSE, null, 16) ?>
+            </div>
+        </td>
+    </tr>
+    <?php $i++; ?>
+    <?php } ?>
+    </tbody>
+</table>
+<?php echo renderPagination('tenders',$paginate)?>
+<br/>
+<a style="float: right" href="/site/view/tender-archive">আর্কাইভ</a>
+<?php else:?>
+    <p>বর্তমানে কোন টেন্ডার বিজ্ঞপ্তি নাই.....</p>
+<?php endif;?>
+
+<style>.bordered {
+    text-align: left !important;
+}
+
+.pagination{list-style:outside none none!important}</style><script></script>

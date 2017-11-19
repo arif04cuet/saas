@@ -1,0 +1,10 @@
+<div id="box-3" class="six columns subdivision-box box first">	
+						<h4>অধিশাখা</h4>	
+	<ul class="square">
+		
+		<?php foreach ($contents as $content) { ?>	
+			<li><a href="/site/view/section_work_distribution?t=<?php echo $content['name_bn']; ?>"><?php echo $content['name']; ?></a></li>   			
+		<?php } ?>
+
+ 	</ul>
+</div><style></style><script></script>

@@ -1,0 +1,6 @@
+<h5 class="bk-org title"><?php echo $content['title']; ?></h5>
+<ul  class="square">
+<?php foreach ($content['links'] as $lnk) { ?>
+	<li><?php echo renderLink($lnk, $lang) ?></li>   
+ <?php } ?>
+</ul>

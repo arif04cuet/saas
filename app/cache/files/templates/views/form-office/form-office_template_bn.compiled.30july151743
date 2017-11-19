@@ -1,0 +1,51 @@
+<div id="article-title">
+	<h1><?php echo $contents['0']['sitename_bn']; ?> এর ফরমসমূহ</h1>
+<div id="print-email-social">
+			
+		<a href="http://www.facebook.com/sharer.php?u=http://www.forms.gov.bd/site/view/form-page/<?php echo $contents['0']['id']?> &t=<?php echo $contents['0']['title_bn'] ?>" target="_blank"><i class="flaticon-facebook12"></i></a>
+		
+		<a href="http://twitter.com/home?status=<?php echo $contents['0']['title_bn'] ?>+http://www.forms.gov.bd/site/view/form-page/<?php echo $contents['0']['id']?>" target="_blank"><i class="flaticon-social19"></i></a> 
+		<a href="http://plus.google.com/share?url=http://www.forms.gov.bd/site/view/form-page/<?php echo $contents['0']['id']?> " target="_blank"><i class="flaticon-google10"></i></a> 
+	</div><!-- print-email-social -->
+</div>
+
+
+
+<ul class="front-tab-ajax-ul">
+<?php 
+foreach ($contents as $content){
+	//-------------tappware	
+	$new_title = str_replace(" ","-",$content['title_bn']);
+	$new_title = htmlspecialchars($new_title, ENT_QUOTES);
+	//-------------tappware
+	echo '<li>';
+	echo '<i class="flaticon-arrow73"></i>'.'   ';
+	$title = $content['title_bn'];
+	echo '<a class="col-md-22 col-sm-22 col-xs-20" href="http://www.forms.gov.bd/site/view/form-page/'.$content['id'].'/'.$new_title.'">'.$title.'</a>';
+	
+	echo '</li>';
+
+}
+
+
+
+?>
+	
+</ul>
+<style>#printable_area a {
+    color: #444444;
+    text-decoration: none;
+}
+
+li{
+list-style:none;
+
+}
+
+.front-tab-ajax-ul li {
+    border-bottom: 1px solid #F5F5F5;
+}
+
+.front-tab-ajax-ul{
+	padding:0;
+}</style><script></script>

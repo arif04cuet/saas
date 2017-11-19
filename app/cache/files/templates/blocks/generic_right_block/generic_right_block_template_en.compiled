@@ -1,0 +1,12 @@
+<div class="column block">
+	<h5 class="bk-org title">
+	<?php echo $title; ?>	
+	</h5>
+	
+	<?php echo $body; ?>
+<p>
+	<?php if($more!=''){?>
+			<a href="<?php echo $more; ?>" class="btn" style="display:block;text-align:center;">More</a>
+		<?php }?>
+	</p>
+</div><style></style><script></script>

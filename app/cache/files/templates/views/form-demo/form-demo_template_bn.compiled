@@ -1,0 +1,24 @@
+<div id="article-title">
+	
+	<h1><?php echo $contents['0']['title_bn']; ?></h1>
+	<div id="print-email-social">
+		
+		
+
+		
+	    <a href="javascript:;"><i class="flaticon-envelope32"></i></a>
+		<a href="http://www.facebook.com/sharer.php?u=http://www.forms.gov.bd/site/view/form-demo/<?php echo $contents['0']['id']?> &t=<?php echo $contents['0']['title_bn'] ?>" target="_blank"><i class="flaticon-facebook12"></i></a>
+		
+		<a href="http://twitter.com/home?status=<?php echo $contents['0']['title_bn'] ?>+http://www.forms.gov.bd/site/view/form-demo/<?php echo $contents['0']['id']?>" target="_blank"><i class="flaticon-social19"></i></a> 
+		<a href="http://plus.google.com/share?url=http://www.forms.gov.bd/site/view/form-demo/<?php echo $contents['0']['id']?> " target="_blank"><i class="flaticon-google10"></i></a> 
+	</div><!-- print-email-social -->
+</div>
+
+<p>	<?php echo $contents['0']['body_bn']; ?></p>
+
+
+<?php echo renderFileViewer('forms',$contents['0']['uploadpath'] ,$contents['0']['filled_up_form'], $contents['0']["subdomain"]); ?>
+
+
+
+<style></style><script></script>

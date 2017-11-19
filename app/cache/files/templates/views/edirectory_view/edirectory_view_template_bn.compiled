@@ -1,0 +1,38 @@
+<div id="statusbar"> মোট ফলাফল পাওয়া গেছে <?php echo count($contents);?> টি</div><!-- statusbar -->
+	
+	<div id="main-body-content">
+		<?php $i=1; 
+		
+		?>
+		<?php foreach ($contents as $content) { ?>	
+		
+		<?php if($i%2 == 0){
+			echo '<div class="man-box even">';
+		}
+		else
+			{
+			echo '<div class="man-box odd">';
+		}
+		?>
+				<div class="image"><img src="/themes/responsive_npf/templates/edirectory/images/apic.jpg" width="92" height="94"></div>
+				<div class="info">
+					<a href="/site/view/profile_details/<?php echo $content['id']; ?>"><span class="info-name violet"><?php echo $content['title']; ?></span></a><br>
+					<span class="info-designation green"><?php echo $content['des']; ?></span><br>
+					<span class="info-address ash"><?php echo $content['mobile']; ?></span>
+				</div>
+				<div class="info-button">
+					<table>
+						<tr>
+							<td><i class="flaticon-events"></i></td>
+							<td><i class="flaticon-events"></i></td>
+						</tr>
+						<tr>
+							<td><i class="flaticon-events"></i></td>
+							<td><i class="flaticon-events"></i></td>
+						</tr>
+					</table>
+				</div>
+			</div><!-- man-box -->
+		<?php $i++; ?>
+		<?php } ?>
+	</div><!-- main-body-content --><style></style><script></script>

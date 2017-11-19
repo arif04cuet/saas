@@ -1,0 +1,27 @@
+<h3>ডাউনলোড</h3><br>
+
+<table class="bordered" style="border:1px solid #d8d8d8; width:100%; ">
+	<thead style="background-color:#fafafa;">
+	<th style="text-align:center;">ক্রমিক</th>
+		<th style="padding:5px;">শিরোনাম</th>
+		<th style="text-align:center;">ডাউনলোড</th>
+	</thead>
+<tbody>
+	<?php $i=1; ?>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td  style="text-align:center;"><?php echo digit_to_bangla($i, bn)?></td>
+		<td><?php echo $content['title_bn'] ?></td>
+		<td style="text-align:center;">
+			<div>
+				<?php echo renderDownloadLink('download',$content['uploadpath'] ,$content['file'], FALSE, null, 32) ?>
+			</div>
+		</td>
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table><style>td, tr{
+border:1px solid #d8d8d8;
+}
+td{padding:5px;}</style><script></script>

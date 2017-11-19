@@ -1,0 +1,24 @@
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Image</th>
+<th>downloads</th>
+</tr>
+</thead>
+<tbody>
+<?php foreach ($contents as $content) { ?>
+<tr>
+<td><?php echo $content['title']; ?></td>
+<td><?php echo renderImageThumbnil('exmple_all_field_types',$content['uploadpath'] ,$content['image']) ?></td>
+<td>
+
+<?php foreach ($content['downloads'] as $fname) { ?>
+<?php echo renderDownloadLink('exmple_all_field_types',$content['uploadpath'] ,$fname) ?>
+ <?php } ?>
+</td>
+</tr>
+ <?php } ?>
+
+</tbody>
+</table>

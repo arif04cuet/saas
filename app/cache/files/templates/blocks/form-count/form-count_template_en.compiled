@@ -1,0 +1,1 @@
+ <div id="total-form-count" class="block right">Total Forms <br><span class="form-count"><?php echo digit_to_bangla($contents[0]['cnt'], 'en'); ?></span></div><style></style><script></script>

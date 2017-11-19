@@ -1,0 +1,4 @@
+<style></style><script>$(document).ready(function(){
+	init_npf_tabs('#tabs');
+});
+</script>

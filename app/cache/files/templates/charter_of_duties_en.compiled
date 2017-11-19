@@ -1,0 +1,7 @@
+<h3><?php echo $content['title']; ?></h3>
+<div><?php echo $content['body']; ?></div>
+<div>
+<?php foreach ($content['file'] as $fname) { ?>
+<?php echo renderDownloadLink('charter_of_duties',$content['uploadpath'] ,$fname) ?>
+<?php } ?>
+</div><style></style><script></script>

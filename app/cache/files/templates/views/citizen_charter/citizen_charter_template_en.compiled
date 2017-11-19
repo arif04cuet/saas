@@ -1,0 +1,4 @@
+<h3><?php  echo $contents[0]['title_en']; ?></h3>
+
+<p>	<?php  echo $contents[0]['body_en']; ?></p>
+<style></style><script></script>

@@ -1,0 +1,9 @@
+<h3><?php echo $content['law_name']; ?></h3>
+<h5><?php echo $content['law_number']; ?></h5>
+<h6><?php echo $content['gadget_number']; ?></h6>
+<?php foreach ($content['attachment_files'] as $fname) { ?>
+<?php echo renderDownloadLink('law',$content['uploadpath'] ,$fname) ?>
+ <?php } ?>
+<?php foreach ($content['amendment_files'] as $fname) { ?>
+<?php echo renderDownloadLink('law',$content['uploadpath'] ,$fname) ?>
+ <?php } ?>

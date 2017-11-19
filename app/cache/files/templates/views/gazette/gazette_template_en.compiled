@@ -1,0 +1,37 @@
+<h3>
+Gazette
+</h3>
+<table class="bordered">
+<tbody>
+	<?php $i=1; ?>
+		<tr>
+   		<th style='width: 35px'>Sl</th>
+   		<th style='width: 200px'>Title</th>
+		 <th style='width: 80px'>Gazette Publish Date</th>
+		<th style='width: 65px'>Notification No</th>
+		 <th style='width: 80px'>Notification Date</th>
+		 <th style='width: 80px'>Division Name</th>
+		 <th style='width: 80px'>District Name</th>
+		 <th style='width: 80px'>Download</th>
+ 	</tr>
+	<?php foreach ($contents as $content) { ?>
+
+	<tr>
+		<td style='width: 35px'><?php echo digit_to_bangla($i,$lang)?></td>
+		<td style='width: 200px'><?php echo $content['title_en'] ?></td>
+		<td style='width: 80px'><?php echo $content['gazette_publish_date'] ?></td>
+		<td style='width: 65px'><?php echo $content['notification_no'] ?></td>
+		<td style='width: 80px'><?php echo $content['notification_date'] ?></td>
+		<td style='width: 80px'><?php echo $content['division_name'] ?></td>
+		<td style='width: 80px'><?php echo $content['district_name'] ?></td>
+	
+		<td style='width: 80px'>Download:	
+			<div>
+				<?php echo renderDownloadLink('gazette',$content['uploadpath'] ,$content['file']) ?>
+			</div>
+		</td>
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table><style></style><script></script>

@@ -1,0 +1,77 @@
+<div class="gov-news-initiatives">
+
+    <div class="gov-initiatives">
+        <div class="full-row gov-init-header">
+            <span style="float:left">
+                <h5>Initiatives</h5>
+            </span>
+			<!--
+            <span style="float:right">
+                 
+            </span> -->
+        </div>
+        <div class="gov-init-list">
+            <ul>
+                <?php
+
+                $sql = "SELECT  id, title_{$lang} AS title, pubdate  FROM npfministryadmin.npf_content_gov_initiatives"
+                        . " WHERE active=1 AND publish=1"
+                        . " ORDER BY pubdate ASC LIMIT 0,7";
+
+                $result = db_query($sql);
+
+
+                while ($row = db_fetch_array($result)) {
+					
+					 $teaser_title = teaser_text($row['title'], 85);
+                    ?>
+					
+ 					<li><?php echo renderLinkBy('gov_initiatives', $row['id'], $teaser_title); ?> <i>(<?php echo digit_to_bangla($row['pubdate'], $lang) ?>)</i></li>  
+                    <?php
+                }
+                ?>
+            </ul>
+			<span style="float:right">
+                <a class="btn" href="/site/view/initiatives">All</a>
+            </span>
+
+        </div>
+    </div>
+
+    <div class="gov-news">
+        <div class="full-row gov-init-header">
+            <span style="float:left">
+                <h5>News</h5>
+            </span>
+			<!--
+            <span style="float:right">
+                 
+            </span> -->
+        </div>
+        
+        <div class="gov-news-list">
+            <ul>
+
+				
+                <?php foreach ($contents as $content) { ?>
+
+				<?php 
+				
+				 $teaser_title = teaser_text($content['title'], 85);
+				?>
+
+                <li><?php echo renderLinkBy('news', $content['id'], $teaser_title) ?> <i>(<?php echo digit_to_bangla($content['pubdate'], $lang) ?>)</i></li> 
+
+                <?php } ?>
+                
+            </ul>
+			<span style="float:right">
+                <a class="btn" href="/site/view/news">All</a>
+            </span>
+
+        </div>
+        
+        
+    </div>
+
+</div><style></style><script></script>

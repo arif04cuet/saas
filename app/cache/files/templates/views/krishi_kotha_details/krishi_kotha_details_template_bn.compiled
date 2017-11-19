@@ -1,0 +1,57 @@
+<?php foreach ($contents as $content) { ?>
+<h3 class="title">
+	<?php echo $content['title_bn']; ?>
+</h3>
+<h2>
+	<!--সালঃ<?php echo $content['year']; ?> মাসঃ <?php echo $content['month']; ?> -->
+</h2>
+<?php if (($content['image'][0]['name'] == '')) { ?> 
+<?php echo renderImage('krishi_kotha', $content['uploadpath'], $content['cover_photo'], '200'); ?>
+<?php } else { ?>
+<?php echo renderImage('krishi_kotha', $content['uploadpath'], $content['image'], '200'); ?>
+<?php } ?>
+
+<div style="float:left">
+	<?php echo $content['body_bn']; ?>
+</div>
+
+ <?php } ?><style>.title{
+background: none repeat scroll 0% 0% #87A00D;
+height: 40px;
+line-height: 40px;
+padding: 5px 10px 0px;
+color: #FFF;
+font-weight: bold;
+font-size: 16px;
+font-family: "solaimanLipi";
+}
+.archive_select_list{
+border:1px solid #607207;
+border-radius:2px;
+margin:5px auto;
+width: 150px;
+}
+.archive_select_list span h5{
+background: none repeat scroll 0% 0% #87A00D;
+color:white;
+font-weight:bold;
+text-align:center;
+}
+.archive_select_list_body{
+
+}
+.submit-btn{
+padding: 5px !important;
+background-color: #87A00D !important;
+border-radius:3px;
+margin-bottom: 3px !important;
+color:white !important;
+font-weight: 100 !important;
+margin-left: 30%;
+font-size:14px;
+
+}
+img{
+float:left;
+margin-right:12px;
+}</style><script></script>

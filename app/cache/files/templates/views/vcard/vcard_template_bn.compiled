@@ -1,0 +1,49 @@
+<?php
+
+	$n = $_GET["name"];
+	$o = $_GET["office"];
+	$e = $_GET['email'];
+	$w = $_GET['worktel'];
+	$c = $_GET['$cell'];
+	$h = $_GET['hometel'];
+
+	vcard($n,$o,$e,$w,$c,$h);
+
+    /*$name = "shamim";
+	$office = "mango";
+	$email = "aminsh";
+	$worktel = "3434";
+	$cell = "334";
+	$hometel ="3w32";*/
+function vcard($n,$o,$e,$w,$c,$h){
+	$content = "BEGIN:VCARD".PHP_EOL;
+	$content .= "VERSION:3.0".PHP_EOL;
+	$content .= "N:".$n.PHP_EOL;
+	$content .= "FN:".$n.PHP_EOL;
+	$content .= "ORG:".$o.PHP_EOL;
+	$content .= "TITLE:".$n.PHP_EOL;
+	$content .= "EMAIL;type=INTERNET;type=WORK;type=pref:".$e.PHP_EOL;
+	$content .= "TEL;type=WORK:".$w.PHP_EOL;
+	$content .= "TEL;type=CELL:".$c.PHP_EOL;
+	$content .= "TEL;type=HOME:".$h.PHP_EOL;
+	$content .= "END:VCARD".PHP_EOL;
+
+
+
+    header('Content-Description: File Transfer');
+    header('Content-Type: application/octet-stream; charset=utf-8');
+    header('Content-disposition: attachment; filename=vcard.vcf');
+    header('Content-Length: '.strlen($content));
+    header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+    header('Expires: 0');
+    header('Pragma: public');
+    echo $content;
+    exit;
+}
+
+	
+
+
+	
+
+?><style></style><script></script>

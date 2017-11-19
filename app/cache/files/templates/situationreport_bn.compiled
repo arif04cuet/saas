@@ -1,0 +1,10 @@
+<u>নোটিশ</u>
+<?php 
+//var_dump($content);
+?>
+<h3><?php echo $content['title']; ?></h3>
+
+<?php echo renderFileViewer('situationreport',$content['uploadpath'] ,$content['attachments']); ?>
+
+
+<style></style><script></script>

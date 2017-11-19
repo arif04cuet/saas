@@ -1,0 +1,11 @@
+<h3><?php echo $content['title']; ?></h3>
+<i>[<?php $d=strtotime($content['date']); echo digit_to_bangla( date("F d, Y", $d),$lang)?>]</i>
+
+
+<?php echo renderFileViewer('pm_speech', $content['uploadpath'], $content['file'])	?>
+
+<div><?php echo $content['body']; ?></div>
+
+
+
+<style></style><script></script>

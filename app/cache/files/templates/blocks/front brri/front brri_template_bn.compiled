@@ -1,0 +1,59 @@
+<head>
+<title></title>
+    <style type="text/css">
+        .auto-style1
+        {
+            font-size: large;
+        }
+        .auto-style2
+        {
+            font-size: large;
+            text-align: justify;
+        }
+        .auto-style3
+        {
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+   <table class="contentpaneopen">
+		<tbody>
+			<tr>
+				<td valign="top" colspan="2">
+					<p class="auto-style2">
+					    <span class="auto-style3">বাংলাদেশ একটি বৃহৎ সমতল ব-দ্বীপ, যা তিনটি বড় নদী গঙ্গা, ব্রক্ষ্মপুত্র এবং মেঘনা নদীর প্রাকৃতিক বৈশিষ্ট্যের প্রভাবে গঠিত হয়েছে। পর্যাপ্ত পানি এবং গ্রীষ্মমন্ডলীয় (নাতিশীতোষ্ণ) জলবায়ুর ফলে ধান উদ্ভিদের জন্য এ এলাকা লালনক্ষেত্র । উপরন্ত ধান এদেশের প্রধান খাদ্য এবং সংস্কৃতিসহ প্রথাগত এবং ধর্মীয় যাবতীয় আচারানুষ্ঠানের সঙ্গে মিশে আছে । বর্তমান সময়ে দেশের জনসংখ্যা দ্রুত বাড়ছে, যা ধান উৎপাদন এবং চাহিদার মধ্যে বিস্তর ব্যবধান তৈরি করছে। বর্ধিত জনসংখ্যার খাদ্য চাহিদা মেটাতে ধান উৎপাদনে মৌলিক কাঠামোগত পরিবর্তন, সনাতন ধানের জাতের পরিবর্তে উচ্চ ফলনশীল জাত উৎপাদনের চর্চা এবং প্রযুক্তি উন্নতিকরণ প্রয়োজন । এ উপমহাদেশে ধান গবেষণা ১৯১০ সাল থেকে শুরু হয়ে ৬০ এর দশকের মাঝামাঝি পর্যন্ত গতিশীল হয়। সংস্কৃতিসহ প্রথাগত এবং ধর্মীয় যাবতীয় আচারানুষ্ঠানের সঙ্গে মিশে আছে ।</span> 
+					</p>
+				</td>
+			</tr>
+<tr>
+<td style="width:212px"><img src="http://brri.portal.gov.bd/uploader/server/../../sites/default/files/files/brri.portal.gov.bd/page/b232b9e9_59ab_46a4_bd93_0261083add3d/brri_f26.jpg" ></td>
+<td>
+    <p class="auto-style2">
+        <span class="auto-style3">খাদ্য নিরাপত্তায় এবং রাজনৈতিক স্থিতিশীলতা নিশ্চিতকরণে ধানের গুরুত্ব উপলব্ধি করায় ১৯৭০ সালের ১ অক্টোবর দেশের রাজধানী শহর ঢাকা থেকে ৩৬ কিলোমিটার উত্তরে গাজীপুরে ৭৬.৮২ হেক্টর জমি নিয়ে স্বায়ত্বশাসিত প্রতিষ্ঠান হিসেবে পূর্ব পাকিস্তান ধান গবেষণা ইনস্টিটিউট ( ইপিআরআরআই) প্রতিষ্ঠিত হয়।</span>      
+	</p>
+</td>
+</tr>
+	<tr>
+		<td colspan="2">
+			<p class="auto-style1">
+	            <span class="auto-style3">পরবর্তীতে ১৯৭১ সালে স্বাধীনতা লাভের পর পরিবর্তিত নাম হয় বাংলাদেশ ধান গবেষণা ইনস্টিটিউট।</span>
+				
+			</p>
+			</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+            <p align="center"><a target="_blank" href="http://www.knowledgebank-brri.org/"></a><strong><span style="font-size: 18pt;"><a target="_blank" href="http://www.knowledgebank-brri.org/"><span style="color: #ff00ff;"><span style="color: #b934cb;"><span style="color: #b83fc0;"><span style="font-size: 24pt;">বাং</span><span style="color: #008000;">লাদেশ </span></span></span></span><span style="color: #008000;"><span style="color: #b33bc3;"><span style="font-size: 24pt;">রা</span><span style="color: #008000;">ইচ</span></span> <span style="font-size: 24pt; color: #b33bc3;">ন</span>লেজ <span style="font-size: 24pt; color: #b33bc3;">ব্যাং</span>ক</span></a></span></strong></p>
+            <p align="center"><a href="" target="_blank"><span style="color: #0000ff;"><img style="color: #ffff00;" src="http://brri.portal.gov.bd/sites/default/files/files/brri.portal.gov.bd/page/b232b9e9_59ab_46a4_bd93_0261083add3d/brri_station_map_1.jpg" height="200"></span></a></p>
+		</td>
+
+	</tr>
+</tbody>
+</table>  <style>.contentpaneopen{
+font-size:15px;
+}
+.contentpaneopen span{
+line-height:1;
+}</style><script></script>

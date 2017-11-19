@@ -1,0 +1,34 @@
+<script src="/<?php echo path_to_theme() ?>/youtube-video-gallery/jquery.youtubevideogallery.js"></script>
+<link rel="stylesheet" href="/<?php echo path_to_theme() ?>/youtube-video-gallery/youtube-video-gallery.css"
+      type="text/css"/>
+
+
+<h3>
+  ভিডিও গ্যালারি
+</h3>
+<hr/>
+<ul class="youtube-videogallery youtube-videogallery-container">
+    <?php $i = 1; ?>
+    <?php foreach ($contents as $content) { ?>
+
+    <li><a href="<?php echo $content['url'] ?>"><?php echo $content['title'] ?></a></li>
+
+    <?php $i++; ?>
+    <?php } ?>
+
+</ul><style>.close a{float: right;color: #fff}
+.youtube-videogallery-display{z-index:1000!important}</style><script>$(document).ready(function () {
+        $("ul.youtube-videogallery").youtubeVideoGallery({
+            assetFolder: '/<?php echo path_to_theme()?>/youtube-video-gallery/',
+            innerHeight: 500,
+            innerWidth: 700,
+            iframeTemplate: '<div class="iframe"><div class="close"><a href="#">CLOSE</a></div><iframe title="Youtube video player" id="youtube-videogallery-iframe" style=" height: {options.innerHeight}px; width: {options.innerWidth}px;" frameborder="0" src="about:blank"></iframe></div>'
+        });
+
+        //close the iframe
+        $(".close a").click(function (e) {
+            e.preventDefault();
+            $(".youtube-videogallery-bodycover").trigger("click");
+        });
+    });
+</script>

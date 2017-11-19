@@ -1,0 +1,12 @@
+<h3><?php echo $content['title']; ?></h3>
+<div><?php echo $content['body']; ?></div>
+<?php 
+	if(!empty($content['field_photo'])){
+		echo renderImage('page',$content['uploadpath'] ,$content['field_photo']);	
+	}
+?>
+<?php 
+	if(!empty($content['field_page_file_english'])){
+		echo renderFileViewer('page',$content['uploadpath'] ,$content['field_page_file_english']);	
+	}
+?><style></style><script></script>

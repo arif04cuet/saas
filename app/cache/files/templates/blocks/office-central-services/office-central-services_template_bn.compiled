@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          কেন্দ্রীয় ই-সেবা
+        </a><i class="indicator flaticon-little20  pull-right"></i>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in">
+      <div class="panel-body">
+			
+			<?php if(sizeof($contents)>0){?>
+			<?php ?>
+				<ul class="list-unstyled" style="padding:0;margin: 0">
+					<?php foreach ($contents as $lnk) { ?>	
+
+						<li><i class="flaticon-right65 violet"></i><?php  echo renderLink($lnk['link'], bn)?></li>
+					<?php } ?>
+				</ul>
+				<?php if($more!=''){?>
+					<a href="<?php echo $more; ?>" class="btn" style="display:block;text-align:center;">সকল</a>
+				<?php }?>
+			<?php } ?>
+			
+      </div>
+    </div>
+  </div><style></style><script></script>

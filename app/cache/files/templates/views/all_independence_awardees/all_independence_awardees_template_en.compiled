@@ -1,0 +1,58 @@
+<h3>
+	List of Independence Awardees
+</h3>
+
+<select id="year_select" onchange="showOnYear(this)" style="">
+	
+		      <option value="0" selected=""> -- Select a Year -- </option>
+			   <?php for($i=date('Y');$i>=1977;$i--){?>
+     			 <option value="<?php echo $i?>"><?php echo $i ?></option>      
+			   <?php } ?>           
+    	</select>
+<?php if(count($contents)>0){?>
+<h4>
+	Awarded Year: <?php echo $q[0]?>
+</h4>
+<table class="bordered">
+	<thead>
+		<tr>
+			<th>SL</th>
+			<th>Person/Organization</th>
+			<th>Sector</th>
+		</tr>
+	</thead>
+<tbody>
+	
+	<?php foreach ($contents as $content) { ?>
+	<?php 
+			if($tmp!=$content['b_yr']){
+				$tmp = $content['b_yr'];
+	?>
+	<tr>
+		<td colspan="3" style="font-weight:bold; line-height: 2em;">
+		Awarded Year:
+			<?php echo $tmp?>
+		</td>
+	</tr>
+	
+	<?php } ?>
+	
+	<tr>
+		<td><?php echo $content['name_order']?></td>
+		<td><?php echo $content['name']; ?></td>
+		<td><?php echo $content['sector']; ?></td>
+	</tr>
+ <?php } ?>
+</tbody>	
+
+</table>
+<?php }else{ ?>
+
+<?php } ?><style></style><script>$( document ).ready(function() {
+  $('#year_select').change(function() {
+      var v = $(this).val();  
+		if(v!=0){
+      window.location = "/site/view/independence_awardees/"+v;
+		}
+  });
+});</script>

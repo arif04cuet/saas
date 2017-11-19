@@ -1,0 +1,3 @@
+<?php  echo renderImage('office', $contents[0]['uploadpath'], $contents[0]['image']) ; ?>
+
+<style></style><script></script>

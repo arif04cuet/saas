@@ -1,0 +1,980 @@
+<form id='frm' name="frm" method="post" action="" style="margin-top: 120px;clear: both;width: 100%;">
+	<u style="font-weight: bold;">প্রথম অংশ (পরিচিতি)</u>
+	<table id="first_table">		
+		<tr>
+			<td width="25%">
+				<label>উত্তর দাতার নাম :</label>
+			</td>
+			<td width="25%">
+				<input type="text" name="name_applicant" id="name_applicant" value="">
+			</td>
+			<td width="25%">
+				<label>লিঙ্গ:</label>
+			</td>
+			<td width="25%">
+				<input type="radio" name="gender_applicant" checked="checked" value="পুরুষ ">&nbsp;পুরুষ 
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="gender_applicant" value="মহিলা">&nbsp;মহিলা
+			</td>
+		</tr>
+		
+		<tr>
+			<td width="25%">
+				<label>পেশার ক্ষেত্রঃ </label>
+			</td>
+			<td width="25%">
+				<select name="occupation_type_applicant" id="occupation_type_applicant">
+				  <option value="সরকারি">সরকারি</option>
+				  <option value="আধা সরকারি">আধা সরকারি</option>
+				  <option value="স্বায়ত্তশাসিত">স্বায়ত্তশাসিত</option>
+				</select>
+			</td>
+			<td width="25%">
+				<label>পেশা:</label>
+			</td>
+			<td width="25%">
+				<select name="occupation_applicant" id="occupation_applicant">
+				  <option value="১ম শ্রেণী">১ম শ্রেণী</option>
+				  <option value="২য় শ্রেণী">২য় শ্রেণী</option>
+				  <option value="৩য় শ্রেণী">৩য় শ্রেণী</option>
+				  <option value="৪র্থ শ্রেণী">৪র্থ শ্রেণী</option>
+				</select>
+			</td>
+		</tr>
+		
+		
+		<tr>
+			<td>
+				<label>অফিসের নাম ও ঠিকানা:</label>
+			</td>
+			<td colspan="3">
+				<textarea name="office_applicant" id="office_applicant"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>বিভাগ কোড:</label>
+			</td>
+			<td>
+				<input class="sText" type="text" name="div_applicant" id="div_applicant" value="">
+			</td>
+			<td>
+				<label>জেলা কোড:</label>
+			</td>
+			<td>
+				<input class="sText"  type="text" name="dis_applicant" id="dis_applicant" value="">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>উপজেলা কোড:</label>
+			</td>
+			<td>
+				<input class="sText"  type="text" name="up_applicant" id="up_applicant" value="">
+			</td>
+			<td>
+				<label>এলাকার ধরণ:</label>
+			</td>
+			<td>
+				<select name="area_applicant" id="area_applicant">
+				  <option value="সিটি কর্পোরেশন ">সিটি কর্পোরেশন </option>
+				  <option value="শহর">শহর</option>
+				  <option value="গ্রাম">গ্রাম</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+	<u style="font-weight: bold;">দ্বিতীয় অংশ (বেতন সংক্রান্ত)</u>
+	<table id="second_table">
+		<tr>
+			<td colspan="3">
+				<label>১। বিদ্যমান জাতীয় বেতন স্কেলে  যে ২০টি গ্রেড আছে, তা আপনি সমর্থন করেন কি ? </label>
+				<input type="hidden" name="q1" value="১। বিদ্যমান জাতীয় বেতন স্কেলে  যে ২০টি গ্রেড আছে, তা আপনি সমর্থন করেন কি ? ">
+			</td>
+		</tr>
+		
+		<tr>
+			<td width="34%">
+				<input type="radio" name="a1" checked="checked" value="হ্যাঁ">&nbsp;হ্যাঁ
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a1" value="না">&nbsp;না
+			</td>
+			<td width="33%">				
+			</td>
+			<td width="33%">&nbsp;</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>১.১।  যদি উত্তর ‘না’ হয় তবে  কতটি গ্রেড হওয়া উচিত এবং কেন ? </label>
+				<input type="hidden" name="q1_1" value="১.১।  যদি উত্তর ‘না’ হয় তবে  কতটি গ্রেড হওয়া উচিত এবং কেন ? ">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<input class="sText"  type="text" name="a1_1" id="a1_1" value="">&nbsp;<label>টি গ্রেড</label>
+			</td>
+			<td colspan="2">
+				<label>যুক্তির পক্ষে মতামতঃ</label>&nbsp;<textarea name="a1_1_remarks" id="a1_1_remarks"></textarea>
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>২। বর্তমানে বাজার দর অনুযায়ী সরকারি/আধা সরকারি/স্বায়ত্বশাসিত সংস্থায় কর্মরত একজন চাকরিজীবীর ৬ (ছয়) সদস্যের পরিবারের জন্য সর্বনিম্ন ও সর্বোচ্চ মূল বেতন কত হওয়া উচিৎ ?</label>
+				<input type="hidden" name="q2" value="২। বর্তমানে বাজার দর অনুযায়ী সরকারি/আধা সরকারি/স্বায়ত্বশাসিত সংস্থায় কর্মরত একজন চাকরিজীবীর ৬ (ছয়) সদস্যের পরিবারের জন্য সর্বনিম্ন ও সর্বোচ্চ মূল বেতন কত হওয়া উচিৎ ?">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<label>সর্বনিম্নঃ</label>&nbsp;<input  class="sText" type="text" name="a2_min" id="a2_min" value="">
+			</td>
+			<td>
+				<label>সর্বোচ্চঃ</label>&nbsp;<input  class="sText" type="text" name="a2_max" id="a2_max" value="">
+			</td>
+			<td>&nbsp;</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>৩।  সকল সরকারি চাকরিজীবীদের জন্য একই হারে বেতন বৃদ্ধি আপনি সমর্থন করেন কি ?</label>
+				<input type="hidden" name="q3" value="৩।  সকল সরকারি চাকরিজীবীদের জন্য একই হারে বেতন বৃদ্ধি আপনি সমর্থন করেন কি ?">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<input type="radio" name="a3" checked="checked" id="a3" value="হ্যাঁ">&nbsp;হ্যাঁ
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a3" value="না">&nbsp;না
+			</td>
+			<td>				
+			</td>
+			<td>&nbsp;</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>৩.১।  যদি উত্তর ‘না’ হয় তবে নিম্নোক্ত ব্যবস্থাগুলোর মধ্যে কোনটি সমর্থন করেন ?</label>
+				<input type="hidden" name="q3_1" value="৩.১।  যদি উত্তর ‘না’ হয় তবে নিম্নোক্ত ব্যবস্থাগুলোর মধ্যে কোনটি সমর্থন করেন ? ">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<select name="a3_1" id="a3_1">
+				  <option value="সবার জন্য বাড়বে, তবে স্বল্প আয়ের জন্য বেশি হারে বাড়বে">সবার জন্য বাড়বে, তবে স্বল্প আয়ের জন্য বেশি হারে বাড়বে</option>
+				  <option value="শুধুমাত্র স্বল্প আয়ের  জন্য  বাড়বে">শুধুমাত্র স্বল্প আয়ের  জন্য  বাড়বে</option>
+				  <option value="সবার জন্য বাড়বে, তবে বেশি আয়ের  জন্য বেশি বাড়বে">সবার জন্য বাড়বে, তবে বেশি আয়ের  জন্য বেশি বাড়বে</option>
+				</select>
+			</td>
+			<td colspan="2">
+				&nbsp;
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>৪।   বর্তমানে প্রচলিত বেতন কাঠামোতে কোন অসংগতি আছে কিনা ?</label>
+				<input type="hidden" name="q4" value="৪।   বর্তমানে প্রচলিত বেতন কাঠামোতে কোন অসংগতি আছে কিনা ?">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<input type="radio" name="a4" checked="checked" id="a3" value="হ্যাঁ">&nbsp;হ্যাঁ
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a4" value="না">&nbsp;না
+			</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>৪.১। যদি উত্তর ‘হ্যাঁ’ হয় তা হলে অসঙ্গতি কি কি ? (একাধিক উত্তর হতে পারে)</label>
+				<input type="hidden" name="q4_1" value="৪.১। যদি উত্তর ‘হ্যাঁ’ হয় তা হলে অসঙ্গতি কি কি ? (একাধিক উত্তর হতে পারে)">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<select name="a4_1" id="a4_1"  multiple>
+				  <option value="(i) আন্তঃস্কেলের বৈষম্য">(i) আন্তঃস্কেলের বৈষম্য</option>
+				  <option value="(ii) অপর্যাপ্ত প্রারম্ভিক বেতন">(ii) অপর্যাপ্ত প্রারম্ভিক বেতন</option>
+				  <option value="(iii) টাইম স্কেলের অসঙ্গতি">(iii) টাইম স্কেলের অসঙ্গতি</option>
+				  <option value="(iv) সবকটি প্রযোজ্য">(iv) সবকটি প্রযোজ্য</option>
+				  <option value="(v) অন্যান্য (উল্লেখ করুন)---">(v) অন্যান্য (উল্লেখ করুন)---</option>
+				</select>				
+			</td>
+			<td colspan="2">
+				<label>অন্যান্য হলে উল্লেখ করুন:</label>&nbsp;<textarea name="a4_1_remarks" id="a4_1_remarks"></textarea>				
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>৫। ১ম শ্রেণীর কর্মকর্তাদের ৪, ১০ বৎসর অন্তর যে সিলেকশন গ্রেড প্রচলিত আছে তার পরিবর্তে তা কত বৎসর পর পর  হওয়া     উচিত বলে আপনি মনে করেন ? </label>
+				<input type="hidden" name="q5" value="৫। ১ম শ্রেণীর কর্মকর্তাদের ৪, ১০ বৎসর অন্তর যে সিলেকশন গ্রেড প্রচলিত আছে তার পরিবর্তে তা কত বৎসর পর পর  হওয়া     উচিত বলে আপনি মনে করেন ? ">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<select name="a5" id="a5">
+				  <option value="(i)	৪, ১০, ১৫ বৎসর  ">(i)	৪, ১০, ১৫ বৎসর  </option>
+				  <option value="(ii) ৪, ৮, ১৩ বৎসর  ">(ii) ৪, ৮, ১৩ বৎসর  </option>
+				  <option value="(iii) ৫, ১০, ১৫, ২০  বৎসর">(iii) ৫, ১০, ১৫, ২০  বৎসর</option>
+				  <option value="(iv) ৭, ১২, ১৬, ২০ বৎসর">(iv) ৭, ১২, ১৬, ২০ বৎসর</option>
+				  <option value="(v) অন্যান্য (উল্লেখ করুন)">(v) অন্যান্য (উল্লেখ করুন)</option>
+				</select>				
+			</td>
+			<td colspan="2">
+				<label>অন্যান্য হলে উল্লেখ করুন:</label>&nbsp;<input type="text" name="a5_remarks" id="a5_remarks" value="" />
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>৬। ২য় শ্রেণীর কর্মকর্তাদের বিদ্যমান ৪ বৎসরে  সিলেকশন গ্রেড এবং ৮, ১২ বৎসরে অন্তর যে টাইম স্কেল আছে তার পরিবর্তে কত বৎসর পর পর  হওয়া উচিত বলে আপনি মনে করেন ? </label>
+				<input type="hidden" name="q6" value="৬। ২য় শ্রেণীর কর্মকর্তাদের বিদ্যমান ৪ বৎসরে  সিলেকশন গ্রেড এবং ৮, ১২ বৎসরে অন্তর যে টাইম স্কেল আছে তার পরিবর্তে কত বৎসর পর পর  হওয়া উচিত বলে আপনি মনে করেন ? ">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<select name="a6" id="a6">
+				  <option value="(i)	৪, ১০, ১৩ বৎসর  ">(i)	৪, ১০, ১৩ বৎসর  </option>
+				  <option value="(ii) ৪, ৮, ১৫ বৎসর  ">(ii) ৪, ৮, ১৫ বৎসর  </option>
+				  <option value="(iii) ৫, ১০, ১৫, ২০  বৎসর">(iii) ৫, ১০, ১৫, ২০  বৎসর</option>
+				  <option value="(iv) ৭, ১২, ১৬, ২০ বৎসর">(iv) ৭, ১২, ১৬, ২০ বৎসর</option>
+				  <option value="(v) অন্যান্য (উল্লেখ করুন)">(v) অন্যান্য (উল্লেখ করুন)</option>
+				</select>				
+			</td>
+			<td colspan="2">
+				<label>অন্যান্য হলে উল্লেখ করুন:</label>&nbsp;<input type="text" name="a6_remarks" id="a6_remarks" value="" />
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>৭। তৃতীয় ও ৪র্থ শ্রেণীর কর্মচারীদের বিদ্যমান ৮,১২, ১৫ বছর অন্তর যে টাইম স্কেল বিদ্যমান আছে তার পরিবর্তে কত বৎসর অন্তর হওয়া উচিত বলে আপনি মনে করেন ?</label>
+				<input type="hidden" name="q7" value="৭। তৃতীয় ও ৪র্থ শ্রেণীর কর্মচারীদের বিদ্যমান ৮,১২, ১৫ বছর অন্তর যে টাইম স্কেল বিদ্যমান আছে তার পরিবর্তে কত বৎসর অন্তর হওয়া উচিত বলে আপনি মনে করেন ?">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<select name="a7" id="a7">
+				  <option value="(i)	 ৮, ১২, ১৪ বৎসর   ">(i)	 ৮, ১২, ১৪ বৎসর  </option>
+				  <option value="(ii) ৮, ১১, ১৫  বৎসর">(ii) ৮, ১১, ১৫  বৎসর</option>
+				  <option value="(iii) ৮, ১২, ১৬, ২০  বৎসর">(iii) ৮, ১২, ১৬, ২০  বৎসর</option>
+				  <option value="(iv) ৭, ১২, ১৬, ২০ বৎসর">(iv) ৭, ১২, ১৬, ২০ বৎসর</option>
+				  <option value="(v) অন্যান্য (উল্লেখ করুন)">(v) অন্যান্য (উল্লেখ করুন)</option>
+				</select>				
+			</td>
+			<td colspan="2">
+				<label>অন্যান্য হলে উল্লেখ করুন:</label>&nbsp;<input type="text" name="a7_remarks" id="a7_remarks" value="" />
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>৮। বিদ্যমান স্কেলের সাথে যে বাৎসরিক বেতন বৃদ্ধি (ইনক্রিমেন্ট ) আছে তা কি পদ্ধতিতে নির্ণয় করা যায় বলে আপনি মনে করেন ?</label>
+				<input type="hidden" name="q8" value="৮। বিদ্যমান স্কেলের সাথে যে বাৎসরিক বেতন বৃদ্ধি (ইনক্রিমেন্ট ) আছে তা কি পদ্ধতিতে নির্ণয় করা যায় বলে আপনি মনে করেন ?">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<select name="a8" id="a8">
+				  <option value="(i)	বর্তমানে অনুসৃত পদ্ধতিতে ">(i)	বর্তমানে অনুসৃত পদ্ধতিতে </option>
+				  <option value="(ii) মূল বেতনের শতকরা হারে   ">(ii) মূল বেতনের শতকরা হারে   </option>
+				  <option value="(iii) মূল্যস্ফীতির সাথে সমন্বয়  করে">(iii) মূল্যস্ফীতির সাথে সমন্বয়  করে</option>
+				  <option value="(iv) জীবন যাত্রার ব্যয়ের সাথে সঙ্গতি রেখে">(iv) জীবন যাত্রার ব্যয়ের সাথে সঙ্গতি রেখে</option>
+				  <option value="(v) অন্যান্য (উল্লেখ করুন)">(v) অন্যান্য (উল্লেখ করুন)</option>
+				</select>				
+			</td>
+			<td colspan="2">
+				<label>অন্যান্য হলে উল্লেখ করুন:</label>&nbsp;<input type="text" name="a8_remarks" id="a8_remarks" value="" />
+			</td>
+		</tr>		
+		
+		<tr>
+			<td colspan="3">
+				<label>৯ ।  সরকারি চাকরিতে মেধাবীদের নিয়োগে আকৃষ্ট  করার জন্য কি কি পদক্ষেপ নেয়া উচিত  বলে আপনি মনে করেন ? (একাধিক উত্তর হতে পারে)</label>
+				<input type="hidden" name="q9" value="৯ ।  সরকারি চাকরিতে মেধাবীদের নিয়োগে আকৃষ্ট  করার জন্য কি কি পদক্ষেপ নেয়া উচিত  বলে আপনি মনে করেন ? (একাধিক উত্তর হতে পারে)">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<select name="a9" id="a9" multiple>
+				  <option value="(i)	প্রারম্ভিক বেতন বৃদ্ধি ">(i)	প্রারম্ভিক বেতন বৃদ্ধি </option>
+				  <option value="(ii) শিক্ষা, চিকিৎসা, বাসস্থান এর  সুবিধাদিসহ অন্যান্য সকল ভাতা বৃদ্ধি   ">(ii) শিক্ষা, চিকিৎসা, বাসস্থান এর  সুবিধাদিসহ অন্যান্য সকল ভাতা বৃদ্ধি  </option>
+				  <option value="(iii)	দেশ ও বিদেশে  প্রশিক্ষণের সুযোগ বৃদ্ধি">(iii) দেশ ও বিদেশে  প্রশিক্ষণের সুযোগ বৃদ্ধি</option>
+				  <option value="(iv) সময়মত পদোন্নতির ক্ষেত্র ও সুযোগ সৃষ্টি">(iv) সময়মত পদোন্নতির ক্ষেত্র ও সুযোগ সৃষ্টি</option>
+				  <option value="(v) অন্যান্য (উল্লেখ করুন)">(v) অন্যান্য (উল্লেখ করুন)</option>
+				</select>				
+			</td>
+			<td colspan="2">
+				<label>অন্যান্য হলে উল্লেখ করুন:</label>&nbsp;<textarea name="a9_remarks" id="a9_remarks"></textarea>
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>১০। বর্তমানে চিকিৎসা ভাতা মাসে ৭০০/- টাকা আছে, তা কত হওয়া উচিত ?</label>
+				<input type="hidden" name="q10" value="১০। বর্তমানে চিকিৎসা ভাতা মাসে ৭০০/- টাকা আছে, তা কত হওয়া উচিত ?">
+			</td>
+		</tr>
+					
+		<tr>
+			<td>
+				<select name="a10" id="a10">
+				  <option value="১৫০০/-  ">১৫০০/-  </option>
+				  <option value="২০০০/-">২০০০/-</option>
+				  <option value="অন্য কোন পরিমাণ ">অন্য কোন পরিমাণ </option>				  
+				</select>				
+			</td>
+			<td colspan="2">
+				<label>অন্যান্য হলে উল্লেখ করুন:</label>&nbsp;<input type="text" name="a10_1" id="a10_1" />
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>১১। বর্তমানে ২ জন সন্তানের শিক্ষা ভাতা মাসে ৩০০/- টাকা আছে, তা কত হওয়া উচিত বলে আপনি মনে করেন ?</label>
+				<input type="hidden" name="q11" value="১১। বর্তমানে ২ জন সন্তানের শিক্ষা ভাতা মাসে ৩০০/- টাকা আছে, তা কত হওয়া উচিত বলে আপনি মনে করেন ?">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<select name="a11" id="a11">				  
+				  <option value="১২০০/-">১২০০/-</option>
+				  <option value="১৫০০/-">১৫০০/-</option>
+				  <option value="অন্য কোন পরিমাণ ">অন্য কোন পরিমাণ </option>
+				</select>				
+			</td>
+			<td colspan="2">
+				<label>অন্যান্য হলে উল্লেখ করুন:</label>&nbsp;<input type="text" name="a11_1" id="a11_1" />
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>১২। বাড়ি ভাড়া বেতনের সঙ্গে আনুপাতিক হওয়া যুক্তিযুক্ত কিনা ?</label>
+				<input type="hidden" name="q12" value="১২। বাড়ি ভাড়া বেতনের সঙ্গে আনুপাতিক হওয়া যুক্তিযুক্ত কিনা ?">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<input type="radio" name="a12" checked="checked" value="হ্যাঁ">&nbsp;হ্যাঁ
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a12" value="না">&nbsp;না				
+			</td>
+			<td colspan="2">
+				&nbsp;
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>১২.১। যদি উত্তর ‘হ্যাঁ’ হয় তবে একটি চাকরিজীবী পরিবারের জন্য মাসিক বাড়ীভাড়া ভাতা কত হওয়া উচিত ? </label>
+				<input type="hidden" name="q12_1" value="১২.১। যদি উত্তর ‘হ্যাঁ’ হয় তবে একটি চাকরিজীবী পরিবারের জন্য মাসিক বাড়ীভাড়া ভাতা কত হওয়া উচিত ? ">
+			</td>
+		</tr>
+		<tr>
+			<td>	
+				<label>স্থানের নাম</label>
+			</td>
+			<td colspan="2">
+				<label>মূল বেতনের কত অংশ</label>
+			</td>
+		</tr>
+		<tr>
+			<td>	
+				<label>ঢাকা</label>
+			</td>
+			<td colspan="2">
+				<select name="a12_1_dhaka" id="a12_1_dhaka">
+				  <option value="৪০%-৫০%">৪০%-৫০%</option>
+				  <option value="৫০%-৬০%">৫০%-৬০%</option>
+				  <option value="৬০-৭০%">৬০-৭০%</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>	
+				<label>বিভাগীয় শহর</label>
+			</td>
+			<td colspan="2">
+				<select name="a12_1_division" id="a12_1_division">
+				  <option value="৪০%-৫০%">৪০%-৫০%</option>
+				  <option value="৫০%-৬০%">৫০%-৬০%</option>
+				  <option value="৬০-৭০%">৬০-৭০%</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>	
+				<label>জেলা শহর</label>
+			</td>
+			<td colspan="2">
+				<select name="a12_1_district" id="a12_1_district">
+				  <option value="৪০%-৫০%">৪০%-৫০%</option>
+				  <option value="৫০%-৬০%">৫০%-৬০%</option>
+				  <option value="৬০-৭০%">৬০-৭০%</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>	
+				<label>উপজেলা শহর</label>
+			</td>
+			<td colspan="2">
+				<select name="a12_1_upazilla" id="a12_1_upazilla">
+				  <option value="৪০%-৫০%">৪০%-৫০%</option>
+				  <option value="৫০%-৬০%">৫০%-৬০%</option>
+				  <option value="৬০-৭০%">৬০-৭০%</option>
+				</select>
+			</td>
+		</tr>
+		
+		
+		<tr>
+			<td colspan="3">
+				<label>১৩। বর্তমানে গ্রাচুইটি ও পেনশন মূল বেতনের ৮০% হিসেবে বিদ্যমান আছে ; এটি যথাযথ কিনা?</label>
+				<input type="hidden" name="q13" value="১৩। বর্তমানে গ্রাচুইটি ও পেনশন মূল বেতনের ৮০% হিসেবে বিদ্যমান আছে ; এটি যথাযথ কিনা?">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<input type="radio" name="a13" checked="checked" value="হ্যাঁ">&nbsp;হ্যাঁ
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a13" value="না">&nbsp;না
+			</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		
+		<tr>
+			<td colspan="2">
+				<label>১৩.১। যদি উত্তর ‘না’ হয় তবে কত শতাংশ হওয়া উচিত?</label>
+				<input type="hidden" name="q13_1" value="১৩.১। যদি উত্তর ‘না’ হয় তবে কত শতাংশ হওয়া উচিত?">
+			</td>
+			<td>
+				<input  class="sText" type="text" name="a13_1" id="a13_1" value="">&nbsp;%
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>১৪।  ভোক্তা মূল্য সূচক (CPI) অনুযায়ী জীবনযাত্রার ক্রমবর্ধমান ব্যয় বিবেচনা করে পেনশনভোগী কর্মকর্তা/কর্মচারীদের পেনশন বৃদ্ধি করার প্রয়োজন আছে কিনা ?</label>
+				<input type="hidden" name="q14" value="১৪।  ভোক্তা মূল্য সূচক (CPI) অনুযায়ী জীবনযাত্রার ক্রমবর্ধমান ব্যয় বিবেচনা করে পেনশনভোগী কর্মকর্তা/কর্মচারীদের পেনশন বৃদ্ধি করার প্রয়োজন আছে কিনা ?">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<input type="radio" name="a14" checked="checked" value="হ্যাঁ">&nbsp;হ্যাঁ
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a14" value="না">&nbsp;না
+			</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		
+		<tr>
+			<td colspan="2">
+				<label>১৪.১।  উত্তর যদি ‘হ্যাঁ’ হয় তা হলে কি হারে হওয়া উচিত ?</label>
+				<input type="hidden" name="q14_1" value="১৪.১।  উত্তর যদি ‘হ্যাঁ’ হয় তা হলে কি হারে হওয়া উচিত ?">
+			</td>
+			<td>
+				<input type="radio" name="a14_1" checked="checked" value="সমানুপাতিক হারে">&nbsp;সমানুপাতিক হারে
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a14_1" value="অন্য কোন হারে">&nbsp;অন্য কোন হারে
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>১৫।   সরকারি কর্মকর্তা/কর্মচারীদের বর্তমান যে গৃহ নির্মাণ ঋণ দেওয়া হয় তা পর্যাপ্ত কিনা ?</label>
+				<input type="hidden" name="q15" value="১৫।   সরকারি কর্মকর্তা/কর্মচারীদের বর্তমান যে গৃহ নির্মাণ ঋণ দেওয়া হয় তা পর্যাপ্ত কিনা ?">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<input type="radio" name="a15" checked="checked" value="হ্যাঁ">&nbsp;হ্যাঁ
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a15" value="না">&nbsp;না
+			</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>১৫.১। যদি উত্তর ‘না’ হয় তাহলে কিভাবে ঋণের ব্যবস্থা করা উচিত ?</label>
+				<input type="hidden" name="q15_1" value="১৫.১। যদি উত্তর ‘না’ হয় তাহলে কিভাবে ঋণের ব্যবস্থা করা উচিত ?">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<select name="a15_1" id="a15_1">
+				  <option value="(i) ব্যাংক রেটে ব্যংকের মাধ্যমে  ">(i) ব্যাংক রেটে ব্যংকের মাধ্যমে  </option>
+				  <option value="(ii)  ব্যাংক রেটে এইচবিএফসি এর মাধ্যমে ">(ii)  ব্যাংক রেটে এইচবিএফসি এর মাধ্যমে </option>
+				  <option value="(iii) আর্থিক প্রতিষ্ঠানের নিয়ম অনুযায়ী">(iii) আর্থিক প্রতিষ্ঠানের নিয়ম অনুযায়ী</option>
+				  <option value="(iv) বর্তমান  নিয়ম অনুযায়ী">(iv) বর্তমান  নিয়ম অনুযায়ী</option>
+				  <option value="(v) অন্যান্য (উল্লেখ করুন) ">(v) অন্যান্য (উল্লেখ করুন) </option>
+				</select>
+			</td>
+			<td colspan="2">
+				<label>অন্যান্য হলে উল্লেখ করুন:</label>&nbsp;<input type="text" name="a15_1_remarks" id="a15_1_remarks" />
+			</td>
+		</tr>
+		
+		
+		<tr>
+			<td colspan="3">
+				<label>১৬। বর্তমানে সরকারি কর্মকর্তা/কর্মচারীদের গাড়ী ক্রয়ের জন্য যে ঋণ সুবিধা দেওয়া হয় তা প্রয়োজনের তুলনায় পর্যাপ্ত কিনা ?</label>
+				<input type="hidden" name="q16" value="১৬। বর্তমানে সরকারি কর্মকর্তা/কর্মচারীদের গাড়ী ক্রয়ের জন্য যে ঋণ সুবিধা দেওয়া হয় তা প্রয়োজনের তুলনায় পর্যাপ্ত কিনা ?">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<input type="radio" name="a16" checked="checked" value="হ্যাঁ">&nbsp;হ্যাঁ
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a16" value="না">&nbsp;না
+			</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		
+		<tr>
+			<td colspan="2">
+				<label>১৬.১।  উত্তর যদি ‘না’ হয় তা হলে  কি হওয়া উচিত ?</label>
+				<input type="hidden" name="q16_1" value="১৬.১।  উত্তর যদি ‘না’ হয় তা হলে  কি হওয়া উচিত ?">
+			</td>
+			<td>
+				<input type="radio" name="a16_1" checked="checked" value="বর্তমান মূল্য অনুযায়ী">&nbsp;বর্তমান মূল্য অনুযায়ী
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a16_1" value="আর্থিক প্রতিষ্ঠানের নিয়ম অনুযায়ী">&nbsp;আর্থিক প্রতিষ্ঠানের নিয়ম অনুযায়ী
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>১৭। বেতন কমিশনের সুপারিশে যদি বেতন বৃদ্ধি করা হয় তা হলে বর্ধিত ব্যয় সংকুলানের জন্য সরকারের কি  কি পদক্ষেপ নেওয়া উচিৎ বলে মনে করেন ? (একাধিক উত্তর হতে পারে)।</label>
+				<input type="hidden" name="q17" value="১৭। বেতন কমিশনের সুপারিশে যদি বেতন বৃদ্ধি করা হয় তা হলে বর্ধিত ব্যয় সংকুলানের জন্য সরকারের কি  কি পদক্ষেপ নেওয়া উচিৎ বলে মনে করেন ? (একাধিক উত্তর হতে পারে)।">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<select name="a17" id="a17" multiple>
+				  <option value="(i)	কর বৃদ্ধি">(i)	কর বৃদ্ধি</option>
+				  <option value="(ii) সম্ভাব্য ক্ষেত্রে কর ফাঁকি রোধ করা   ">(ii) সম্ভাব্য ক্ষেত্রে কর ফাঁকি রোধ করা  </option>
+				  <option value="(iii)	করের আওতা সম্প্রসারণ">(iii) করের আওতা সম্প্রসারণ</option>
+				  <option value="(v) অন্যান্য (উল্লেখ করুন)">(v) অন্যান্য (উল্লেখ করুন)</option>
+				</select>				
+			</td>
+			<td colspan="2">
+				<label>অন্যান্য হলে উল্লেখ করুন:</label>&nbsp;<textarea name="a17_remarks" id="a17_remarks"></textarea>
+			</td>
+		</tr>	
+	</table>	
+		
+	<u style="font-weight: bold;">তৃতীয় অংশ (সার্ভিস সংক্রান্ত)</u>
+	<table id="second_table">
+		<tr>
+			<td colspan="3">
+				<label>১৮।  সরকারি চাকরিতে পদোন্নতি জন্য আইনানুগ নীতিমালা থাকা প্রয়োজন কিনা ?</label>
+				<input type="hidden" name="q18" value="১৮।  সরকারি চাকরিতে পদোন্নতি জন্য আইনানুগ নীতিমালা থাকা প্রয়োজন কিনা ?">
+			</td>
+		</tr>
+		
+		<tr>
+			<td width="34%">
+				<input type="radio" name="a18" checked="checked" value="হ্যাঁ">&nbsp;হ্যাঁ
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a18" value="না">&nbsp;না
+			</td>
+			<td width="33%">				
+			</td>
+			<td width="33%">&nbsp;</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>১৮.১।  উত্তর যদি ‘হ্যাঁ’ হয়, তা হলে পদোন্নতির কি কি বিষয় গুরুত্ব দেওয়া উচিত বলে আপনি মনে করেন?  (একাধিক উত্তর হতে পারে)</label>
+				<input type="hidden" name="q18_1" value="১৮.১।  উত্তর যদি ‘হ্যাঁ’ হয়, তা হলে পদোন্নতির কি কি বিষয় গুরুত্ব দেওয়া উচিত বলে আপনি মনে করেন?  (একাধিক উত্তর হতে পারে)">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<select name="a18_1" id="a18_1" multiple>
+				  <option value="শিক্ষাগত যোগ্যতা">শিক্ষাগত যোগ্যতা</option>
+				  <option value="প্রশিক্ষণ">প্রশিক্ষণ</option>
+				  <option value="জ্যেষ্ঠতা">জ্যেষ্ঠতা</option>
+				  <option value="এসিআর">এসিআর</option>
+				  <option value="অন্যান্য (উল্লেখ করুন)">অন্যান্য (উল্লেখ করুন)</option>
+				</select>				
+			</td>
+			<td colspan="2">
+				<label>অন্যান্য হলে উল্লেখ করুন:</label>&nbsp;<textarea name="a18_1_remarks" id="a18_1_remarks"></textarea>
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>১৯।  দপ্তর/সংস্থা/বিভাগ/পদায়িত কর্মস্থল /ক্যাডার ভিত্তিক চাকরিতে বেতন ও অন্যান্য সুবিধাদির ক্ষেত্রে বৈষম্য রয়েছে বলে মনে করেন কি?</label>
+				<input type="hidden" name="q19" value="১৯।  দপ্তর/সংস্থা/বিভাগ/পদায়িত কর্মস্থল /ক্যাডার ভিত্তিক চাকরিতে বেতন ও অন্যান্য সুবিধাদির ক্ষেত্রে বৈষম্য রয়েছে বলে মনে করেন কি?">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<input type="radio" name="a19" checked="checked" value="হ্যাঁ">&nbsp;হ্যাঁ
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a19" value="না">&nbsp;না				
+			</td>
+			<td colspan="2">
+				&nbsp;
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>১৯.১।  উত্তর যদি ‘হ্যাঁ’ হয় তা হলে উক্ত বৈষম্য দূরীকরণে আপনার মতামত দিন।</label>
+				<input type="hidden" name="q19_1" value="১৯.১।  উত্তর যদি ‘হ্যাঁ’ হয় তা হলে উক্ত বৈষম্য দূরীকরণে আপনার মতামত দিন।">
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="2">
+				<textarea name="a19_1" id="a19_1"></textarea>
+			</td>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+				
+		<tr>
+			<td colspan="3">
+				<label>২০।  বিদ্যমান বার্ষিক গোপনীয় প্রতিবেদন (এসিআর)  যে পদ্ধতি অনুসরণ করা হয়ে থাকে তা  আপনি সমর্থন করেন কি?</label>
+				<input type="hidden" name="q20" value="২০।  বিদ্যমান বার্ষিক গোপনীয় প্রতিবেদন (এসিআর)  যে পদ্ধতি অনুসরণ করা হয়ে থাকে তা  আপনি সমর্থন করেন কি?">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<input type="radio" name="a20" checked="checked" value="হ্যাঁ">&nbsp;হ্যাঁ
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a20" value="না">&nbsp;না				
+			</td>
+			<td colspan="2">
+				&nbsp;
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>২০.১।  উত্তর যদি ‘না’ হয়, তা হলে কি পদ্ধতিতে হওয়া উচিত বলে আপনি মনে করেন ?</label>
+				<input type="hidden" name="q20_1" value="২০.১।  উত্তর যদি ‘না’ হয়, তা হলে কি পদ্ধতিতে হওয়া উচিত বলে আপনি মনে করেন ?">
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="2">
+				<textarea name="a20_1" id="a20_1"></textarea>
+			</td>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>২১।  স্বেচ্ছায় অবসরে যাওয়ার জন্য পূর্ণ পেনশন চাকুরী বয়স ২৫ বছর রয়েছে, তা কমানো উচিৎ কিনা ?</label>
+				<input type="hidden" name="q21" value="২১।  স্বেচ্ছায় অবসরে যাওয়ার জন্য পূর্ণ পেনশন চাকুরী বয়স ২৫ বছর রয়েছে, তা কমানো উচিৎ কিনা ?">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="radio" name="a21" checked="checked" value="হ্যাঁ">&nbsp;হ্যাঁ
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a21" value="না">&nbsp;না				
+			</td>
+			<td colspan="2">
+				&nbsp;
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>২১.১।  উত্তর যদি ‘হ্যাঁ’ হয় তা হলে কত বছর হওয়া উচিত ?</label>
+				<input type="hidden" name="q21_1" value="২১.১।  উত্তর যদি ‘হ্যাঁ’ হয় তা হলে কত বছর হওয়া উচিত ?">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="radio" name="a21_1" checked="checked" value="১৮">&nbsp;১৮
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a21_1" value="২০">&nbsp;২০		
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a21_1" value="২২">&nbsp;২২	
+			</td>
+			<td colspan="2">
+				&nbsp;
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>২২।  বিভিন্ন দপ্তর/সংস্থা/বিভাগ-এর কাজের ধরন ভিত্তিক কোন গুচ্ছ (Cluster) সৃষ্টি  অর্থাৎ কাজের প্রকৃতি অনুযায়ী কতগুলো           ক্যাডার-কে এক শ্রেণিভুক্ত করা যায় কিনা?</label>
+				<input type="hidden" name="q22" value="২২।  বিভিন্ন দপ্তর/সংস্থা/বিভাগ-এর কাজের ধরন ভিত্তিক কোন গুচ্ছ (Cluster) সৃষ্টি  অর্থাৎ কাজের প্রকৃতি অনুযায়ী কতগুলো           ক্যাডার-কে এক শ্রেণিভুক্ত করা যায় কিনা?">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="radio" name="a22" checked="checked" value="হ্যাঁ">&nbsp;হ্যাঁ
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a22" value="না">&nbsp;না				
+			</td>
+			<td colspan="2">
+				&nbsp;
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>২২.১।  উত্তর যদি ‘হ্যাঁ’ হয় তাহলে কিভাবে এবং কয়টি গুচ্ছ (Cluster)  তৈরি করা যেতে পারে সে বিষয়ে আপনার মতামত           দিন।</label>
+				<input type="hidden" name="q22_1" value="২২.১।  উত্তর যদি ‘হ্যাঁ’ হয় তাহলে কিভাবে এবং কয়টি গুচ্ছ (Cluster)  তৈরি করা যেতে পারে সে বিষয়ে আপনার মতামত           দিন।">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<textarea name="a22_1" id="a22_1"></textarea>
+			</td>			
+			<td>
+				
+			</td>
+		</tr>
+				
+		<tr>
+			<td colspan="3">
+				<label>২৩। কোন গুচ্ছে (Cluster) প্রবেশের ক্ষেত্রে কোন বিশেষ দক্ষতা/যোগ্যতা থাকার প্রয়োজন আছে কিনা ?</label>
+				<input type="hidden" name="q23" value="২৩। কোন গুচ্ছে (Cluster) প্রবেশের ক্ষেত্রে কোন বিশেষ দক্ষতা/যোগ্যতা থাকার প্রয়োজন আছে কিনা ?">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="radio" name="a23" checked="checked" value="হ্যাঁ">&nbsp;হ্যাঁ
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a23" value="না">&nbsp;না				
+			</td>
+			<td colspan="2">
+				&nbsp;
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>২৩.১। উত্তর যদি ‘হ্যাঁ’ হয় তা হলে কি ধরনের দক্ষতা/যোগ্যতা থাকা উচিত ?</label>
+				<input type="hidden" name="q23_1" value="২৩.১। উত্তর যদি ‘হ্যাঁ’ হয় তা হলে কি ধরনের দক্ষতা/যোগ্যতা থাকা উচিত ?">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<textarea name="a23_1" id="a23_1"></textarea>
+			</td>			
+			<td>
+				
+			</td>
+		</tr>
+		
+		
+		<tr>
+			<td colspan="3">
+				<label>২৪। বাংলাদেশ সিভিল সার্ভিস এর ক্যাডারসমূহের  পুনর্গঠনের বিষয়ে আপনার কোনো পরামর্শ আছে কি ?</label>
+				<input type="hidden" name="q24" value="২৪। বাংলাদেশ সিভিল সার্ভিস এর ক্যাডারসমূহের  পুনর্গঠনের বিষয়ে আপনার কোনো পরামর্শ আছে কি ?">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="radio" name="a24" checked="checked" value="হ্যাঁ">&nbsp;হ্যাঁ
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a24" value="না">&nbsp;না				
+			</td>
+			<td colspan="2">
+				&nbsp;
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>২৪.১। যদি উত্তর ‘হ্যাঁ’ হয় তা হলে  আপনার মতামতের  পক্ষে যুক্তি প্রদান করুন।(প্রযোজ্য ক্ষেত্রে পৃথক কাগজ সংযোগ করা যাবে)</label>
+				<input type="hidden" name="q24_1" value="২৪.১। যদি উত্তর ‘হ্যাঁ’ হয় তা হলে  আপনার মতামতের  পক্ষে যুক্তি প্রদান করুন।(প্রযোজ্য ক্ষেত্রে পৃথক কাগজ সংযোগ করা যাবে)">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<textarea name="a24_1" id="a24_1"></textarea>
+			</td>			
+			<td>
+				
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>২৫। কর্মকর্তা/কর্মচারীদের কম্পিউটার দক্ষতা বৃদ্ধির জন্য কি ধরনের প্রশিক্ষণ প্রয়োজন ? (উল্লেখ করুন)</label>
+				<input type="hidden" name="q25" value="২৫। কর্মকর্তা/কর্মচারীদের কম্পিউটার দক্ষতা বৃদ্ধির জন্য কি ধরনের প্রশিক্ষণ প্রয়োজন ? (উল্লেখ করুন)">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<textarea name="a25" id="a25"></textarea>
+			</td>			
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>২৬। সরকারী কর্মকর্তা/কর্মচারীদের দক্ষতা বৃদ্ধির জন্য প্রশিক্ষণে  কোন কোন বিষয় অগ্রাধিকার দেয়া উচিৎ? (উল্লেখ করুন)</label>
+				<input type="hidden" name="q26" value="২৬। সরকারী কর্মকর্তা/কর্মচারীদের দক্ষতা বৃদ্ধির জন্য প্রশিক্ষণে  কোন কোন বিষয় অগ্রাধিকার দেয়া উচিৎ? (উল্লেখ করুন)">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<textarea name="a26" id="a26"></textarea>
+			</td>			
+			<td>
+				&nbsp;
+			</td>
+		</tr>	
+		
+		<tr>
+			<td colspan="3">
+				<label>২৭। সরকারি কর্মকর্তাদের বিভিন্ন পর্যায়ের পদে চুক্তিভিত্তিক পার্শ্ব প্রবেশ সমর্থন করেন কিনা ? </label>
+				<input type="hidden" name="q27" value="২৭। সরকারি কর্মকর্তাদের বিভিন্ন পর্যায়ের পদে চুক্তিভিত্তিক পার্শ্ব প্রবেশ সমর্থন করেন কিনা ? ">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="radio" name="a27" checked="checked" value="হ্যাঁ">&nbsp;হ্যাঁ
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="a27" value="না">&nbsp;না				
+			</td>
+			<td colspan="2">
+				&nbsp;
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>২৭.১।  আপনার উত্তরের পক্ষে যুক্তি দিন ।</label>
+				<input type="hidden" name="q27_1" value="২৭.১।  আপনার উত্তরের পক্ষে যুক্তি দিন ।">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<textarea name="a27_1" id="a27_1"></textarea>
+			</td>			
+			<td>
+			&nbsp;	
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>২৭.২। উত্তর যদি ‘হ্যাঁ’ হয় তবে-</label>
+				<input type="hidden" name="q27_2" value="২৭.২। উত্তর যদি ‘হ্যাঁ’ হয় তবে-">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<label>(i)	কোন স্তরেঃ</label><input type="text" value="" name="a27_2_1" id="a27_2_1" />
+			</td>			
+			<td>
+				<label>(ii)	কত শতাংশঃ</label><input type="text" value="" name="a27_2_2" id="a27_2_2" />
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<label>২৮। উপর্যুক্ত প্রশ্নসমূহে উত্থাপিত বিষয়সমূহ ছাড়া অন্য কোন বিষয়ে আপনার মতামত থাকলে তা উল্লেখ করুন? </label>
+				<input type="hidden" name="q28" value="২৮। উপর্যুক্ত প্রশ্নসমূহে উত্থাপিত বিষয়সমূহ ছাড়া অন্য কোন বিষয়ে আপনার মতামত থাকলে তা উল্লেখ করুন? ">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<textarea name="a28" id="a28"></textarea>
+			</td>			
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+	
+		<tr>
+			<td colspan="3">
+				<img id="siimage" style="border: 1px solid #000; margin-right: 15px" src="/securimage/securimage_show.php?sid=<?php echo md5(uniqid()) ?>" alt="CAPTCHA Image" align="left" />
+				<a tabindex="-1" style="border-style: none;" href="#" title="Refresh Image" onclick="document.getElementById(\'siimage\').src = \'./securimage_show.php?sid=\' + Math.random(); this.blur(); return false"><img src="./images/refresh.png" alt="Reload Image" height="32" width="32" onclick="this.blur()" align="bottom" border="0" /></a><br />
+				<strong>Enter Code*:</strong><br />
+				<input type="text" id="ct_captcha" name="ct_captcha" size="12" maxlength="16" />
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="3">
+				<input type="button" id="submit" name="submit" value="সংরক্ষণ করুন" onclick="save_form()" />
+			</td>
+		</tr>
+	</table>
+</form><style>#first_table td input, #second_table td input
+{
+	margin: 0px;
+}</style><script>function save_form()
+{
+
+	var save_url = "http://paycom.portal.gov.bd/npfadmin/formspay/insertform?form_name=paycom_individual";
+	var dt = $( "#frm" ).serialize();
+	//dt += "&form_name=testing_view";
+	$.ajax({
+		type: "POST",
+		url: save_url,
+		data: dt,
+		success: function (result) {
+			console.debug(result);
+			//alert(result);
+			if(result == "success")
+			{
+				alert("জরিপে অংশগ্রহণ করার জন্য ধন্যবাদ, আপনার তথ্য ও উপাত্তগুলো সফলভাবে সংরক্ষণ হয়েছে।");
+				$("#submit").hide();
+			}
+			else if(result == "captcha")
+			{
+				alert("Captcha Mismatch!!!");
+			}
+			else
+			{
+				alert(result);
+			}		
+		}
+	});
+
+return false;
+}
+</script>

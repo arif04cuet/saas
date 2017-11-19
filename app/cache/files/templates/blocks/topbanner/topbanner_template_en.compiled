@@ -1,0 +1,24 @@
+<ul class="rslides" id="front-image-slider">
+	<?php foreach ($contents as $content) { ?>
+	<li>
+			 <?php
+        if (isset($content['image'][0]) && !empty($content['image'][0]["link"])) {
+            ?>
+        	<a target="_blank" href="<?php echo $content['image'][0]["link"]; ?>">
+                <?php echo renderImage('top_banner',$content['uploadpath'] ,$content['image'],960,220) ?>
+            </a>
+            <?php
+        } else {
+            ?>
+           
+                <?php echo renderImage('top_banner',$content['uploadpath'] ,$content['image'],960,220) ?>   
+			
+
+            <?php
+        }
+        ?>
+		
+	<?php //echo renderImage('top_banner',$content['uploadpath'] ,$content['image'],960,220) ?>
+	</li>
+	<?php } ?>
+</ul><style></style><script></script>

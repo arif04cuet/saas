@@ -1,0 +1,319 @@
+<br>
+<div class="container">
+
+	<?php if($_GET['message'] == 'success') :?>
+		<div><?php echo '<p><b>Your information has been received successfully;</b></p>'?></div>
+	<?php endif;?>
+    <div class="row">
+        <div class="com-md-12">
+            <p align="center"><b>
+                    Government of the People's Republic of Bangladesh <br>
+                    National Institute Of Mass Communication <br>
+                    125/A, Darus Salam, Mirpur Road, Dhaka-1216.<br>
+                    Date : November 22, 2015
+                </b>
+            </p>
+        </div>
+    </div>
+    <hr>
+    <form action="/npfadmin/application/create" method="post" enctype="multipart/form-data">
+
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="email">Select a Course <span style="color:#FF0000; font-size:16px">*</span></label>
+                    <select required="" name="courseName" id="courseid" class="form-control">
+                        <option value="">Select a Course</option>
+
+                        <option value="07-Broadcast News Reporting">
+                            07-Broadcast News Reporting
+                        </option>
+                        <option value="08-Digital Photography">
+                            08-Digital Photography
+                        </option>
+                        <option value="12-News Presentation Course">
+                            12-News Presentation Course
+                        </option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="txtStuName">Trainee Name <span style="color:#FF0000; font-size:16px">*</span></label>
+                    <input required type="text" class="form-control" id="txtStuName" placeholder="Trainee Name"
+                           name="txtStuName">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="txtStuFName">Father Name <span style="color:#FF0000; font-size:16px">*</span></label>
+                    <input required type="text" class="form-control" id="txtStuFName" placeholder="Father Name"
+                           name="txtStuFName">
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="txtStuMName">Mother Name <span style="color:#FF0000; font-size:16px">*</span></label>
+                    <input required type="text" class="form-control" id="txtStuMName" placeholder="Mother Name"
+                           name="txtStuMName">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="txtDateOfBirthYear">Date Of Birth <span style="color:#FF0000; font-size:16px">*</span></label>
+                    <input required type="text" class="form-control" id="txtDateOfBirthYear" placeholder="yyyy-mm-dd"
+                           name="txtDateOfBirthYear">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="rdSex">Sex <span style="color:#FF0000; font-size:16px">*</span></label>
+
+                    <div>
+                        <label class="radio-inline">
+                            <input type="radio" name="rdSex" id="male" value="male" checked> Male
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="rdSex" id="female" value="female"> Female
+                        </label>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="txtPresentAdd">Present Address <span style="color:#FF0000; font-size:16px">*</span></label>
+                    <textarea required class="form-control" id="txtPresentAdd" placeholder="Present Address"
+                              name="txtPresentAdd"></textarea>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="txtPermanentAdd">Permanent Address <span style="color:#FF0000; font-size:16px">*</span></label>
+                    <textarea required class="form-control" id="txtPermanentAdd" placeholder="Permanent Address"
+                              name="txtPermanentAdd"></textarea>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="txtQualification">Educational Qualification <span style="color:#FF0000; font-size:16px">*</span></label>
+                    <textarea required class="form-control" id="txtQualification" placeholder="Educational Qualification"
+                              name="txtQualification"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="txtRPhoneNo">Residence Phone No.</label>
+                    <input type="text" class="form-control" id="txtRPhoneNo" placeholder="Residence Phone No."
+                           name="txtRPhoneNo">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="txtMobileNo">Mobile No. <span style="color:#FF0000; font-size:16px">*</span></label>
+                    <input required type="text" class="form-control" id="txtMobileNo" placeholder="Mobile No."
+                           name="txtMobileNo">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="txtEmail">E-mail</label>
+                    <input type="email" class="form-control" id="txtEmail" placeholder="E-mail"
+                           name="txtEmail">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="txtIdeaTrain">Idea About Tranning <span style="color:#FF0000; font-size:16px">*</span></label>
+                    <textarea required class="form-control" id="txtIdeaTrain" placeholder="Idea About Tranning"
+                              name="txtIdeaTrain"></textarea>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="txtAmbTrain">Ambition of Training <span style="color:#FF0000; font-size:16px">*</span></label>
+                    <textarea required class="form-control" id="txtAmbTrain" placeholder="Ambition of Training"
+                              name="txtAmbTrain"></textarea>
+                </div>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+        </div>
+
+
+        <p class="bg-primary"> Only For Service Holder</p>
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="txtOfficeAdd">Office Name & Address</label>
+                    <textarea class="form-control" id="txtOfficeAdd" placeholder="Office Name & Address"
+                              name="txtOfficeAdd"></textarea>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="txtOfficeRespon">Office Responsibility</label>
+                    <textarea class="form-control" id="txtOfficeRespon" placeholder="Office Responsibility"
+                              name="txtOfficeRespon"></textarea>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="txtServiceTrain">Service Training(if any)</label>
+                    <textarea class="form-control" id="txtServiceTrain" placeholder="Service Training(if any)"
+                              name="txtServiceTrain"></textarea>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="txtDegn">Office Designation</label>
+                    <input type="text" class="form-control" id="txtDegn" placeholder="Office Designation"
+                           name="txtDegn">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="txtOfficePhoneNo">Office Phone No.</label>
+                    <input type="text" class="form-control" id="txtOfficePhoneNo" placeholder="Office Phone No."
+                           name="txtOfficePhoneNo">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="txtOfficeFAX">Office FAX</label>
+                    <input type="text" class="form-control" id="txtOfficeFAX" placeholder="Office FAX"
+                           name="txtOfficeFAX">
+                </div>
+            </div>
+        </div>
+
+
+        <p class="bg-primary"> All Attachment</p>
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="img">Trainee Photo <span style="color:#FF0000; font-size:16px">*</span></label>
+                    <input required type="file" class="form-control" id="img" placeholder="Trainee Photo"
+                           name="img">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="imgSSC">SSC Certificate <span style="color:#FF0000; font-size:16px">*</span></label>
+                    <input required type="file" class="form-control" id="imgSSC" placeholder="SSC Certificate"
+                           name="imgSSC">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="imgHSC">HSC Certificate <span style="color:#FF0000; font-size:16px">*</span></label>
+                    <input required type="file" class="form-control" id="imgHSC" placeholder="HSC Certificate"
+                           name="imgHSC">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="imgHONS">Hon's Certificate <span style="color:#FF0000; font-size:16px">*</span></label>
+                    <input required type="file" class="form-control" id="imgHONS" placeholder="Hon's Certificate"
+                           name="imgHONS">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="imgMAS">Masters Certificate</label>
+                    <input type="file" class="form-control" id="imgMAS" placeholder="Masters Certificate"
+                           name="imgMAS">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="imgCHAR">Character Certificate <span style="color:#FF0000; font-size:16px">*</span></label>
+                    <input required type="file" class="form-control" id="imgCHAR" placeholder="Character Certificate"
+                           name="imgCHAR">
+                </div>
+            </div>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input required type="checkbox" name="txtTrainAnnoun" value="1"> <b>I participate in training regularly and obey all rules & regulation of this training Institute.</b>
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg pull-right" >Submit</button>
+    </form>
+</div>
+
+<br><style>.online_form input,.online_form textarea{display:inline}
+.online_form textarea{width:90%;float:left}
+
+.container {
+    width: 965px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 12.5px;
+    padding-right: 12.5px;
+
+    position: relative;
+    width: 960px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+
+.row {
+    margin-left: -12px;
+    margin-right: -13px;
+    margin-bottom: 0px;
+}
+
+
+
+
+
+
+.col-md-4 {
+    width: 30%;
+}
+
+
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: left;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 13px;
+    padding-right: 12px;
+}</style><script></script>

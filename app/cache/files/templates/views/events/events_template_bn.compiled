@@ -1,0 +1,41 @@
+<h3>
+	ইভেন্ট
+</h3>
+
+<?php 
+if(count($contents) == 0)
+	{
+?>
+
+<table class="bordered">
+	<tbody>
+		<tr>
+			<td>কোনো ইভেন্ট পাওয়া যায় নাই। </td>
+		</tr>
+	</tbody>
+</table>
+<?php 
+	}
+?>
+
+<table class="bordered">
+<tbody>
+	<?php $i=1; ?>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo digit_to_bangla($i,$lang)?></td>
+		<td><?php echo renderLinkBy('notices',$content['id'] ,$content['title'] )?></td>
+		
+		<td>ইভেন্ট তারিখ: <?php echo digit_to_bangla($content['eventdate'],$lang)?></td>
+		<td> ডাউনলোড:	
+			<div>
+				<?php foreach ($content['attachments'] as $fname) { ?>
+					<?php echo renderDownloadLink('notices',$content['uploadpath'] ,$fname); ?>
+ 				<?php } ?>							
+			</div>
+		</td>
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table><style></style><script></script>

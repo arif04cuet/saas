@@ -1,0 +1,37 @@
+<h3>
+	<?php echo $content['title']; ?>
+</h3>
+<div>আইনের নং: <?php echo $content['law_no']; ?></div>
+<div>গেজেট নং: <?php echo $content['gadget_no']; ?></div>
+<div>প্রকাশের তারিখ:<?php echo $content['published']; ?></div>
+<div>বিস্তারিত: <?php echo $content['details']; ?></div>
+<?php
+//var_dump($content);
+?>
+<?php if($content['attachments'] !="")
+	{
+?>
+<?php foreach ($content['attachments'] as $fname) { ?>
+<?php echo renderDownloadLink('law',$content['uploadpath'] ,$fname); ?><br>
+<?php echo renderGoogleDocViewer('law',$content['uploadpath'] ,$fname); ?>
+
+
+
+ <?php } ?>
+<?php
+}
+?>
+
+<?php
+//var_dump($content);
+?>
+<?php if($content['amendments'] !="")
+	{
+?>
+<?php foreach ($content['amendments'] as $fname) { ?>
+<?php echo renderDownloadLink('law',$content['uploadpath'] ,$fname); ?>
+ <?php } ?>
+<?php
+}
+?>
+<style></style><script></script>

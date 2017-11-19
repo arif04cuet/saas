@@ -1,0 +1,163 @@
+<div id="gov-domain-list"  class="link-list">
+	
+</div><style>.link-list{
+list-style: none inside none;
+list-style-image: url("../../themes/responsive_npf/images/bullet_arrow1.png");
+float: left;
+width: 100%;
+}
+.link-list li{
+padding-left: 10px;
+padding-top: 10px;
+line-height: 30px;
+font-size: 20px;
+}
+.link-list li.even{
+background-color: #eee;
+}
+.link-list li.odd{
+background-color: #ddd;
+}
+.link-list li a{
+padding: 0 5px;
+text-decoration: none;
+/*font-family: nikoshBan,arial;*/
+}
+.link-list li a:hover{
+background-color: #609513;
+color: #fff;
+}
+.link-list ul{
+margin-left: 20px;
+background-color: #eee;
+display: none;
+}
+.link-list ul li{
+font-size: 16px;
+}
+.link-list ul li.even{
+background-color: #eee;
+}
+.link-list ul li.odd{
+background-color: #ccc;
+}
+.link-list ul li a{
+padding: 0 5px;
+text-decoration: none;
+}
+.link-list ul li a:hover{
+background-color: #609513;
+color: #fff;
+}
+.directorates{
+background-color: #DA0000;
+color: #fff!important;
+padding: 0 5px;
+font-size: 14px;
+} 
+#gov-domain-list li a i
+{
+	font-family: nikoshBan !important;
+}</style><script>$(document).ready(function()
+{
+
+	var url = "/npfadmin/domains/getservicemins?ln=bn&callback=?";
+//alert(url);
+	get_domain_lists(url);
+});
+
+function get_domain_lists(url){
+
+	$.getJSON(url,'',function(data){
+		//console.debug(data);
+		var t = '';
+		var i = 1;
+		var tp = data.type;
+		
+		
+		$.each(data.data, function(  ) {
+			var f = "odd";
+			if(i%2==1){f = "odd";}else{f = "even";}
+			t += '<li class="'+f+'">';
+			if($(this)[0].domainname==""){
+				t += $(this)[0].name;
+				///////////hafij/////////////
+				if($(this)[0].off_c_id)
+				{
+					t += '<a class="view_profile" href="/site/offices_information/'+$(this)[0].off_c_id+'"><img src="../../themes/responsive_npf/images/office_profile_icon.png" title="দপ্তর প্রোফাইল" alt="office_profile_icon" width="24" /></a>';	
+				}
+				////////////////////////////
+			}else{
+				
+				t += '<a href="http://'+$(this)[0].domainname+'">'+$(this)[0].name+'</a>';
+				///////////hafij/////////////
+				if($(this)[0].off_c_id)
+				{
+					t += '<a class="view_profile" href="/site/offices_information/'+$(this)[0].off_c_id+'"><img src="../../themes/responsive_npf/images/office_profile_icon.png" title="দপ্তর প্রোফাইল" alt="office_profile_icon" width="24" /></a>';	
+				}
+				////////////////////////////
+			}
+			
+			//console.debug( $(this)[0].childs.length );
+			if($(this)[0].childs && ($(this)[0].childs.length>0)){
+				var l = $(this)[0].childs.length;
+				var tt = "";
+											if(tp=="divisions"){
+					tt = "জেলা";
+				}else{
+					tt = "অধিদপ্তর";
+				}							
+				
+				t += '<a class="directorates" href="javascript:;">'+tt+' <i>('+l+')</i></a>';
+				
+				t += '<ul>';
+				var ii = 1;
+				$.each($(this)[0].childs, function(  ) {
+					console.debug($(this)[0]);
+					var ff = "odd";
+					if(ii%2==1){ff = "odd";}else{ff = "even";}
+					t += '<li class="'+ff+'">';
+					if($(this)[0].domainname==""){
+						t += $(this)[0].name;
+						///////////hafij/////////////
+						if($(this)[0].off_c_id)
+						{
+							t += '<a class="view_profile" href="/site/offices_information/'+$(this)[0].off_c_id+'"><img src="../../themes/responsive_npf/images/office_profile_icon.png" title="দপ্তর প্রোফাইল" alt="office_profile_icon" width="24" /></a>';	
+						}
+						////////////////////////////
+					}else{
+						t += '<a href="http://'+$(this)[0].domainname+'">'+$(this)[0].name+'</a>';
+						
+						///////////hafij/////////////
+						if($(this)[0].off_c_id)
+						{
+							t += '<a class="view_profile" href="/site/offices_information/'+$(this)[0].off_c_id+'"><img src="../../themes/responsive_npf/images/office_profile_icon.png" title="দপ্তর প্রোফাইল" alt="office_profile_icon" width="24" /></a>';	
+						}
+						////////////////////////////					
+					}
+					t += '</li>';
+					ii++;
+				});
+				t += '</ul>';
+			}
+			t += '</li>';
+			i++;
+		});
+		//t += '';
+		
+		$('#gov-domain-list').html(t);
+		$( ".directorates" ).click(function(event) {
+		  $(this).next('ul').toggle();
+		  event.preventDefault();
+		});
+		
+		///////////hafij/////////////
+		/*
+		$( ".view_profile" ).click(function(event) {
+			alert("profile here...");
+		});
+		*/
+		////////////////////////////
+		
+	});
+}</script>

@@ -1,0 +1,21 @@
+<div class="col-md-12 mainbody-content-top-block-left">
+	
+
+
+	<img alt="office-name" src="<?php  echo renderImagePath('office', $contents[0]['uploadpath'], $contents[0]['image']) ; ?>" style="width:100%;" class="img-responsive"></div>
+
+<div class="col-md-11 col-md-offset-1 mainbody-content-top-block-right address-box bg-ash">
+							<address>
+							  <strong><?php echo $contents[0]['title_bn']; ?></strong><br><?php echo $contents[0]['sitename_bn']; ?><br>
+							  <br>
+							  <abbr title="Phone">টেলিফোন:</abbr> <?php echo $contents[0]['phone']; ?><br>
+							  <abbr title="Phone">ফ্যাক্স:</abbr> <?php echo $contents[0]['fax']; ?><br>
+							  <abbr title="Phone">ইমেইল:</abbr> <?php echo $contents[0]['email']; ?><br>
+							  <br>
+							 <?php echo $contents[0]['address_bn']; ?>
+							</address>
+</div>
+
+<div style="padding: 40px;line-height: 2em" class="col-md-24 mainbody-content-bottom-block bg-ash">
+	<?php echo $contents[0]['body_bn']; ?>
+</div><style></style><script></script>

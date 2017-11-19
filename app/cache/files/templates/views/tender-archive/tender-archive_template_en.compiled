@@ -1,0 +1,33 @@
+<h3>
+    Tender Archive
+</h3>
+<?php if(count(contents)>0):?>
+<table class="bordered"  style="text-align:center;">
+    <thead>
+    <th>Sl. No</th>
+    <th>Title</th>
+    <th>Published Date</th>
+    <th>Download</th>
+    </thead>
+    <tbody>
+    <?php $i=1;?>
+    <?php foreach ($contents as $content) { ?>
+    <tr>
+        <td><?php echo digit_to_bangla($i+$offset,$lang)?></td>
+        <td><?php echo $content['title_en']; ?></td>
+        <td><?php echo digit_to_bangla($content['pubdate'],$lang)?></td>
+
+        <td>
+            <div>
+                <?php echo renderDownloadLink('tenders',$content['uploadpath'] ,$content['attachments_en'], FALSE,null, 16) ?>
+            </div>
+        </td>
+    </tr>
+    <?php $i++; ?>
+    <?php } ?>
+    </tbody>
+</table>
+<?php else:?>
+    <p>There are no tender notice available now......</p>
+<?php endif;?>
+<style></style><script></script>

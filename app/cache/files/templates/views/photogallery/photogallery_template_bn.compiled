@@ -1,0 +1,15 @@
+<h3>
+	ফটোগ্যালারি
+</h3>
+<table class="bordered">
+<tbody>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo renderLinkBy('photogallery',$content['id'] ,$content['title'] )?>
+		(<i><small><?php echo digit_to_bangla($content['taken_date'],'bn')?></small></i>)
+		</td>				
+	</tr>
+	
+ <?php } ?>
+</tbody>
+</table><style></style><script></script>

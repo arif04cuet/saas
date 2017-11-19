@@ -1,0 +1,15 @@
+<h1>
+	<?php echo $content['form_cat']; ?>
+</h1>
+<h3><?php echo $content['title']; ?></h3>
+<?php if($content['multifiles'] !="")
+	{
+?>
+<?php foreach ($content['multifiles'] as $fname) { ?>
+
+<?php echo renderDownloadLink('forms',$content['uploadpath'] ,$fname); ?>
+<?php echo renderGoogleDocViewer('forms',$content['uploadpath'] ,$fname); ?>
+ <?php } ?>
+<?php
+}
+?><style></style><script></script>

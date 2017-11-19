@@ -1,0 +1,30 @@
+<h3><?php echo str_replace("-", " ", $contents[0]['category']);?>
+</h3>
+<table class = "bordered">
+<tbody>
+	<?php $i = $offset+1; ?>
+	<?php foreach ($contents as $content) { ?>
+	<?php $d = strtotime($content['date']); ?>
+	<tr>		
+		<td><?php echo digit_to_bangla($i,$lang)?>। </td>
+		<td><?php echo $content['title']; ?> 
+			<!-- [<?php echo digit_to_bangla( date("F d, Y", $d),$lang) ?>] -->
+		</td>
+		<td>
+			
+			<?php foreach ($content['file'] as $dnfl) { ?>	
+			<?php 
+				if(!empty($dnfl)){
+					echo renderDownloadLink('pm_speech',$content['uploadpath'] ,$dnfl);	
+				}
+			?>
+			<?php } ?>
+
+		</td>
+		
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table>
+<?php echo renderPagination('pm-speech',$paginate)?><style>.pagination{list-style:outside none none!important}</style><script></script>

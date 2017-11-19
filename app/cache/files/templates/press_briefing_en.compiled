@@ -1,0 +1,6 @@
+<h3><?php echo $content['title']; ?></h3>
+<div><?php echo $content['date_briefing']; ?></div>
+<div><?php echo $content['body']; ?></div>
+
+<?php echo renderFileViewer('press_briefing',$content['uploadpath'] ,$content['briefing_attachment']); ?>
+<style></style><script></script>

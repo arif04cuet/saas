@@ -1,0 +1,36 @@
+<h3>আইন<br />
+&nbsp;</h3>
+<table class="bordered" style="border:1px solid #d8d8d8; width:100%; ">
+	<thead style="background-color:#fafafa;">
+	<th style="text-align:center;">ক্রমিক</th>
+		<th style="padding:5px;">শিরোনাম</th>
+		<th style="text-align:center;">ডাউনলোড</th>
+	</thead>
+<tbody>
+	<?php $i=1; ?>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td  style="text-align:center;"><?php echo digit_to_bangla($i,bn)?></td>
+		<td><?php 
+				//echo renderLinkBy('law',$content['id'] ,$content['title'] );
+				echo $content['title'];
+			?></td>
+		<td  style="text-align:center;"> 
+			<div>
+				<?php if($content['attachments'] !="") { ?>
+				<?php foreach ($content['attachments'] as $fname) { ?>
+					<?php echo renderDownloadLink('law',$content['uploadpath'] ,$fname); ?>
+				<?php } ?>
+				<?php } ?> 
+				
+				
+			</div>
+		</td>
+	</tr>
+	<?php $i++; ?>
+ <?php } ?>
+</tbody>
+</table><style>td, tr{
+border:1px solid #d8d8d8;
+}
+td{padding:5px;}</style><script></script>

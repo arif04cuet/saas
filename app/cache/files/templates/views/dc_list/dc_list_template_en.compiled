@@ -1,0 +1,24 @@
+<h3>
+	District Commissioner List	
+</h3>
+<table>
+	<thead>
+		<tr>
+			<th>Sl</th>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Divission</th>
+		</tr>
+	</thead>
+<tbody>
+	<?php foreach ($contents as $content) { ?>
+	<tr>
+		<td><?php echo $content['sl']; ?></td>
+		<td><?php echo $content['id_num']; ?></td>
+		<td><?php echo $content['name']; ?></td>
+		<td><?php echo $content['designation']; ?></td>
+		<td><?php echo $content['org_name']; ?></td>
+	</tr>
+ <?php } ?>
+</tbody>
+</table><style></style><script></script>

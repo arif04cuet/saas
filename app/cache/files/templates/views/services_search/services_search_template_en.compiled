@@ -1,0 +1,82 @@
+<div id="article-title">
+	<h1>
+		সেবা অনুসন্ধান ফলাফল
+	</h1>
+</div>
+
+<div id="statusbar">
+	<?php echo '<span class="italic">'.$q[0].'</span>'.' এর জন্য ফলাফল পাওয়া গেছে মোট '.digit_to_bangla(sizeof($contents), bn).' টি'.'<br>'; ?>
+</div>
+
+
+
+<ul class="front-tab-ajax-ul">
+<?php 
+foreach ($contents as $content){
+	echo '<li>';
+	echo '<i class="flaticon-right65"></i>'.'   ';
+	echo '<a href="/site/service_portal/'.$content['id'].'">'.$content['title_bn'].'</a>';
+	echo '</li>';
+
+}
+
+?>
+	
+</ul><style>#printable_area a {
+    color: #444444;
+    text-decoration: none;
+}
+
+.front-tab-ajax-ul li{
+list-style:none;
+border-bottom:1px solid #efefef;
+
+}
+
+.highlight, .italic {
+    color: #FFA500;
+}
+
+#statusbar {
+    background-color: #FAFAFA;
+    border: 1px solid #D8D8D8;
+    padding: 10px;
+}
+
+.front-tab-ajax-ul{
+padding:0;
+}
+
+/*==============================================*/
+#article-title {
+    border-bottom: 4px solid #8CC641;
+    clear: both;
+    display: block;
+    margin-bottom: 10px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.front-tab-ajax-ul li{
+ 	margin-bottom:10px;
+}
+
+.front-tab-ajax-ul li i {
+    background-color: #efefef;
+    display: block;
+    float: left;
+    margin-right: 20px;
+    text-align: center;
+    width: 24px;
+	height: 24px;
+}
+.front-tab-ajax-ul li:hover i{
+    background-color: #683091;
+    color:#fff;
+}
+.front-tab-ajax-ul li:hover{
+	border-bottom:1px solid #683091;
+}
+
+/*==============================================*/
+</style><script></script>

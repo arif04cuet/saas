@@ -1,0 +1,52 @@
+<div class="cat_title">সর্বশেষ প্রকাশিত <?php echo $contents[0]['category']; ?></div>
+<div class="items">
+    <?php $i = $offset + 1; ?>
+    <?php foreach ($contents as $content) { ?>
+
+    <li class="item">
+        <div class="">
+            <div class="img">
+                <?php foreach ($content['photo'] as $img) { ?>
+
+                <img class="" src="<?php echo getImagePath('ekrishi', $content['uploadpath'], $img) ?>"
+                     alt="<?php echo $img['caption_en']; ?>" title="<?php echo $img['caption_en']; ?>"/>
+
+                <?php } ?>
+            </div>
+            <div class="text">
+                <a class="title" href="/site/ekrishi/<?php echo $content['id'] ?>"><?php echo $content['title']; ?></a>
+                <div><?php echo strlen($content['body']) > 1000 ? substr($content['body'], 0, 1000) . ".." : $content['body']; ?></div>
+            </div>
+            <div><span style="">Read : <?php echo $content['view_count'] ?></span> <a style="color: olive;float: right;font-size: 18px;" class="more" href="/site/ekrishi/<?php echo $content['id'] ?>">Details</a></div>
+        </div>
+
+    </li>
+    <?php $i++; ?>
+    <?php } ?>
+
+</div>
+<style>.items .item img{width:150px;float:left;padding:5px}
+.items .item{border-bottom: 1px solid olivedrab;list-style:none;}
+.items .item text{float:left}
+.items .item .title{font-size:16px;font-weight:bold}
+.items p{float:none!important}
+
+.cat_title{ background-color: #d7eeb6;
+    border-bottom: 2px solid black;
+    font-size: 16px;
+    margin-bottom: 12px;
+    padding: 5px;}
+
+/* Slider css*/
+.bxslider li{margin-left: 0!important;margin-bottom: 0!important;}
+.bx-wrapper .bx-controls-direction a.disabled{display:block!important}
+.bx-wrapper{margin:0!important}</style><script> $('.bxslider').bxSlider({
+        minSlides: 3,
+        maxSlides:3,
+        slideWidth: 220,
+        slideMargin: 5,
+		auto:true
+       
+    });
+
+$('.bx-wrapper').css('max-width','670px');</script>

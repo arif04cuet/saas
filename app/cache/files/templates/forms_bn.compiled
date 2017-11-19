@@ -1,0 +1,10 @@
+<h3><?php echo $content['title']; ?></h3>
+
+<?php echo renderFileViewer('forms',$content['uploadpath'] ,$content['multifiles']); ?>
+
+<p>
+		পূরণকৃত নমুনা ফরমঃ
+</p>
+<?php echo renderFileViewer('forms',$content['uploadpath'] ,$content['filled_up_form']); ?>
+
+<style></style><script></script>

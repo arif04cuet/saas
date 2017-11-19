@@ -1,0 +1,61 @@
+<div style="text-align:center;">
+	<h2>
+		Category Based Training Programme
+	</h2> 
+	<h3>
+		National Institute of Mass Communication (NIMC)
+	</h3>
+	<h4>
+		Course At A Glance
+	</h4>
+</div>
+
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+		<tbody>
+			<tr>
+					<td width="5%" valign="middle" class="head" rowspan="2"><strong>Sl.</strong></td>
+					<td width="5%" valign="middle" class="head" rowspan="2"><strong>Course code</strong></td>
+					
+					<td width="35%" valign="middle" class="head" rowspan="2"><strong>Name of Course</strong></td>
+					<td width="11%" valign="middle" class="head" rowspan="2"><div align="center"><strong>Duration</strong><br>
+					<strong>(Days)</strong></div></td>
+					<td width="10%" valign="middle" class="head" rowspan="2"><div align="center"><strong>Total</strong><br>
+				    <strong>Course</strong></div></td>
+					<td nowrap="nowrap" class="head" colspan="4"><div align="center"><strong>Number of Participants</strong></div></td>			
+					<td width="8%" valign="middle" class="head" rowspan="2"><div align="center"><strong>Details</strong></div></td>
+			</tr>
+
+            <tr>
+					<td width="11%" valign="middle" class="head"><div align="center"><strong>Desired</strong></div></td>			
+					<td width="6%" valign="middle" class="head"><div align="center"><strong>Min</strong></div></td>
+					<td width="6%" valign="middle" class="head"><div align="center"><strong>Max</strong></div></td>			
+					<td width="8%" valign="middle" class="head"><div align="center"><strong>Total</strong></div></td>
+			</tr>
+			
+			<?php $i = 1; ?>
+
+			<?php foreach ($contents as $content) { ?>
+
+				
+			<tr>
+						<td height="18" style="text-align:center; padding-left:0px;" class="style3 dept"><?php echo digit_to_bangla($i,$lang)?></td>
+						<td style="text-align:center; padding-left:10px" class="style3 dept"><?php echo digit_to_bangla($i,$lang)?></td>					
+						<td style="text-align:left; padding-left:10px" class="style3 dept"><?php echo renderLinkBy('courseinfo',$content['id'] ,$content['title_bn'] )?></td>
+						<td style="text-align:center;" class="style3 dept"><?php echo $content['duration']; ?></td>
+						<td style="text-align:center;" class="style3 dept"><?php echo $content['totalcourse']; ?></td>
+						<td style="text-align:center;" class="style3 dept"><?php echo $content['dnop']; ?></td>
+						<td style="text-align:center;" class="style3 dept"><?php echo $content['minnop']; ?></td>
+						<td style="text-align:center;" class="style3 dept"><?php echo $content['maxnop']; ?></td>
+						<td style="text-align:center;" class="style3 dept"><?php echo $content['tnop']; ?></td>
+						<td style="text-align:center;" class="style3 dept"><?php echo renderLinkBy('courseinfo',$content['id'] ,'Detail' )?></td>
+			</tr>
+			
+			<?php $i++; ?>
+ 			<?php } ?>
+
+		</tbody>
+</table>
+
+<?php echo renderPagination('courseinfo',$paginate)?>
+
+<style></style><script></script>

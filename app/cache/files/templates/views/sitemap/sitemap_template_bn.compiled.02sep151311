@@ -1,0 +1,1091 @@
+<h3>
+    সাইট ম্যাপ
+</h3>
+<?php
+
+$root = 'pmo';
+$tree = array();
+$tree[$root] = array('parent' => 'root', 'title' => $domain_info['sitename'], 'link' => '/');
+?>
+<div class="sitemap">
+
+    <?php
+    global $domain_info;
+    $domainid = $domain_info['id'];
+
+    //echo $domainid;
+
+    if($domainid == 6619)
+    {
+        /*========== Start View Site map================*/
+        ?>
+        <h3>ধরন অনুসারে</h3>
+        <ul style="list-style-type:circle">
+        <li>- &nbsp;<a href="http://www.forms.gov.bd/site/view/category_content/অর্থ-ব্যাংক-বাণিজ্য">অর্থ-ব্যাংক-বাণিজ্য</a></li>
+        <li>- &nbsp;<a href="http://www.forms.gov.bd/site/view/category_content/আইন-শৃংখলা+ও+আদালত">আইন-শৃংখলা ও আদালত</a></li>
+        <li>- &nbsp;<a href="http://www.forms.gov.bd/site/view/category_content/চাকুরি+সংক্রান্ত">চাকুরি সংক্রান্ত</a></li>
+        <li>- &nbsp;<a href="http://www.forms.gov.bd/site/view/category_content/কৃষি-খাদ্য-পরিবেশ">কৃষি-খাদ্য-পরিবেশ</a></li>
+        <li>- &nbsp;<a href="http://www.forms.gov.bd/site/view/category_content/শিক্ষা+সংক্রান্ত">শিক্ষা সংক্রান্ত</a></li>
+        <li>- &nbsp;<a href="http://www.forms.gov.bd/site/view/category_content/ভূমি+সংক্রান্ত">ভূমি সংক্রান্ত</a></li>
+        <li>- &nbsp;<a href="http://www.forms.gov.bd/site/view/category_content/স্থানীয়+সরকার">স্থানীয় সরকার</a></li>
+        <li>- &nbsp;<a href="http://www.forms.gov.bd/site/view/category_content/তথ্য-ডাক+ও+টেলিযোগাযোগ">তথ্য-ডাক ও টেলিযোগাযোগ</a></li>
+        <li>- &nbsp;<a href="http://www.forms.gov.bd/site/view/category_content/স্বাস্থ্য+সংক্রান্ত">স্বাস্থ্য সংক্রান্ত</a></li>
+        <li>- &nbsp;<a href="http://www.forms.gov.bd/site/view/category_content/অন্যান্য">অন্যান্য</a></li>
+        </ul>
+        
+        <h3>দপ্তর অনুসারে</h3>
+        <ul style="list-style-type:circle">    
+        <?php
+        $sql1 = 'SELECT
+        d.id, d.sitename_bn, count(d.id) "cnt"
+        FROM npfministryadmin.npf_content_forms cf
+        INNER JOIN npfministryadmin.npf_domains d
+        ON cf.domain_id=d.id
+        WHERE   cf.active=1 AND cf.publish=1 AND d.active=1
+        GROUP BY d.id
+        ORDER BY d.sitename_bn';
+
+        $result1 = db_query($sql1);
+        $a_result1 = array();
+
+        while($row = db_fetch_object($result1))
+        {
+            $a_result1[] = get_object_vars($row);
+        }
+
+        foreach($a_result1 as $links1)
+        {
+            $new_title1 = str_replace(" ","-",$links1['sitename_bn']);
+            $new_title1 = htmlspecialchars($new_title1, ENT_QUOTES);
+            //http://www.".$site_subdomain."/site/view/form-office/".$links1['id']."/".$new_title1."</loc>";
+            ?>
+            
+            <li>- &nbsp;<a href="http://www.forms.gov.bd/site/view/form-office/<?php echo $links1['id']."/".$new_title1; ?>"><?php echo $links1['sitename_bn']; ?></a></li>
+            <?php
+        }
+        ?>
+
+        </ul>
+        <h3>সকল ফরম</h3>
+        <ul style="list-style-type:circle">    
+        <?php
+        $sql = "SELECT id, title_bn,title_en FROM npfministryadmin.npf_content_forms WHERE active=1;";  
+
+        $resource = db_query($sql);
+
+        while ($result = mysql_fetch_array($resource))
+        {
+            $id = $result['id'];
+            $new_title = str_replace(" ","-",$result['title_bn']);
+            $new_title = htmlspecialchars($new_title, ENT_QUOTES);
+            ?>
+            <li>- &nbsp;<a href="http://www.forms.gov.bd/site/view/form-page/<?php echo $id."/".$new_title; ?>"><?php echo $result['title_bn']; ?></a></li>
+            <?php
+           
+        }
+        ?>
+
+        </ul>
+        <h3>পূরণকৃত নমুনা ফরম</h3>
+        <ul style="list-style-type:circle">    
+        <?php
+        $sql = 'SELECT id, title_bn title, filled_up_form FROM npfministryadmin.npf_content_forms WHERE active=1 AND publish=1 AND filled_up_form IS NOT NULL ORDER BY title ASC';  
+
+        $resource = db_query($sql);
+
+        while ($result = mysql_fetch_array($resource))
+        {
+            $id = $result['id'];
+            $new_title = str_replace(" ","-",$result['title']);
+            $new_title = htmlspecialchars($new_title, ENT_QUOTES);
+
+            $filled_form = $result['filled_up_form'];
+            $new_filled_form = unserialize($filled_form);
+            //var_dump($new_filled_form);
+
+            if(strlen($new_filled_form[0]['name']) != "")
+            {
+                ?>
+                <li>- &nbsp;<a href="http://www.forms.gov.bd/site/view/form-demo/<?php echo $id."/".$new_title; ?>"><?php echo $result['title']; ?></a></li>
+                <?php
+            }
+       
+        }
+        ?>
+
+
+        </ul>
+        <ul>
+        <li><h3><a href="http://www.forms.gov.bd/site/page/ae6e9428-ee16-4e31-bc25-c56b3511cbaa/ফরমস-বাতায়ন-সম্পর্কে">ফরমস বাতায়ন সম্পর্কে</a></h3></li>
+        <li><h3><a href="http://www.forms.gov.bd/site/page/ba8302ea-f9f8-498c-8448-358bb1666814/ব্যবহারের-শর্তাবলি">ব্যবহারের শর্তাবলি</a></h3></li>
+        <li><h3><a href="http://www.forms.gov.bd/site/page/a7a28587-9dd0-4482-85f3-efae45128791/সহযোগিতায়">সহযোগিতায়</a></h3></li> 
+        <li><h3><a href="http://www.forms.gov.bd/site/page/a5c88347-b278-4937-98e1-42d1e9675912/যোগাযোগ">যোগাযোগ</a></h3></li>     
+        </ul>
+
+        <?php
+        /*========== Start create XML Site map================*/
+
+        $str = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">';
+        global $domain_info;
+        $domain_subdomain = $domain_info['subdomain'];
+
+        $site_subdomain = str_replace(".portal.",".",$domain_subdomain);
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/</loc>";
+        $str .= '<priority>1.0</priority>';
+        $str .= '</url><br/>';
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/category_content/অর্থ-ব্যাংক-বাণিজ্য</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/category_content/আইন-শৃংখলা+ও+আদালত</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/category_content/চাকুরি+সংক্রান্ত</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/category_content/কৃষি-খাদ্য-পরিবেশ</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/category_content/শিক্ষা+সংক্রান্ত</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/category_content/ভূমি+সংক্রান্ত</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/category_content/স্থানীয়+সরকার</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/category_content/তথ্য-ডাক+ও+টেলিযোগাযোগ</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/category_content/স্বাস্থ্য+সংক্রান্ত</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/category_content/অন্যান্য</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        // dynamic link start
+        //$str .= createXML('root', $sitemap); 
+        $sql = "SELECT id, title_bn,title_en FROM npfministryadmin.npf_content_forms WHERE active=1;";
+        
+        $resource = db_query($sql);
+
+        while ($result = mysql_fetch_array($resource))
+        {
+            $id = $result['id'];
+            $new_title = str_replace(" ","-",$result['title_bn']);
+            $new_title = htmlspecialchars($new_title, ENT_QUOTES);
+            //echo $new_title;
+            $str .= "<url>";
+            $str .= "<loc>http://www.".$site_subdomain."/site/view/form-page/".$id."/".$new_title."</loc>";
+            $str .= '<changefreq>monthly</changefreq>';
+            $str .= '<priority>0.85</priority>';
+            $str .= "</url>";
+        }
+
+
+        $sql1 = 'SELECT
+        d.id, d.sitename_bn, count(d.id) "cnt"
+        FROM npfministryadmin.npf_content_forms cf
+        INNER JOIN npfministryadmin.npf_domains d
+        ON cf.domain_id=d.id
+        WHERE   cf.active=1 AND cf.publish=1 AND d.active=1
+        GROUP BY d.id
+        ORDER BY d.sitename_bn';
+
+        $result1 = db_query($sql1);
+        $a_result1 = array();
+
+        while($row = db_fetch_object($result1))
+        {
+            $a_result1[] = get_object_vars($row);
+        }
+
+        foreach($a_result1 as $links1)
+        {
+    
+            //$content_body .= '<a href="http://forms.portal.gov.bd/site/view/form-office/'.$links1['id'].'">'.$links1['sitename_bn'].'</a>'.' ('.$links['cnt'].')';
+
+            $new_title1 = str_replace(" ","-",$links1['sitename_bn']);
+            $new_title1 = htmlspecialchars($new_title1, ENT_QUOTES);
+            $str .= "<url>";
+            $str .= "<loc>http://www.".$site_subdomain."/site/view/form-office/".$links1['id']."/".$new_title1."</loc>";
+            $str .= '<changefreq>monthly</changefreq>';
+            $str .= '<priority>0.85</priority>';
+            $str .= "</url>";
+
+
+        }
+
+        $sql = 'SELECT id, title_bn title, filled_up_form FROM npfministryadmin.npf_content_forms WHERE active=1 AND publish=1 AND filled_up_form IS NOT NULL ORDER BY title ASC';
+        
+        $resource = db_query($sql);
+
+        while ($result = mysql_fetch_array($resource))
+        {
+            $id = $result['id'];
+            $new_title = str_replace(" ","-",$result['title']);
+            $new_title = htmlspecialchars($new_title, ENT_QUOTES);
+
+            $filled_form = $result['filled_up_form'];
+            $new_filled_form = unserialize($filled_form);
+
+            if(strlen($new_filled_form[0]['name']) != "")
+            {
+                $str .= "<url>";
+                $str .= "<loc>http://www.".$site_subdomain."/site/view/form-demo/".$id."/".$new_title."</loc>";
+                $str .= '<changefreq>monthly</changefreq>';
+                $str .= '<priority>0.85</priority>';
+                $str .= "</url>";
+            }
+
+        }
+
+        //'link' => $result['link_path']
+        // dynamic link end
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/page/ae6e9428-ee16-4e31-bc25-c56b3511cbaa/ফরমস-বাতায়ন-সম্পর্কে</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/page/ba8302ea-f9f8-498c-8448-358bb1666814/ব্যবহারের-শর্তাবলি</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/page/a7a28587-9dd0-4482-85f3-efae45128791/সহযোগিতায়</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/page/a5c88347-b278-4937-98e1-42d1e9675912/যোগাযোগ</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+
+        $str .= '</urlset>';
+
+        $dir = "sitemap/".$site_subdomain;
+        $fn = $dir."/sitemap.xml";
+        if (!is_dir($dir)) {
+            mkdir($dir, 0777, true);   
+        }
+
+        unlink($fn);
+
+        $file = fopen($fn, "a+");
+        $size = filesize($fn);
+
+        fwrite($file, $str);
+        $text = fread($file, $size);
+        fclose($file); 
+        $xmlLink = 'http://www.'.$site_subdomain.'/'.$fn;
+
+        ?>
+
+        <li><h3><a href="<?php echo $xmlLink; ?>">XML Sitemap</a></h3></li>
+        <?php  
+        /*===============XML Site Map work End=================*/   
+    }
+
+    else if($domainid == 6253)
+    {
+        /*========== Start View Site map================*/
+        ?>
+
+        <li><h3><a href="http://www.services.portal.gov.bd/site/view/services_all/সেবাসমূহ">সেবাসমূহ</a></h3></li>
+        <ul style="list-style-type:circle">   
+        <?php
+        $sql = 'SELECT cs.id id, cs.title_bn title, cs.service_domain, cs.uploadpath, cs.flow_chart, sdm.sitename_bn FROM npfministryadmin.npf_content_service_portal cs left join npfministryadmin.npf_domains sdm on cs.service_domain = sdm.id WHERE cs.active = 1 AND cs.publish = 1 group by sdm.sitename_bn LIMIT 50 OFFSET 1';  
+
+        $resource = db_query($sql);
+
+        while ($result = mysql_fetch_array($resource))
+        {
+            $sd = $result['service_domain'];
+            //echo $sd;
+            $new_title = str_replace(" ","-",$result['sitename_bn']);
+            $new_title = htmlspecialchars($new_title, ENT_QUOTES);
+
+            // $filled_form = $result['filled_up_form'];
+            // $new_filled_form = unserialize($filled_form);
+
+            ?>
+            <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_org/<?php echo $sd."/".$new_title; ?>"><?php echo $result['sitename_bn']; ?></a></li>
+            <?php
+       
+        }
+
+        $sql = 'SELECT cs.id id, cs.title_bn title, cs.service_domain, cs.uploadpath, cs.flow_chart, sdm.sitename_bn FROM npfministryadmin.npf_content_service_portal cs left join npfministryadmin.npf_domains sdm on cs.service_domain = sdm.id WHERE cs.active = 1 AND cs.publish = 1 group by sdm.sitename_bn, cs.title_bn';  
+
+        $resource = db_query($sql);
+
+        while ($result = mysql_fetch_array($resource))
+        {
+            $id = $result['id'];
+            //echo $sd;
+            $new_title = str_replace(" ","-",$result['title']);
+            $new_title = htmlspecialchars($new_title, ENT_QUOTES);
+
+            // $filled_form = $result['filled_up_form'];
+            // $new_filled_form = unserialize($filled_form);
+
+            ?>
+            <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/service_portal/<?php echo $id."/".$new_title; ?>"><?php echo $result['title']; ?></a></li>
+            <?php
+       
+        }
+
+        ?>
+        </ul>
+
+        <li><h3><a href="http://www.services.portal.gov.bd/site/view/organizations/দপ্তরসমূহ">দপ্তরসমূহ</a></h3></li>
+        <ul style="list-style-type:circle">   
+        <?php
+        $sql = 'SELECT * FROM npfministryadmin.npf_content_offices_information WHERE domain_id = 6253';  
+
+        $resource = db_query($sql);
+
+        while ($result = mysql_fetch_array($resource))
+        {
+            $id = $result['id'];
+            //echo $sd;
+            $new_title = str_replace(" ","-",$result['title_bn']);
+            $new_title = htmlspecialchars($new_title, ENT_QUOTES);
+
+            // $filled_form = $result['filled_up_form'];
+            // $new_filled_form = unserialize($filled_form);
+
+            ?>
+            <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/offices_information/<?php echo $id."/".$new_title; ?>"><?php echo $result['title_bn']; ?></a></li>
+            <?php
+       
+        }
+
+        ?>
+        </ul>   
+        
+
+        <h3>খাত অনুসারে</h3>
+        <ul style="list-style-type:circle">   
+        <?php
+        $sql = 'SELECT lt.id catid,
+                    lt.name_bn catname,
+                    cs.id id,
+                    cs.title_bn title
+                    FROM
+                    npfministryadmin.npf_lookups lt
+                    CROSS JOIN
+                    npfministryadmin.npf_content_service_portal cs
+                    ON FIND_IN_SET(lt.id, cs.service_pr_cat)
+                    WHERE cs.active = 1 AND cs.publish = 1 group by lt.name_bn';  
+
+        $resource = db_query($sql);
+
+        while ($result = mysql_fetch_array($resource))
+        {
+            $id = $result['catid'];
+            //echo $sd;
+            $new_title = str_replace(" ","-",$result['catname']);
+            $new_title = htmlspecialchars($new_title, ENT_QUOTES);
+
+            // $filled_form = $result['filled_up_form'];
+            // $new_filled_form = unserialize($filled_form);
+
+            ?>
+            <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_pcat/<?php echo $id."/".$new_title; ?>"><?php echo $result['catname']; ?></a></li>
+            <?php
+       
+        }
+
+        ?>
+        </ul>
+        
+        <h3>ধরন অনুসারে</h3>
+        <ul style="list-style-type:circle">
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_cat/228/অনুদান, ভর্তুকি-ও-উপবৃত্তি">অনুদান, ভর্তুকি ও উপবৃত্তি</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_cat/388/আইন-শৃঙ্খলা">আইন শৃঙ্খলা</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_cat/224/ঋণ">ঋণ</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_cat/231/ক্রয়-বিক্রয়">ক্রয় বিক্রয়</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_cat/233/চিকিৎসা-ও-স্বাস্থ্য সেবা">চিকিৎসা ও স্বাস্থ্য সেবা</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_cat/232/তথ্য-ও-প্রতিবেদন">তথ্য ও প্রতিবেদন</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_cat/234/নিয়োগ">নিয়োগ</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_cat/221/পরামর্শ, উদ্বুদ্ধকরণ-ও-অভিযোগ">পরামর্শ, উদ্বুদ্ধকরণ ও অভিযোগ</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_cat/229/পরীক্ষণ">পরীক্ষণ</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_cat/239/পেনশন">পেনশন</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_cat/227/প্রযুক্তি-সম্প্রসারণ">প্রযুক্তি সম্প্রসারণ</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_cat/222/প্রশিক্ষণ">প্রশিক্ষণ</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_cat/223/বিতরণ, ক্ষতিপূরণ, ত্রাণ-ও-পুনর্বাসন">বিতরণ, ক্ষতিপূরণ, ত্রাণ ও পুনর্বাসন</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_cat/258/বিল-নিষ্পত্তি">বিল নিষ্পত্তি</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_cat/226/ভাতা">ভাতা</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_cat/257/ভূমি-সংক্রান্ত">ভূমি সংক্রান্ত</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_cat/256/মেরামত, সংস্কার-ও-নির্মাণ">মেরামত, সংস্কার ও নির্মাণ</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_cat/225/সনদ, লাইসেন্স-ও-নিবন্ধন">সনদ, লাইসেন্স ও নিবন্ধন</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_cat/230/সঞ্চয়">সঞ্চয়</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_cat/259/অন্যান্য-ও-বিবিধ">অন্যান্য ও বিবিধ</a></li>
+        </ul>
+
+        <h3>জেলা-উপজেলা অফিস অনুসারে</h3>
+        <ul style="list-style-type:circle">
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/265/উপজেলা-নির্বাহী-অফিসারের-কার্যালয়">উপজেলা নির্বাহী অফিসারের কার্যালয়</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/290/উপজেলা-আনসার-ভিডিপি-কর্মকর্তার-কার্যালয়">উপজেলা আনসার ভিডিপি  কর্মকর্তার কার্যালয়</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/276/উপজেলা-কৃষি-অফিস">উপজেলা কৃষি অফিস</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/284/উপজেলা-খাদ্য-নিয়ন্ত্রণ-অফিস">উপজেলা খাদ্য নিয়ন্ত্রণ অফিস</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/282/উপজেলা-পরিবার-পরিকল্পনা-অফিস">উপজেলা পরিবার পরিকল্পনা অফিস</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/291/উপজেলা-পরিসংখ্যান-কর্মকর্তার-কার্যালয়">উপজেলা পরিসংখ্যান  কর্মকর্তার কার্যালয়</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/286/উপজেলা-পল্লী-উন্নয়ন-কর্মকর্তার-কার্যালয়">উপজেলা পল্লী উন্নয়ন কর্মকর্তার কার্যালয়</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/283/উপজেলা-প্রকল্প-বাস্তবায়ন-কর্মকর্তার-কার্যালয়">উপজেলা প্রকল্প বাস্তবায়ন কর্মকর্তার কার্যালয়</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/266/উপজেলা-প্রকৌশলীর-দপ্তর">উপজেলা প্রকৌশলীর দপ্তর</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/270/উপজেলা-প্রাণিসম্পদ-অফিস">উপজেলা প্রাণিসম্পদ অফিস</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/280/উপজেলা-মহিলা-বিষয়ক-কর্মকর্তার-কার্যালয়">উপজেলা মহিলা বিষয়ক কর্মকর্তার কার্যালয়</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/279/উপজেলা-মৎস্য-অফিস">উপজেলা মৎস্য অফিস</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/281/উপজেলা-মাধ্যমিক-শিক্ষা-অফিস">উপজেলা মাধ্যমিক শিক্ষা অফিস</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/292/উপজেলা-যুব-উন্নয়ন-কর্মকর্তার-কার্যালয়">উপজেলা যুব উন্নয়ন কর্মকর্তার কার্যালয়</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/264/উপজেলা-শিক্ষা-অফিস">উপজেলা শিক্ষা অফিস</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/287/উপজেলা-সমবায়-কর্মকর্তার-কার্যালয়">উপজেলা সমবায় কর্মকর্তার কার্যালয়</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/271/উপজেলা-সমাজসেবা-অফিস">উপজেলা সমাজসেবা অফিস</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/277/উপজেলা-স্বাস্থ্য-ও-পরিবার-পরিকল্পনা-কর্মকর্তার-কার্যালয়">উপজেলা স্বাস্থ্য ও পরিবার পরিকল্পনা কর্মকর্তার কার্যালয়</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/285/উপজেলা-হিসাব রক্ষণ-অফিস">উপজেলা হিসাব রক্ষণ অফিস</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/278/থানা">থানা</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/275/সহকারী-কমিশনার-অফিস (ভূমি)">সহকারী কমিশনার অফিস (ভূমি)</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/288/জনস্বাস্থ্য-প্রকৌশলীর-কার্যালয়">জনস্বাস্থ্য প্রকৌশলীর কার্যালয়</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/295/আঞ্চলিক-পাসপোর্ট-অফিস">আঞ্চলিক পাসপোর্ট অফিস</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/307/ইসলামিক-ফাউন্ডেশন, জেলা-কার্যালয়">ইসলামিক ফাউন্ডেশন, জেলা কার্যালয়</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/300/উপআঞ্চলিক-কার্যালয়, মাদকদ্রব্য-নিয়ন্ত্রণ-অধিদপ্তর">উপআঞ্চলিক কার্যালয়, মাদকদ্রব্য নিয়ন্ত্রণ অধিদপ্তর</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/304/জেলা কর্মসংস্থান ও জনশক্তি অফিস, বিএমইটি">জেলা-কর্মসংস্থান-ও-জনশক্তি অফিস, বিএমইটি</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/303/জেলা-তথ্য-অফিস">জেলা তথ্য অফিস</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/294/জেলা-সার্কেল-অফিস, বিআরটিএ">জেলা সার্কেল অফিস, বিআরটিএ</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/306/জেলা-ক্রীড়া-অফিস">জেলা ক্রীড়া অফিস</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/296/নির্বাহী-প্রকৌশলীর-কার্যালয়, গণপূর্ত">নির্বাহী প্রকৌশলীর কার্যালয়, গণপূর্ত</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/302/নির্বাহী-প্রকৌশলীর-কার্যালয়, পানি উন্নয়ন বোর্ড">নির্বাহী প্রকৌশলীর কার্যালয়, পানি উন্নয়ন বোর্ড</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/298/নির্বাহী-প্রকেৌশলীর-কার্যালয়,পিডিবি">নির্বাহী প্রকেৌশলীর কার্যালয়,পিডিবি</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/297/নির্বাহী-প্রকৌশলীর-কার্যালয়, সড়ক-ও-জনপথ">নির্বাহী প্রকৌশলীর কার্যালয়, সড়ক ও জনপথ</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/299/পল্লী-বিদ্যুৎ-সমিতি">পল্লী বিদ্যুৎ সমিতি</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/308/বাংলাদেশ-শিশু-একাডেমী">বাংলাদেশ শিশু একাডেমী</a></li>
+        <li>- &nbsp;<a href="http://www.services.portal.gov.bd/site/view/services_off/305/শিল্প-সহায়ক-কেন্দ্র্র , বিসিক">শিল্প  সহায়ক কেন্দ্র্র , বিসিক</a></li>
+        </ul>
+
+        <ul style="list-style-type:circle">    
+       
+        </ul>
+
+        <li><h3><a href="http://www.services.portal.gov.bd/site/page/493b0654-29dd-4484-8894-a509f829a37b/সেবাকুঞ্জ-সম্পর্কে">সেবাকুঞ্জ সম্পর্কে</a></h3></li>
+        <li><h3><a href="http://www.services.portal.gov.bd/site/page/4a6ae716-bfe7-430f-a25e-5b4794fd1a3a/ব্যবহারের-শর্তাবলি">ব্যবহারের শর্তাবলি</a></h3></li>
+        <li><h3><a href="http://www.services.portal.gov.bd/site/page/e8f86cf2-1555-436a-b01d-6cb9c6311fed/সহযোগিতায়">সহযোগিতায়</a></h3></li> 
+        <li><h3><a href="http://www.services.portal.gov.bd/site/page/823e1d76-5d2c-483d-9505-192c5fb6e053/যোগাযোগ">যোগাযোগ</a></h3></li>
+
+        <?php
+
+
+        /*========== Start create XML Site map================*/
+
+        $str = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">';
+        global $domain_info;
+        $domain_subdomain = $domain_info['subdomain'];
+
+        //$site_subdomain = str_replace(".portal.",".",$domain_subdomain);
+        $site_subdomain = $domain_subdomain;
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/</loc>";
+        $str .= '<priority>1.0</priority>';
+        $str .= '</url><br/>';
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_all/সেবাসমূহ</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $sql = 'SELECT cs.id id, cs.title_bn title, cs.service_domain, cs.uploadpath, cs.flow_chart, sdm.sitename_bn FROM npfministryadmin.npf_content_service_portal cs left join npfministryadmin.npf_domains sdm on cs.service_domain = sdm.id WHERE cs.active = 1 AND cs.publish = 1 group by sdm.sitename_bn LIMIT 50 OFFSET 1';
+        
+        $resource = db_query($sql);
+
+        while ($result = mysql_fetch_array($resource))
+        {
+            $sd = $result['service_domain'];
+            $new_title = str_replace(" ","-",$result['sitename_bn']);
+            $new_title = htmlspecialchars($new_title, ENT_QUOTES);
+            //echo $new_title;
+            $str .= "<url>";
+            $str .= "<loc>http://www.".$site_subdomain."/site/view/services_org/".$sd."/".$new_title."</loc>";
+            $str .= '<changefreq>monthly</changefreq>';
+            $str .= '<priority>0.85</priority>';
+            $str .= "</url>";
+        }
+
+        $sql = 'SELECT cs.id id, cs.title_bn title, cs.service_domain, cs.uploadpath, cs.flow_chart, sdm.sitename_bn FROM npfministryadmin.npf_content_service_portal cs left join npfministryadmin.npf_domains sdm on cs.service_domain = sdm.id WHERE cs.active = 1 AND cs.publish = 1 group by sdm.sitename_bn, cs.title_bn';
+        
+        $resource = db_query($sql);
+
+        while ($result = mysql_fetch_array($resource))
+        {
+            $id = $result['id'];
+            $new_title = str_replace(" ","-",$result['title']);
+            $new_title = htmlspecialchars($new_title, ENT_QUOTES);
+            //echo $new_title;
+            $str .= "<url>";
+            $str .= "<loc>http://www.".$site_subdomain."/site/service_portal/".$id."/".$new_title."</loc>";
+            $str .= '<changefreq>monthly</changefreq>';
+            $str .= '<priority>0.85</priority>';
+            $str .= "</url>";
+        }
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/organizations/দপ্তরসমূহ</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $sql = 'SELECT * FROM npfministryadmin.npf_content_offices_information WHERE domain_id = 6253';
+        
+        $resource = db_query($sql);
+
+        while ($result = mysql_fetch_array($resource))
+        {
+            $id = $result['id'];
+            $new_title = str_replace(" ","-",$result['title_bn']);
+            $new_title = htmlspecialchars($new_title, ENT_QUOTES);
+            //echo $new_title;
+            $str .= "<url>";
+            $str .= "<loc>http://www.".$site_subdomain."/site/offices_information/".$id."/".$new_title."</loc>";
+            $str .= '<changefreq>monthly</changefreq>';
+            $str .= '<priority>0.85</priority>';
+            $str .= "</url>";
+        }
+
+        $sql = 'SELECT lt.id catid,
+                    lt.name_bn catname,
+                    cs.id id,
+                    cs.title_bn title
+                    FROM
+                    npfministryadmin.npf_lookups lt
+                    CROSS JOIN
+                    npfministryadmin.npf_content_service_portal cs
+                    ON FIND_IN_SET(lt.id, cs.service_pr_cat)
+                    WHERE cs.active = 1 AND cs.publish = 1 group by lt.name_bn';
+        
+        $resource = db_query($sql);
+
+        while ($result = mysql_fetch_array($resource))
+        {
+            $id = $result['catid'];
+            $new_title = str_replace(" ","-",$result['catname']);
+            $new_title = htmlspecialchars($new_title, ENT_QUOTES);
+            //echo $new_title;
+            $str .= "<url>";
+            $str .= "<loc>http://www.".$site_subdomain."/site/view/services_pcat/".$id."/".$new_title."</loc>";
+            $str .= '<changefreq>monthly</changefreq>';
+            $str .= '<priority>0.85</priority>';
+            $str .= "</url>";
+        }
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_cat/228/অনুদান, ভর্তুকি-ও-উপবৃত্তি</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_cat/388/আইন-শৃঙ্খলা</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_cat/224/ঋণ</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_cat/231/ক্রয়-বিক্রয়</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_cat/233/চিকিৎসা-ও-স্বাস্থ্য সেবা</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_cat/232/তথ্য-ও-প্রতিবেদন</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_cat/234/নিয়োগ</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_cat/221/পরামর্শ, উদ্বুদ্ধকরণ-ও-অভিযোগ</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_cat/229/পরীক্ষণ</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_cat/239/পেনশন</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_cat/227/প্রযুক্তি-সম্প্রসারণ</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_cat/222/প্রশিক্ষণ</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_cat/223/বিতরণ, ক্ষতিপূরণ, ত্রাণ-ও-পুনর্বাসন</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_cat/258/বিল-নিষ্পত্তি</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_cat/226/ভাতা</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_cat/257/ভূমি-সংক্রান্ত</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_cat/256/মেরামত, সংস্কার-ও-নির্মাণ</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_cat/225/সনদ, লাইসেন্স-ও-নিবন্ধন</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_cat/230/সঞ্চয়</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_cat/259/অন্যান্য-ও-বিবিধ</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+
+        
+        //--------------------
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/265/উপজেলা-নির্বাহী-অফিসারের-কার্যালয়</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/290/উপজেলা-আনসার-ভিডিপি-কর্মকর্তার-কার্যালয়</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/276/উপজেলা-কৃষি-অফিস</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/284/উপজেলা-খাদ্য-নিয়ন্ত্রণ-অফিস</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/282/উপজেলা-পরিবার-পরিকল্পনা-অফিস</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/291/উপজেলা-পরিসংখ্যান-কর্মকর্তার-কার্যালয়</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/286/উপজেলা-পল্লী-উন্নয়ন-কর্মকর্তার-কার্যালয়</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/283/উপজেলা-প্রকল্প-বাস্তবায়ন-কর্মকর্তার-কার্যালয়</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/266/উপজেলা-প্রকৌশলীর-দপ্তর</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/270/উপজেলা-প্রাণিসম্পদ-অফিস</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/280/উপজেলা-মহিলা-বিষয়ক-কর্মকর্তার-কার্যালয়</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/279/উপজেলা-মৎস্য-অফিস</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/281/উপজেলা-মাধ্যমিক-শিক্ষা-অফিস</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/292/উপজেলা-যুব-উন্নয়ন-কর্মকর্তার-কার্যালয়</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/264/উপজেলা-শিক্ষা-অফিস</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/287/উপজেলা-সমবায়-কর্মকর্তার-কার্যালয়</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/271/উপজেলা-সমাজসেবা-অফিস</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/277/উপজেলা-স্বাস্থ্য-ও-পরিবার-পরিকল্পনা-কর্মকর্তার-কার্যালয়</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/285/উপজেলা-হিসাব রক্ষণ-অফিস</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/278/থানা</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/275/সহকারী-কমিশনার-অফিস (ভূমি)</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/288/জনস্বাস্থ্য-প্রকৌশলীর-কার্যালয়</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/295/আঞ্চলিক-পাসপোর্ট-অফিস</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/307/ইসলামিক-ফাউন্ডেশন, জেলা-কার্যালয়</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/300/উপআঞ্চলিক-কার্যালয়, মাদকদ্রব্য-নিয়ন্ত্রণ-অধিদপ্তর</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/304/জেলা কর্মসংস্থান ও জনশক্তি অফিস, বিএমইটি</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/303/জেলা-তথ্য-অফিস</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/294/জেলা-সার্কেল-অফিস, বিআরটিএ</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/306/জেলা-ক্রীড়া-অফিস</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/296/নির্বাহী-প্রকৌশলীর-কার্যালয়, গণপূর্ত</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/302/নির্বাহী-প্রকৌশলীর-কার্যালয়, পানি উন্নয়ন বোর্ড</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/298/নির্বাহী-প্রকেৌশলীর-কার্যালয়,পিডিবি</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/265/নির্বাহী-প্রকৌশলীর-কার্যালয়, সড়ক-ও-জনপথ</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/299/পল্লী-বিদ্যুৎ-সমিতি</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/308/বাংলাদেশ-শিশু-একাডেমী</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/view/services_off/305/শিল্প-সহায়ক-কেন্দ্র্র , বিসিক</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        //---------------------
+
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/page/493b0654-29dd-4484-8894-a509f829a37b/সেবাকুঞ্জ-সম্পর্কে</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/page/4a6ae716-bfe7-430f-a25e-5b4794fd1a3a/ব্যবহারের-শর্তাবলি</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/page/e8f86cf2-1555-436a-b01d-6cb9c6311fed/সহযোগিতায়</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/site/page/823e1d76-5d2c-483d-9505-192c5fb6e053/যোগাযোগ</loc>";
+        $str .= '<changefreq>monthly</changefreq>';
+        $str .= '<priority>0.85</priority>';
+        $str .= "</url>";
+
+
+        $str .= '</urlset>';
+
+        $dir = "sitemap/".$site_subdomain;
+        $fn = $dir."/sitemap.xml";
+        if (!is_dir($dir)) {
+            mkdir($dir, 0777, true);       
+        }
+
+        unlink($fn);
+
+        $file = fopen($fn, "a+");
+        $size = filesize($fn);
+
+        fwrite($file, $str);
+        $text = fread($file, $size);
+        fclose($file); 
+        $xmlLink = 'http://www.'.$site_subdomain.'/'.$fn;
+
+        ?>
+
+        <li><h3><a href="<?php echo $xmlLink; ?>">XML Sitemap</a></h3></li>
+        <?php  
+        /*===============Site Map work End=================*/   
+    }
+
+    //initialize sitemap with main menu
+    
+    else
+    {
+        $sitemap = initSitemap($tree, $root);
+        //add service box links
+        $sql = "select id,title_bn,title_en,link1,link2,link3,link4 From npfministryadmin.npf_content_front_service_box where active=1 AND publish=1 AND domain_id = '$domainid' order by box_order";
+        $sitemap = addLinks($sql, $sitemap, 'service_box', false);
+
+        // add important links
+        $sitemap['important_links'] = array('parent' => $root, 'title' => 'গুরুত্বপূর্ণ লিংক', 'link' => 'nolink');
+        $sql = "select id,title_bn,title_en,link from npfministryadmin.npf_content_external_links where active=1 AND publish=1 AND domain_id = '$domainid' order by weight desc";
+        $sitemap = addLinks($sql, $sitemap, 'important_links', $lang);
+
+        // add Internal Service Links
+        $sitemap['internal_eservices'] = array('parent' => $root, 'title' => 'আভ্যন্তরীণ ই-সেবা', 'link' => 'nolink');
+        $sql = "select id,title_bn,title_en,link from npfministryadmin.npf_content_internal_eservices where active=1 AND publish=1 AND domain_id = '$domainid'";
+        $sitemap = addLinks($sql, $sitemap, 'internal_eservices', $lang);
+
+        // add Internal Service Links
+        $sitemap['central_eservices'] = array('parent' => $root, 'title' => 'কেন্দ্রীয় ই-সেবা ', 'link' => 'nolink');
+        $sql = "select id,title_bn,title_en,link from npfministryadmin.npf_content_central_eservices where active=1 AND publish=1";
+        $sitemap = addLinks($sql, $sitemap, 'central_eservices', $lang);
+
+        //add footer menu
+        $sitemap['footer'] = array('parent' => $root, 'title' => 'ফুটার মেনু', 'link' => 'nolink');
+        $sql = "select id,title_bn,title_en,link from npfministryadmin.npf_content_footer_menu where active=1 AND publish=1 AND domain_id = '$domainid'";
+        $sitemap = addLinks($sql, $sitemap, 'footer', false);
+
+        ?>
+        <?php parseAndPrintTree('root', $sitemap); ?>
+
+
+        <?php
+        /*========== Start View Site map================*/
+
+        $str = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">';
+        global $domain_info;
+        $domain_subdomain = $domain_info['subdomain'];
+
+        $site_subdomain = str_replace(".portal.",".",$domain_subdomain);
+        
+        $str .= "<url>";
+        $str .= "<loc>http://www.".$site_subdomain."/</loc>";
+        $str .= '<priority>1.0</priority>';
+        $str .= '</url>';
+
+        $str .= createXML('root', $sitemap); 
+
+        $str .= '</urlset>';
+
+        $dir = "sitemap/".$site_subdomain;
+        $fn = $dir."/sitemap.xml";
+        if (!is_dir($dir)) {
+            mkdir($dir, 0777, true);       
+        }
+
+        unlink($fn);
+
+        $file = fopen($fn, "a+");
+        $size = filesize($fn);
+
+        fwrite($file, $str);
+        $text = fread($file, $size);
+        fclose($file); 
+        $xmlLink = 'http://www.'.$site_subdomain.'/'.$fn;
+
+        ?>
+
+        <a class="btn left" href="<?php echo $xmlLink; ?>">XML Sitemap</a>
+        <?php  
+        /*===============Site Map work End=================*/
+        
+    }
+    
+?>
+    
+</div><style></style><script></script>

@@ -1,0 +1,40 @@
+<div id="service_profile_book">
+	
+<table style="width:100%">
+<tbody  style="width:100%"><tr>
+	<th>ক্রমিক</th>
+	<th>শিরোনাম</th>
+	<th>মন্ত্রণালয়</th>		
+	<th>অধিদপ্তর</th>
+	<th>অফিস</th>
+	<th>ডাউনলোড</th>
+</tr>
+<?php $i=1; foreach($contents as $content){ ?>
+<tr>
+	<td><?php echo digit_to_bangla($i,bn)?></td>
+	<td><?php echo $content['title_bn']?></td>
+	<td><?php echo $content['ministry']?></td>		
+	<td><?php echo $content['directorate']?></td>
+	<td><?php echo $content['feild_office']?></td>
+	<td><?php echo renderDownloadLink('service_profile',$content['uploadpath'] ,$content['profile'], FALSE,null, 16) ?></td>
+</tr>
+<?php $i++; } ?>
+
+</tbody></table>
+
+
+</div>
+
+<style>#service_profile_book table {
+  width: 100%;
+}
+#service_profile_book tr:first-child{
+background-color:#683091;
+color:#ffffff;
+}
+#service_profile_book th, #service_profile_book td {
+  padding: 0.25rem;
+  text-align: left;
+}
+#service_profile_book tbody tr:nth-child(odd) {
+}</style><script></script>
