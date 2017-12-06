@@ -20,64 +20,73 @@ class DomaininfosController extends ControllerBase
 //        $this->setViewTemplate();
 //        $this->view->profile = $this->getUserProfile();
     }
-    public function migrateAction(){
+
+    public function migrateAction()
+    {
         if ($this->request->isPost()) {
-            try{
+            try {
                 //var_dump($this->request->getPost());
                 $src_domain = $this->request->getPost('src_domain', 'striptags');
                 $src_db = $this->request->getPost('src_db', 'striptags');
-                if($src_domain && $src_db){
-                    $tmp = $this->migratedomain->migrate_domain(trim($src_domain),trim($src_db));
-                    if($tmp){
+                if ($src_domain && $src_db) {
+                    $tmp = $this->migratedomain->migrate_domain(trim($src_domain), trim($src_db));
+                    if ($tmp) {
                         $this->flash->success("Successfully migrate domain.");
-                    }else{
+                    } else {
                         $this->flash->error("Error Occurred in migrating domain.");
                     }
                 }
 
 
-            }catch(Exception $e){
+            } catch (Exception $e) {
                 $this->flash->error("Error Occurred in migrating domain.");
             }
         }
     }
-    public function cleanallAction(){
+
+    public function cleanallAction()
+    {
         $this->cleandomain->cleanall_domain();
     }
-    public function cloneAction(){
+
+    public function cloneAction()
+    {
 
 
         // clone a domain
         if ($this->request->isPost()) {
 
-            try{
-		//echo "<pre>";
-		//var_dump($this);exit;
-                
+            try {
+                //echo "<pre>";
+                //var_dump($this);exit;
+
                 $src_domain = $this->request->getPost('src_domain', 'striptags');
                 $clean_domain = $this->request->getPost('clean_domain', 'int');
                 $dest_domain = $this->request->getPost('dest_domain', 'striptags');
-                if($clean_domain){
+                if ($clean_domain) {
                     $this->cleandomain->clean_domain(trim($dest_domain));
                 }
-                $this->clonedomain->clone_domain(trim($src_domain),trim($dest_domain));
+                $this->clonedomain->clone_domain(trim($src_domain), trim($dest_domain));
                 $this->flash->success("Successfully cloned domain.");
-            }catch(Exception $e){
+            } catch (Exception $e) {
                 $this->flash->error("Error Occurred in cloning domain.");
             }
         }
     }
-    public function cleanAction(){
+
+    public function cleanAction()
+    {
         if ($this->request->isPost()) {
-            try{
+            try {
                 $src_domain = $this->request->getPost('domain', 'striptags');
                 $this->cleandomain->clean_domain(trim($src_domain));
                 $this->flash->success("Successfully cleaned domain.");
-            }catch(Exception $e){
+            } catch (Exception $e) {
                 $this->flash->error("Error Occurred in cleaning domain.");
             }
         }
     }
+
     public function indexAction()
     {
         $this->persistent->conditions = null;
@@ -141,7 +150,7 @@ class DomaininfosController extends ControllerBase
                 'sitename_bn' => $this->request->getPost('sitename_bn', 'striptags'),
                 'sitename_en' => $this->request->getPost('sitename_en', 'striptags'),
                 'site_mail' => $this->request->getPost('site_mail', 'email'),
-				'meta_description' => $this->request->getPost('meta_description', 'striptags'),
+                'meta_description' => $this->request->getPost('meta_description', 'striptags'),
                 'site_theme' => $this->request->getPost('site_theme', 'alphanum'),
                 'site_slogan_bn' => $this->request->getPost('site_slogan_bn', 'striptags'),
                 'site_slogan_en' => $this->request->getPost('site_slogan_en', 'striptags'),
@@ -152,9 +161,9 @@ class DomaininfosController extends ControllerBase
                 'site_offline' => $this->request->getPost('site_offline', 'int'),
                 'site_mission_bn' => $this->request->getPost('site_mission_bn', 'striptags'),
                 'site_mission_en' => $this->request->getPost('site_mission_en', 'striptags'),
-                'analytics_id' => $this->request->getPost('analytics_id', 'striptags')
+                'analytics_id' => $this->request->getPost('analytics_id', 'striptags'),
+                'createdby' => $this->getUserId()
             ));
-
 
 
             if (!$npfDomain->save()) {
@@ -162,7 +171,7 @@ class DomaininfosController extends ControllerBase
             } else {
 
                 $domain_id = $npfDomain->id;
-                DomainSetup::copyDomainResources($domain_type_id,$domain_id);
+                DomainSetup::copyDomainResources($domain_type_id, $domain_id);
 
                 $this->flash->success("Domain was created successfully");
 
@@ -188,6 +197,7 @@ class DomaininfosController extends ControllerBase
 
         if ($this->request->isPost()) {
 
+            $date = new \DateTime();
             $npfDomain->assign(array(
                 'subdomain' => $this->request->getPost('subdomain', 'striptags'),
                 'alias' => $this->request->getPost('alias', 'striptags'),
@@ -201,7 +211,7 @@ class DomaininfosController extends ControllerBase
                 'sitename_bn' => $this->request->getPost('sitename_bn', 'striptags'),
                 'sitename_en' => $this->request->getPost('sitename_en', 'striptags'),
                 'site_mail' => $this->request->getPost('site_mail', 'email'),
-				'meta_description' => $this->request->getPost('meta_description', 'striptags'),
+                'meta_description' => $this->request->getPost('meta_description', 'striptags'),
                 'site_theme' => $this->request->getPost('site_theme', 'alphanum'),
                 'site_slogan_bn' => $this->request->getPost('site_slogan_bn', 'striptags'),
                 'site_slogan_en' => $this->request->getPost('site_slogan_en', 'striptags'),
@@ -212,7 +222,9 @@ class DomaininfosController extends ControllerBase
                 'site_offline' => $this->request->getPost('site_offline', 'int'),
                 'site_mission_bn' => $this->request->getPost('site_mission_bn', 'striptags'),
                 'site_mission_en' => $this->request->getPost('site_mission_en', 'striptags'),
-                'analytics_id' => $this->request->getPost('analytics_id', 'striptags')
+                'analytics_id' => $this->request->getPost('analytics_id', 'striptags'),
+                'lastmodifiedby' => $this->getUserId(),
+                'lastmodified' => $date->format("Y-m-d H:i:s")
             ));
 
             if (!$npfDomain->save()) {

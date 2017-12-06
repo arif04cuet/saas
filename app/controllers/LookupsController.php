@@ -34,7 +34,7 @@ class LookupsController extends ControllerBase
         if($domainid!=1){
             $cnt_ids = $this->getDomainTaxonomy($domainid);
             if(!empty($cnt_ids)){
-                $cnt_ids = " active = 1 AND id IN (".$cnt_ids.")";
+                $cnt_ids = " active = 1 AND id IN (".$cnt_ids.") OR is_common=1";
 //                $cnt_ids = " active = 1";
             }
         }
@@ -70,9 +70,14 @@ class LookupsController extends ControllerBase
         }
         $domainid = $this->getDomainId();
         //$parameters->andWhere("domain_id=".$domainid);
-        $parameters['conditions'] .= " AND domain_id=".$domainid;
-		
-		$parameters['order'] = "weight";
+        //$parameters['conditions'] .= " AND domain_id=".$domainid;
+
+        $is_common = NpfLookupTypes::findFirstById($this->request->get('lookuptype_id'));
+        if (!$is_common->is_common)
+            $parameters['conditions'] .= " AND domain_id=" . $domainid;
+
+        
+		$parameters['order'] = "created desc";
 		
 //        var_dump($parameters);
         $npfLookups = NpfLookups::find($parameters);
@@ -186,7 +191,7 @@ class LookupsController extends ControllerBase
     public function deleteAction($id)
     {
 
-        $user = NpfLookups::findFirstById($id);
+        /*$user = NpfLookups::findFirstById($id);
         if (!$user) {
             $this->flash->error("Lookup was not found");
             return $this->dispatcher->forward(array('action' => 'index'));
@@ -198,7 +203,7 @@ class LookupsController extends ControllerBase
             $this->flash->success("Lookup was deleted");
         }
 
-        return $this->dispatcher->forward(array('action' => 'index'));
+        return $this->dispatcher->forward(array('action' => 'index'));*/
     }
 
 

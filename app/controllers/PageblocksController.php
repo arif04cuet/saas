@@ -25,7 +25,7 @@ class PageblocksController extends ControllerBase
 
         $this->view->regions = NpfRegion::find();
         $this->view->bblocks = NpfBlocks::find(array(
-            "domain_id = ".$domain_id,
+            "domain_id = " . $domain_id,
             "order" => "region_id,weight"
         ));
 
@@ -71,9 +71,10 @@ class PageblocksController extends ControllerBase
      */
     public function createAction()
     {
+        $domain_id = $this->getDomainId();
+
         if ($this->request->isPost()) {
 
-            $domain_id = $this->getDomainId();
 
             $npfBlocks = new NpfBlocks();
 
@@ -82,12 +83,18 @@ class PageblocksController extends ControllerBase
                 'title_en' => $this->request->getPost('title_en', 'striptags'),
                 'body_bn' => $this->request->getPost('body_bn'),
                 'body_en' => $this->request->getPost('body_en'),
-                'more' => $this->request->getPost('more','string'),
-                'weight' => 0,
-                'region_id' => 0,
+                'lastmodifiedby' => $this->getUserId(),
+                'more' => $this->request->getPost('more', 'string'),
                 'domain_id' => $domain_id,
                 'template_block_name' => $this->request->getPost('template_block_name', 'striptags'),
             ));
+
+            if ($domain_id == 1) {
+                $npfBlocks->assign(array(
+                    'region_id' => $this->request->getPost('region_id', 'int', 0),
+                    'weight' => $this->request->getPost('weight', 'int', 0),
+                ));
+            }
 
             if (!$npfBlocks->save()) {
                 $this->flash->error($npfBlocks->getMessages());
@@ -101,7 +108,8 @@ class PageblocksController extends ControllerBase
         }
         $uuid = $this->uuid->v4();
         $this->view->uuid = $uuid;
-        $this->view->uploadPath = $this->getFileUploadPath('npfblock',$uuid);
+        $this->view->domainId = $domain_id;
+        $this->view->uploadPath = $this->getFileUploadPath('npfblock', $uuid);
         $this->view->form = new NpfBlocksForm(null);
     }
 
@@ -113,6 +121,7 @@ class PageblocksController extends ControllerBase
     {
 
         $npfBlocks = NpfBlocks::findFirstById($id);
+        $domain_id = $npfBlocks->domain_id;
         if (!$npfBlocks) {
             $this->flash->error("Blocks was not found");
             return $this->dispatcher->forward(array('action' => 'index'));
@@ -125,9 +134,17 @@ class PageblocksController extends ControllerBase
                 'title_en' => $this->request->getPost('title_en', 'striptags'),
                 'body_bn' => $this->request->getPost('body_bn'),
                 'body_en' => $this->request->getPost('body_en'),
-                'more' => $this->request->getPost('more','string'),
-                'template_block_name' => $this->request->getPost('template_block_name', 'striptags'),
+                'more' => $this->request->getPost('more', 'string'),
+                'lastmodifiedby' => $this->getUserId(),
+                'template_block_name' => $this->request->getPost('template_block_name', 'striptags')
             ));
+
+            if ($domain_id == 1) {
+                $npfBlocks->assign(array(
+                    'region_id' => $this->request->getPost('region_id', 'int', 0),
+                    'weight' => $this->request->getPost('weight', 'int', 0),
+                ));
+            }
 
             if (!$npfBlocks->save()) {
                 $this->flash->error($npfBlocks->getMessages());
@@ -141,7 +158,8 @@ class PageblocksController extends ControllerBase
             }
 
         }
-        $this->view->uploadPath = $this->getFileUploadPath('npfblock',$npfBlocks->uploadpath);
+        $this->view->domainId = $domain_id;
+        $this->view->uploadPath = $this->getFileUploadPath('npfblock', $npfBlocks->uploadpath);
         $this->view->form = new NpfBlocksForm($npfBlocks, array('edit' => true));
 //        var_dump($this->view->form);
     }
@@ -158,20 +176,18 @@ class PageblocksController extends ControllerBase
         if ($this->request->isPost() == true) {
 
             // Check whether the request was made with Ajax
-            if ($this->request->isAjax() == true)
-            {
+            if ($this->request->isAjax() == true) {
                 $this->view->disable();
                 $data = $this->request->getPost('blcks');
-                foreach($data as $blck){
-                    $tmp = NpfBlocks::updateBlock($blck[0],$blck[1],$blck[2]);
-                    if(false)
-                    {
+                foreach ($data as $blck) {
+                    $tmp = NpfBlocks::updateBlock($blck[0], $blck[1], $blck[2]);
+                    if (false) {
                         $a_result = "failed";
                         break;
                     }
                 }
                 $a_result = "success";
-            }else{
+            } else {
                 $a_result = "invalid";
             }
         }
@@ -179,7 +195,7 @@ class PageblocksController extends ControllerBase
         $response = new Response();
         //Set the content of the response
         $response->setContentType('application/json', 'UTF-8');
-        $response->setContent(json_encode(array("result"=>$a_result)));//json_encode(array("result"=>$data)));
+        $response->setContent(json_encode(array("result" => $a_result)));//json_encode(array("result"=>$data)));
         //Return the response
         return $response;
     }

@@ -1,8 +1,17 @@
 {{ content() }}
+
 {{ stylesheet_link('js/bootstrap-datepicker/css/datepicker.css') }}
 {{ stylesheet_link('js/colorpicker/css/colorpicker.css') }}
+
 {{ javascript_include('js/bootstrap-datepicker/js/bootstrap-datepicker.js') }}
 {{ javascript_include('js/colorpicker/js/bootstrap-colorpicker.js') }}
+
+<!--
+<link href="/npfadmin/js/bootstrap-datepicker/css/datepicker.css" rel="stylesheet">
+<link href="/npfadmin/js/colorpicker/css/colorpicker.css" rel="stylesheet">
+<script src="/npfadmin/js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script src="/npfadmin/js/colorpicker/js/bootstrap-colorpicker.js"></script>
+-->
 
 <?php //var_dump($contentValues)?>
 {{ partial("content/partials/domain_selector_picker") }}
@@ -139,7 +148,11 @@
                 {{ partial("content/partials/child_content_ref", ['show': true, 'fldname': fld['name'],'cntname': formName, 'id':contentValues['id']]) }}
             {% elseif fld['type'] == "parentcontenttype" %}			
                 {{ partial("content/partials/parent_content_ref", ['fldname': fld['name'],'fldrefname': fld['contentname'],'fldval': contentValues[fld['name']]]) }}
-				
+            {% elseif fld['type'] == "contentefselect2" %}
+                {{ partial("content/partials/contentefselect2", ['fldname': fld['name'],'fldrefname': fld['contentname'],'title':fld['title'],'fldval': contentValues[fld['name']]]) }}
+            {% elseif fld['type'] == "dependentcontent" %}
+                {{ partial("content/partials/dependentcontent", ['fldname': fld['name'],'fldrefname': fld['contentname'],'dependson': fld['dependson'],'fldval': contentValues[fld['name']]]) }}
+
             {% elseif fld['type'] == "contentref" %}
        	     {{ partial("content/partials/single_ref", ['fldname': fld['name'],'fldrefname': fld['contentname'],'fldval': contentValues[fld['name']][0]]) }}
             {% elseif fld['type'] == "multicontentref" %}

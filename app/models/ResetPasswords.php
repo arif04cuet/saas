@@ -83,7 +83,7 @@ class ResetPasswords extends Model
 			'reset',
 			array(
 				//'resetUrl' => '/reset-password/' . $this->code . '/' . $this->user->email
-                'resetUrl' => $domainname.'/npfadmin/reset-password/' . $this->code . '/' . $this->user->email
+                'resetUrl' => $domainname.'/npfadmin/public/reset-password/' . $this->code . '/' . $this->user->email
 			)
 		);
 	}

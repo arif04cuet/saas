@@ -7,7 +7,7 @@ use Phalcon\Mvc\Model,
 use Phalcon\Mvc\Model\Resultset\Simple as Resultset;
 
 
-class NpfDomains extends Model
+class NpfDomains extends BaseModel
 {
 
     /**
@@ -192,6 +192,18 @@ class NpfDomains extends Model
      * @var string
      */
     public $analytics_id;
+    public $api_token;
+
+    public function beforeCreate()
+    {
+        $this->created = $this->getDatetime();
+        $this->lastmodified = $this->getDatetime();
+    }
+
+    public function beforeUpdate()
+    {
+        //$this->lastmodified = $this->getDatetime();
+    }
 
     /**
      * Independent Column Mapping.
@@ -230,7 +242,8 @@ class NpfDomains extends Model
             'site_mission_en' => 'site_mission_en',
             'weight' => 'weight',
             'analytics_id' => 'analytics_id',
-			'meta_description' => 'meta_description'
+            'meta_description' => 'meta_description',
+            'api_token' => 'api_token'
         );
     }
 

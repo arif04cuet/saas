@@ -1,5 +1,4 @@
 <?php
-
 use Phalcon\DI\FactoryDefault,
     Phalcon\Mvc\View,
     Phalcon\Crypt,
@@ -9,6 +8,7 @@ use Phalcon\DI\FactoryDefault,
     Phalcon\Mvc\View\Engine\Volt as VoltEngine,
     Phalcon\Mvc\Model\Metadata\Files as MetaDataAdapter,
     Phalcon\Session\Adapter\Files as SessionAdapter,
+    Phalcon\Logger,
     Phalcon\Flash\Direct as Flash;
 
 use Vokuro\Auth\Auth,
@@ -88,6 +88,27 @@ $di->set('db', function () use ($config) {
             'charset' => 'utf8'
         )
     );
+
+    $eventsManager = new Phalcon\Events\Manager();
+
+    $logger = new \Phalcon\Logger\Adapter\File(BASE_PATH . "/logs/db.log");
+    
+        //Listen all the database events
+    $eventsManager->attach('db', function ($event, $connection) use ($logger) {
+        if ($event->getType() == 'beforeQuery') {
+            $sqlVariables = $connection->getSQLVariables();
+            if (count($sqlVariables)) {
+                $logger->log($connection->getSQLStatement() . ' ' . join(', ', $sqlVariables), Logger::INFO);
+            } else {
+                $logger->log($connection->getSQLStatement(), Logger::INFO);
+            }
+        }
+    });
+    
+        //Assign the eventsManager to the db adapter instance
+    $connection->setEventsManager($eventsManager);
+
+
     return $connection;
 });
 
@@ -203,9 +224,9 @@ $di->set('migratedomain', function () {
     return new MigrateDomain();
 });
 
-//$di->set('logger', function() use ($config) {
-//
-//    $logger = new Phalcon\Logger\Adapter\File\Multiple($config->application->logDir);
-//
-//    return $logger;
-//});
+// $di->set('logger', function () use ($config) {
+
+//     $logger = new Phalcon\Logger\Adapter\File\Multiple($config->application->logDir);
+
+//     return $logger;
+// });

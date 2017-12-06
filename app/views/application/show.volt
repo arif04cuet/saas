@@ -23,13 +23,16 @@
                 vertical-align: top;
                 border-top: 1px solid #ddd;
             }
-
+            .no-print, .no-print *
+            {
+                display: none !important;
+            }
         }
     </style>
     <div class="row">
         <div class="col-md-12">
             <h3><?php echo $application['courseName']?>
-                <button style="float: right" id="print" class="btn">Print</button>
+                <button style="float: right" id="print" class="btn no-print">Print</button>
             </h3>
 
             <h4>Government of the People's Republic of Bangladesh
@@ -41,7 +44,7 @@
     </div>
     <div class="row">
         <div class="col-md-8">
-            <img style="display: block" src="<?php echo $uploadPath.$application['img']?>" alt="trainee photo">
+            <img style="display: block;width: 200px;height: 230px" src="<?php echo $uploadPath.$application['img']?>" alt="trainee photo">
             <br>
             <table class="table table-bordered">
                 <tr>
@@ -169,4 +172,6 @@
         });
     });
 </script>
+
+
 

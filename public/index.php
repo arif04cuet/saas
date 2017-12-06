@@ -1,6 +1,9 @@
 <?php
-ini_set( 'display_errors', 1 );
+ini_set('display_errors', 1);
 error_reporting(E_ALL);
+
+define('BASE_PATH', dirname(__DIR__));
+define('APP_PATH', BASE_PATH . '/app');
 
 try {
 
@@ -14,6 +17,9 @@ try {
 	 */
 	include __DIR__ . "/../app/config/loader.php";
 
+	//Composer
+
+	require __DIR__ . "/../vendor/autoload.php";
 	/**
 	 * Read services
 	 */
@@ -25,11 +31,11 @@ try {
 	 * Handle the request
 	 */
 	$application = new \Phalcon\Mvc\Application($di);
-
+	//$di['app'] = $application; (new \Snowair\Debugbar\ServiceProvider())->start();
 	echo $application->handle()->getContent();
 
 } catch (Exception $e) {
-	$t =  $e->getMessage();
+	$t = $e->getMessage();
 	$t .= nl2br(htmlentities($e->getTraceAsString()));
-    echo $t;
+	echo $t;
 }

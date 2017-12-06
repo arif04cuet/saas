@@ -124,6 +124,19 @@
         addFieldRow();
 
     });
+
+    function getTitleProps(id, name) {
+        var t = '<div style="display:none" id="' + id + '">' +
+                '<input type="text" value="" name="' + name + '[title]" placeholder="Title Field">' + '</div>';
+        return t;
+    }
+
+    function getDependentProps(id, name) {
+        var t = '<div style="display:none" id="' + id + '">' +
+                '<input type="text" value="" name="' + name + '[dependson]" placeholder="Dependent Field">' + '</div>';
+        return t;
+    }
+
     function getFileProps(id,name){
         var t = '<div style="display:none" id="'+id+'">' +
             '<input type="text" value="960" name="'+name+'[maxwidth]" placeholder="Max Width">' +
@@ -144,6 +157,8 @@
         var lookupTbls = $('#lookupTbl > select').html();
         var cntntTypes = $('#cntntTypes > select').html();
         var imageProps = getFileProps('fld_'+numOfFlds+'_fileprops','fld['+numOfFlds+']');
+        var dropDownTitleFile = getTitleProps('fld_' + numOfFlds + '_dropTitle', 'fld[' + numOfFlds + ']');
+        var dependsOn = getDependentProps('fld_' + numOfFlds + '_dependson', 'fld[' + numOfFlds + ']');
 
         $('#tblFields > tbody').append('<tr><td><input type="text" value="" name="fld['+numOfFlds+'][name]"></td>' +
             '<td><input type="text" value="" name="fld['+numOfFlds+'][hname]"></td><td>' +
@@ -157,7 +172,7 @@
             '<select class="hide" name="fld['+numOfFlds+'][contentname]" id="fld_'+numOfFlds+'_contentname">' +
             cntntTypes +
             '</select>' + imageProps +
-            '<input style="display: none" type="text" value="" name="fld['+numOfFlds+'][dependson]" id="fld_'+numOfFlds+'_dependson">' +
+            '<input style="display: none" type="text" value="" name="fld['+numOfFlds+'][dependson]" id="fld_'+numOfFlds+'_dependson">' +dropDownTitleFile +dependsOn+
             '</td><td>' +
             '<select class="input-mini" name="fld['+numOfFlds+'][active]">' +
             '<option value="0">Disable</option>' +
@@ -191,6 +206,17 @@
         }else{
             $('#fld_'+n+'_fileprops').hide();
         }
+
+
+        if ($(t).val() == 'contentefselect2') {
+            $("#fld_" + n + "_dropTitle").show();
+        }
+
+        if ($(t).val() == 'dependentcontent') {
+            $("#fld_" + n + "_dependson").show();
+        }
+
+
     }
     function showContentTypes(){
 

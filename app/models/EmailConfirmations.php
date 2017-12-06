@@ -76,7 +76,7 @@ class EmailConfirmations extends Model
 			'confirmation',
 			array(
 				//'domainName' => '/confirm/' . $this->code . '/' . $this->user->email,
-                'confirmUrl' => $domainname.'/npfadmin/confirm/' . $this->code . '/' . $this->user->email
+                'confirmUrl' => $domainname.'/npfadmin/public/confirm/' . $this->code . '/' . $this->user->email
 			)
 		);
 	}

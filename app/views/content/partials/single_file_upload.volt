@@ -1,19 +1,16 @@
-{{ stylesheet_link('css/jquery.fileupload.css') }}
 
+{{ stylesheet_link('css/jquery.fileupload.css') }}
 {{ javascript_include('js/vendor/jquery.ui.widget.js') }}
 {{ javascript_include('js/jquery.iframe-transport.js') }}
 {{ javascript_include('js/jquery.fileupload.js') }}
 
 
 
-<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
-<!--<script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.min.js"></script>-->
-<!-- The Canvas to Blob plugin is included for image resizing functionality -->
-<!--<script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>-->
-<!-- The File Upload processing plugin -->
-<!--<script src="/npfadmin/js/jquery.fileupload-process.js"></script>-->
-<!-- The File Upload image preview & resize plugin -->
-<!--<script src="/npfadmin/js/jquery.fileupload-image.js"></script>-->
+{{ javascript_include('js/load-image.all.min.js') }}
+{{ javascript_include('js/canvas-to-blob.min.js') }}
+
+{{ javascript_include('js/jquery.fileupload-process.js') }}
+{{ javascript_include('js/jquery.fileupload-image.js') }}
 
 
 <!-- Modal -->

@@ -1,8 +1,13 @@
+<?php
+header("X-XSS-Protection: 0");
+header('X-Content-Type-Options: nosniff');
+?>
 <!DOCTYPE html>
 <html>
 	<head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta http-equiv="X-Frame-Options" content="deny">
 		<?php echo $this->tag->getTitle(); ?></title>
 <!--		<link href="//netdna.bootstrapcdn.com/bootswatch/2.3.1/united/bootstrap.min.css" rel="stylesheet">-->
         {{ stylesheet_link('css/bootstrap/css/bootstrap.min.css') }}

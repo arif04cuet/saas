@@ -31,7 +31,7 @@ class ContenttypeController extends ControllerBase
         if($domainid!=1){
             $cnt_ids = $this->getDomainContentTypes($domainid);
             if(!empty($cnt_ids)){
-                $cnt_ids = " active = 1 AND id IN (".$cnt_ids.")";
+                $cnt_ids = " active = 1 AND id IN (".$cnt_ids.") OR is_common=1";
             }
         }
         //

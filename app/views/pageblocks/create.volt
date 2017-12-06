@@ -63,6 +63,21 @@
         </div>
     </div>
 
+    <?php if($domainId == 1):?>
+    <div id="div-block-rigion" class="clearfix">
+        <label for="name">Block Region</label>
+        {{ form.render("region_id") }}
+    </div>
+
+
+    <div id="div-block-rigion" class="clearfix">
+        <label for="name">Weight</label>
+        {{ form.render("weight") }}
+    </div>
+
+    <?php endif;?>
+
+
     <div id="div-block-template" class="clearfix">
         <label for="name">Template Block</label>
         {{ form.render("template_block_name") }}

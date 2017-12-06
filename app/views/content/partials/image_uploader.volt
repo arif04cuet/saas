@@ -1,5 +1,5 @@
-{{ stylesheet_link('css/bootstrap-modal.css') }}
 
+{{ stylesheet_link('css/bootstrap-modal.css') }}
 {{ javascript_include('js/bootstrap-modalmanager.js') }}
 {{ javascript_include('js/bootstrap-modal.js') }}
 

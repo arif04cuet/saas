@@ -168,6 +168,7 @@ class WebformsController extends ControllerBase
 
     public function updateformAction()
     {
+
         $this->view->disable();
         $msg = "Invalid post data.";
 
@@ -194,7 +195,7 @@ class WebformsController extends ControllerBase
             ));
 
             if (!$npfWebforms->save()) {
-                $msg = "failed";
+                $msg = $npfWebforms->getMessages();
             } else {
                 $msg = "success";
             }

@@ -93,8 +93,19 @@
                       <li>{{ link_to('viewcontents', 'Views') }}</li>
                       <li>{{ link_to('pageblocks', 'Blocks') }}</li>
                       <li>{{ link_to('webforms', 'Web Forms') }}</li>
+					   {% if domainname == 'pmo.portal.gov.bd' %}
+                                <li>{{ link_to('feedback/list', 'Feedback Forms') }}</li>
+                       {% endif %}
+					   
+					    {% if domainname == 'nimc.portal.gov.bd' %}
+							 <li>{{ link_to('application/list', 'Application List') }}</li>
+						{% else %}
+							<li>{{ link_to('application/listForm', 'Application List') }}</li>
+						{% endif %}
+		
                       <li class="divider"></li>
                       <li>{{ link_to('menus', 'Menus') }}</li>
+                      <li>{{ link_to('application/logs', 'Audit Log') }}</li>
                   </ul>
               </li>
               <li class="dropdown">

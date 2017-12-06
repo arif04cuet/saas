@@ -68,7 +68,7 @@
         }
     }
     function selectView(){
-        var url = '/viewcontents/listajax';
+        var url = '/npfadmin/viewcontents/listajax';
         $.post(url,
             function(html,status){
                 //console.debug(data);
@@ -86,7 +86,7 @@
     function get_content_types(){
         //var val = $('#modal-content-type').val();
         //$('#Modal-Content-Selector').modal('show');
-        var url = '/contenttype/listajax';
+        var url = '/npfadmin/contenttype/listajax';
         $.post(url,
             function(html,status){
                 $('#content-view-sel').hide();
@@ -100,7 +100,7 @@
     }
     function get_contents(content_type){
 
-        var url = '/content/'+content_type+'/listajax';
+        var url = '/npfadmin/content/'+content_type+'/listajax';
         $.post(url,
             function(html,status){
                 $('#content-view-sel').hide();
@@ -118,7 +118,7 @@
     }
     function get_contents2(content_type){
 
-        var url = '/content/'+content_type+'/listajax';
+        var url = '/npfadmin/content/'+content_type+'/listajax';
         $.post(url,
             function(html,status){
                 $('#content-view-sel').hide();

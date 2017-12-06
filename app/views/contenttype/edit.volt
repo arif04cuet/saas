@@ -125,6 +125,15 @@
                     {% if fld['type'] == "parentcontenttype" or fld['type'] == "childcontenttype" or fld['type'] == "contentref" or fld['type'] == "multicontentref" %}
                     {{ text_field('fld['~i~'][contentname]','value':fld['contentname'],'readonly':'readonly') }}
                     {% endif %}
+                    
+                    {% if fld['type'] == "contentefselect2" %}
+                        {{ text_field('fld['~i~'][contentname]','value':fld['contentname']) }}
+                        {{ text_field('fld['~i~'][title]','value':fld['title']) }}
+                    {% endif %}
+                    {% if fld['type'] == "dependentcontent" %}
+                        {{ text_field('fld['~i~'][dependson]','value':fld['dependson']) }}
+                    {% endif %}
+
                     {% if fld['type'] == "filefield" or fld['type'] == "imglist" %}
                     {{ text_field('fld['~i~'][maxwidth]','value':fld['maxwidth'],'readonly':'readonly') }}
                     {{ text_field('fld['~i~'][maxheight]','value':fld['maxheight'],'readonly':'readonly') }}
@@ -203,8 +212,21 @@
 </form>
 <script>
 
-    var numOfFlds =  <?php echo $num_flds ?>;
-    var numOfSqls = <?php echo $numOfSqls ?>;
+    var numOfFlds =  "<?php echo $num_flds ?>";
+    var numOfSqls = "<?php echo $numOfSqls ?>";
+
+    function getTitleProps(id, name) {
+        var t = '<div style="display:none" id="' + id + '">' +
+                '<input type="text" value="" name="' + name + '[dropTitle]" placeholder="Title Field">' + '</div>';
+        return t;
+    }
+
+    function getDependentProps(id, name) {
+        var t = '<div style="display:none" id="' + id + '">' +
+                '<input type="text" value="" name="' + name + '[dependson]" placeholder="Dependent Field">' + '</div>';
+        return t;
+    }
+
     function getFileProps(id,name){
         // ---:  /\/(pdf|xml)$/i
         // ---:  /^image\/(gif|jpeg|png)$/
@@ -227,6 +249,9 @@
         var lookupTbls = $('#lookupTbl > select').html();
         var cntntTypes = $('#cntntTypes > select').html();
         var imageProps = getFileProps('fld_'+numOfFlds+'_fileprops','fld['+numOfFlds+']');
+        var dependsOn = getDependentProps('fld_' + numOfFlds + '_dependson', 'fld[' + numOfFlds + ']');
+        var dropDownTitleFile = getTitleProps('fld_' + numOfFlds + '_dropTitle', 'fld[' + numOfFlds + ']');
+
 
         $('#tblFields > tbody').append('<tr><td></td><td></td><td><input class="input-small" type="text" value="" name="fld['+numOfFlds+'][name]"></td>' +
             '<td><input type="text" value="" name="fld['+numOfFlds+'][hname]"></td><td>' +
@@ -238,7 +263,7 @@
             '</select>' +
             '<select class="hide" name="fld['+numOfFlds+'][contentname]" id="fld_'+numOfFlds+'_contentname">' +
             cntntTypes +
-            '</select>' +  imageProps +
+            '</select>' +  imageProps +dropDownTitleFile +dependsOn+
             '<input style="display: none" type="text" value="" name="fld['+numOfFlds+'][dependson]" id="fld_'+numOfFlds+'_dependson">' +
             '</td><td>' +
             '<select class="input-small" name="fld['+numOfFlds+'][active]">' +
@@ -275,6 +300,16 @@
         }else{
             $('#fld_'+n+'_fileprops').hide();
         }
+
+        if ($(t).val() == 'contentefselect2') {
+            $("#fld_" + n + "_dropTitle").show();
+        }
+
+        if ($(t).val() == 'dependentcontent') {
+            $("#fld_" + n + "_dependson").show();
+        }
+
+
     }
 
     function removeThis(t){

@@ -34,7 +34,7 @@ class ServicesController extends ControllerBase
                         cs.uploadpath,
                         cs.flow_chart
                         FROM
-                        npf_content_service_portal cs
+                        npfministryadmin.npf_content_service_portal cs
                         WHERE cs.service_domain = ".$domaintypeid." AND cs.active = 1 AND cs.publish = 1
                 ";
                 //echo $sql;

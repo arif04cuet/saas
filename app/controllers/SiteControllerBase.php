@@ -1,5 +1,4 @@
 <?php
-
 namespace Vokuro\Controllers;
 
 use Phalcon\Mvc\Controller,
@@ -30,6 +29,7 @@ class SiteControllerBase extends Controller
         $this->view->disableLevel(View::LEVEL_MAIN_LAYOUT);
         $this->view->setTemplateBefore('frontend');
         $this->view->domain_info = $domain_info = (array)$this->getDomain();
+
         $this->view->lang = $lang = 'bn';
         $this->view->is_disable_rightbar = false;
 
@@ -314,7 +314,7 @@ class SiteControllerBase extends Controller
         return $this->renderPhpFile($compiledFilename, $t);
     }
 
-    public function  unserializedRows(&$row)
+    public function unserializedRows(&$row)
     {
 
         foreach ($row as &$col) {
@@ -335,15 +335,15 @@ class SiteControllerBase extends Controller
         if (!preg_match('/^([adObis]):/', $data, $badions))
             return false;
         switch ($badions[1]) {
-            case 'a' :
-            case 'O' :
-            case 's' :
+            case 'a':
+            case 'O':
+            case 's':
                 if (preg_match("/^{$badions[1]}:[0-9]+:.*[;}]\$/s", $data))
                     return true;
                 break;
-            case 'b' :
-            case 'i' :
-            case 'd' :
+            case 'b':
+            case 'i':
+            case 'd':
                 if (preg_match("/^{$badions[1]}:[0-9.E-]+;\$/", $data))
                     return true;
                 break;

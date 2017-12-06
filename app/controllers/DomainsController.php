@@ -183,6 +183,43 @@ class DomainsController extends ControllerBase
         $response->setContent(json_encode($taxonomy));
         return $response;
     }
+    
+    public function loaddataAction()
+    {
+        $data = array();
+        $table = $this->request->getQuery("table");
+        $domainId = $this->getDomainId();
+        $result = Contents::getContentList($table, $domainId);
+        if ($result) {
+            foreach ($result as $r) {
+                $data[] = array('id' => $r->id, 'name' => $r->title_bn);
+            }
+        }
+        $response = new Response();
+        $response->setContentType('application/json', 'UTF-8');
+        $response->setContent(json_encode($data));
+        return $response;
+    }
+
+    public function loaddependentdataAction()
+    {
+
+        $data = $this->request->getQuery();
+        $table = $data['table'];
+        $parentField = $data['parentField'];
+        $parentVal = $data['parentVal'];
+        $sql = "select id,title_bn from $table where $parentField='".$parentVal."'";
+        $content = new Contents();
+        $result = new \Phalcon\Mvc\Model\Resultset\Simple(null, $content, $content->getReadConnection()->query($sql));
+        $output = '';
+        if ($result) {
+            foreach ($result as $r) {
+                $output[] = array('id' => $r->id, 'name' => $r->title_bn);
+            }
+        }
+        echo json_encode($output);
+        exit;
+    }
 
     public function getdomainsAction()
     {
@@ -407,7 +444,7 @@ class DomainsController extends ControllerBase
             $tmp1 = array();
 
             //////////////////office content type information/////////////////////
-            $service_sql1 = "SELECT id off_c_id FROM npf_content_offices_information WHERE domain='" . $t1->id . "'
+            $service_sql1 = "SELECT id off_c_id FROM npfministryadmin.npf_content_offices_information WHERE domain='" . $t1->id . "'
 					 AND active = 1 AND publish = 1 limit 1";
             $service_tmp1 = Contents::run_sql($service_sql1);
             if (count($service_tmp1) > 0) {
@@ -435,7 +472,7 @@ class DomainsController extends ControllerBase
             $tmp2 = array();
 
             //////////////////office content type information/////////////////////
-            $service_sql2 = "SELECT id off_c_id FROM npf_content_offices_information WHERE domain='" . $t2->id . "'
+            $service_sql2 = "SELECT id off_c_id FROM npfministryadmin.npf_content_offices_information WHERE domain='" . $t2->id . "'
 					 AND active = 1 AND publish = 1 limit 1";
             $service_tmp2 = Contents::run_sql($service_sql2);
             if (count($service_tmp2) > 0) {

@@ -15,7 +15,7 @@ class NpfBlocks extends BaseModel
      * @var integer
      */
     public $id;
-
+     
     /**
      *
      * @var string
@@ -37,7 +37,7 @@ class NpfBlocks extends BaseModel
      * @var string
      */
     public $body_en;
-
+     
     /**
      *
      * @var integer
@@ -65,7 +65,7 @@ class NpfBlocks extends BaseModel
      * @var integer
      */
     public $weight;
-
+     
     /**
      *
      * @var integer
@@ -73,24 +73,25 @@ class NpfBlocks extends BaseModel
     public $region_id;
 
 
+
     /**
      *
      * @var string
      */
     public $created;
-
+     
     /**
      *
      * @var string
      */
     public $lastmodified;
-
+     
     /**
      *
      * @var integer
      */
     public $createdby;
-
+     
     /**
      *
      * @var integer
@@ -98,14 +99,11 @@ class NpfBlocks extends BaseModel
     public $lastmodifiedby;
 
 
-    public function beforeCreate()
-    {
+    public function beforeCreate(){
         $this->created = $this->getDatetime();
         $this->lastmodified = $this->getDatetime();
     }
-
-    public function beforeUpdate()
-    {
+    public function beforeUpdate(){
         $this->lastmodified = $this->getDatetime();
     }
 
@@ -113,10 +111,9 @@ class NpfBlocks extends BaseModel
     /**
      * Independent Column Mapping.
      */
-    public function columnMap()
-    {
+    public function columnMap() {
         return array(
-            'id' => 'id',
+            'id' => 'id', 
             'title_bn' => 'title_bn',
             'title_en' => 'title_en',
             'body_bn' => 'body_bn',
@@ -124,18 +121,17 @@ class NpfBlocks extends BaseModel
             'domain_id' => 'domain_id',
             'template_block_name' => 'template_block_name',
             'weight' => 'weight',
-            'region_id' => 'region_id',
+            'region_id' => 'region_id', 
             'more' => 'more',
             'uploadpath' => 'uploadpath',
             'created' => 'created',
-            'lastmodified' => 'lastmodified',
+            'lastmodified' => 'lastmodified', 
             'createdby' => 'createdby',
             'lastmodifiedby' => 'lastmodifiedby',
         );
     }
 
-    public static function updateBlock($id, $region, $weight)
-    {
+    public static function updateBlock($id, $region, $weight){
         // A raw SQL statement
         $sql = "UPDATE npf_blocks
                 SET
@@ -149,13 +145,5 @@ class NpfBlocks extends BaseModel
 
         // Execute the query
         return new Resultset(null, $blocks, $blocks->getReadConnection()->query($sql));
-    }
-
-    public static function getResultBySql($sql)
-    {
-        $di = \Phalcon\DI::getDefault();
-        $result_set = $di->db->query($sql);
-        $result_set->setFetchMode(\Phalcon\Db::FETCH_OBJ);
-        return $result_set->fetchAll($result_set);
     }
 }

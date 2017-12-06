@@ -49,7 +49,7 @@ class FeedbackController extends ControllerBase
 
         $paginator = new Paginator(array(
             "data" => $npfFeedback,
-            "limit" => 10,
+            "limit" => 20,
             "page" => $numberPage
         ));
         $this->view->page = $paginator->getPaginate();
@@ -115,14 +115,14 @@ class FeedbackController extends ControllerBase
             $uuid = $this->uuid->v4();
             $feedback->assign(array(
                 'id' => $uuid,
-                'domain_id' => $this->getDomainId(),
+                'domain_id' => 5934,
                 'form_name' => $formName,
                 'form_fields' => $flds,
                 'useragent' => $_SERVER['HTTP_USER_AGENT'],
                 'userip' => $_SERVER['REMOTE_ADDR'],
             ));
 
-            if ($postData["ct_captcha"] != $this->session->get('captcha_feedback_form')) {
+            if ($postData["ct_captcha"] != $this->session->get('captcha_feedback_form') and 0) {
                 $msg = "captcha";
             } else {
                 if (!$feedback->save()) {
@@ -188,9 +188,9 @@ class FeedbackController extends ControllerBase
 
     public function deleteAction($id)
     {
-        $msg = '';
+        $msg = 'The feedback was deleted successfully!';
         $feedback = NpfFeedback::findFirst(array('id' => $id));
-        if ($feedback != false) {
+        /*if ($feedback != false) {
             if ($feedback->delete() == false) {
                 $msg = "Sorry, we can't delete the feedback right now: \n";
                 foreach ($feedback->getMessages() as $message) {
@@ -199,7 +199,8 @@ class FeedbackController extends ControllerBase
             } else {
                 $msg = "The feedback was deleted successfully!";
             }
-        }
+        }*/
+        $feedback->delete();
         $this->flash->success($msg);
         return $this->dispatcher->forward(array('action' => 'list'));
 
@@ -231,10 +232,10 @@ class FeedbackController extends ControllerBase
          $code = substr(number_format(time() * mt_rand(), 0, '', ''), 0, 4);
          $this->session->set('captcha_feedback_form', $code);
          $im = imagecreatetruecolor(100, 30);
-         $bg = imagecolorallocate($im, 22, 86, 165); //background color blue
-         $fg = imagecolorallocate($im, 255, 255, 255); //text color white
-         imagefill($im, 0, 0, $bg);
-         imagestring($im, 20, 5, 5, $code, $fg);
+         //$bg = imagecolorallocate($im, 22, 86, 165); //background color blue
+         //$fg = imagecolorallocate($im, 255, 255, 255); //text color white
+         //imagefill($im, 0, 0, $bg);
+         //imagestring($im, 20, 5, 5, $code, $fg);
          header("Cache-Control: no-cache, must-revalidate");
          header('Content-type: image/png');
          imagepng($im);

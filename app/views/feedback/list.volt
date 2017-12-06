@@ -12,6 +12,7 @@
         <thead>
         <tr>
             <th>Id</th>
+            <th>Date</th>
             <th class="span2">Name</th>
             <th>Email</th>
             <th class="span5">Message</th>
@@ -26,10 +27,11 @@
     ?>
 
     <tr>
-        <td><?php echo $m;?></td>
+        <td><?php echo ($_GET['page'])?(($_GET['page']-1)*20)+$m:$m;?></td>
+        <td><?php echo $feedback->created;?></td>
         <td><?php echo $form_fields['name']?></td>
         <td><?php echo $form_fields['email']?></td>
-        <td><?php echo $form_fields['message']?></td>
+        <td><?php echo substr($form_fields['message'],0,100)?></td>
         <td width="">
             {{ link_to("feedback/show/" ~ feedback.id, '<i class="icon-comment"></i>', "class": "btn") }}
             {{ link_to("feedback/delete/" ~ feedback.id, '<i class="icon-remove"></i>', "class": "btn delete") }}
