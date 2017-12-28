@@ -1,4 +1,3 @@
-{{content()}}
 {{ javascript_include('js/jquery.vticker.js') }}
 <script>
     $(function () {

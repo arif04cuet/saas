@@ -5,6 +5,8 @@ $router->removeExtraSlashes(true);
 
 /* For public view*/
 
+
+
 $router->add('/', array(
     'controller' => 'site',
     'action' => 'index'

@@ -6,8 +6,6 @@
 {{ javascript_include('js/colorpicker/js/bootstrap-colorpicker.js') }}
 
 
-
-
 {{ partial("content/partials/single_file_upload", ['uppth': uploadPath]) }}
 {{ partial("content/partials/select_content") }}
 {{ partial("content/partials/domain_selector_picker") }}
@@ -23,7 +21,7 @@
             {{ submit_button("Save", "class": "btn btn-success") }}
         </li>
     </ul>
-        {{ content() }}
+
     <h2>Create  {{ formHName }}</h2>
         {{ partial("content/partials/image_uploader", ['uppth': uploadPath]) }}
 

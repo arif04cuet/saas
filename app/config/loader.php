@@ -9,6 +9,7 @@ $namespaces = array(
 	'Vokuro\Controllers' => $config->application->controllersDir,
 	'Vokuro\Forms' => $config->application->formsDir,
 	'Vokuro' => $config->application->libraryDir,
+	'Vokuro\Plugins' => $config->application->pluginsDir,
 );
 
 $map = require $config->application->vendorDir . 'composer/autoload_namespaces.php';
@@ -27,4 +28,3 @@ $loader->registerClasses($classMap);
 
 
 $loader->register();
-

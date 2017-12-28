@@ -44,6 +44,8 @@
         <div class="nav-collapse">
 
           <ul class="nav">
+
+            <?php //if($profile['profile'] == 'Administrators' || $profile['profile'] == 'Master Trainers'):?>
               <li class="dropdown">
                   <a data-toggle="dropdown" class="dropdown-toggle" role="button" href="#" id="drop1">
                       Domain Manager<b class="caret"></b></a>
@@ -83,6 +85,7 @@
                       <li>{{ link_to('hitstat', 'Hit Status') }}</li>
                   </ul>
               </li>
+              <?php //endif;?>
               <li class="dropdown">
                   <a data-toggle="dropdown" class="dropdown-toggle" role="button" href="#" id="drop1">
                       Site Manager<b class="caret"></b></a>

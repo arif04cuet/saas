@@ -10,7 +10,7 @@ return new \Phalcon\Config(array(
 		'host' => '127.0.0.1',
 		'username' => 'root',
 		'password' => 'root',
-		'dbname' => 'npfministryadmin',
+		'dbname' => 'saas',
 	),
 	'application' => array(
 		'controllersDir' => __DIR__ . '/../../app/controllers/',
@@ -20,7 +20,7 @@ return new \Phalcon\Config(array(
 		'libraryDir' => __DIR__ . '/../../app/library/',
 		'pluginsDir' => __DIR__ . '/../../app/plugins/',
 		'cacheDir' => __DIR__ . '/../../app/cache/',
-		'logDir' => __DIR__ . '/../../logs',
+		'logDir' => __DIR__ . '/../../logs/',
 		'incubatorDir' => __DIR__ . '/../../app/incubator/Library/Phalcon/',
 		'vendorDir' => __DIR__ . '/../../vendor/',
 		'baseUri' => '/',

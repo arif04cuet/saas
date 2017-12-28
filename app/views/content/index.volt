@@ -1,5 +1,3 @@
-{{ content() }}
-
 <ul class="pager">
     <li class="previous pull-left">
         <a onclick="goBack(); return false;" href="javascript:;">&larr; Go Back</a>

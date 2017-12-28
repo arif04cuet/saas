@@ -29,8 +29,7 @@ class ControllerBase extends Controller
         $this->setViewTemplate();
         $this->view->profile = $identity;
         $this->view->domainname = $this->getDomainName();
-
-
+       
         //Only check permissions on private controllers
         if ($this->acl->isPrivate($controllerName)) {
 
@@ -94,6 +93,8 @@ class ControllerBase extends Controller
             $this->session->remove("content-flash-msg");
         }
 
+       
+
     }
 
     public function log($text)
@@ -140,6 +141,7 @@ class ControllerBase extends Controller
         } else if ($profile == 'Content Manager') {
             $template = 'contenteditor';
         }
+        
         $this->view->setTemplateBefore($template);
     }
 
@@ -179,18 +181,12 @@ class ControllerBase extends Controller
 
     public function getDomainId()
     {
-        $domain_name = $this->getDomainName();
-        $domain_name = $domain_name == 'localhost' ? 'cabinet.gov.bd' : $domain_name;
-        $domain = NpfDomains::findFirst("subdomain = '" . $domain_name . "'");
-
-        return $domain->id;
+        return $this->current_domain->id;
     }
 
 	public function getDomain()
     {
-        $domain_name = $this->getDomainName();
-        $domain = NpfDomains::findFirst("subdomain = '" . $domain_name . "'");
-        return $domain;
+        return $this->current_domain;
     }
 	
     public function getOfficeInfo()

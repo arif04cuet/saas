@@ -70,7 +70,7 @@ $di->set('view', function () use ($config) {
 /**
  * Database connection is created based in the parameters defined in the configuration file
  */
-$di->set('db', function () use ($config) {
+$di->set('db', function () use ($config,$di) {
     /*	return new DbAdapter(array(
             'host' => $config->database->host,
             'username' => $config->database->username,
@@ -91,7 +91,7 @@ $di->set('db', function () use ($config) {
 
     $eventsManager = new Phalcon\Events\Manager();
 
-    $logger = new \Phalcon\Logger\Adapter\File(BASE_PATH . "/logs/db.log");
+    $logger = $di->get('logger');
     
         //Listen all the database events
     $eventsManager->attach('db', function ($event, $connection) use ($logger) {
@@ -142,9 +142,16 @@ $di->set('crypt', function () use ($config) {
 /**
  * Dispatcher use a default namespace
  */
-$di->set('dispatcher', function () {
+$di->set('dispatcher', function () use ($di){
     $dispatcher = new Dispatcher();
     $dispatcher->setDefaultNamespace('Vokuro\Controllers');
+
+    //Obtain the standard eventsManager from the DI
+    $eventsManager = $di->getShared('eventsManager');
+    $security = new Vokuro\Plugins\Security($di);
+    $eventsManager->attach('dispatch', $security);
+    $dispatcher->setEventsManager($eventsManager);
+
     return $dispatcher;
 });
 
@@ -224,9 +231,8 @@ $di->set('migratedomain', function () {
     return new MigrateDomain();
 });
 
-// $di->set('logger', function () use ($config) {
+$di->set('logger', function () use ($config) {
 
-//     $logger = new Phalcon\Logger\Adapter\File\Multiple($config->application->logDir);
-
-//     return $logger;
-// });
+    $logger = new Phalcon\Logger\Adapter\File(BASE_PATH.'/logs/app.log');
+    return $logger;
+});

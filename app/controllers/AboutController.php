@@ -7,19 +7,7 @@ class AboutController extends ControllerBase
 
     public function indexAction()
     {
-    	$this->view->setTemplateBefore('public');
-    }
-    public function renderAction() {
-        $filename = $this->config->application->actionUri.'/test.php';
-        $vars = array();
-        $vars['this'] = $this;
-        if (is_array($vars) && !empty($vars)) {
-            extract($vars);
-        }
-        ob_start();
-        include $filename;
-        $output = ob_get_clean();
-        echo $output;
+    	//$this->view->setTemplateBefore('public');
     }
 
     private function test2(){
@@ -29,4 +17,3 @@ class AboutController extends ControllerBase
         echo 'public test3';
     }
 }
-

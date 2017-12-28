@@ -26,6 +26,7 @@ class ContenttypeController extends ControllerBase
     }
     public function listAction()
     {
+        
         $domainid = $this->getDomainId();
         $cnt_ids = '';
         if($domainid!=1){
@@ -352,4 +353,3 @@ class ContenttypeController extends ControllerBase
         return $sql_query;
     }
 }
-

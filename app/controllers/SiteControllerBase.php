@@ -197,8 +197,7 @@ class SiteControllerBase extends Controller
 
     public function getDomain()
     {
-        $name = $_SERVER['HTTP_HOST'];
-        return NpfDomains::findFirstBySubdomain($name);
+        return $this->current_domain;
     }
 
     public function buildFooterMenu($domainid, $lang)

@@ -9,6 +9,7 @@ class SiteController extends SiteControllerBase
 
     public function indexAction()
     {
+        
         $domain_info = (array)$this->getDomain();
         $lang = $this->view->lang;
         $this->view->leftbar = $this->buildRegion($domain_info['id'], $lang, 'left');

@@ -15,7 +15,9 @@ class SessionController extends ControllerBase
 
     public function initialize()
     {
+        
         $this->view->setTemplateBefore('public');
+        
     }
 
     public function indexAction()
@@ -23,49 +25,18 @@ class SessionController extends ControllerBase
         return $this->response->redirect('/login');
     }
 
-//	public function signupAction()
-//	{
-//		$form = new SignUpForm();
-//
-//		if ($this->request->isPost()) {
-//
-//			if ($form->isValid($this->request->getPost()) != false) {
-//
-//				$user = new Users();
-//
-//				$user->assign(array(
-//					'name' => $this->request->getPost('name', 'striptags'),
-//					'email' => $this->request->getPost('email'),
-//					'password' => $this->security->hash($this->request->getPost('password')),
-//					'profilesId' => 2
-//				));
-//
-//				if ($user->save()) {
-//					return $this->dispatcher->forward(array(
-//						'controller' => 'index',
-//						'action' => 'index'
-//					));
-//				}
-//
-//				$this->flash->error($user->getMessages());
-//			}
-//
-//		}
-//
-//		$this->view->form = $form;
-//	}
-
     /**
      * Starts a session in the admin backend
      */
     public function loginAction()
     {
-        if ($this->cookies->has('logged-in') and $this->cookies->get('logged-in') == 'logged-in' and $this->getUserId()) {
-            $this->response->redirect('contenttype/list');
-        }
 
+        // if ($this->cookies->has('logged-in') and $this->cookies->get('logged-in') == 'logged-in' and $this->getUserId()) {
+        //     $this->response->redirect('contenttype/list');
+        // }
+        
         $form = new LoginForm();
-
+       
         try {
 
             if (!$this->request->isPost()) {
@@ -76,6 +47,7 @@ class SessionController extends ControllerBase
                     return $this->auth->loginWithRememberMe();
                 }
 
+               
             } else {
 
                 if ($form->isValid($this->request->getPost()) == false) {
@@ -109,6 +81,7 @@ class SessionController extends ControllerBase
 
     private function redirectTo()
     {
+
         $profile = $this->getUserProfile();
         if ($profile == 'Administrators') {
             return $this->response->redirect('contenttype');
@@ -119,6 +92,7 @@ class SessionController extends ControllerBase
         } else if ($profile == 'Content Manager') {
             return $this->response->redirect('contenttype/list');
         }
+       
     }
 
     /**
@@ -175,8 +149,7 @@ class SessionController extends ControllerBase
         $this->session->destroy();
         $this->auth->remove();
 
-        return $this->response->redirect('');
+        return $this->response->redirect('user');
     }
 
 }
-
