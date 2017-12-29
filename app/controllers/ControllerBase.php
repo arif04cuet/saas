@@ -21,15 +21,15 @@ class ControllerBase extends Controller
     public function beforeExecuteRoute(Dispatcher $dispatcher)
     {
 
-
-        $controllerName = $dispatcher->getControllerName();
-
         $identity = $this->auth->getIdentity();
-
-        $this->setViewTemplate();
-        $this->view->profile = $identity;
-        $this->view->domainname = $this->getDomainName();
-       
+        if($identity){
+            $menu = 'menu/'.strtolower(str_replace(" ",'',$identity['profile']));
+            $this->view->setTemplateAfter($menu);
+            $this->view->profile = $identity;
+            $this->view->domainname = $this->getDomainName();
+        }
+        
+        $controllerName = $dispatcher->getControllerName();
         //Only check permissions on private controllers
         if ($this->acl->isPrivate($controllerName)) {
 
@@ -128,21 +128,22 @@ class ControllerBase extends Controller
         return true;
     }
 
-    public function setViewTemplate()
+    public function setMenu()
     {
         $profile = $this->getUserProfile();
-        $template = 'public';
-        if ($profile == 'Administrators') {
-            $template = 'sysadmin';
-        } else if ($profile == 'Master Trainers') {
-            $template = 'sysadmin';
-        } else if ($profile == 'Site Admin') {
-            $template = 'contentmanager';
-        } else if ($profile == 'Content Manager') {
-            $template = 'contenteditor';
-        }
+        $template = 'menu/'.strtolower(str_replace(" ",'',$profile));
+
+        // if ($profile == 'Administrators') {
+        //     $template = 'sysadmin';
+        // } else if ($profile == 'Master Trainers') {
+        //     $template = 'sysadmin';
+        // } else if ($profile == 'Site Admin') {
+        //     $template = 'contentmanager';
+        // } else if ($profile == 'Content Manager') {
+        //     $template = 'contenteditor';
+        // }
         
-        $this->view->setTemplateBefore($template);
+        $this->view->setTemplateAfter($template);
     }
 
     public function getUserProfile()

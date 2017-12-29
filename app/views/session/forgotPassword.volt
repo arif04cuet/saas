@@ -1,19 +1,18 @@
-{{ content() }}
 
 <div align="center" class="well">
 
+	<h2>Forgot Password?</h2>
+		
 	{{ form('class': 'form-search', "AUTOCOMPLETE":"OFF") }}
+	{{ form.render('csrf', ['value': security.getToken()]) }}
 
-	<div align="left">
-		<h2>Forgot Password?</h2>
-	</div>
 
 		{{ form.render('email') }}
 		{{ form.render('Send') }}
 
 		<hr>
 
-		{{ form.render('csrf', ['value': security.getToken()]) }}
+		
 
 	</form>
 

@@ -77,6 +77,6 @@
 </div>
 
 
-{{ content() }}
+
 </body>
 </html>

@@ -35,6 +35,7 @@ class ContentController extends ControllerBase
     public function indexAction()
     {
         $contentType = $this->dispatcher->getParam('contentType');
+        $this->tag->setTitle(ucfirst($contentType));
         $limit = 50;
         $numberPage = 1;
         if ($this->request->isPost()) {
@@ -579,4 +580,3 @@ class ContentController extends ControllerBase
         return $npfContentCnt[0]->cnt * 1;
     }
 }
-

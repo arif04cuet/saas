@@ -21,9 +21,13 @@ class SiteController extends SiteControllerBase
         $this->view->leftbar = $this->get_view_content($name);
     }
 
-    public function viewAction($contentType, $id)
+    public function texonomyAction($name,$q1)
     {
+        $this->view->leftbar = $this->get_view_content($name);
+    }
 
+    public function detailsAction($contentType, $id)
+    {
         $this->view->leftbar = $this->renderContent($contentType, $id);
     }
 }

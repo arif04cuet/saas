@@ -12,15 +12,25 @@ $router->add('/', array(
     'action' => 'index'
 ));
 
-$router->add('/site/{name:[a-z\-]+}/{id:[a-z0-9\-]{36}}', array(
-    'controller' => 'site',
-    'action' => 'view'
-));
+
+
 
 $router->add('/site/view/{name:[a-z\-]+}', array(
     'controller' => 'site',
     'action' => 'list'
 ));
+
+$router->add('/site/view/{name:[a-z\-]+}/{q1:(.*)}', array(
+    'controller' => 'site',
+    'action' => 'texonomy'
+));
+
+
+$router->add('/site/{name:[a-z\-]+}/{id:[a-z0-9\-]{36}}', array(
+    'controller' => 'site',
+    'action' => 'details'
+));
+
 
 $router->add('/admin', array(
     'controller' => 'session',

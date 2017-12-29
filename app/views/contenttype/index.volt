@@ -1,4 +1,4 @@
-{{ content() }}
+
 
 <div align="right">
     {{ link_to("contenttype/create", "<i class='icon-plus-sign'></i> Create Content Type", "class": "btn btn-primary") }}

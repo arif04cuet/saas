@@ -1,27 +1,29 @@
-{{ content() }}
 
-<div align="center" class="well">
 
-	{{ form('class': 'form-search', "AUTOCOMPLETE":"OFF") }}
-
-	<div align="left">
-		<h2>Log In</h2>
+	<div class="container">
+			<div class="well">
+		<div class="row">
+			<div class="" style="width:25%;margin:0 auto">
+					{{ form("AUTOCOMPLETE":"OFF") }}
+					{{ form.render('csrf', ['value': security.getToken()]) }}
+					<div class="form-group">
+						{{ form.render('email') }} 
+					</div>
+					<div class="form-group">
+							{{ form.render('password') }}
+					</div>
+					
+					<div class="form-group checkbox">
+							{{ form.render('remember') }} {{ form.label('remember') }}
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+				
+				<div class="forgot">
+						{{ link_to("session/forgotPassword", "Forgot password ? click here") }}
+				</div>
+			</div>
+		</div>
+	</div>
 	</div>
 
-	{{ form.render('email') }} {{ form.render('password') }} {{ form.render('go') }}
-
-	<div align="center" class="remember">
-		{{ form.render('remember') }} {{ form.label('remember') }}
-	</div>
-
-	{{ form.render('csrf', ['value': security.getToken()]) }}
-
-	<hr>
-
-	<div class="forgot">
-		{{ link_to("session/forgotPassword", "Forgot my password") }}
-	</div>
-
-	</form>
-
-</div>

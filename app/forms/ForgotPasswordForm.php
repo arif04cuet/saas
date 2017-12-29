@@ -6,13 +6,14 @@ namespace Vokuro\Forms;
 use Phalcon\Forms\Form,
 	Phalcon\Forms\Element\Text,
 	Phalcon\Forms\Element\Submit,
+	Phalcon\Forms\Element\Hidden,
 	Phalcon\Validation\Validator\PresenceOf,
+	Phalcon\Validation\Validator\Identical,
 	Phalcon\Validation\Validator\Email;
 
 use Vokuro\Models\Profiles;
 
 
-/*
 class ForgotPasswordForm extends Form
 {
 
@@ -32,6 +33,7 @@ class ForgotPasswordForm extends Form
 		));
 
 		$this->add($email);
+
 
 		//CSRF
 		$csrf = new Hidden('csrf');
@@ -44,46 +46,6 @@ class ForgotPasswordForm extends Form
 		);
 
 		$this->add($csrf);
-
-		$this->add(new Submit('Send', array(
-			'class' => 'btn btn-primary'
-		)));
-	}
-
-}
-
-
-
-
-namespace Vokuro\Forms;
-
-use Phalcon\Forms\Form,
-	Phalcon\Forms\Element\Text,
-	Phalcon\Forms\Element\Submit,
-	Phalcon\Validation\Validator\PresenceOf,
-	Phalcon\Validation\Validator\Email;
-
-use Vokuro\Models\Profiles;
-*/
-class ForgotPasswordForm extends Form
-{
-
-	public function initialize()
-	{
-		$email = new Text('email', array(
-			'placeholder' => 'Email'
-		));
-
-		$email->addValidators(array(
-			new PresenceOf(array(
-				'message' => 'The e-mail is required'
-			)),
-			new Email(array(
-				'message' => 'The e-mail is not valid'
-			))
-		));
-
-		$this->add($email);
 
 		$this->add(new Submit('Send', array(
 			'class' => 'btn btn-primary'

@@ -1,7 +1,3 @@
-{{ javascript_include('js/ckeditor/ckeditor.js') }}
-{{ javascript_include('js/ckeditor/adapters/jquery.js') }}
-
-
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container" style="width: auto;">
@@ -61,25 +57,8 @@
   </div>
 </div>
 
-<div class="container" style="margin-top:40px">
-  {{ content() }}
+<br><br>
+<div class="container">
+    {{content()}}
 </div>
 
-<script>
-    function switchDomain(select){
-        var selected_host = $(select).val();
-        //var url = window.location;
-        var protocol = window.location.protocol;
-        var host = window.location.host;
-        var uri = window.location.pathname;
-        //console.debug(url);
-        var url = protocol+"//"+selected_host+uri;
-        window.location = url;
-
-    }
-
-    $(document).ready(function(){
-        var host = window.location.host;
-        $("#domain-switcher").val(host);
-    });
-</script>
